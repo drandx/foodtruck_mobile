@@ -32,14 +32,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BaseViewModel.cs" />
-    <Compile Include="MessageViewModel.cs" />
-    <Compile Include="FriendViewModel.cs" />
-    <Compile Include="RegisterViewModel.cs" />
-    <Compile Include="LoginViewModel.cs" />
-    <Compile Include="IWebService.cs" />
-    <Compile Include="DataModel.cs" />
-    <Compile Include="ISettings.cs" />
+    <Compile Include="Model\BaseViewModel.cs" />
+    <Compile Include="Model\FriendViewModel.cs" />
+    <Compile Include="Model\LoginViewModel.cs" />
+    <Compile Include="Model\MessageViewModel.cs" />
+    <Compile Include="Model\RegisterViewModel.cs" />
+    <Compile Include="Domain\DataModel.cs" />
+    <Compile Include="Service\ISettings.cs" />
+    <Compile Include="Service\IWebService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="Model\" />
+    <Folder Include="Service\" />
+    <Folder Include="Common\" />
+  </ItemGroup>
 </Project>

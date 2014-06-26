@@ -115,5 +115,6 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Controllers\" />
+    <Folder Include="Core\" />
   </ItemGroup>
 </Project>
