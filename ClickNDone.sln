@@ -51,6 +51,6 @@ Global
 		{DFD3D4B0-1E41-4457-95F5-B360133D8196}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ClickNDone.Core\ClickNDone.Core.csproj
+		StartupItem = ClickNDone.iOS\ClickNDone.iOS.csproj
 	EndGlobalSection
 EndGlobal

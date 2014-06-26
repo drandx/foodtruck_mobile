@@ -103,10 +103,17 @@
     <Compile Include="ClickNDone.iOSViewController.designer.cs">
       <DependentUpon>ClickNDone.iOSViewController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\LoginController.designer.cs">
+      <DependentUpon>LoginController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
     <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
 </Project>
