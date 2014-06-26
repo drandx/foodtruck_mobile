@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XamChat.Core
+namespace ClickNDone.Core
 {
 	public interface ISettings
 	{

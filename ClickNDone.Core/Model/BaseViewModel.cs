@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.ComponentModel.Design;
+using ClickNDone.Core;
 
 
-namespace XamChat.Core
+namespace ClickNDone.Core
 {
 	public class BaseViewModel
 	{

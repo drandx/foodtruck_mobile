@@ -107,6 +107,30 @@
     <Compile Include="Controllers\LoginController.designer.cs">
       <DependentUpon>LoginController.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\ISettings.cs">
+      <Link>Core\ISettings.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Service\IWebService.cs">
+      <Link>Core\IWebService.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Domain\DataModel.cs">
+      <Link>Core\DataModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
+      <Link>Core\BaseViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\FriendViewModel.cs">
+      <Link>Core\FriendViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\LoginViewModel.cs">
+      <Link>Core\LoginViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\MessageViewModel.cs">
+      <Link>Core\MessageViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
+      <Link>Core\RegisterViewModel.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

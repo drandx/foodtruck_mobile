@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using System.Collections.Generic;
 
 
-namespace XamChat.Core
+namespace ClickNDone.Core
 {
 	public class MessageViewModel : BaseViewModel
 	{

@@ -38,8 +38,10 @@
     <Compile Include="Model\MessageViewModel.cs" />
     <Compile Include="Model\RegisterViewModel.cs" />
     <Compile Include="Domain\DataModel.cs" />
-    <Compile Include="Service\ISettings.cs" />
     <Compile Include="Service\IWebService.cs" />
+    <Compile Include="Common\ISettings.cs" />
+    <Compile Include="Common\FakeSettings.cs" />
+    <Compile Include="Service\FakeWebService.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

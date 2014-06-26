@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-namespace XamChat.Core
+namespace ClickNDone.Core
 {
 	public class RegisterViewModel : BaseViewModel
 	{
