@@ -107,29 +107,38 @@
     <Compile Include="Controllers\LoginController.designer.cs">
       <DependentUpon>LoginController.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Common\ISettings.cs">
-      <Link>Core\ISettings.cs</Link>
+    <Compile Include="..\ClickNDone.Core\Service\FakeWebService.cs">
+      <Link>Core\Service\FakeWebService.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Service\IWebService.cs">
-      <Link>Core\IWebService.cs</Link>
+      <Link>Core\Service\IWebService.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Domain\DataModel.cs">
-      <Link>Core\DataModel.cs</Link>
+    <Compile Include="..\ClickNDone.Core\Common\FakeSettings.cs">
+      <Link>Core\Common\FakeSettings.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\ISettings.cs">
+      <Link>Core\Common\ISettings.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
-      <Link>Core\BaseViewModel.cs</Link>
+      <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\FriendViewModel.cs">
-      <Link>Core\FriendViewModel.cs</Link>
+      <Link>Core\Model\FriendViewModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\LoginViewModel.cs">
-      <Link>Core\LoginViewModel.cs</Link>
+      <Link>Core\Model\LoginViewModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\MessageViewModel.cs">
-      <Link>Core\MessageViewModel.cs</Link>
+      <Link>Core\Model\MessageViewModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
-      <Link>Core\RegisterViewModel.cs</Link>
+      <Link>Core\Model\RegisterViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Domain\DataModel.cs">
+      <Link>Core\Domain\DataModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\DependencyInjectionWrapper.cs">
+      <Link>Core\Common\DependencyInjectionWrapper.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -140,5 +149,9 @@
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Core\" />
+    <Folder Include="Core\Service\" />
+    <Folder Include="Core\Common\" />
+    <Folder Include="Core\Model\" />
+    <Folder Include="Core\Domain\" />
   </ItemGroup>
 </Project>

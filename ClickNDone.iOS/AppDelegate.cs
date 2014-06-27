@@ -4,6 +4,8 @@ using System.Linq;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.ComponentModel.Design;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
@@ -42,6 +44,23 @@ namespace ClickNDone.iOS
 		public override void WillTerminate (UIApplication application)
 		{
 		}
+
+		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
+		{
+			//View Settings
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new FakeSettings());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new FakeWebService());
+
+			//ViewModels
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(LoginViewModel),new LoginViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(FriendViewModel),new FriendViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(MessageViewModel),new MessageViewModel());
+
+			return true;
+
+		}
+
 	}
 }
 

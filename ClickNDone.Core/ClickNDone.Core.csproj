@@ -42,6 +42,7 @@
     <Compile Include="Common\ISettings.cs" />
     <Compile Include="Common\FakeSettings.cs" />
     <Compile Include="Service\FakeWebService.cs" />
+    <Compile Include="Common\DependencyInjectionWrapper.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

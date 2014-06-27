@@ -8,8 +8,8 @@ namespace ClickNDone.Core
 {
 	public class BaseViewModel
 	{
-		protected readonly IWebService service /*= ServiceContainer.Resolve<IWebService>()*/;
-		protected readonly ISettings settings /*= ServiceContainer.Resolve<ISettings>()*/;
+		protected readonly IWebService service = (IWebService)DependencyInjectionWrapper.Instance.ServiceContainer().GetService(typeof(IWebService));
+		protected readonly ISettings settings = (ISettings)DependencyInjectionWrapper.Instance.ServiceContainer().GetService(typeof(ISettings));
 		public event EventHandler IsBusyChanged = delegate { };
 		private bool isBusy = false;
 		public bool IsBusy
