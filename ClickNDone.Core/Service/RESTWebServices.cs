@@ -22,10 +22,8 @@ namespace ClickNDone.Core
 			
 		public async Task<User> Login (string username, string password)
 		{
-			await Sleep ();
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
-			//client.Headers.Add ("X-ZUMO-APPLICATION", MobileServiceAppId);
 			User user = new User ();
 			user.Id = 1;
 			user.username = username;
@@ -38,8 +36,20 @@ namespace ClickNDone.Core
 			var json = JsonConvert.SerializeObject (person);
 			Console.WriteLine ("JSON representation of person: {0}", json);
 			string url = Constants.WebServiceHost + "login";
-			var response = client.UploadString (url, "POST", json);
+			var response = await client.UploadStringTaskAsync (url, "POST", json);
 			return user;
+		}
+
+		public async Task<TermsConditions> GetTermsConditions(bool isEndUser)
+		{
+			string url = Constants.WebServiceHost + "terms_conditions/";
+			if (!isEndUser) 
+				url = url + "SERVICE_PROVIDER_TYPE";
+			else
+				url = url + "END_USER_TYPE";
+			var response = await client.DownloadStringTaskAsync (url);
+			var terms = JsonConvert.DeserializeObject<TermsConditions> (response);
+			return terms;
 		}
 
 		public async Task<User> Register (User user)

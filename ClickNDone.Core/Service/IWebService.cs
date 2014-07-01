@@ -12,6 +12,7 @@ namespace ClickNDone.Core
 		Task<Conversation[]> GetConversations(int userId);
 		Task<Message[]> GetMessages(int conversationId);
 		Task<Message> SendMessage(Message message);
+		Task<TermsConditions> GetTermsConditions(bool isEndUser);
 	}
 }
 

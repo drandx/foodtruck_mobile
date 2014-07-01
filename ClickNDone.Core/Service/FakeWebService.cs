@@ -96,8 +96,10 @@ namespace ClickNDone.Core
 			return message;
 		}
 
-
-
+		public async Task<TermsConditions> GetTermsConditions(bool isEndUser)
+		{
+			throw new NotImplementedException();
+		}
 
 	}
 }

@@ -43,5 +43,11 @@ namespace ClickNDone.Core
 
 	}
 
+	public class TermsConditions
+	{
+		public string terms { get; set; }
+		public string conditions { get; set; }
+	}
+
 }
 
