@@ -88,6 +88,10 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
+    <Reference Include="System.Json" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -140,6 +144,12 @@
     <Compile Include="..\ClickNDone.Core\Common\DependencyInjectionWrapper.cs">
       <Link>Core\Common\DependencyInjectionWrapper.cs</Link>
     </Compile>
+    <Compile Include="..\ClickNDone.Core\Service\RESTWebServices.cs">
+      <Link>Core\Service\RESTWebServices.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\Constants.cs">
+      <Link>Core\Common\Constants.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
@@ -153,5 +163,11 @@
     <Folder Include="Core\Common\" />
     <Folder Include="Core\Model\" />
     <Folder Include="Core\Domain\" />
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="json.net">
+      <Version>4.5.11</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
   </ItemGroup>
 </Project>

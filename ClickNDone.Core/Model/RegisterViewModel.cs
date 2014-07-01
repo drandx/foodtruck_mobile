@@ -19,8 +19,8 @@ namespace ClickNDone.Core
 			try
 			{
 				settings.User = await service
-					.Register(new User { Username = Username,
-						Password = Password, });
+					.Register(new User { username = Username,
+						password = Password, });
 				settings.Save();
 			} finally {
 				IsBusy = false;

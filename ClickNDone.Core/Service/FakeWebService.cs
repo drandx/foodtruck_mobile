@@ -20,7 +20,7 @@ namespace ClickNDone.Core
 		public async Task<User> Login (string username, string password)
 		{
 			await Sleep ();
-			return new User { Id = 1, Username = username };
+			return new User { Id = 1, username = username };
 		}
 
 		public async Task<User> Register (User user)
@@ -33,16 +33,16 @@ namespace ClickNDone.Core
 		{
 			await Sleep ();
 			return new[] {
-				new User { Id = 2, Username = "bobama" },
-				new User { Id = 2, Username = "bobloblaw" },
-				new User { Id = 3, Username = "gmichael" },
+				new User { Id = 2, username = "bobama" },
+				new User { Id = 2, username = "bobloblaw" },
+				new User { Id = 3, username = "gmichael" },
 			};
 		}
 
 		public async Task<User> AddFriend (int userId, string username)
 		{
 			await Sleep ();
-			return new User { Id = 4, Username = username };
+			return new User { Id = 4, username = username };
 		}
 
 		public async Task<Conversation[]> GetConversations(int userId)

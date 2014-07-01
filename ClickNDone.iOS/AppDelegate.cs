@@ -49,7 +49,7 @@ namespace ClickNDone.iOS
 		{
 			//View Settings
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new FakeSettings());
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new FakeWebService());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
 
 			//ViewModels
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(LoginViewModel),new LoginViewModel());

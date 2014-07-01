@@ -31,8 +31,16 @@ namespace ClickNDone.Core
 	public class User
 	{
 		public int Id { get; set; }
-		public string Username { get; set; }
-		public string Password { get; set; }
+		public string username { get; set; }
+		public string password { get; set; }
+
+	}
+
+	public class Person
+	{
+		public string username { get; set; }
+		public string password { get; set; }
+
 	}
 
 }
