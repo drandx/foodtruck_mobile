@@ -37,11 +37,12 @@
     <Compile Include="Domain\DataModel.cs" />
     <Compile Include="Service\IWebService.cs" />
     <Compile Include="Common\ISettings.cs" />
-    <Compile Include="Common\FakeSettings.cs" />
     <Compile Include="Service\FakeWebService.cs" />
     <Compile Include="Common\DependencyInjectionWrapper.cs" />
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Service\RESTWebServices.cs" />
+    <Compile Include="Common\Settings.cs" />
+    <Compile Include="Model\TermsConditionsViewModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

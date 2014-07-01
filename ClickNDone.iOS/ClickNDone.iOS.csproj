@@ -117,9 +117,6 @@
     <Compile Include="..\ClickNDone.Core\Service\IWebService.cs">
       <Link>Core\Service\IWebService.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Common\FakeSettings.cs">
-      <Link>Core\Common\FakeSettings.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Common\ISettings.cs">
       <Link>Core\Common\ISettings.cs</Link>
     </Compile>
@@ -150,6 +147,17 @@
     <Compile Include="..\ClickNDone.Core\Common\Constants.cs">
       <Link>Core\Common\Constants.cs</Link>
     </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\Settings.cs">
+      <Link>Core\Common\Settings.cs</Link>
+    </Compile>
+    <Compile Include="Controllers\TermsConditionsController.cs" />
+    <Compile Include="Controllers\TermsConditionsController.designer.cs">
+      <DependentUpon>TermsConditionsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\TermsConditionsViewModel.cs">
+      <Link>Core\Model\TermsConditionsViewModel.cs</Link>
+    </Compile>
+    <Compile Include="Common\BaseUIViewController.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
@@ -163,6 +171,7 @@
     <Folder Include="Core\Common\" />
     <Folder Include="Core\Model\" />
     <Folder Include="Core\Domain\" />
+    <Folder Include="Common\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="json.net">

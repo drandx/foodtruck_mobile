@@ -2,10 +2,11 @@
 
 namespace ClickNDone.Core
 {
-	public class FakeSettings : ISettings
+	public class Settings : ISettings
 	{
 		public User User { get; set; }
 		public void Save() { }
+		public bool IsEnduser { get; set;}
 	}
 
 }

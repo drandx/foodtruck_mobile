@@ -40,6 +40,7 @@ namespace ClickNDone.iOS
 			base.ViewWillAppear(false);
 			loginViewModel.IsBusyChanged += OnIsBusyChanged;
 		}
+
 		public override void ViewWillDisappear(bool animated)
 		{
 			base.ViewWillDisappear(false);
@@ -53,7 +54,6 @@ namespace ClickNDone.iOS
 					btnLogIn.Enabled =
 						indicator.Hidden = !loginViewModel.IsBusy;
 		}
-
 
 	}
 }

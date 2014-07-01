@@ -48,7 +48,7 @@ namespace ClickNDone.iOS
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
 			//View Settings
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new FakeSettings());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new Settings());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
 
 			//ViewModels
@@ -56,6 +56,7 @@ namespace ClickNDone.iOS
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(FriendViewModel),new FriendViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(MessageViewModel),new MessageViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
 
 			return true;
 
