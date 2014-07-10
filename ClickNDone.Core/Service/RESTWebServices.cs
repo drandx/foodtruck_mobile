@@ -10,33 +10,39 @@ namespace ClickNDone.Core
 
 		private WebClient client;
 
-		public RESTWebServices ()
-		{
-			client = new WebClient ();
-		}
+		public int SleepDuration { get; set; }
 
 		private Task Sleep ()
 		{
-			return Task.Delay (1);
+			return Task.Delay (SleepDuration);
+		}
+
+		public RESTWebServices ()
+		{
+			SleepDuration = 1;
+			client = new WebClient ();
 		}
 			
 		public async Task<User> Login (string username, string password)
 		{
+			await Sleep ();
+
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 			User user = new User ();
 			user.Id = 1;
 			user.username = username;
-			user.username = password;
+			user.password = password;
 
 			Person person = new Person ();
 			person.password = password;
 			person.username = username;
 
-			var json = JsonConvert.SerializeObject (person);
-			Console.WriteLine ("JSON representation of person: {0}", json);
-			string url = Constants.WebServiceHost + "login";
-			var response = await client.UploadStringTaskAsync (url, "POST", json);
+//			var json = JsonConvert.SerializeObject (person);
+//			Console.WriteLine ("JSON representation of person: {0}", json);
+//			string url = Constants.WebServiceHost + "login";
+//			var response = await client.UploadStringTaskAsync (url, "POST", json);
+
 			return user;
 		}
 
@@ -49,6 +55,7 @@ namespace ClickNDone.Core
 				url = url + "END_USER_TYPE";
 			var response = await client.DownloadStringTaskAsync (url);
 			var terms = JsonConvert.DeserializeObject<TermsConditions> (response);
+
 			return terms;
 		}
 

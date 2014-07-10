@@ -92,9 +92,43 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Components\json.net-4.5.11\lib\ios\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="FlyoutNavigation">
+      <HintPath>..\Components\flyoutnavigation-1.3\lib\ios\FlyoutNavigation.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoTouch.Dialog-1" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
+    <BundleResource Include="images\Background-Party.png" />
+    <BundleResource Include="images\Background.png" />
+    <BundleResource Include="images\favorite.png" />
+    <BundleResource Include="images\favorited.png" />
+    <BundleResource Include="images\slideout.png" />
+    <BundleResource Include="images\Speakers\aaron.jpg" />
+    <BundleResource Include="images\Speakers\ananth.jpg" />
+    <BundleResource Include="images\Speakers\bob.jpg" />
+    <BundleResource Include="images\Speakers\chris.jpg" />
+    <BundleResource Include="images\Speakers\david.jpg" />
+    <BundleResource Include="images\Speakers\dean.jpg" />
+    <BundleResource Include="images\Speakers\demis.jpg" />
+    <BundleResource Include="images\Speakers\don.jpg" />
+    <BundleResource Include="images\Speakers\frank.jpg" />
+    <BundleResource Include="images\Speakers\greg.jpg" />
+    <BundleResource Include="images\Speakers\igor.jpg" />
+    <BundleResource Include="images\Speakers\jb.jpg" />
+    <BundleResource Include="images\Speakers\jeremie.jpg" />
+    <BundleResource Include="images\Speakers\john_bubriski.jpg" />
+    <BundleResource Include="images\Speakers\john_zablocki.jpg" />
+    <BundleResource Include="images\Speakers\jonathan.jpg" />
+    <BundleResource Include="images\Speakers\louis.jpg" />
+    <BundleResource Include="images\Speakers\michael.jpg" />
+    <BundleResource Include="images\Speakers\miguel.jpg" />
+    <BundleResource Include="images\Speakers\paul.jpg" />
+    <BundleResource Include="images\Speakers\phil.jpg" />
+    <BundleResource Include="images\Speakers\sam.jpg" />
+    <BundleResource Include="images\Speakers\scott.jpg" />
+    <BundleResource Include="images\Speakers\somya.jpg" />
+    <BundleResource Include="images\Speakers\steve.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -158,6 +192,10 @@
       <Link>Core\Model\TermsConditionsViewModel.cs</Link>
     </Compile>
     <Compile Include="Common\BaseUIViewController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomeController.designer.cs">
+      <DependentUpon>HomeController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
@@ -172,10 +210,15 @@
     <Folder Include="Core\Model\" />
     <Folder Include="Core\Domain\" />
     <Folder Include="Common\" />
+    <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
     <XamarinComponentReference Include="json.net">
       <Version>4.5.11</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="flyoutnavigation">
+      <Version>1.3</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
   </ItemGroup>

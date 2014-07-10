@@ -104,17 +104,17 @@
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
                         <outlet property="txtEmail" destination="dj5-2r-Bpn" id="a79-1F-gMx"/>
                         <outlet property="txtPassword" destination="FiG-fo-Igm" id="EpL-j7-y8X"/>
-                        <segue destination="Vst-B1-DoA" kind="push" identifier="OnLogin" id="a8M-oX-YDi"/>
+                        <segue destination="Vst-B1-DoA" kind="modal" identifier="OnLogin" id="a8M-oX-YDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-1s-4nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="492" y="68"/>
         </scene>
-        <!--View Controller-->
+        <!--Home Controller-->
         <scene sceneID="ncE-Ys-etI">
             <objects>
-                <viewController id="Vst-B1-DoA" sceneMemberID="viewController">
+                <viewController id="Vst-B1-DoA" customClass="HomeController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RM8-dr-jON"/>
                         <viewControllerLayoutGuide type="bottom" id="OHN-wV-5Gf"/>
@@ -122,18 +122,6 @@
                     <view key="view" contentMode="scaleToFill" id="fbg-u4-Nuo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5S-yV-7Uq">
-                                <rect key="frame" x="78" y="269" width="164" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Terminos y Condiciones">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Pd2-Tp-BeD" kind="push" id="uK1-C5-mEp"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="h1a-ea-D6z"/>
@@ -145,7 +133,7 @@
         <!--Terms Conditions Controller-->
         <scene sceneID="nJP-NG-lyb">
             <objects>
-                <viewController id="Pd2-Tp-BeD" customClass="TermsConditionsController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsConditionsController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Pd2-Tp-BeD" customClass="TermsConditionsController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Idl-oO-1Jv"/>
                         <viewControllerLayoutGuide type="bottom" id="Nnj-GZ-NAi"/>
