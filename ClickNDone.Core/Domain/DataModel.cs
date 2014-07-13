@@ -40,7 +40,10 @@ namespace ClickNDone.Core
 	{
 		public string username { get; set; }
 		public string password { get; set; }
-
+		public string urlAvatar { get; set;}
+		public string fullName { get; set;}
+		public string email { get; set;}
+		public string token { get; set;}
 	}
 
 	public class TermsConditions

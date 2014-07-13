@@ -7,6 +7,7 @@ namespace ClickNDone.Core
 		User User { get; set; }
 		bool IsEnduser { get; set;}
 		void Save();
+		string IOSDeviceToken { get; set;}
 	}
 }
 

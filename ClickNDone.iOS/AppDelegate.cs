@@ -16,11 +16,13 @@ namespace ClickNDone.iOS
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-		
+
 		public override UIWindow Window {
 			get;
 			set;
 		}
+
+		public static string _deviceToken="test";
 		
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.
@@ -58,8 +60,23 @@ namespace ClickNDone.iOS
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(MessageViewModel),new MessageViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
 
+			//Push Notifications
+			UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge;
+			UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes);
+
 			return true;
 
+		}
+
+		public override void RegisteredForRemoteNotifications (UIApplication application, NSData deviceToken)
+		{
+			_deviceToken = deviceToken.ToString();
+			// code to register with your server application goes here
+		}
+
+		public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
+		{
+			new UIAlertView("Error registering push notifications", error.LocalizedDescription, null, "OK", null).Show();
 		}
 
 	}
