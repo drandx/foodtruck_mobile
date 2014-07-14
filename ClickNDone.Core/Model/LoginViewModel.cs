@@ -6,8 +6,13 @@ namespace ClickNDone.Core
 	public class LoginViewModel : BaseViewModel
 	{
 		public string Username { get; set; }
-
 		public string Password { get; set; }
+
+		public User User
+		{
+			get{return this.settings.User;}
+		}
+
 
 		public async Task Login()
 		{
@@ -19,7 +24,6 @@ namespace ClickNDone.Core
 			try
 			{
 				settings.User = await service.Login(Username, Password);
-				settings.Save();
 			}
 			finally {
 				IsBusy = false;
@@ -35,6 +39,7 @@ namespace ClickNDone.Core
 		{
 			this.settings.DeviceToken = token;
 		}
+
 	}
 }
 

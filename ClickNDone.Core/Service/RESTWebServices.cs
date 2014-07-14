@@ -32,6 +32,9 @@ namespace ClickNDone.Core
 			user.Id = 1;
 			user.username = username;
 			user.password = password;
+			user.email = "garjuanpablo@gmail.com";
+			user.fullName = "Juan Pablo Garcia";
+			user.urlAvatar = "";
 
 			LoginObj loginObj = new LoginObj ();
 			loginObj.password = password;

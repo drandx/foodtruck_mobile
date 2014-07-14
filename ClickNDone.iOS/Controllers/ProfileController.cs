@@ -4,13 +4,24 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class ProfileController : UIViewController
 	{
+		readonly LoginViewModel loginViewModel = (LoginViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(LoginViewModel));
+
 		public ProfileController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			var user = loginViewModel.User;
+
+		}
+
 	}
 }
