@@ -201,6 +201,10 @@
     <Compile Include="Controllers\UserSelectionController.designer.cs">
       <DependentUpon>UserSelectionController.cs</DependentUpon>
     </Compile>
+    <Compile Include="ProfileController.cs" />
+    <Compile Include="ProfileController.designer.cs">
+      <DependentUpon>ProfileController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

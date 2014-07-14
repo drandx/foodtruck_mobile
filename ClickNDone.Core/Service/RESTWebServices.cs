@@ -58,6 +58,11 @@ namespace ClickNDone.Core
 			return terms;
 		}
 
+		public async Task<User> GetUser(bool isEndUser)
+		{
+			throw new NotImplementedException();
+		}
+
 		public async Task<User> Register (User user)
 		{
 			throw new NotImplementedException();

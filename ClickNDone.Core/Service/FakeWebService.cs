@@ -101,6 +101,11 @@ namespace ClickNDone.Core
 			throw new NotImplementedException();
 		}
 
+		public async Task<User> GetUser(bool isEndUser)
+		{
+			throw new NotImplementedException();
+		}
+
 	}
 }
 

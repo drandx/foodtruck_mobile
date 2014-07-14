@@ -12,9 +12,23 @@ namespace ClickNDone.iOS
 	[Register ("UserSelectionController")]
 	partial class UserSelectionController
 	{
+		[Outlet]
+		MonoTouch.UIKit.UIButton btnCustomer { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UIButton btnProvider { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnProvider != null) {
+				btnProvider.Dispose ();
+				btnProvider = null;
+			}
+
+			if (btnCustomer != null) {
+				btnCustomer.Dispose ();
+				btnCustomer = null;
+			}
 		}
 	}
 }

@@ -6,7 +6,9 @@ namespace ClickNDone.Core
 	public class LoginViewModel : BaseViewModel
 	{
 		public string Username { get; set; }
+
 		public string Password { get; set; }
+
 		public async Task Login()
 		{
 			if (string.IsNullOrEmpty(Username))
@@ -22,7 +24,17 @@ namespace ClickNDone.Core
 			finally {
 				IsBusy = false;
 			}
-		} 
+		}
+
+		public void IsEndUser(Boolean endUser)
+		{
+			this.settings.IsEnduser = endUser;
+		}
+
+		public void SetDeviceToken (String token)
+		{
+			this.settings.DeviceToken = token;
+		}
 	}
 }
 

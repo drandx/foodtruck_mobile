@@ -20,8 +20,6 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			System.Diagnostics.Debug.Write ("**HomeController - Device Token: " + AppDelegate._deviceToken);
-
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section("Seccion 1"){//with this code we create Sections
@@ -33,7 +31,7 @@ namespace ClickNDone.iOS
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
-					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,//here we create the instances for the Controllers
+					this.Storyboard.InstantiateViewController("ProfileController") as UIViewController,//here we create the instances for the Controllers
 					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
 					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
 				}

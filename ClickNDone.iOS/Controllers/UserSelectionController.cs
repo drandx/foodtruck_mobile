@@ -4,13 +4,29 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class UserSelectionController : UIViewController
 	{
+		readonly LoginViewModel loginViewModel = (LoginViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(LoginViewModel));
+
 		public UserSelectionController (IntPtr handle) : base (handle)
 		{
+		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			btnCustomer.TouchUpInside += (sender, e) => {
+				loginViewModel.IsEndUser(true);
+				PerformSegue ("OnUserSelection", this);
+			};
+			btnProvider.TouchUpInside += (sender, e) => {
+				loginViewModel.IsEndUser(false);
+				PerformSegue ("OnUserSelection", this);
+			};
 		}
 	}
 }
