@@ -33,7 +33,17 @@ namespace ClickNDone.Core
 		public int Id { get; set; }
 		public string username { get; set; }
 		public string password { get; set; }
+		public string urlAvatar { get; set;}
+		public string fullName { get; set;}
+		public string email { get; set;}
+		public string token { get; set;}
 
+	}
+
+	public class LoginObj
+	{
+		public string username { get; set; }
+		public string password { get; set; }
 	}
 
 	public class Person

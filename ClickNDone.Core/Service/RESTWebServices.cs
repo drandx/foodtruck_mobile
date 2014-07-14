@@ -25,20 +25,19 @@ namespace ClickNDone.Core
 			
 		public async Task<User> Login (string username, string password)
 		{
-			await Sleep ();
-
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+
 			User user = new User ();
 			user.Id = 1;
 			user.username = username;
 			user.password = password;
 
-			Person person = new Person ();
-			person.password = password;
-			person.username = username;
+			LoginObj loginObj = new LoginObj ();
+			loginObj.password = password;
+			loginObj.username = username;
 
-			var json = JsonConvert.SerializeObject (person);
+			var json = JsonConvert.SerializeObject (loginObj);
 			Console.WriteLine ("JSON representation of person: {0}", json);
 			string url = Constants.WebServiceHost + "login";
 			var response = await client.UploadStringTaskAsync (url, "POST", json);

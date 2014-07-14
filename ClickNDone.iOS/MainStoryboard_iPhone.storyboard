@@ -19,10 +19,10 @@
             </objects>
             <point key="canvasLocation" x="-407" y="68"/>
         </scene>
-        <!--View Controller-->
+        <!--User Selection Controller-->
         <scene sceneID="jvV-CW-TOI">
             <objects>
-                <viewController id="xRS-KV-x2Z" sceneMemberID="viewController">
+                <viewController id="xRS-KV-x2Z" customClass="UserSelectionController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="B86-lx-mP8"/>
                         <viewControllerLayoutGuide type="bottom" id="fye-mT-HQt"/>
@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="492" y="68"/>
         </scene>
-        <!--Home Controller-->
+        <!--Main Page Controller-->
         <scene sceneID="ncE-Ys-etI">
             <objects>
-                <viewController id="Vst-B1-DoA" customClass="HomeController" sceneMemberID="viewController">
+                <viewController id="Vst-B1-DoA" customClass="MainPageController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RM8-dr-jON"/>
                         <viewControllerLayoutGuide type="bottom" id="OHN-wV-5Gf"/>

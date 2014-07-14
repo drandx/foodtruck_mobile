@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace ClickNDone.iOS
 {
-	[Register ("HomeController")]
-	partial class HomeController
+	[Register ("MainPageController")]
+	partial class MainPageController
 	{
 		
 		void ReleaseDesignerOutlets ()
