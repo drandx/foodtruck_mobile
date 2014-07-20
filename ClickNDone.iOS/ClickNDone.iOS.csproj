@@ -205,6 +205,11 @@
     <Compile Include="Controllers\ProfileController.designer.cs">
       <DependentUpon>ProfileController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CategoryController.designer.cs">
+      <DependentUpon>CategoryController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\ServiceCategoriesTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

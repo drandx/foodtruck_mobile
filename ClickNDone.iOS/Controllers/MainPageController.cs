@@ -22,16 +22,18 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
-					new Section("Seccion 1"){//with this code we create Sections
-						new StyledStringElement ("Mi Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("Redimir Codigo")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-					},
-					new Section("Seccion 2"){
-						new StyledStringElement ("Terminos y Condiciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+					new Section(){//with this code we create Sections
+						new StyledStringElement ("perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+						new StyledStringElement ("categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+						new StyledStringElement ("historial de servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+						new StyledStringElement ("ranking y calificaciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+						new StyledStringElement ("terminos y condiciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
 					this.Storyboard.InstantiateViewController("ProfileController") as UIViewController,//here we create the instances for the Controllers
+					this.Storyboard.InstantiateViewController("CategoryController") as UIViewController,
+					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
 					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
 					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
 				}
