@@ -130,6 +130,8 @@
     <BundleResource Include="images\Speakers\scott.jpg" />
     <BundleResource Include="images\Speakers\somya.jpg" />
     <BundleResource Include="images\Speakers\steve.jpg" />
+    <BundleResource Include="Resources\Splash-568h%402x.png" />
+    <BundleResource Include="images\header%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -209,7 +211,12 @@
     <Compile Include="Controllers\CategoryController.designer.cs">
       <DependentUpon>CategoryController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\ServiceCategoriesTableSource.cs" />
+    <Compile Include="HomeLogoController.cs" />
+    <Compile Include="HomeLogoController.designer.cs">
+      <DependentUpon>HomeLogoController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\ServiceCategoriesTableSource.cs" />
+    <Compile Include="Common\Helper.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

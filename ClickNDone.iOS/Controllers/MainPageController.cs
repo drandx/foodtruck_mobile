@@ -23,6 +23,7 @@ namespace ClickNDone.iOS
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section(){//with this code we create Sections
+						new StyledStringElement ("logo")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
 						new StyledStringElement ("perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
 						new StyledStringElement ("categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
 						new StyledStringElement ("historial de servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
@@ -31,6 +32,7 @@ namespace ClickNDone.iOS
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
+					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 					this.Storyboard.InstantiateViewController("ProfileController") as UIViewController,//here we create the instances for the Controllers
 					this.Storyboard.InstantiateViewController("CategoryController") as UIViewController,
 					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,

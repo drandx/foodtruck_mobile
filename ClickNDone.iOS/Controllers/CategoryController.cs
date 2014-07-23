@@ -7,11 +7,18 @@ using MonoTouch.UIKit;
 
 namespace ClickNDone.iOS
 {
-	public partial class CategoryController : UITableViewController
+	public partial class CategoryController : UIViewController
 	{
-		public CategoryController (IntPtr handle) : base (handle)
+		public CategoryController(IntPtr handle) : base (handle)
 		{
-			TableView.Source = new ServiceCategoriesTableSource ();
+
+
+		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+
 		}
 	}
 }

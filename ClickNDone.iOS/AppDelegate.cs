@@ -49,6 +49,10 @@ namespace ClickNDone.iOS
 
 		public override bool FinishedLaunching (UIApplication application, NSDictionary launchOptions)
 		{
+			//Styles
+			Helper.setAppearances ();
+
+
 			//View Settings
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new Settings());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
@@ -78,6 +82,7 @@ namespace ClickNDone.iOS
 		{
 			new UIAlertView("Error registering push notifications", error.LocalizedDescription, null, "OK", null).Show();
 		}
+
 
 	}
 }

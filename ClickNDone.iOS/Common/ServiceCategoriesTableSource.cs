@@ -14,7 +14,7 @@ namespace ClickNDone.iOS
 		public ServiceCategoriesTableSource ()
 		{
 			dummyData = new string[3];
-			dummyData[0] = "Cabeza";
+			dummyData[0] = "Home Soluttions";
 			dummyData[1] = "Pies";
 			dummyData[2] = "Manos";
 
