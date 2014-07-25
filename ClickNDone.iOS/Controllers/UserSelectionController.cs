@@ -28,5 +28,11 @@ namespace ClickNDone.iOS
 				PerformSegue ("OnUserSelection", this);
 			};
 		}
+
+		public override bool PrefersStatusBarHidden ()
+		{
+			//return base.PrefersStatusBarHidden ();
+			return false;
+		}
 	}
 }
