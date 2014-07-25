@@ -132,6 +132,12 @@
     <BundleResource Include="images\Speakers\steve.jpg" />
     <BundleResource Include="Resources\Splash-568h%402x.png" />
     <BundleResource Include="images\header%402x.png" />
+    <BundleResource Include="images\btn_cliente%402x.png" />
+    <BundleResource Include="images\btn_proveedor%402x.png" />
+    <BundleResource Include="images\btn_conectar%402x.png" />
+    <BundleResource Include="images\btn_registrar%402x.png" />
+    <BundleResource Include="images\btn_olvidapassword%402x.png" />
+    <BundleResource Include="images\btn_registrate%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -217,6 +223,7 @@
     </Compile>
     <Compile Include="Common\ServiceCategoriesTableSource.cs" />
     <Compile Include="Common\Helper.cs" />
+    <Compile Include="Common\MyUITextField.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

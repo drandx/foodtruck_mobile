@@ -20,6 +20,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 			loginViewModel.SetDeviceToken(AppDelegate._deviceToken);
 			btnLogIn.TouchUpInside += async(sender, e) =>
 			{

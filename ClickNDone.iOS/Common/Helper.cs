@@ -15,6 +15,7 @@ namespace ClickNDone.iOS
 		{
 			UIImage barImage = UIImage.FromFile("images/header@2x.png");
 			UINavigationBar.Appearance.SetBackgroundImage (barImage,UIBarMetrics.Default);
+
 		}
 
 	}
