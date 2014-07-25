@@ -9,7 +9,6 @@
             <objects>
                 <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="62F-m9-1Og" sceneMemberID="viewController">
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eqG-9M-Bxh">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -64,7 +63,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lQ9-uv-wPs"/>
+                    <navigationItem key="navigationItem" id="lQ9-uv-wPs">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="0bX-Zr-9E0"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="btnCustomer" destination="lJh-rt-Dpe" id="9Oq-E2-BGU"/>
                         <outlet property="btnProvider" destination="dT7-KQ-kHl" id="DP2-gi-ZaB"/>
@@ -194,10 +195,14 @@
         <!--Navigation Controller-->
         <scene sceneID="GKg-b5-1aC">
             <objects>
-                <navigationController storyboardIdentifier="HomeLogoController" definesPresentationContext="YES" id="kpP-CZ-P4e" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="HomeLogoController" definesPresentationContext="YES" toolbarHidden="NO" id="kpP-CZ-P4e" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iuG-M3-xEA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nEF-b4-Ger">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="glm-q1-J4T" kind="relationship" relationship="rootViewController" id="DXT-du-kPt"/>
                     </connections>
@@ -237,10 +242,14 @@
         <!--Navigation Controller-->
         <scene sceneID="7Nm-Uk-mAF">
             <objects>
-                <navigationController storyboardIdentifier="ProfileController" definesPresentationContext="YES" id="A67-XW-9yO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="ProfileController" definesPresentationContext="YES" toolbarHidden="NO" id="A67-XW-9yO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="obm-D9-oEa">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="bzU-2d-gre">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="EkI-WJ-qsO" kind="relationship" relationship="rootViewController" id="lur-e5-USI"/>
                     </connections>
@@ -478,10 +487,14 @@
         <!--Navigation Controller-->
         <scene sceneID="T11-fX-FJO">
             <objects>
-                <navigationController storyboardIdentifier="TermsConditionsController" definesPresentationContext="YES" id="zbf-uE-zfc" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="TermsConditionsController" definesPresentationContext="YES" toolbarHidden="NO" id="zbf-uE-zfc" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="AQL-gv-Wzh">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="HYf-n5-6dW">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="Pd2-Tp-BeD" kind="relationship" relationship="rootViewController" id="D8J-HL-GE4"/>
                     </connections>
@@ -539,10 +552,14 @@
         <!--Navigation Controller-->
         <scene sceneID="ctB-kZ-ly0">
             <objects>
-                <navigationController storyboardIdentifier="CategoryController" definesPresentationContext="YES" id="AwU-IS-eq9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryController" definesPresentationContext="YES" toolbarHidden="NO" id="AwU-IS-eq9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="INO-Ih-pFF">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="nXa-Rd-gdM">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="xw6-3X-QCN" kind="relationship" relationship="rootViewController" id="aUQ-ng-MoQ"/>
                     </connections>
@@ -615,6 +632,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="eEo-Ob-Y2u"/>
+        <segue reference="D8J-HL-GE4"/>
     </inferredMetricsTieBreakers>
 </document>

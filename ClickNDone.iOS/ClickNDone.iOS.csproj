@@ -112,9 +112,9 @@
     <BundleResource Include="images\btn_registrar%402x.png" />
     <BundleResource Include="images\btn_olvidapassword%402x.png" />
     <BundleResource Include="images\btn_registrate%402x.png" />
+    <BundleResource Include="images\header-3-64.png" />
+    <BundleResource Include="images\barra_copyright_44%402x.png" />
     <BundleResource Include="images\barra_copyright%402x.png" />
-    <BundleResource Include="images\header%402x.png" />
-    <BundleResource Include="images\header2%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
