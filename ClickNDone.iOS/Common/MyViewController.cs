@@ -17,6 +17,13 @@ namespace ClickNDone.iOS
 			});
 			NavigationItem.SetLeftBarButtonItem (bbi, false);
 		}
+
+
+		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		{
+			base.TouchesBegan (touches, evt);
+			this.View.EndEditing (true);
+		}
 	}
 }
 

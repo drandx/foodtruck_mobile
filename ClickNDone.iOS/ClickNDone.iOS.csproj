@@ -45,8 +45,8 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Angela Chisaca (A4WS59L5P2)</CodesignKey>
-    <CodesignProvision>B2538110-F805-4333-811E-052CC4FFE0BC</CodesignProvision>
+    <CodesignKey>iPhone Distribution: Angela Chisaca (3UL9JNTPTK)</CodesignKey>
+    <CodesignProvision>AF105E2B-EE67-4D90-AAC1-D9A904F3D3B3</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <MtouchSdkVersion>7.1</MtouchSdkVersion>
     <IpaPackageName>

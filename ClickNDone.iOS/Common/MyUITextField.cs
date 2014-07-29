@@ -11,6 +11,11 @@ namespace ClickNDone.iOS
 			UIColor borderColor = UIColor.FromRGB (0,167,229);
 			this.Layer.BorderColor = borderColor.CGColor;
 			this.Layer.BorderWidth = 2f;
+
+			this.ShouldReturn += (textField) => { 
+				textField.ResignFirstResponder(); 
+				return true;
+			};
 		}
 	}
 }
