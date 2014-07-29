@@ -45,8 +45,15 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer</CodesignKey>
-    <CodesignProvision>D1EC5B6D-A721-4C13-827F-542BE44A8D5B</CodesignProvision>
+    <CodesignKey>iPhone Developer: Angela Chisaca (A4WS59L5P2)</CodesignKey>
+    <CodesignProvision>B2538110-F805-4333-811E-052CC4FFE0BC</CodesignProvision>
+    <BuildIpa>true</BuildIpa>
+    <MtouchSdkVersion>7.1</MtouchSdkVersion>
+    <IpaPackageName>
+    </IpaPackageName>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>ARMv7</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -71,6 +78,8 @@
     <BuildIpa>true</BuildIpa>
     <CodesignProvision>Automatic:AdHoc</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
+    <IpaPackageName>
+    </IpaPackageName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>full</DebugType>
@@ -130,10 +139,13 @@
     <BundleResource Include="images\img_photo%402x.png" />
     <BundleResource Include="images\btn_cerrar_sesion%402x.png" />
     <BundleResource Include="images\btn_guardar%402x.png" />
+    <BundleResource Include="images\btn_menu_perfil%402x.png" />
+    <BundleResource Include="images\btn_menu%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="Entitlements.plist" />
+    <None Include="RELEASE-NOTES.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -209,13 +221,14 @@
     <Compile Include="Controllers\CategoryController.designer.cs">
       <DependentUpon>CategoryController.cs</DependentUpon>
     </Compile>
-    <Compile Include="HomeLogoController.cs" />
-    <Compile Include="HomeLogoController.designer.cs">
-      <DependentUpon>HomeLogoController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\ServiceCategoriesTableSource.cs" />
     <Compile Include="Common\Helper.cs" />
     <Compile Include="Common\MyUITextField.cs" />
+    <Compile Include="Common\MyViewController.cs" />
+    <Compile Include="Controllers\HomeLogoController.cs" />
+    <Compile Include="Controllers\HomeLogoController.designer.cs">
+      <DependentUpon>HomeLogoController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

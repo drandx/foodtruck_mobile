@@ -472,26 +472,34 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACEPTO LOS TEMINOS Y CONDICIONES*" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5l-Bq-B7J">
-                                <rect key="frame" x="99" y="318" width="206" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                <color key="textColor" red="0.0" green="0.65490198135375977" blue="0.89803922176361084" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or8-X2-lZT">
-                                <rect key="frame" x="181" y="347" width="42" height="12"/>
+                                <rect key="frame" x="181" y="375" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="images/btn_borrar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-Xu-S3Y">
-                                <rect key="frame" x="253" y="347" width="52" height="12"/>
+                                <rect key="frame" x="253" y="375" width="52" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="images/btn_registrar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-2I-Bvs">
+                                <rect key="frame" x="26" y="318" width="306" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" link="YES"/>
+                                </accessibility>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <state key="normal" title="ACEPTO LOS TERMINOS Y CONDICIONES*">
+                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pd2-Tp-BeD" kind="push" id="uHb-zl-3a4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -601,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BCm-l0-wDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="766"/>
+            <point key="canvasLocation" x="1514" y="1244"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ctB-kZ-ly0">
@@ -622,10 +630,10 @@
             </objects>
             <point key="canvasLocation" x="1024" y="-712"/>
         </scene>
-        <!--View Controller-->
+        <!--Category Controller-->
         <scene sceneID="WMw-v8-xSw">
             <objects>
-                <viewController id="xw6-3X-QCN" sceneMemberID="viewController">
+                <viewController id="xw6-3X-QCN" customClass="CategoryController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aUD-OA-IDA"/>
                         <viewControllerLayoutGuide type="bottom" id="UFY-CM-FE7"/>
@@ -709,4 +717,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="uHb-zl-3a4"/>
+    </inferredMetricsTieBreakers>
 </document>

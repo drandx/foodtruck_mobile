@@ -8,7 +8,7 @@ using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class ProfileController : UIViewController
+	public partial class ProfileController : MyViewController
 	{
 		readonly LoginViewModel loginViewModel = (LoginViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(LoginViewModel));
 

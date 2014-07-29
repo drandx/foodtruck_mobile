@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.ComponentModel.Design;
 using ClickNDone.Core;
+using FlyoutNavigation;
 
 namespace ClickNDone.iOS
 {
@@ -16,7 +17,6 @@ namespace ClickNDone.iOS
 	public partial class AppDelegate : UIApplicationDelegate
 	{
 		// class-level declarations
-
 		public override UIWindow Window {
 			get;
 			set;

@@ -7,17 +7,17 @@ using MonoTouch.UIKit;
 
 namespace ClickNDone.iOS
 {
-	public partial class CategoryController : UIViewController
+	public partial class CategoryController : MyViewController
 	{
 		public CategoryController(IntPtr handle) : base (handle)
 		{
-
 
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 
 		}
 	}

@@ -20,34 +20,37 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			UIImage profileImage = UIImage.FromFile("images/btn_menu_perfil.png");
+
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section(){//with this code we create Sections
 						new StyledStringElement ("Home")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new ImageStringElement("",profileImage),
+						//new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						new StyledStringElement ("Mi Ranking")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new StyledStringElement ("Terminos y Condiciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
 					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 					this.Storyboard.InstantiateViewController("ProfileController") as UIViewController,//here we create the instances for the Controllers
 					this.Storyboard.InstantiateViewController("CategoryController") as UIViewController,
-					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
-					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
-					this.Storyboard.InstantiateViewController("TermsConditionsController") as UIViewController,
+					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,
+					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,
 				}
 			};
 
 			//LateralBar.NavigationTableView.BackgroundView = new UIImageView (UIImage.FromBundle ("images/Background-Party.png"));
 			UIColor bgColor = UIColor.FromRGB (0,167,229);
 			LateralBar.NavigationTableView.BackgroundColor = bgColor;
-			LateralBar.NavigationTableView.SeparatorColor = UIColor.DarkGray;
+			LateralBar.NavigationTableView.SeparatorColor = UIColor.Clear;
 
 			LateralBar.ToggleMenu();
 			View.AddSubview (LateralBar.View);
+			navigation = LateralBar;
 
 		}
 

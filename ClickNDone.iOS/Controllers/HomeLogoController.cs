@@ -7,10 +7,15 @@ using MonoTouch.UIKit;
 
 namespace ClickNDone.iOS
 {
-	public partial class HomeLogoController : UIViewController
+	public partial class HomeLogoController : MyViewController
 	{
 		public HomeLogoController (IntPtr handle) : base (handle)
 		{
+		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
 		}
 	}
 }
