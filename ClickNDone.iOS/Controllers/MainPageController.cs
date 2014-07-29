@@ -23,12 +23,12 @@ namespace ClickNDone.iOS
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section(){//with this code we create Sections
-						new StyledStringElement ("logo")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("historial de servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("ranking y calificaciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
-						new StyledStringElement ("terminos y condiciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.LightGray },
+						new StyledStringElement ("Home")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new StyledStringElement ("Mi Ranking")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						new StyledStringElement ("Terminos y Condiciones")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
@@ -41,7 +41,9 @@ namespace ClickNDone.iOS
 				}
 			};
 
-			LateralBar.NavigationTableView.BackgroundView = new UIImageView (UIImage.FromBundle ("images/Background-Party.png"));
+			//LateralBar.NavigationTableView.BackgroundView = new UIImageView (UIImage.FromBundle ("images/Background-Party.png"));
+			UIColor bgColor = UIColor.FromRGB (0,167,229);
+			LateralBar.NavigationTableView.BackgroundColor = bgColor;
 			LateralBar.NavigationTableView.SeparatorColor = UIColor.DarkGray;
 
 			LateralBar.ToggleMenu();

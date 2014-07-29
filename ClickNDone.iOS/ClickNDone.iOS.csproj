@@ -126,6 +126,10 @@
     <BundleResource Include="images\btn_cerrar%402x.png" />
     <BundleResource Include="images\logo_beauty%402x.png" />
     <BundleResource Include="images\logo_solutions%402x.png" />
+    <BundleResource Include="images\logo_home%402x.png" />
+    <BundleResource Include="images\img_photo%402x.png" />
+    <BundleResource Include="images\btn_cerrar_sesion%402x.png" />
+    <BundleResource Include="images\btn_guardar%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
