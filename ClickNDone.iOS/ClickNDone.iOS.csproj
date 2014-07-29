@@ -122,6 +122,10 @@
     <BundleResource Include="images\Icon-Small%402x.png" />
     <BundleResource Include="images\Icon-Spotlight-40%402x.png" />
     <BundleResource Include="images\Icon-Small.png" />
+    <BundleResource Include="images\btn_borrar%402x.png" />
+    <BundleResource Include="images\btn_cerrar%402x.png" />
+    <BundleResource Include="images\logo_beauty%402x.png" />
+    <BundleResource Include="images\logo_solutions%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
