@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>ClickNDone.iOS</string>
+	<string>ClicknDone</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.clickndonesoluttions.beautyapp</string>
 	<key>CFBundleShortVersionString</key>

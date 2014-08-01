@@ -45,8 +45,8 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Distribution: Angela Chisaca (3UL9JNTPTK)</CodesignKey>
-    <CodesignProvision>AF105E2B-EE67-4D90-AAC1-D9A904F3D3B3</CodesignProvision>
+    <CodesignKey>iPhone Developer: Angela Chisaca (A4WS59L5P2)</CodesignKey>
+    <CodesignProvision>BB2B49B9-6544-45DB-BBDD-E99A0A83EEAE</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <MtouchSdkVersion>7.1</MtouchSdkVersion>
     <IpaPackageName>
@@ -139,8 +139,13 @@
     <BundleResource Include="images\img_photo%402x.png" />
     <BundleResource Include="images\btn_cerrar_sesion%402x.png" />
     <BundleResource Include="images\btn_guardar%402x.png" />
-    <BundleResource Include="images\btn_menu_perfil%402x.png" />
     <BundleResource Include="images\btn_menu%402x.png" />
+    <BundleResource Include="images\btn_menu_perfil%402x.png" />
+    <BundleResource Include="images\btn_menu_categorias%402x.png" />
+    <BundleResource Include="images\btn_menu_historial%402x.png" />
+    <BundleResource Include="images\btn_menu_promociones%402x.png" />
+    <BundleResource Include="images\btn_menu_ranking%402x.png" />
+    <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

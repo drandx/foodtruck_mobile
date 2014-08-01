@@ -21,17 +21,18 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 
-			UIImage profileImage = UIImage.FromFile("images/btn_menu_perfil.png");
-
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section(){//with this code we create Sections
 						new StyledStringElement ("Home")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new ImageStringElement("",profileImage),
+						new ImageStringElement("",UIImage.FromFile("images/btn_menu_perfil.png")),
+						new ImageStringElement("",UIImage.FromFile("images/btn_menu_categorias.png")),
+						new ImageStringElement("",UIImage.FromFile("images/btn_menu_historial.png")),
+						new ImageStringElement("",UIImage.FromFile("images/btn_menu_ranking.png")),
 						//new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new StyledStringElement ("Mi Ranking")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						//new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						//new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
+						//new StyledStringElement ("Mi Ranking")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 					},
 				},
 				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
