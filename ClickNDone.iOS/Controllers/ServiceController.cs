@@ -10,6 +10,7 @@ namespace ClickNDone.iOS
 	public partial class ServiceController : UIViewController
 	{
 		ActionSheetDatePicker actionSheetDatePicker;
+		ActionSheetDatePicker actionSheetTimePicker;
 
 		public ServiceController (IntPtr handle) : base (handle)
 		{
@@ -20,6 +21,7 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 
+			//Date Selector
 			UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
 				actionSheetDatePicker.Show ();
 			});
@@ -39,7 +41,7 @@ namespace ClickNDone.iOS
 			lblYear.AddGestureRecognizer(labelYearTap);
 
 			actionSheetDatePicker = new ActionSheetDatePicker (this.View);
-			actionSheetDatePicker.Title = "Choose Date:";
+			actionSheetDatePicker.Title = "Seleccione la fecha:";
 			actionSheetDatePicker.DatePicker.Mode = UIDatePickerMode.Date;
 			actionSheetDatePicker.DatePicker.MinimumDate = DateTime.Today.AddDays (0);
 			actionSheetDatePicker.DatePicker.MaximumDate = DateTime.Today.AddDays (120);			
@@ -59,6 +61,51 @@ namespace ClickNDone.iOS
 				lblYear.Text = dateTime.Year.ToString();
 			};
 
+			//Time Selector
+			UITapGestureRecognizer labelHourTap = new UITapGestureRecognizer(() => {
+				actionSheetTimePicker.Show ();
+			});
+			UITapGestureRecognizer labelMinuteTap = new UITapGestureRecognizer(() => {
+				actionSheetTimePicker.Show ();
+			});
+			UITapGestureRecognizer labelAMPMTap = new UITapGestureRecognizer(() => {
+				actionSheetTimePicker.Show ();
+			});
+
+			lblHour.UserInteractionEnabled = true;
+			lblHour.AddGestureRecognizer(labelHourTap);
+
+			lblMinute.UserInteractionEnabled = true;
+			lblMinute.AddGestureRecognizer(labelMinuteTap);
+
+			lblAMPM.UserInteractionEnabled = true;
+			lblAMPM.AddGestureRecognizer(labelAMPMTap);
+
+			actionSheetTimePicker = new ActionSheetDatePicker (this.View);
+			actionSheetTimePicker.Title = "Seleccione la hora:";
+			actionSheetTimePicker.DatePicker.Mode = UIDatePickerMode.Time;
+
+			actionSheetTimePicker.DatePicker.ValueChanged += (s, e) => {
+				NSDate selectedDate = (s as UIDatePicker).Date;
+				var dateTime = DateTime.SpecifyKind(selectedDate, DateTimeKind.Unspecified);
+				lblHour.Text = dateTime.Hour.ToString();
+				lblMinute.Text = dateTime.Minute.ToString();
+				lblAMPM.Text = dateTime.ToString("tt");
+			};
+
+			actionSheetTimePicker.DoneButton.TouchDown += (s, e) => {
+				var dateTime = DateTime.SpecifyKind(actionSheetTimePicker.DatePicker.Date, DateTimeKind.Unspecified);
+				lblHour.Text = dateTime.ToString("hh");
+				lblMinute.Text = dateTime.Minute.ToString();
+				lblAMPM.Text = dateTime.ToString("tt");
+			};
+
+		}
+
+		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
+		{
+			base.TouchesBegan (touches, evt);
+			this.View.EndEditing (true);
 		}
 	}
 }

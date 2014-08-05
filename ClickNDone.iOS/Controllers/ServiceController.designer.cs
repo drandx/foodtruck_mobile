@@ -13,7 +13,16 @@ namespace ClickNDone.iOS
 	partial class ServiceController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UILabel lblAMPM { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel lblDay { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblHour { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblMinute { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lblMonth { get; set; }
@@ -23,19 +32,34 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (lblMonth != null) {
-				lblMonth.Dispose ();
-				lblMonth = null;
-			}
-
 			if (lblDay != null) {
 				lblDay.Dispose ();
 				lblDay = null;
 			}
 
+			if (lblMonth != null) {
+				lblMonth.Dispose ();
+				lblMonth = null;
+			}
+
 			if (lblYear != null) {
 				lblYear.Dispose ();
 				lblYear = null;
+			}
+
+			if (lblHour != null) {
+				lblHour.Dispose ();
+				lblHour = null;
+			}
+
+			if (lblMinute != null) {
+				lblMinute.Dispose ();
+				lblMinute = null;
+			}
+
+			if (lblAMPM != null) {
+				lblAMPM.Dispose ();
+				lblAMPM = null;
 			}
 		}
 	}
