@@ -22,6 +22,9 @@
     <MtouchLink>None</MtouchLink>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
+    <MtouchI18n>
+    </MtouchI18n>
+    <MtouchArch>i386</MtouchArch>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>full</DebugType>
@@ -45,8 +48,8 @@
     <ConsolePause>false</ConsolePause>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>iPhone Developer: Angela Chisaca (A4WS59L5P2)</CodesignKey>
-    <CodesignProvision>BB2B49B9-6544-45DB-BBDD-E99A0A83EEAE</CodesignProvision>
+    <CodesignKey>iPhone Distribution</CodesignKey>
+    <CodesignProvision>Automatic:AdHoc</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <MtouchSdkVersion>7.1</MtouchSdkVersion>
     <IpaPackageName>
@@ -234,6 +237,7 @@
     <Compile Include="Controllers\HomeLogoController.designer.cs">
       <DependentUpon>HomeLogoController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Common\MyUIButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
