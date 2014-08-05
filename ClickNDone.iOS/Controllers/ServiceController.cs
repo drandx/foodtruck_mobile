@@ -19,22 +19,46 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
 			UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
-				System.Diagnostics.Debug.WriteLine("**Tapping Month Label**");
+				actionSheetDatePicker.Show ();
+			});
+			UITapGestureRecognizer labelDayTap = new UITapGestureRecognizer(() => {
+				actionSheetDatePicker.Show ();
+			});
+			UITapGestureRecognizer labelYearTap = new UITapGestureRecognizer(() => {
 				actionSheetDatePicker.Show ();
 			});
 			lblMonth.UserInteractionEnabled = true;
 			lblMonth.AddGestureRecognizer(labelTap);
 
+			lblDay.UserInteractionEnabled = true;
+			lblDay.AddGestureRecognizer(labelDayTap);
+
+			lblYear.UserInteractionEnabled = true;
+			lblYear.AddGestureRecognizer(labelYearTap);
+
 			actionSheetDatePicker = new ActionSheetDatePicker (this.View);
 			actionSheetDatePicker.Title = "Choose Date:";
-			actionSheetDatePicker.DatePicker.Mode = UIDatePickerMode.DateAndTime;
-			actionSheetDatePicker.DatePicker.MinimumDate = DateTime.Today.AddDays (-7);
-			actionSheetDatePicker.DatePicker.MaximumDate = DateTime.Today.AddDays (7);			
+			actionSheetDatePicker.DatePicker.Mode = UIDatePickerMode.Date;
+			actionSheetDatePicker.DatePicker.MinimumDate = DateTime.Today.AddDays (0);
+			actionSheetDatePicker.DatePicker.MaximumDate = DateTime.Today.AddDays (120);			
 
 			actionSheetDatePicker.DatePicker.ValueChanged += (s, e) => {
-				System.Diagnostics.Debug.WriteLine("**Changed Date: "+(s as UIDatePicker).Date.ToString ());
+				NSDate selectedDate = (s as UIDatePicker).Date;
+				var dateTime = DateTime.SpecifyKind(selectedDate, DateTimeKind.Unspecified);
+				lblMonth.Text = dateTime.ToString("MMMM");
+				lblDay.Text = dateTime.Day.ToString();
+				lblYear.Text = dateTime.Year.ToString();
 			};
+
+			actionSheetDatePicker.DoneButton.TouchDown += (s, e) => {
+				var dateTime = DateTime.SpecifyKind(actionSheetDatePicker.DatePicker.Date, DateTimeKind.Unspecified);
+				lblMonth.Text = dateTime.ToString("MMMM");
+				lblDay.Text = dateTime.Day.ToString();
+				lblYear.Text = dateTime.Year.ToString();
+			};
+
 		}
 	}
 }

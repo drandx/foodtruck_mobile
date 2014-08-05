@@ -149,6 +149,7 @@
     <BundleResource Include="images\btn_menu_promociones%402x.png" />
     <BundleResource Include="images\btn_menu_ranking%402x.png" />
     <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
+    <BundleResource Include="images\btn_consultar%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

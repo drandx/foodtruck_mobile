@@ -26,6 +26,12 @@ namespace ClickNDone.iOS {
 			get { return datePicker; }
 			set { datePicker = value; }
 		}
+
+		public UIButton DoneButton
+		{
+			get { return doneButton; }
+		}
+
 		UIDatePicker datePicker = new UIDatePicker(RectangleF.Empty);
 		
 		/// <summary>
@@ -55,7 +61,7 @@ namespace ClickNDone.iOS {
 			titleLabel.Font = UIFont.BoldSystemFontOfSize (18);
 			
 			// configure the done button
-			doneButton.SetTitle ("done", UIControlState.Normal);
+			doneButton.SetTitle ("Cerrar", UIControlState.Normal);
 			doneButton.TouchUpInside += (s, e) => { actionSheet.DismissWithClickedButtonIndex (0, true); };
 			
 			// create + configure the action sheet

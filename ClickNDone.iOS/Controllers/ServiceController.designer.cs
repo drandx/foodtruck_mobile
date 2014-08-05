@@ -13,13 +13,29 @@ namespace ClickNDone.iOS
 	partial class ServiceController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UILabel lblDay { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel lblMonth { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblYear { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
 			if (lblMonth != null) {
 				lblMonth.Dispose ();
 				lblMonth = null;
+			}
+
+			if (lblDay != null) {
+				lblDay.Dispose ();
+				lblDay = null;
+			}
+
+			if (lblYear != null) {
+				lblYear.Dispose ();
+				lblYear = null;
 			}
 		}
 	}
