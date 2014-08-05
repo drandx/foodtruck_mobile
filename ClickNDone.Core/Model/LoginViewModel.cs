@@ -40,6 +40,11 @@ namespace ClickNDone.Core
 			this.settings.DeviceToken = token;
 		}
 
+		public string GetDeviceToken()
+		{
+			return this.settings.DeviceToken;
+		}
+
 	}
 }
 

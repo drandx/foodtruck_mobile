@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using FlyoutNavigation;
 using MonoTouch.Dialog;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
