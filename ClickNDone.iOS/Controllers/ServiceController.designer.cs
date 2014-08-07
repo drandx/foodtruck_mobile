@@ -29,22 +29,23 @@ namespace ClickNDone.iOS
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lblYear { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UITextField txtFromValue { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UITextField txtToValue { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (lblAMPM != null) {
+				lblAMPM.Dispose ();
+				lblAMPM = null;
+			}
+
 			if (lblDay != null) {
 				lblDay.Dispose ();
 				lblDay = null;
-			}
-
-			if (lblMonth != null) {
-				lblMonth.Dispose ();
-				lblMonth = null;
-			}
-
-			if (lblYear != null) {
-				lblYear.Dispose ();
-				lblYear = null;
 			}
 
 			if (lblHour != null) {
@@ -57,9 +58,24 @@ namespace ClickNDone.iOS
 				lblMinute = null;
 			}
 
-			if (lblAMPM != null) {
-				lblAMPM.Dispose ();
-				lblAMPM = null;
+			if (lblMonth != null) {
+				lblMonth.Dispose ();
+				lblMonth = null;
+			}
+
+			if (lblYear != null) {
+				lblYear.Dispose ();
+				lblYear = null;
+			}
+
+			if (txtFromValue != null) {
+				txtFromValue.Dispose ();
+				txtFromValue = null;
+			}
+
+			if (txtToValue != null) {
+				txtToValue.Dispose ();
+				txtToValue = null;
 			}
 		}
 	}

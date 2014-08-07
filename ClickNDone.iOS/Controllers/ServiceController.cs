@@ -4,6 +4,7 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using System.Collections.Generic;
 
 namespace ClickNDone.iOS
 {
@@ -11,6 +12,26 @@ namespace ClickNDone.iOS
 	{
 		ActionSheetDatePicker actionSheetDatePicker;
 		ActionSheetDatePicker actionSheetTimePicker;
+
+		private readonly IList<string> fromMoney = new List<string>
+		{
+			"Blue",
+			"Green",
+			"Red",
+			"Purple",
+			"Yellow"
+		};
+		private readonly IList<string> toMoney = new List<string>
+		{
+			"Blue",
+			"Green",
+			"Red",
+			"Purple",
+			"Yellow"
+		};
+
+		private string selectedFromMoney;
+		private string selectedToMoney;
 
 		public ServiceController (IntPtr handle) : base (handle)
 		{
@@ -100,12 +121,73 @@ namespace ClickNDone.iOS
 				lblAMPM.Text = dateTime.ToString("tt");
 			};
 
+			this.SetupPickers();
+
 		}
 
 		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
 		{
 			base.TouchesBegan (touches, evt);
 			this.View.EndEditing (true);
+		}
+
+		private void SetupPickers()
+		{
+			// Setup the picker and model // FROM
+			PickerModel model = new PickerModel(this.fromMoney);
+			model.PickerChanged += (sender, e) => {
+				this.selectedFromMoney = e.SelectedValue;
+			};
+
+			// Setup the picker and model // TO
+			PickerModel modelToValue = new PickerModel(this.toMoney);
+			modelToValue.PickerChanged += (sender, e) => {
+				this.selectedToMoney = e.SelectedValue;
+			};
+
+			UIPickerView picker = new UIPickerView();
+			picker.ShowSelectionIndicator = true;
+			picker.Model = model;
+
+			UIPickerView pickerToValue = new UIPickerView();
+			pickerToValue.ShowSelectionIndicator = true;
+			pickerToValue.Model = modelToValue;
+
+			// Setup the toolbar
+			UIToolbar toolbar = new UIToolbar();
+			toolbar.BarStyle = UIBarStyle.Black;
+			toolbar.Translucent = true;
+			toolbar.SizeToFit();
+
+
+			// Setup the toolbar
+			UIToolbar toolbarToValue = new UIToolbar();
+			toolbarToValue.BarStyle = UIBarStyle.Black;
+			toolbarToValue.Translucent = true;
+			toolbarToValue.SizeToFit();
+
+			// Create a 'done' button for the toolbar and add it to the toolbar
+			UIBarButtonItem doneButton = new UIBarButtonItem("Cerrar", UIBarButtonItemStyle.Done,
+				(s, e) => {
+					this.txtFromValue.Text = selectedFromMoney;
+					this.txtFromValue.ResignFirstResponder();
+				});
+			toolbar.SetItems(new UIBarButtonItem[]{doneButton}, true);
+
+			UIBarButtonItem doneButtonToValue = new UIBarButtonItem("Cerrar", UIBarButtonItemStyle.Done,
+				(s, e) => {
+					this.txtToValue.Text = this.selectedToMoney;
+					this.txtToValue.ResignFirstResponder();
+				});
+			toolbarToValue.SetItems(new UIBarButtonItem[]{doneButtonToValue}, true);
+
+			// Tell the textbox to use the picker for input
+			this.txtFromValue.InputView = picker;
+			this.txtToValue.InputView = pickerToValue;
+
+			// Display the toolbar over the pickers
+			this.txtFromValue.InputAccessoryView = toolbar;
+			this.txtToValue.InputAccessoryView = toolbarToValue;
 		}
 	}
 }

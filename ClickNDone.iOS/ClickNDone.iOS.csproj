@@ -244,6 +244,8 @@
       <DependentUpon>ServiceController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\ActionSheetDatePicker.cs" />
+    <Compile Include="Common\PickerModel.cs" />
+    <Compile Include="Common\PickerChangedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
