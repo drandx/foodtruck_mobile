@@ -40,10 +40,10 @@ namespace ClickNDone.Core
 			loginObj.password = password;
 			loginObj.username = username;
 
-			var json = JsonConvert.SerializeObject (loginObj);
-			Console.WriteLine ("JSON representation of person: {0}", json);
-			string url = Constants.WebServiceHost + "login";
-			var response = await client.UploadStringTaskAsync (url, "POST", json);
+			//var json = JsonConvert.SerializeObject (loginObj);
+			//Console.WriteLine ("JSON representation of person: {0}", json);
+			//string url = Constants.WebServiceHost + "login";
+			//var response = await client.UploadStringTaskAsync (url, "POST", json);
 
 			return user;
 		}

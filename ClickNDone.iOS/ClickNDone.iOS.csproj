@@ -143,12 +143,6 @@
     <BundleResource Include="images\btn_cerrar_sesion%402x.png" />
     <BundleResource Include="images\btn_guardar%402x.png" />
     <BundleResource Include="images\btn_menu%402x.png" />
-    <BundleResource Include="images\btn_menu_perfil%402x.png" />
-    <BundleResource Include="images\btn_menu_categorias%402x.png" />
-    <BundleResource Include="images\btn_menu_historial%402x.png" />
-    <BundleResource Include="images\btn_menu_promociones%402x.png" />
-    <BundleResource Include="images\btn_menu_ranking%402x.png" />
-    <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
     <BundleResource Include="images\btn_consultar%402x.png" />
     <BundleResource Include="images\btn_cancelar_servicio%402x.png" />
     <BundleResource Include="images\btn_star%402x.png" />
@@ -156,6 +150,13 @@
     <BundleResource Include="images\btn_enviar_calificacion%402x.png" />
     <BundleResource Include="images\btn_no_calificacion%402x.png" />
     <BundleResource Include="images\btn_enviar%402x.png" />
+    <BundleResource Include="images\btn_menu_categorias%402x.png" />
+    <BundleResource Include="images\btn_menu_promociones%402x.png" />
+    <BundleResource Include="images\btn_menu_ranking%402x.png" />
+    <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
+    <BundleResource Include="images\btn_menu_historial%402x.png" />
+    <BundleResource Include="images\btn_menu_perfil_750%402x.png" />
+    <BundleResource Include="images\btn_menu_perfil%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
