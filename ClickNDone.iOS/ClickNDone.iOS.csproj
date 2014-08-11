@@ -155,6 +155,7 @@
     <BundleResource Include="images\btn_consultar_servicio%402x.png" />
     <BundleResource Include="images\btn_enviar_calificacion%402x.png" />
     <BundleResource Include="images\btn_no_calificacion%402x.png" />
+    <BundleResource Include="images\btn_enviar%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -254,6 +255,10 @@
     <Compile Include="Controllers\ServiceRequestController.cs" />
     <Compile Include="Controllers\ServiceRequestController.designer.cs">
       <DependentUpon>ServiceRequestController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SugerenciasController.cs" />
+    <Compile Include="Controllers\SugerenciasController.designer.cs">
+      <DependentUpon>SugerenciasController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

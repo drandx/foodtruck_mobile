@@ -30,6 +30,7 @@ namespace ClickNDone.iOS
 						new ImageStringElement("",UIImage.FromFile("images/btn_menu_categorias.png")),
 						new ImageStringElement("",UIImage.FromFile("images/btn_menu_historial.png")),
 						new ImageStringElement("",UIImage.FromFile("images/btn_menu_ranking.png")),
+						new ImageStringElement("",UIImage.FromFile("images/btn_menu_sugerencias.png")),
 						//new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						//new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						//new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
@@ -42,6 +43,7 @@ namespace ClickNDone.iOS
 					this.Storyboard.InstantiateViewController("CategoryController") as UIViewController,
 					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,
 					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,
+					this.Storyboard.InstantiateViewController("SugerenciasController") as UIViewController,
 				}
 			};
 
