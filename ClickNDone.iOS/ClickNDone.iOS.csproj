@@ -260,6 +260,10 @@
     <Compile Include="Controllers\SugerenciasController.designer.cs">
       <DependentUpon>SugerenciasController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\HistorialServiciosController.cs" />
+    <Compile Include="Controllers\HistorialServiciosController.designer.cs">
+      <DependentUpon>HistorialServiciosController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
