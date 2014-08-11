@@ -26,11 +26,11 @@ namespace ClickNDone.iOS
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
 					new Section(){//with this code we create Sections
 						new StyledStringElement ("Home")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						new ImageStringElement("",UIImage.FromFile("images/btn_menu_perfil.png")),
-						new ImageStringElement("",UIImage.FromFile("images/btn_menu_categorias.png")),
-						new ImageStringElement("",UIImage.FromFile("images/btn_menu_historial.png")),
-						new ImageStringElement("",UIImage.FromFile("images/btn_menu_ranking.png")),
-						new ImageStringElement("",UIImage.FromFile("images/btn_menu_sugerencias.png")),
+						new MyImageStringElement ("",UIImage.FromFile ("images/btn_menu_perfil@2x.png")),
+						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_categorias.png")),
+						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_historial.png")),
+						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_ranking.png")),
+						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_sugerencias.png")),
 						//new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						//new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
 						//new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
