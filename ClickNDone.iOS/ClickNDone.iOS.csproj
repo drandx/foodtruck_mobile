@@ -150,6 +150,11 @@
     <BundleResource Include="images\btn_menu_ranking%402x.png" />
     <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
     <BundleResource Include="images\btn_consultar%402x.png" />
+    <BundleResource Include="images\btn_cancelar_servicio%402x.png" />
+    <BundleResource Include="images\btn_star%402x.png" />
+    <BundleResource Include="images\btn_consultar_servicio%402x.png" />
+    <BundleResource Include="images\btn_enviar_calificacion%402x.png" />
+    <BundleResource Include="images\btn_no_calificacion%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -246,12 +251,17 @@
     <Compile Include="Common\ActionSheetDatePicker.cs" />
     <Compile Include="Common\PickerModel.cs" />
     <Compile Include="Common\PickerChangedEventArgs.cs" />
+    <Compile Include="Controllers\ServiceRequestController.cs" />
+    <Compile Include="Controllers\ServiceRequestController.designer.cs">
+      <DependentUpon>ServiceRequestController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
     <InterfaceDefinition Include="MainStoryboard_iPad.storyboard" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.MonoTouch.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Controllers\" />
     <Folder Include="Core\" />
