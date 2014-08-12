@@ -30,13 +30,15 @@ namespace ClickNDone.Core
 
 	public class User
 	{
-		public int Id { get; set; }
 		public string username { get; set; }
 		public string password { get; set; }
 		public string urlAvatar { get; set;}
 		public string fullName { get; set;}
 		public string email { get; set;}
 		public string token { get; set;}
+		public string userType { get; set;}
+		public string birthAge { get; set;}
+		public string cellphone { get; set;}
 
 	}
 
@@ -44,16 +46,7 @@ namespace ClickNDone.Core
 	{
 		public string username { get; set; }
 		public string password { get; set; }
-	}
-
-	public class Person
-	{
-		public string username { get; set; }
-		public string password { get; set; }
-		public string urlAvatar { get; set;}
-		public string fullName { get; set;}
-		public string email { get; set;}
-		public string token { get; set;}
+		public string userType { get; set; }
 	}
 
 	public class TermsConditions

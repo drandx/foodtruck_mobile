@@ -7,13 +7,14 @@ namespace ClickNDone.Core
 	{
 		public string Username { get; set; }
 		public string Password { get; set; }
+		public UserType UserType { get; set;}
+		public string DeviceToken { get; set;}
 
 		public User User
 		{
 			get{return this.settings.User;}
 		}
-
-
+			
 		public async Task Login()
 		{
 			if (string.IsNullOrEmpty(Username))
@@ -23,26 +24,13 @@ namespace ClickNDone.Core
 			IsBusy = true;
 			try
 			{
-				settings.User = await service.Login(Username, Password);
+				settings.User = await service.Login(Username, Password, UserType);
+				//TODO Set variables like, device token, user devices, usertype to The Settings Object
+				settings.Save();
 			}
 			finally {
 				IsBusy = false;
 			}
-		}
-
-		public void IsEndUser(Boolean endUser)
-		{
-			this.settings.IsEnduser = endUser;
-		}
-
-		public void SetDeviceToken (String token)
-		{
-			this.settings.DeviceToken = token;
-		}
-
-		public string GetDeviceToken()
-		{
-			return this.settings.DeviceToken;
 		}
 
 	}

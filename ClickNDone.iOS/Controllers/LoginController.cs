@@ -21,7 +21,7 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 
-			loginViewModel.SetDeviceToken(AppDelegate._deviceToken);
+			loginViewModel.DeviceToken = AppDelegate._deviceToken;
 			btnLogIn.TouchUpInside += async(sender, e) =>
 			{
 				loginViewModel.Username = txtEmail.Text;

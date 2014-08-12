@@ -9,10 +9,12 @@ namespace ClickNDone.iOS
 	{
 		UIImage currentImage;
 		UITableViewCell currentCell;
+		Boolean hidden;
 
-		public MyImageStringElement (string caption, UIImage image) : base (caption, image)
+		public MyImageStringElement (string caption, UIImage image, Boolean hidden) : base (caption, image)
 		{
 			currentImage = image;
+			this.hidden = hidden;
 		}
 			
 		public override UITableViewCell GetCell (UITableView tv)     
@@ -21,6 +23,7 @@ namespace ClickNDone.iOS
 			var cell = base.GetCell (tv);
 			cell.BackgroundColor = bgColor;
 			cell.ImageView.Image = currentImage; 
+			cell.Layer.Hidden = this.hidden;
 			currentCell = cell;
 			return currentCell;
 		}
@@ -31,6 +34,7 @@ namespace ClickNDone.iOS
 			if (currentCell != null)
 				currentCell.ImageView.Image = currentImage;
 		}
+
 	}
 }
 

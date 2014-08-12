@@ -54,14 +54,12 @@ namespace ClickNDone.iOS
 
 
 			//View Settings
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new Settings());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new IOSSettings());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
 
 			//ViewModels
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(LoginViewModel),new LoginViewModel());
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(FriendViewModel),new FriendViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(MessageViewModel),new MessageViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
 
 			//Push Notifications

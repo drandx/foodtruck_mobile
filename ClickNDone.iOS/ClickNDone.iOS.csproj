@@ -174,9 +174,6 @@
     <Compile Include="Controllers\LoginController.designer.cs">
       <DependentUpon>LoginController.cs</DependentUpon>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Service\FakeWebService.cs">
-      <Link>Core\Service\FakeWebService.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Service\IWebService.cs">
       <Link>Core\Service\IWebService.cs</Link>
     </Compile>
@@ -186,14 +183,8 @@
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
       <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\FriendViewModel.cs">
-      <Link>Core\Model\FriendViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Model\LoginViewModel.cs">
       <Link>Core\Model\LoginViewModel.cs</Link>
-    </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\MessageViewModel.cs">
-      <Link>Core\Model\MessageViewModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
       <Link>Core\Model\RegisterViewModel.cs</Link>
@@ -266,6 +257,7 @@
       <DependentUpon>HistorialServiciosController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\MyImageStringElement.cs" />
+    <Compile Include="Common\IOSSettings.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

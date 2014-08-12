@@ -20,11 +20,11 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			btnCustomer.TouchUpInside += (sender, e) => {
-				loginViewModel.IsEndUser(true);
+				loginViewModel.UserType = UserType.CONSUMER;
 				PerformSegue ("OnUserSelection", this);
 			};
 			btnProvider.TouchUpInside += (sender, e) => {
-				loginViewModel.IsEndUser(false);
+				loginViewModel.UserType = UserType.SUPPLIER;
 				PerformSegue ("OnUserSelection", this);
 			};
 		}

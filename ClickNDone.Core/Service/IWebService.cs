@@ -14,7 +14,7 @@ namespace ClickNDone.Core
 		Task<Message> SendMessage(Message message);
 
 		//Click-n-done Services
-		Task<User> Login(string username, string password);
+		Task<User> Login(string username, string password, UserType userType);
 		Task<TermsConditions> GetTermsConditions(bool isEndUser);
 		Task<User> GetUser(bool isEndUser);
 	}

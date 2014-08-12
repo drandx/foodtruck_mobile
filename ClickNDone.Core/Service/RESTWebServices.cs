@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using System.Net;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace ClickNDone.Core
 {
@@ -23,27 +24,32 @@ namespace ClickNDone.Core
 			client = new WebClient ();
 		}
 			
-		public async Task<User> Login (string username, string password)
+		public async Task<User> Login (string username, string password, UserType userType)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 
-			User user = new User ();
-			user.Id = 1;
-			user.username = username;
-			user.password = password;
-			user.email = "garjuanpablo@gmail.com";
-			user.fullName = "Juan Pablo Garcia";
-			user.urlAvatar = "";
-
 			LoginObj loginObj = new LoginObj ();
 			loginObj.password = password;
 			loginObj.username = username;
+			loginObj.userType = userType.ToString();
 
-			//var json = JsonConvert.SerializeObject (loginObj);
-			//Console.WriteLine ("JSON representation of person: {0}", json);
-			//string url = Constants.WebServiceHost + "login";
-			//var response = await client.UploadStringTaskAsync (url, "POST", json);
+			var json = JsonConvert.SerializeObject (loginObj);
+			string url = Constants.WebServiceHost + "auth/login";
+
+			var response = await client.UploadStringTaskAsync (url, "POST", json);
+			var objResp = JObject.Parse (response);
+
+			User user = new User ();
+			user.username = username;
+			user.password = password;
+			user.email = objResp["email"].ToString();
+			user.fullName = objResp["fullName"].ToString();
+			user.urlAvatar = objResp["urlAvatar"].ToString();
+			user.token = objResp["token"].ToString();
+			user.userType = objResp["userType"].ToString();
+			user.birthAge = objResp["birthAge"].ToString();
+			user.cellphone = objResp["cellphone"].ToString();
 
 			return user;
 		}
