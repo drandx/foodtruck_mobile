@@ -8,11 +8,10 @@ namespace ClickNDone.Core
 		public string Username { get; set; }
 		public string Password { get; set; }
 		public UserType UserType { get; set;}
-		public string DeviceToken { get; set;}
 
 		public User User
 		{
-			get{return this.settings.User;}
+			get{return this.settings.LoadUserLocallly();}
 		}
 			
 		public async Task Login()
@@ -25,8 +24,7 @@ namespace ClickNDone.Core
 			try
 			{
 				settings.User = await service.Login(Username, Password, UserType);
-				//TODO Set variables like, device token, user devices, usertype to The Settings Object
-				settings.Save();
+				settings.SaveUserLocallly();
 			}
 			finally {
 				IsBusy = false;

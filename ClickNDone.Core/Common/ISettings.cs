@@ -5,8 +5,8 @@ namespace ClickNDone.Core
 	public interface ISettings
 	{
 		User User { get; set; }
-		string DeviceToken { get; set;}
-		void Save();
+		void SaveUserLocallly();
+		User LoadUserLocallly();
 	}
 }
 

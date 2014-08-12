@@ -20,7 +20,6 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			var user = loginViewModel.User;
-
 		}
 
 	}
