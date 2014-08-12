@@ -10,7 +10,7 @@ namespace ClickNDone.iOS
 {
 	public partial class LoginController : UIViewController
 	{
-		readonly LoginViewModel loginViewModel = (LoginViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(LoginViewModel));
+		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 	
 		public LoginController (IntPtr handle) : base (handle)
 		{

@@ -10,7 +10,7 @@ namespace ClickNDone.iOS
 {
 	public partial class UserSelectionController : UIViewController
 	{
-		readonly LoginViewModel loginViewModel = (LoginViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(LoginViewModel));
+		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 
 		public UserSelectionController (IntPtr handle) : base (handle)
 		{

@@ -183,9 +183,6 @@
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
       <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\LoginViewModel.cs">
-      <Link>Core\Model\LoginViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
       <Link>Core\Model\RegisterViewModel.cs</Link>
     </Compile>
@@ -258,6 +255,9 @@
     </Compile>
     <Compile Include="Common\MyImageStringElement.cs" />
     <Compile Include="Common\IOSSettings.cs" />
+    <Compile Include="..\ClickNDone.Core\Model\UserModel.cs">
+      <Link>Core\Model\UserModel.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

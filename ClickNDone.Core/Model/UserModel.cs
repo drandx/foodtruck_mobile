@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace ClickNDone.Core
 {
-	public class LoginViewModel : BaseViewModel
+	public class UserModel : BaseViewModel
 	{
 		public string Username { get; set; }
 		public string Password { get; set; }
