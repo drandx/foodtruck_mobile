@@ -1,0 +1,6 @@
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/bin/Debug/ClickNDone.Core.dll.mdb
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/bin/Debug/ClickNDone.Core.dll
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/obj/Debug/ClickNDone.Core.dll
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/obj/Debug/ClickNDone.Core.dll.mdb
+/Users/drandx/Projects/clickndone_mobile/ClickNDone.Core/bin/Debug/Newtonsoft.Json.dll
