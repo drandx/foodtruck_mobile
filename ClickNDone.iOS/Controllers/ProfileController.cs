@@ -10,7 +10,7 @@ namespace ClickNDone.iOS
 {
 	public partial class ProfileController : MyViewController
 	{
-		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+		readonly UserModel UserModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 
 		public ProfileController (IntPtr handle) : base (handle)
 		{
@@ -19,7 +19,12 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			var user = loginViewModel.User;
+			var user = UserModel.User;
+			this.txtEmail.Text = user.email;
+			this.txtName.Text = user.fullName;
+			this.txtPassword.Text = user.password;
+			this.txtPhoneNumber.Text = user.cellphone;
+			this.txtLastName.Text = " -- ";
 		}
 
 	}

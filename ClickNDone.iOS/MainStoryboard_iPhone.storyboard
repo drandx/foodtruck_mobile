@@ -8,6 +8,7 @@
         <scene sceneID="Jzf-Wm-euj">
             <objects>
                 <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="62F-m9-1Og" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="nPr-mD-Y6y"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eqG-9M-Bxh">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
@@ -23,7 +24,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRx-kg-6UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="74"/>
+            <point key="canvasLocation" x="-491" y="49"/>
         </scene>
         <!--User Selection Controller-->
         <scene sceneID="jvV-CW-TOI">
@@ -74,7 +75,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Def-HL-l0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="68"/>
+            <point key="canvasLocation" x="11" y="34"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="oVk-Bm-ZSE">
@@ -173,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-1s-4nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="492" y="68"/>
+            <point key="canvasLocation" x="497" y="24"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="ncE-Ys-etI">
@@ -257,7 +258,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hkU-LX-5Jv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1018" y="-6"/>
+            <point key="canvasLocation" x="1008" y="34"/>
         </scene>
         <!--Profile Controller-->
         <scene sceneID="UXX-Tf-Zlz">
@@ -288,6 +289,9 @@
                                 <state key="normal" backgroundImage="images/btn_cerrar_sesion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="62F-m9-1Og" kind="modal" id="7RI-ya-a5E"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datos de Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeM-RY-Yg0">
                                 <rect key="frame" x="19" y="267" width="281" height="29"/>
@@ -378,10 +382,17 @@
                     <navigationItem key="navigationItem" id="rI1-Dz-u1Y">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="3No-Kh-CZp"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="txtEmail" destination="eNu-fn-Zve" id="l0m-Hp-4oH"/>
+                        <outlet property="txtLastName" destination="go7-CX-DrR" id="7mI-6U-mPD"/>
+                        <outlet property="txtName" destination="pCr-ml-2Xe" id="vIk-QF-kCI"/>
+                        <outlet property="txtPassword" destination="G1q-Gv-QJ6" id="Kyu-22-dlC"/>
+                        <outlet property="txtPhoneNumber" destination="Vzp-Zw-O6p" id="0mP-SG-XfI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7qR-m6-daP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1472" y="-6"/>
+            <point key="canvasLocation" x="1472" y="34"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="y1M-5z-djj">
@@ -2600,8 +2611,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="MZE-yt-Vyh"/>
         <segue reference="uHb-zl-3a4"/>
         <segue reference="yT1-RT-vM4"/>
-        <segue reference="MZE-yt-Vyh"/>
     </inferredMetricsTieBreakers>
 </document>
