@@ -12,6 +12,7 @@ namespace ClickNDone.iOS
 			var user = NSUserDefaults.StandardUserDefaults;
 			string jsonString = JsonConvert.SerializeObject (this.User);
 			user.SetString (jsonString, "UserJsonObj");
+			user.Synchronize ();
 		}
 
 		public override User LoadUserLocallly ()
