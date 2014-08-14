@@ -83,6 +83,7 @@
     <Compile Include="..\ClickNDone.Core\Service\RESTWebServices.cs">
       <Link>Core\Service\RESTWebServices.cs</Link>
     </Compile>
+    <Compile Include="SecondActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -93,6 +94,7 @@
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
     <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\layout\Second.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

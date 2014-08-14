@@ -26,7 +26,17 @@ namespace ClickNDone.Droid
 			Button button = FindViewById<Button> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+				StartActivity(typeof(SecondActivity));
+			};
+
+
+			// Get our button from the layout resource,
+			// and attach an event to it
+			Button myButton = FindViewById<Button> (Resource.Id.myAddButton);
+			TextView myText = FindViewById<TextView> (Resource.Id.textMyCount);
+
+			myButton.Click += delegate {
+				myButton.Text = string.Format("{0} clicks!", count++);
 			};
 		}
 	}

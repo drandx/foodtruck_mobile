@@ -12,15 +12,16 @@
         android:text="This is my Hello Hello World!!!"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/myText" />
+        android:id="@+id/myLabel" />
     <Button
         android:text="Add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1" />
+        android:id="@+id/myAddButton" />
     <TextView
-        android:text="MyCount:"
+        android:text="Count:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/textMyCount" />
 </LinearLayout>
