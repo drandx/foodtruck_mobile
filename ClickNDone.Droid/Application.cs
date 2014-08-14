@@ -22,19 +22,20 @@ namespace ClickNDone.Droid
 
 		}
 
-//		protected override void OnCreate (Bundle bundle)
-//		{
-//			base.OnCreate (bundle);
-//
-//			//View Settings
-//			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),Settings());
-//			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
-//
-//			//ViewModels
-//			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(UserModel),new UserModel());
-//			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
-//			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
-//		}
-	}
-}
+		public override void OnCreate()
+		{
+			base.OnCreate ();
 
+			//View Settings
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new Settings());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
+
+			//ViewModels
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(UserModel),new UserModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
+
+		}
+	}
+
+}

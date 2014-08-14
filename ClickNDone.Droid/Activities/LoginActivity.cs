@@ -43,8 +43,10 @@ namespace ClickNDone.Droid
 			viewModel.Password = password.Text;
 			try
 			{
-				//await viewModel.Login();
+				await viewModel.Login();
 				//TODO: navigate to a new activity
+				System.Diagnostics.Debug.WriteLine(" *** READY TO GO HOME *** ");
+
 			}
 			catch (Exception exc)
 			{

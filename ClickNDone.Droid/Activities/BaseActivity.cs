@@ -34,12 +34,12 @@ namespace ClickNDone.Droid
 		protected override void OnResume()
 		{
 			base.OnResume();
-			//viewModel.IsBusyChanged += OnIsBusyChanged;
+			viewModel.IsBusyChanged += OnIsBusyChanged;
 		}
 		protected override void OnPause()
 		{
 			base.OnPause();
-			//viewModel.IsBusyChanged -= OnIsBusyChanged;
+			viewModel.IsBusyChanged -= OnIsBusyChanged;
 		}
 
 		void OnIsBusyChanged (object sender, EventArgs e)
