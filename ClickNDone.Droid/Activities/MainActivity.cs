@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace ClickNDone.Droid
 {
-	[Activity (Label = "ClickNDone.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "ClickNDone.Droid", MainLauncher = false, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;

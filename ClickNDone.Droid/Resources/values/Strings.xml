@@ -1,5 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <resources>
 	<string name="hello">Start Second Activity</string>
-	<string name="app_name">ClickNDone.Droid</string>
+	<string name="app_name">ClickNDone</string>
+	<string name="ErrorTitle">Oops!</string>
+	<string name="Loading">Loading</string>
 </resources>
