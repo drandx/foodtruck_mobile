@@ -20,6 +20,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			btnRegister.Hidden = loginViewModel.UserType.Equals (UserType.CONSUMER) ? false : true;
 
 			btnLogIn.TouchUpInside += async(sender, e) =>
 			{
@@ -31,7 +32,7 @@ namespace ClickNDone.iOS
 				}
 				catch (Exception exc)
 				{
-					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+					new UIAlertView("Oops!", "Nombre de usuario o password incorrectos", null, "Ok").Show();
 				}
 			};
 		}

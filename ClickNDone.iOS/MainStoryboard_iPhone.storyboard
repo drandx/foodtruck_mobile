@@ -166,6 +166,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnLogIn" destination="7UE-Z0-Y1N" id="uJ8-Z8-EE4"/>
+                        <outlet property="btnRegister" destination="irS-st-NUa" id="jGh-VK-acZ"/>
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
                         <outlet property="txtEmail" destination="dj5-2r-Bpn" id="a79-1F-gMx"/>
                         <outlet property="txtPassword" destination="FiG-fo-Igm" id="EpL-j7-y8X"/>

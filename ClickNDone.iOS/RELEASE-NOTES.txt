@@ -1,1 +1,1 @@
-Mejorando la pagina de perfil.
+Servicio de registro integrado.

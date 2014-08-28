@@ -36,7 +36,7 @@ namespace ClickNDone.iOS
 				}
 				catch (Exception exc)
 				{
-					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+					new UIAlertView("Oops!", "El telefono o email ya se encuentran registrados.", null, "Ok").Show();
 				}
 			};
 
