@@ -59,7 +59,6 @@ namespace ClickNDone.iOS
 
 			//ViewModels
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(UserModel),new UserModel());
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(RegisterViewModel),new RegisterViewModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
 
 			//Push Notifications

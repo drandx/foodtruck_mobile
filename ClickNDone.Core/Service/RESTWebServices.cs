@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ClickNDone.Core
 {
@@ -37,19 +39,21 @@ namespace ClickNDone.Core
 			var json = JsonConvert.SerializeObject (loginObj);
 			string url = Constants.WebServiceHost + "auth/login";
 
+			client.Headers.Set ("X-Origin-OS","Iphone 7");
+			client.Headers.Set ("X-Origin-Token","ggggg");
+			client.Headers.Set ("User-Agent","IOS7");
 			var response = await client.UploadStringTaskAsync (url, "POST", json);
 			var objResp = JObject.Parse (response);
 
 			User user = new User ();
-			user.username = username;
 			user.password = password;
 			user.email = objResp["email"].ToString();
-			user.fullName = objResp["fullName"].ToString();
+			user.names = objResp["fullName"].ToString();
 			user.urlAvatar = objResp["urlAvatar"].ToString();
 			user.token = objResp["token"].ToString();
 			user.userType = objResp["userType"].ToString();
 			user.birthAge = objResp["birthAge"].ToString();
-			user.cellphone = objResp["cellphone"].ToString();
+			user.mobile = objResp["cellphone"].ToString();
 
 			return user;
 		}
@@ -67,12 +71,35 @@ namespace ClickNDone.Core
 			return terms;
 		}
 
-		public async Task<User> GetUser(bool isEndUser)
+		public async Task<User> Register (User user)
 		{
-			throw new NotImplementedException();
+			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
+			client.Headers.Set ("X-Origin-OS","Iphone 7");
+			client.Headers.Set ("X-Origin-Token","ggggg");
+			client.Headers.Set ("User-Agent","IOS7");
+
+			IDictionary<String,Object> userAttributes = new Dictionary<string, object> ();
+			userAttributes.Add ("username", user.mobile);
+			userAttributes.Add ("password", user.password);
+			userAttributes.Add ("email", user.email);
+			userAttributes.Add ("names", user.names);
+			userAttributes.Add ("surnames", user.surnames);
+			userAttributes.Add ("mobile", user.mobile);
+			userAttributes.Add ("userType", user.userType.ToString());
+
+			var userJson = JsonConvert.SerializeObject (userAttributes);
+
+			string url = Constants.WebServiceHost + "auth/signup";
+			var response = await client.UploadStringTaskAsync (url, "POST", userJson);
+			var objResp = JObject.Parse (response);
+			User myUser = new User ();
+			myUser.token = objResp["token"].ToString();
+			return myUser;
+
 		}
 
-		public async Task<User> Register (User user)
+		public async Task<User> GetUser(bool isEndUser)
 		{
 			throw new NotImplementedException();
 		}
@@ -83,21 +110,6 @@ namespace ClickNDone.Core
 		}
 
 		public async Task<User> AddFriend (int userId, string username)
-		{
-			throw new NotImplementedException();
-		}
-
-		public async Task<Conversation[]> GetConversations(int userId)
-		{
-			throw new NotImplementedException();
-		}
-
-		public async Task<Message[]> GetMessages(int conversationId)
-		{
-			throw new NotImplementedException();
-		}
-
-		public async Task<Message> SendMessage(Message message)
 		{
 			throw new NotImplementedException();
 		}

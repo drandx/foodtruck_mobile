@@ -394,10 +394,10 @@
             </objects>
             <point key="canvasLocation" x="1472" y="34"/>
         </scene>
-        <!--View Controller-->
+        <!--User Register Controller-->
         <scene sceneID="y1M-5z-djj">
             <objects>
-                <viewController id="MP6-jL-oPw" sceneMemberID="viewController">
+                <viewController id="MP6-jL-oPw" customClass="UserRegisterController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u3j-Gq-iBN"/>
                         <viewControllerLayoutGuide type="bottom" id="e3L-GH-mCV"/>
@@ -428,7 +428,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Foto dummy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-L5-edj" customClass="MyUITextField">
+                            <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Foto dummy" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Q83-L5-edj" customClass="MyUITextField">
                                 <rect key="frame" x="123" y="207" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -440,14 +440,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-Qr-O8Z" customClass="MyUITextField">
                                 <rect key="frame" x="123" y="280" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Registro de Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZR-KI-6td">
                                 <rect key="frame" x="26" y="101" width="183" height="29"/>
@@ -490,21 +490,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Or8-X2-lZT">
-                                <rect key="frame" x="181" y="375" width="42" height="12"/>
+                                <rect key="frame" x="181" y="412" width="42" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="images/btn_borrar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oU9-Xu-S3Y">
-                                <rect key="frame" x="253" y="375" width="52" height="12"/>
+                                <rect key="frame" x="253" y="412" width="52" height="12"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="images/btn_registrar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bna-2I-Bvs">
-                                <rect key="frame" x="26" y="318" width="306" height="30"/>
+                                <rect key="frame" x="26" y="355" width="306" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" none="YES" button="YES" link="YES"/>
@@ -518,12 +518,42 @@
                                     <segue destination="Pd2-Tp-BeD" kind="push" id="uHb-zl-3a4"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4kX-hj-Y10">
+                                <rect key="frame" x="150" y="385" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dKZ-al-gLX" customClass="MyUITextField">
+                                <rect key="frame" x="123" y="317" width="182" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password*" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-Tf-2Hw">
+                                <rect key="frame" x="26" y="317" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="02d-KX-aQf">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="MWE-1w-CNU"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnClear" destination="Or8-X2-lZT" id="YCl-fz-L6G"/>
+                        <outlet property="btnRegister" destination="oU9-Xu-S3Y" id="RaB-Yl-0j1"/>
+                        <outlet property="indicator" destination="4kX-hj-Y10" id="XvI-CH-STb"/>
+                        <outlet property="txtEmail" destination="jUn-Qr-O8Z" id="7wT-GR-iu2"/>
+                        <outlet property="txtImage" destination="Q83-L5-edj" id="b8G-Gz-kWj"/>
+                        <outlet property="txtLastName" destination="HXb-gx-hSX" id="ddu-u8-AWb"/>
+                        <outlet property="txtName" destination="P7t-XB-2vR" id="sHM-JS-f62"/>
+                        <outlet property="txtPassword" destination="dKZ-al-gLX" id="Nol-kV-UFd"/>
+                        <outlet property="txtPhoneNumber" destination="eBA-0U-dt9" id="Mxf-AP-Jb4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="atw-gs-86I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

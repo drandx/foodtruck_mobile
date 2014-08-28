@@ -183,9 +183,6 @@
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
       <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
-      <Link>Core\Model\RegisterViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Domain\DataModel.cs">
       <Link>Core\Domain\DataModel.cs</Link>
     </Compile>
@@ -257,6 +254,10 @@
     <Compile Include="Common\IOSSettings.cs" />
     <Compile Include="..\ClickNDone.Core\Model\UserModel.cs">
       <Link>Core\Model\UserModel.cs</Link>
+    </Compile>
+    <Compile Include="Controllers\UserRegisterController.cs" />
+    <Compile Include="Controllers\UserRegisterController.designer.cs">
+      <DependentUpon>UserRegisterController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

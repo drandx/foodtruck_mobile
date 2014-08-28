@@ -21,10 +21,10 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 			var user = UserModel.User;
 			this.txtEmail.Text = user.email;
-			this.txtName.Text = user.fullName;
+			this.txtName.Text = user.names;
 			this.txtPassword.Text = user.password;
-			this.txtPhoneNumber.Text = user.cellphone;
-			this.txtLastName.Text = " -- ";
+			this.txtPhoneNumber.Text = user.mobile;
+			this.txtLastName.Text = user.surnames;
 		}
 
 	}

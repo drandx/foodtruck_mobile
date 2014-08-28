@@ -30,7 +30,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\BaseViewModel.cs" />
-    <Compile Include="Model\RegisterViewModel.cs" />
     <Compile Include="Domain\DataModel.cs" />
     <Compile Include="Service\IWebService.cs" />
     <Compile Include="Common\ISettings.cs" />

@@ -67,9 +67,6 @@
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
       <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\RegisterViewModel.cs">
-      <Link>Core\Model\RegisterViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Model\TermsConditionsViewModel.cs">
       <Link>Core\Model\TermsConditionsViewModel.cs</Link>
     </Compile>
