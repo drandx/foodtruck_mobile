@@ -19,6 +19,18 @@ Global
 		AppStore|iPhone = AppStore|iPhone
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|iPhone.Build.0 = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}.Release|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
 		{DFD3D4B0-1E41-4457-95F5-B360133D8196}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
 		{DFD3D4B0-1E41-4457-95F5-B360133D8196}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
 		{DFD3D4B0-1E41-4457-95F5-B360133D8196}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
@@ -53,6 +65,6 @@ Global
 		{FE7ED3C5-C567-408C-B1B8-DC5549F45928}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ClickNDone.Droid\ClickNDone.Droid.csproj
+		StartupItem = ClickNDone.iOS\ClickNDone.iOS.csproj
 	EndGlobalSection
 EndGlobal
