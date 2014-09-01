@@ -1,1 +1,1 @@
-Servicio de registro integrado.
+Arreglando problemas de configuracion.
