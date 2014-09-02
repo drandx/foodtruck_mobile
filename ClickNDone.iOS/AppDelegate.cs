@@ -22,7 +22,8 @@ namespace ClickNDone.iOS
 			set;
 		}
 
-		public static string _deviceToken="test";
+		public static string _deviceToken="N/A";
+		private ISettings deviceSettinigs;
 		
 		// This method is invoked when the application is about to move from active to inactive state.
 		// OpenGL applications should use this method to pause.
@@ -51,10 +52,12 @@ namespace ClickNDone.iOS
 		{
 			//Styles
 			Helper.setAppearances ();
-
+			deviceSettinigs = new IOSSettings ();
+			//TODO-temporary solution for debugging
+			deviceSettinigs.DeviceToken = _deviceToken;
 
 			//View Settings
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),new IOSSettings());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(ISettings),deviceSettinigs);
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(IWebService),new RESTWebServices());
 
 			//ViewModels
@@ -71,7 +74,9 @@ namespace ClickNDone.iOS
 
 		public override void RegisteredForRemoteNotifications (UIApplication application, NSData deviceToken)
 		{
+			//TODO-Remove this property (_deviceToken)
 			_deviceToken = deviceToken.ToString();
+			deviceSettinigs.DeviceToken = deviceToken.ToString ();
 			// code to register with your server application goes here
 		}
 

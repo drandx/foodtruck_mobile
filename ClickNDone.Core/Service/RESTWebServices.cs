@@ -26,7 +26,7 @@ namespace ClickNDone.Core
 			client = new WebClient ();
 		}
 			
-		public async Task<User> Login (string username, string password, UserType userType)
+		public async Task<User> Login (string username, string password, UserType userType, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -40,7 +40,7 @@ namespace ClickNDone.Core
 			string url = Constants.WebServiceHost + "auth/login";
 
 			client.Headers.Set ("X-Origin-OS","Iphone 7");
-			client.Headers.Set ("X-Origin-Token","ggggg");
+			client.Headers.Set ("X-Origin-Token",deviceToken);
 			client.Headers.Set ("User-Agent","IOS7");
 			var response = await client.UploadStringTaskAsync (url, "POST", json);
 			var objResp = JObject.Parse (response);
@@ -71,12 +71,12 @@ namespace ClickNDone.Core
 			return terms;
 		}
 
-		public async Task<User> Register (User user)
+		public async Task<User> Register (User user, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
 			client.Headers.Set ("X-Origin-OS","Iphone 7");
-			client.Headers.Set ("X-Origin-Token","ggggg");
+			client.Headers.Set ("X-Origin-Token",deviceToken);
 			client.Headers.Set ("User-Agent","IOS7");
 
 			IDictionary<String,Object> userAttributes = new Dictionary<string, object> ();

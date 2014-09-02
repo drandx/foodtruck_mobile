@@ -7,6 +7,7 @@ namespace ClickNDone.Core
 		User User { get; set; }
 		void SaveUserLocallly();
 		User LoadUserLocallly();
+		String DeviceToken { get; set; }
 	}
 }
 
