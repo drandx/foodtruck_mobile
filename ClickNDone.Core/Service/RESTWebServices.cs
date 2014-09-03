@@ -49,7 +49,6 @@ namespace ClickNDone.Core
 			user.password = password;
 			user.email = objResp["email"].ToString();
 			user.names = objResp["fullName"].ToString();
-			user.urlAvatar = objResp["urlAvatar"].ToString();
 			user.token = objResp["token"].ToString();
 			user.userType = objResp["userType"].ToString();
 			user.birthAge = objResp["birthAge"].ToString();
@@ -99,19 +98,66 @@ namespace ClickNDone.Core
 
 		}
 
+		public async Task<List<Category>> GetCategories(String sessionToken,String deviceToken)
+		{
+			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+			client.Headers.Set ("X-Origin-OS","Iphone 7");
+			client.Headers.Set ("X-Origin-Token",deviceToken);
+			client.Headers.Set ("User-Agent","IOS7");
+
+			string url = Constants.WebServiceHost + "cnd-api/business/all?allowanceToken="+sessionToken;
+
+			var responseString = await client.DownloadStringTaskAsync (url);
+			var objResp = JObject.Parse (responseString);
+			List<Category> categoriesRet = new List<Category>();
+
+			foreach(var cat in objResp["categories"])
+			{
+				List<Category> subCategories = new List<Category>();
+				Category category = new Category ();
+				category.Name = cat ["categoryName"].ToString();
+				category.Description = cat ["categoryDescription"].ToString();
+				category.Convention = cat ["categoryConvention"].ToString();
+
+				foreach(var subcat in cat["subCategories"])
+				{
+					Category subcategory = new Category ();
+					subcategory.Name = subcat ["subCategoryName"].ToString();
+					subcategory.Description = subcat ["subCategoryDescription"].ToString();
+					subcategory.Convention = subcat ["subCategoryConvention"].ToString();
+					subCategories.Add (subcategory);
+				}
+
+				category.Subcategories = subCategories;
+				categoriesRet.Add (category);
+			}
+
+			return categoriesRet;
+		}
+
+		public async Task<Boolean> PlaceOrder(Order order, String sessionToken, String deviceToken)
+		{
+			await Sleep ();
+			return false;
+		}
+
 		public async Task<User> GetUser(bool isEndUser)
 		{
-			throw new NotImplementedException();
+			await Sleep ();
+			return null;
 		}
 
 		public async Task<User[]> GetFriends (int userId)
 		{
-			throw new NotImplementedException();
+			await Sleep ();
+			return null;
 		}
 
 		public async Task<User> AddFriend (int userId, string username)
 		{
-			throw new NotImplementedException();
+			await Sleep ();
+			return null;
 		}
 
 	}

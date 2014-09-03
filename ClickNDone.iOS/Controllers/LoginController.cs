@@ -32,7 +32,7 @@ namespace ClickNDone.iOS
 				}
 				catch (Exception exc)
 				{
-					new UIAlertView("Oops!", "Nombre de usuario o password incorrectos", null, "Ok").Show();
+					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
 				}
 			};
 		}

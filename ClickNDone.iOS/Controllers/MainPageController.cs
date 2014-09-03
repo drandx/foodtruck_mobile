@@ -13,14 +13,24 @@ namespace ClickNDone.iOS
 	public partial class MainPageController : UIViewController
 	{
 		public static FlyoutNavigationController navigation;
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
+
 
 		public MainPageController (IntPtr handle) : base (handle)
 		{
 		}
 
-		public override void ViewDidLoad ()
+		public async override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+
+			try {
+				await categoriesModel.GetCategories();
+			}
+			catch (Exception exc)
+			{
+				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+			}
 
 			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements

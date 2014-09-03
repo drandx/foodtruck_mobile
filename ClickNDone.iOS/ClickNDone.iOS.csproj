@@ -262,6 +262,12 @@
     <Compile Include="Controllers\UserRegisterController.designer.cs">
       <DependentUpon>UserRegisterController.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\CategoriesModel.cs">
+      <Link>Core\Model\CategoriesModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
+      <Link>Core\Model\OrdersModel.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

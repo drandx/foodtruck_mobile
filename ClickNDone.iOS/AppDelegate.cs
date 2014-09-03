@@ -22,7 +22,7 @@ namespace ClickNDone.iOS
 			set;
 		}
 
-		public static string _deviceToken="N/A";
+		public static string _deviceToken="ggggg";
 		private ISettings deviceSettinigs;
 		
 		// This method is invoked when the application is about to move from active to inactive state.
@@ -63,6 +63,8 @@ namespace ClickNDone.iOS
 			//ViewModels
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(UserModel),new UserModel());
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(CategoriesModel),new CategoriesModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(OrdersModel),new OrdersModel());
 
 			//Push Notifications
 			UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge;

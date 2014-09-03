@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ClickNDone.Core
 {
@@ -28,6 +29,23 @@ namespace ClickNDone.Core
 	{
 		public string terms { get; set; }
 		public string conditions { get; set; }
+	}
+
+	public class Category
+	{
+		public string Name { get; set; }
+		public string Description { get; set; }
+		public string Convention { get; set; }
+		public List<Category> Subcategories { get; set; }
+	}
+
+	public class Order
+	{
+		public string Location { get; set; }
+		public string Comments { get; set; }
+		public Double MinCost { get; set; }
+		public Double MaxCost { get; set; }
+		public DateTime ReservationDate { get; set; }
 	}
 
 }

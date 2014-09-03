@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ClickNDone.Core
 {
@@ -9,6 +10,8 @@ namespace ClickNDone.Core
 		Task<TermsConditions> GetTermsConditions(bool isEndUser);
 		Task<User> GetUser(bool isEndUser);
 		Task<User> Register(User user,String deviceToken);
+		Task<List<Category>> GetCategories(String sessionToken,String deviceToken);
+		Task<Boolean> PlaceOrder(Order order, String sessionToken, String deviceToken);
 	}
 }
 
