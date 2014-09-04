@@ -5,6 +5,7 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
@@ -13,25 +14,27 @@ namespace ClickNDone.iOS
 		ActionSheetDatePicker actionSheetDatePicker;
 		ActionSheetDatePicker actionSheetTimePicker;
 
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+
 		private readonly IList<string> fromMoney = new List<string>
 		{
-			"Blue",
-			"Green",
-			"Red",
-			"Purple",
-			"Yellow"
+			"10000",
+			"30000",
+			"50000",
+			"70000"
 		};
 		private readonly IList<string> toMoney = new List<string>
 		{
-			"Blue",
-			"Green",
-			"Red",
-			"Purple",
-			"Yellow"
+			"10000",
+			"30000",
+			"50000",
+			"150000"
 		};
 
 		private string selectedFromMoney;
 		private string selectedToMoney;
+		private DateTime selectedTime;
+		private DateTime selectedDate;
 
 		public ServiceController (IntPtr handle) : base (handle)
 		{
@@ -73,6 +76,7 @@ namespace ClickNDone.iOS
 				lblMonth.Text = dateTime.ToString("MMMM");
 				lblDay.Text = dateTime.Day.ToString();
 				lblYear.Text = dateTime.Year.ToString();
+				this.selectedDate = dateTime;
 			};
 
 			actionSheetDatePicker.DoneButton.TouchDown += (s, e) => {
@@ -80,6 +84,7 @@ namespace ClickNDone.iOS
 				lblMonth.Text = dateTime.ToString("MMMM");
 				lblDay.Text = dateTime.Day.ToString();
 				lblYear.Text = dateTime.Year.ToString();
+				this.selectedDate = dateTime;
 			};
 
 			//Time Selector
@@ -112,6 +117,7 @@ namespace ClickNDone.iOS
 				lblHour.Text = dateTime.Hour.ToString();
 				lblMinute.Text = dateTime.Minute.ToString();
 				lblAMPM.Text = dateTime.ToString("tt");
+				this.selectedTime = dateTime;
 			};
 
 			actionSheetTimePicker.DoneButton.TouchDown += (s, e) => {
@@ -119,6 +125,19 @@ namespace ClickNDone.iOS
 				lblHour.Text = dateTime.ToString("hh");
 				lblMinute.Text = dateTime.Minute.ToString();
 				lblAMPM.Text = dateTime.ToString("tt");
+
+			};
+
+			btnRequestService.TouchUpInside += async(sender, e) => {
+				ordersModel.MinCost = Convert.ToDouble(selectedFromMoney);
+				ordersModel.MaxCost = Convert.ToDouble(selectedToMoney);
+				DateTime finalDateTime = new DateTime();
+				finalDateTime.AddDays(this.selectedDate.Day);
+				finalDateTime.AddMonths(this.selectedDate.Month);
+				finalDateTime.AddYears(this.selectedDate.Year);
+				finalDateTime.AddHours(this.selectedTime.Hour);
+				finalDateTime.AddMinutes(this.selectedTime.Minute);
+				ordersModel.ReservationDate = finalDateTime;
 			};
 
 			this.SetupPickers();
@@ -137,12 +156,14 @@ namespace ClickNDone.iOS
 			PickerModel model = new PickerModel(this.fromMoney);
 			model.PickerChanged += (sender, e) => {
 				this.selectedFromMoney = e.SelectedValue;
+				this.txtFromValue.Text = e.SelectedValue;
 			};
 
 			// Setup the picker and model // TO
 			PickerModel modelToValue = new PickerModel(this.toMoney);
 			modelToValue.PickerChanged += (sender, e) => {
 				this.selectedToMoney = e.SelectedValue;
+				txtToValue.Text = e.SelectedValue;
 			};
 
 			UIPickerView picker = new UIPickerView();

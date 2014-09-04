@@ -13,6 +13,9 @@ namespace ClickNDone.iOS
 	partial class ServiceController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnRequestService { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UILabel lblAMPM { get; set; }
 
 		[Outlet]
@@ -76,6 +79,11 @@ namespace ClickNDone.iOS
 			if (txtToValue != null) {
 				txtToValue.Dispose ();
 				txtToValue = null;
+			}
+
+			if (btnRequestService != null) {
+				btnRequestService.Dispose ();
+				btnRequestService = null;
 			}
 		}
 	}

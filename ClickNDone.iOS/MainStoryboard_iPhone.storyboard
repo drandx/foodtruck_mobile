@@ -933,6 +933,7 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="ZBz-EC-LKX"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnRequestService" destination="jyC-i6-fhT" id="6WY-hj-0gF"/>
                         <outlet property="lblAMPM" destination="fKP-uZ-Dsf" id="3b1-8X-WGV"/>
                         <outlet property="lblDay" destination="jvp-8g-xRz" id="NQY-tE-iUE"/>
                         <outlet property="lblHour" destination="mYj-19-FiB" id="Rbq-dp-tj7"/>
