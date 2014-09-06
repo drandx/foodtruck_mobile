@@ -18,7 +18,23 @@ namespace ClickNDone.Core
 
 		public async Task ReuestService()
 		{
-
+			if (string.IsNullOrEmpty(Location) || string.IsNullOrEmpty(Comments) || string.IsNullOrEmpty(MinCost.ToString()) 
+				|| string.IsNullOrEmpty(MaxCost.ToString()) || string.IsNullOrEmpty(ReservationDate.ToString()))
+				throw new Exception("Ingrese los campos correctamente");
+			IsBusy = true;
+			try
+			{
+				ServiceRequest serviceRequest = new ServiceRequest();
+				serviceRequest.Comments = this.Comments;
+				serviceRequest.Location = Location;
+				serviceRequest.MinCost = MinCost;
+				serviceRequest.MaxCost = MaxCost;
+				serviceRequest.ReservationDate = ReservationDate;
+				await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
+			}
+			finally {
+				IsBusy = false;
+			}
 
 		}
 

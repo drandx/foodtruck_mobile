@@ -128,7 +128,7 @@ namespace ClickNDone.iOS
 
 			};
 
-			btnRequestService.TouchUpInside += async(sender, e) => {
+			btnRequestService.TouchUpInside += (sender, e) => {
 				ordersModel.MinCost = Convert.ToDouble(selectedFromMoney);
 				ordersModel.MaxCost = Convert.ToDouble(selectedToMoney);
 				DateTime finalDateTime = new DateTime();

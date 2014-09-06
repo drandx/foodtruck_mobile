@@ -4,18 +4,30 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class ServiceRequestController : UIViewController
 	{
+
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+
 		public ServiceRequestController (IntPtr handle) : base (handle)
 		{
+
 		}
 
-		public override void ViewDidLoad ()
+		public override async void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			try {
+				await ordersModel.ReuestService ();
+			}
+			catch (Exception exc)
+			{
+				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+			}
 		}
 	}
 }

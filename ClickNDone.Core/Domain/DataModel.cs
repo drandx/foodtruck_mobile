@@ -15,7 +15,7 @@ namespace ClickNDone.Core
 		public string gender { get; set;}
 		public string userType { get; set;}
 		public string urlAvatar { get; set;}
-		public string token { get; set;}
+		public string sessionToken { get; set;}
 	}
 
 	public class LoginObj
@@ -39,13 +39,14 @@ namespace ClickNDone.Core
 		public List<Category> Subcategories { get; set; }
 	}
 
-	public class Order
+	public class ServiceRequest
 	{
 		public string Location { get; set; }
 		public string Comments { get; set; }
 		public Double MinCost { get; set; }
 		public Double MaxCost { get; set; }
 		public DateTime ReservationDate { get; set; }
+		public Category Category { get; set;}
 	}
 
 }

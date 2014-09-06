@@ -11,7 +11,7 @@ namespace ClickNDone.Core
 		Task<User> GetUser(bool isEndUser);
 		Task<User> Register(User user,String deviceToken);
 		Task<List<Category>> GetCategories(String sessionToken,String deviceToken);
-		Task<Boolean> PlaceOrder(Order order, String sessionToken, String deviceToken);
+		Task<Boolean> RequestService(ServiceRequest order, String sessionToken, String deviceToken);
 	}
 }
 

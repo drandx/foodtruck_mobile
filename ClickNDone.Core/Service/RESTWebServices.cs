@@ -49,7 +49,7 @@ namespace ClickNDone.Core
 			user.password = password;
 			user.email = objResp["email"].ToString();
 			user.names = objResp["fullName"].ToString();
-			user.token = objResp["token"].ToString();
+			user.sessionToken = objResp["token"].ToString();
 			user.userType = objResp["userType"].ToString();
 			user.birthAge = objResp["birthAge"].ToString();
 			user.mobile = objResp["cellphone"].ToString();
@@ -93,7 +93,7 @@ namespace ClickNDone.Core
 			var response = await client.UploadStringTaskAsync (url, "POST", userJson);
 			var objResp = JObject.Parse (response);
 			User myUser = new User ();
-			myUser.token = objResp["token"].ToString();
+			myUser.sessionToken = objResp["token"].ToString();
 			return myUser;
 
 		}
@@ -136,9 +136,23 @@ namespace ClickNDone.Core
 			return categoriesRet;
 		}
 
-		public async Task<Boolean> PlaceOrder(Order order, String sessionToken, String deviceToken)
+		public async Task<Boolean> RequestService(ServiceRequest order, String sessionToken, String deviceToken)
 		{
-			await Sleep ();
+			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
+			client.Headers.Set ("X-Origin-OS","Iphone 7");
+			client.Headers.Set ("X-Origin-Token",deviceToken);
+			client.Headers.Set ("User-Agent","IOS7");
+
+			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
+
+			var serviceRequestJson = JsonConvert.SerializeObject (serviceRequestAttributes);
+
+			string url = Constants.WebServiceHost + "cnd-api/service/"+order.Category.Convention+"/bookRequest?allowanceToken="+sessionToken;
+
+			var response = await client.UploadStringTaskAsync (url, "POST", serviceRequestJson);
+			var objResp = JObject.Parse (response);
+
 			return false;
 		}
 

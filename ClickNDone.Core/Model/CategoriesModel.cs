@@ -13,7 +13,7 @@ namespace ClickNDone.Core
 			IsBusy = true;
 			try
 			{
-				Categories = await service.GetCategories(settings.User.token, settings.DeviceToken);
+				Categories = await service.GetCategories(settings.User.sessionToken, settings.DeviceToken);
 			}
 			finally {
 				IsBusy = false;
