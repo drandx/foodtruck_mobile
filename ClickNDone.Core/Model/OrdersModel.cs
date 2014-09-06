@@ -16,7 +16,7 @@ namespace ClickNDone.Core
 
 		}
 
-		public async Task ReuestService()
+		public async Task<String> RequestService()
 		{
 			if (string.IsNullOrEmpty(Location) || string.IsNullOrEmpty(Comments) || string.IsNullOrEmpty(MinCost.ToString()) 
 				|| string.IsNullOrEmpty(MaxCost.ToString()) || string.IsNullOrEmpty(ReservationDate.ToString()))
@@ -30,7 +30,13 @@ namespace ClickNDone.Core
 				serviceRequest.MinCost = MinCost;
 				serviceRequest.MaxCost = MaxCost;
 				serviceRequest.ReservationDate = ReservationDate;
-				await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
+				//TODO - Replace with dinamyc category.
+				Category selectedCat = new Category();
+				selectedCat.Convention = "BEA-NAIL";
+				serviceRequest.Category = selectedCat;
+				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
+
+				return ret;
 			}
 			finally {
 				IsBusy = false;

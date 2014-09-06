@@ -138,6 +138,8 @@ namespace ClickNDone.iOS
 				finalDateTime.AddHours(this.selectedTime.Hour);
 				finalDateTime.AddMinutes(this.selectedTime.Minute);
 				ordersModel.ReservationDate = finalDateTime;
+				ordersModel.Comments = txtComments.Text;
+				ordersModel.Location = txtAddress.Text;
 			};
 
 			this.SetupPickers();

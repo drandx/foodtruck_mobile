@@ -22,7 +22,8 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			try {
-				await ordersModel.ReuestService ();
+				var ret = await ordersModel.RequestService ();
+				new UIAlertView("Response!", ret, null, "Ok").Show();
 			}
 			catch (Exception exc)
 			{

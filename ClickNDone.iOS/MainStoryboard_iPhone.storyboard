@@ -940,6 +940,8 @@
                         <outlet property="lblMinute" destination="Ahk-uV-g0N" id="AQy-Hl-5Db"/>
                         <outlet property="lblMonth" destination="d0s-q4-5r9" id="uih-X5-ogY"/>
                         <outlet property="lblYear" destination="E2Z-aE-07Q" id="20J-cz-uqs"/>
+                        <outlet property="txtAddress" destination="KNN-Ia-08Z" id="Bks-XE-Wg0"/>
+                        <outlet property="txtComments" destination="mto-4P-5x6" id="gff-Aa-aDr"/>
                         <outlet property="txtFromValue" destination="qUv-Jk-9yN" id="RAd-BQ-gHF"/>
                         <outlet property="txtToValue" destination="dUb-53-NIh" id="foD-Dt-BXK"/>
                     </connections>

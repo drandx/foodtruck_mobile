@@ -34,6 +34,12 @@ namespace ClickNDone.iOS
 		MonoTouch.UIKit.UILabel lblYear { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UITextField txtAddress { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UITextField txtComments { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UITextField txtFromValue { get; set; }
 
 		[Outlet]
@@ -41,6 +47,11 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (btnRequestService != null) {
+				btnRequestService.Dispose ();
+				btnRequestService = null;
+			}
+
 			if (lblAMPM != null) {
 				lblAMPM.Dispose ();
 				lblAMPM = null;
@@ -81,9 +92,14 @@ namespace ClickNDone.iOS
 				txtToValue = null;
 			}
 
-			if (btnRequestService != null) {
-				btnRequestService.Dispose ();
-				btnRequestService = null;
+			if (txtAddress != null) {
+				txtAddress.Dispose ();
+				txtAddress = null;
+			}
+
+			if (txtComments != null) {
+				txtComments.Dispose ();
+				txtComments = null;
 			}
 		}
 	}

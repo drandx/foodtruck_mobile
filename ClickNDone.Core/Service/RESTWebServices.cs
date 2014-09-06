@@ -19,13 +19,21 @@ namespace ClickNDone.Core
 		{
 			return Task.Delay (SleepDuration);
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public RESTWebServices ()
 		{
 			SleepDuration = 1;
 			client = new WebClient ();
 		}
-			
+		/*
+		 * 
+		 * 
+		 * 
+		 */	
 		public async Task<User> Login (string username, string password, UserType userType, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
@@ -56,7 +64,11 @@ namespace ClickNDone.Core
 
 			return user;
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<TermsConditions> GetTermsConditions(bool isEndUser)
 		{
 			string url = Constants.WebServiceHost + "terms_conditions/";
@@ -69,7 +81,11 @@ namespace ClickNDone.Core
 
 			return terms;
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<User> Register (User user, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
@@ -97,7 +113,11 @@ namespace ClickNDone.Core
 			return myUser;
 
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<List<Category>> GetCategories(String sessionToken,String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
@@ -135,8 +155,12 @@ namespace ClickNDone.Core
 
 			return categoriesRet;
 		}
-
-		public async Task<Boolean> RequestService(ServiceRequest order, String sessionToken, String deviceToken)
+		/*
+		 * 
+		 * 
+		 * 
+		 */
+		public async Task<String> RequestService(ServiceRequest order, String sessionToken, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
@@ -145,29 +169,46 @@ namespace ClickNDone.Core
 			client.Headers.Set ("User-Agent","IOS7");
 
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
+			serviceRequestAttributes.Add ("comments", order.Comments);
+			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32(order.MinCost));
+			serviceRequestAttributes.Add ("maximumCost", Convert.ToInt32(order.MaxCost));
+			serviceRequestAttributes.Add ("location", order.Location);
+			serviceRequestAttributes.Add ("reservationDate", order.ReservationDate.ToString("MM-dd-yy H:mm:ss"));
+			serviceRequestAttributes.Add ("allowanceToken", sessionToken);
 
 			var serviceRequestJson = JsonConvert.SerializeObject (serviceRequestAttributes);
 
 			string url = Constants.WebServiceHost + "cnd-api/service/"+order.Category.Convention+"/bookRequest?allowanceToken="+sessionToken;
 
-			var response = await client.UploadStringTaskAsync (url, "POST", serviceRequestJson);
+			var response = await client.UploadStringTaskAsync (url, "PUT", serviceRequestJson);
 			var objResp = JObject.Parse (response);
-
-			return false;
+			return response;
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<User> GetUser(bool isEndUser)
 		{
 			await Sleep ();
 			return null;
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<User[]> GetFriends (int userId)
 		{
 			await Sleep ();
 			return null;
 		}
-
+		/*
+		 * 
+		 * 
+		 * 
+		 */
 		public async Task<User> AddFriend (int userId, string username)
 		{
 			await Sleep ();
