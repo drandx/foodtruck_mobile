@@ -84,6 +84,12 @@
     <Compile Include="Application.cs" />
     <Compile Include="Activities\BaseActivity.cs" />
     <Compile Include="Activities\LoginActivity.cs" />
+    <Compile Include="..\ClickNDone.Core\Model\CategoriesModel.cs">
+      <Link>Core\Model\CategoriesModel.cs</Link>
+    </Compile>
+    <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
+      <Link>Core\Model\OrdersModel.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -93,9 +99,10 @@
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
     <AndroidResource Include="Resources\values\Strings.xml" />
-    <AndroidResource Include="Resources\drawable\Icon.png" />
     <AndroidResource Include="Resources\layout\Second.axml" />
     <AndroidResource Include="Resources\layout\Login.axml" />
+    <AndroidResource Include="Resources\drawable\Icon.png" />
+    <AndroidResource Include="Resources\drawable\Icon2x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

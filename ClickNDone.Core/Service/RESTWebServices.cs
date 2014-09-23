@@ -45,7 +45,7 @@ namespace ClickNDone.Core
 			loginObj.userType = userType.ToString();
 
 			var json = JsonConvert.SerializeObject (loginObj);
-			string url = Constants.WebServiceHost + "auth/login";
+			string url = Constants.WebServiceHost + "login";
 
 			client.Headers.Set ("X-Origin-OS","Iphone 7");
 			client.Headers.Set ("X-Origin-Token",deviceToken);
@@ -88,6 +88,8 @@ namespace ClickNDone.Core
 		 */
 		public async Task<User> Register (User user, String deviceToken)
 		{
+			string url = Constants.WebServiceHost + "auth/signup";
+
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
 			client.Headers.Set ("X-Origin-OS","Iphone 7");
@@ -105,11 +107,12 @@ namespace ClickNDone.Core
 
 			var userJson = JsonConvert.SerializeObject (userAttributes);
 
-			string url = Constants.WebServiceHost + "auth/signup";
 			var response = await client.UploadStringTaskAsync (url, "POST", userJson);
 			var objResp = JObject.Parse (response);
+
+			//TODO-Pedir que me devuelvan un token basura
 			User myUser = new User ();
-			myUser.sessionToken = objResp["token"].ToString();
+			//myUser.sessionToken = objResp["token"].ToString();
 			return myUser;
 
 		}
@@ -126,13 +129,13 @@ namespace ClickNDone.Core
 			client.Headers.Set ("X-Origin-Token",deviceToken);
 			client.Headers.Set ("User-Agent","IOS7");
 
-			string url = Constants.WebServiceHost + "cnd-api/business/all?allowanceToken="+sessionToken;
+			string url = Constants.WebServiceHost + "allcategories";
 
 			var responseString = await client.DownloadStringTaskAsync (url);
 			var objResp = JObject.Parse (responseString);
 			List<Category> categoriesRet = new List<Category>();
 
-			foreach(var cat in objResp["categories"])
+			foreach(var cat in objResp["category"])
 			{
 				List<Category> subCategories = new List<Category>();
 				Category category = new Category ();
@@ -168,6 +171,8 @@ namespace ClickNDone.Core
 			client.Headers.Set ("X-Origin-Token",deviceToken);
 			client.Headers.Set ("User-Agent","IOS7");
 
+			string url = Constants.WebServiceHost + "requestservice";
+
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
 			serviceRequestAttributes.Add ("comments", order.Comments);
 			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32(order.MinCost));
@@ -177,8 +182,6 @@ namespace ClickNDone.Core
 			serviceRequestAttributes.Add ("allowanceToken", sessionToken);
 
 			var serviceRequestJson = JsonConvert.SerializeObject (serviceRequestAttributes);
-
-			string url = Constants.WebServiceHost + "cnd-api/service/"+order.Category.Convention+"/bookRequest?allowanceToken="+sessionToken;
 
 			var response = await client.UploadStringTaskAsync (url, "PUT", serviceRequestJson);
 			var objResp = JObject.Parse (response);

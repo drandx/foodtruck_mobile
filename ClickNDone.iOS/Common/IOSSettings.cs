@@ -7,7 +7,7 @@ namespace ClickNDone.iOS
 {
 	public class IOSSettings:Settings
 	{
-		public override void SaveUserLocallly() 
+		public override void SaveUserLocallly ()
 		{
 			var user = NSUserDefaults.StandardUserDefaults;
 			string jsonString = JsonConvert.SerializeObject (this.User);
@@ -19,9 +19,15 @@ namespace ClickNDone.iOS
 		{
 			var user = NSUserDefaults.StandardUserDefaults;
 			string jsonString = user.StringForKey ("UserJsonObj");
-			return JsonConvert.DeserializeObject<User> (jsonString);
-		}
+			User retUser = new User ();
+			try {
+				retUser = JsonConvert.DeserializeObject<User> (jsonString);
+			} catch (Exception exc) {
+				System.Diagnostics.Debug.WriteLine ("Problems loading user from file "+exc.Message);
+			}
+			return retUser;
 			
+		}
 	}
 }
 

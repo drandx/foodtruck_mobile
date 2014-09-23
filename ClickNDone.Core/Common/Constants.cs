@@ -10,7 +10,7 @@ namespace ClickNDone.Core
 
 	public class Constants
 	{
-		public const string WebServiceHost = "http://clickndonebackend.azurewebsites.net/Click_n_Done-Backend/rest/";
+		public const string WebServiceHost = "http://click-n-done.com/WebApp/service/api.php?rquest=";
 	}
 }
 

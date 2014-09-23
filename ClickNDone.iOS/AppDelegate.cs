@@ -76,15 +76,22 @@ namespace ClickNDone.iOS
 
 		public override void RegisteredForRemoteNotifications (UIApplication application, NSData deviceToken)
 		{
-			//TODO-Remove this property (_deviceToken)
-			_deviceToken = deviceToken.ToString();
-			deviceSettinigs.DeviceToken = deviceToken.ToString ();
-			// code to register with your server application goes here
+			try
+			{
+				string token = deviceToken.Description;
+				token = token.Substring(1, token.Length - 2);
+				deviceSettinigs.DeviceToken = token;
+				_deviceToken = token;
+			}
+			catch (Exception exc)
+			{
+				Console.WriteLine("*Error registering push: " + exc);
+			}
 		}
 
 		public override void FailedToRegisterForRemoteNotifications (UIApplication application , NSError error)
 		{
-			new UIAlertView("Error registering push notifications", error.LocalizedDescription, null, "OK", null).Show();
+			new UIAlertView("Error registering push notifications*", error.LocalizedDescription, null, "OK", null).Show();
 		}
 
 
