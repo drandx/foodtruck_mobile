@@ -45,16 +45,15 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 
-			//TODO - Fix ActionSheet 
 			//Date Selector
 			UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
-				//actionSheetDatePicker.Show ();
+				actionSheetDatePicker.Show ();
 			});
 			UITapGestureRecognizer labelDayTap = new UITapGestureRecognizer(() => {
-				//actionSheetDatePicker.Show ();
+				actionSheetDatePicker.Show ();
 			});
 			UITapGestureRecognizer labelYearTap = new UITapGestureRecognizer(() => {
-				//actionSheetDatePicker.Show ();
+				actionSheetDatePicker.Show ();
 			});
 			lblMonth.UserInteractionEnabled = true;
 			lblMonth.AddGestureRecognizer(labelTap);
@@ -88,16 +87,15 @@ namespace ClickNDone.iOS
 				this.selectedDate = dateTime;
 			};
 
-			//TODO - Fix ActionSheet 
 			//Time Selector
 			UITapGestureRecognizer labelHourTap = new UITapGestureRecognizer(() => {
-				//actionSheetTimePicker.Show ();
+				actionSheetTimePicker.Show ();
 			});
 			UITapGestureRecognizer labelMinuteTap = new UITapGestureRecognizer(() => {
-				//actionSheetTimePicker.Show ();
+				actionSheetTimePicker.Show ();
 			});
 			UITapGestureRecognizer labelAMPMTap = new UITapGestureRecognizer(() => {
-				//actionSheetTimePicker.Show ();
+				actionSheetTimePicker.Show ();
 			});
 
 			lblHour.UserInteractionEnabled = true;

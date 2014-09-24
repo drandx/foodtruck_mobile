@@ -11,6 +11,9 @@ namespace ClickNDone.iOS
 {
 	public partial class TermsConditionsController : UIViewController
 	{
+
+		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+
 		public TermsConditionsController ()
 		{
 			System.Diagnostics.Debug.Write ("Init this shit");
@@ -18,20 +21,33 @@ namespace ClickNDone.iOS
 
 		readonly TermsConditionsViewModel termsViewModel = (TermsConditionsViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(TermsConditionsViewModel));
 
-		public override async void ViewDidLoad ()
+		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
-			try 
+			//TODO-Start using the service for terms and conditions.
+			/*try 
 			{
-				var terms = await termsViewModel.GetTermsConditions();
-				textTerms.Text = terms.terms;
-				textConditions.Text = terms.conditions;
+				//var terms = await termsViewModel.GetTermsConditions();
+				//textTerms.Text = terms.terms;
+				//textConditions.Text = terms.conditions;
 			}
 			catch (Exception exc)
 			{
 				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
-			}
+			}*/
+			if(loginViewModel.UserType.Equals(UserType.CONSUMER))
+				textTerms.Text = "Consumer ** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
+					"labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+					"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum " +
+					"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui " +
+					"officia deserunt mollit anim id est laborum";
+			else
+				textTerms.Text = "Supplier ** Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut " +
+					"labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut " +
+					"aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum " +
+					"dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui " +
+					"officia deserunt mollit anim id est laborum";
+
 		}
 
 		public TermsConditionsController (IntPtr handle) : base (handle)
