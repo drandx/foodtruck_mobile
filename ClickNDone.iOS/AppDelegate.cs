@@ -67,8 +67,8 @@ namespace ClickNDone.iOS
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(OrdersModel),new OrdersModel());
 
 			//Push Notifications
-			UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge;
-			UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes);
+			//UIRemoteNotificationType notificationTypes = UIRemoteNotificationType.Alert | UIRemoteNotificationType.Badge;
+			//UIApplication.SharedApplication.RegisterForRemoteNotificationTypes(notificationTypes);
 
 			return true;
 
