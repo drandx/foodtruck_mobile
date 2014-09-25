@@ -12,5 +12,12 @@ namespace ClickNDone.iOS
 		public SugerenciasController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.LoadLeftbarButton ();
+			this.AddKeyboarListeners ();
+		}
 	}
 }

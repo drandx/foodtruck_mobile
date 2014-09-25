@@ -19,6 +19,8 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
+			this.LoadLeftbarButton ();
 			var user = UserModel.User;
 			this.txtEmail.Text = user.email;
 			this.txtName.Text = user.names;

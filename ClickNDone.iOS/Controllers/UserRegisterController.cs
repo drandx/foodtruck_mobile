@@ -8,7 +8,7 @@ using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class UserRegisterController : UIViewController
+	public partial class UserRegisterController : MyViewController
 	{
 		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 
@@ -20,6 +20,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
 
 			btnRegister.TouchUpInside += async(sender, e) =>
 			{
@@ -58,13 +59,7 @@ namespace ClickNDone.iOS
 			txtPhoneNumber.Text = "";
 			txtPassword.Text = "";
 		}
-
-		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
-		{
-			base.TouchesBegan (touches, evt);
-			this.View.EndEditing (true);
-		}
-
+			
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(false);

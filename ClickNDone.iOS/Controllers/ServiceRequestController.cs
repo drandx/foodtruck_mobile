@@ -8,7 +8,7 @@ using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class ServiceRequestController : UIViewController
+	public partial class ServiceRequestController : MyViewController
 	{
 
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
@@ -21,6 +21,7 @@ namespace ClickNDone.iOS
 		public override async void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
 			try {
 				var ret = await ordersModel.RequestService ();
 				new UIAlertView("Response!", ret, null, "Ok").Show();

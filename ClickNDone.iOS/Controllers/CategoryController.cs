@@ -17,8 +17,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-
-
+			this.LoadLeftbarButton ();
 		}
 	}
 }

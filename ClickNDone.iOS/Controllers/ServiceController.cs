@@ -9,7 +9,7 @@ using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class ServiceController : UIViewController
+	public partial class ServiceController : MyViewController
 	{
 		ActionSheetDatePicker actionSheetDatePicker;
 		ActionSheetDatePicker actionSheetTimePicker;
@@ -44,6 +44,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
 
 			//Date Selector
 			UITapGestureRecognizer labelTap = new UITapGestureRecognizer(() => {
@@ -144,12 +145,6 @@ namespace ClickNDone.iOS
 
 			this.SetupPickers();
 
-		}
-
-		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)
-		{
-			base.TouchesBegan (touches, evt);
-			this.View.EndEditing (true);
 		}
 
 		private void SetupPickers()
