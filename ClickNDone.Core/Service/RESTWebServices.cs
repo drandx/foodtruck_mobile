@@ -40,8 +40,8 @@ namespace ClickNDone.Core
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 
 			LoginObj loginObj = new LoginObj ();
-			loginObj.password = password;
-			loginObj.username = username;
+			loginObj.pwd = password;
+			loginObj.email = username;
 			loginObj.userType = userType.ToString();
 
 			var json = JsonConvert.SerializeObject (loginObj);
@@ -56,11 +56,14 @@ namespace ClickNDone.Core
 			User user = new User ();
 			user.password = password;
 			user.email = objResp["email"].ToString();
-			user.names = objResp["fullName"].ToString();
-			user.sessionToken = objResp["token"].ToString();
+			user.names = objResp["names"].ToString();
+			//TODO-Use this property to store session token
+			//user.sessionToken = objResp["token"].ToString();
+			user.sessionToken = "";
 			user.userType = objResp["userType"].ToString();
 			user.birthAge = objResp["birthAge"].ToString();
-			user.mobile = objResp["cellphone"].ToString();
+			//TODO-Include campo cellphone
+			//user.mobile = objResp["cellphone"].ToString();
 
 			return user;
 		}
@@ -88,7 +91,7 @@ namespace ClickNDone.Core
 		 */
 		public async Task<User> Register (User user, String deviceToken)
 		{
-			string url = Constants.WebServiceHost + "auth/signup";
+			string url = Constants.WebServiceHost + "signup";
 
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
@@ -97,7 +100,7 @@ namespace ClickNDone.Core
 			client.Headers.Set ("User-Agent","IOS7");
 
 			IDictionary<String,Object> userAttributes = new Dictionary<string, object> ();
-			userAttributes.Add ("username", user.mobile);
+			userAttributes.Add ("username", user.email);
 			userAttributes.Add ("password", user.password);
 			userAttributes.Add ("email", user.email);
 			userAttributes.Add ("names", user.names);
@@ -183,9 +186,9 @@ namespace ClickNDone.Core
 
 			var serviceRequestJson = JsonConvert.SerializeObject (serviceRequestAttributes);
 
-			var response = await client.UploadStringTaskAsync (url, "PUT", serviceRequestJson);
+			var response = await client.UploadStringTaskAsync (url, "POST", serviceRequestJson);
 			var objResp = JObject.Parse (response);
-			return response;
+			return objResp["serviceID"].ToString();
 		}
 		/*
 		 * 

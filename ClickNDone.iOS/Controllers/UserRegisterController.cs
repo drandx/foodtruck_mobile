@@ -56,6 +56,7 @@ namespace ClickNDone.iOS
 			txtLastName.Text = "";
 			txtName.Text = "";
 			txtPhoneNumber.Text = "";
+			txtPassword.Text = "";
 		}
 
 		public override void TouchesBegan (MonoTouch.Foundation.NSSet touches, UIEvent evt)

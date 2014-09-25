@@ -27,8 +27,7 @@ namespace ClickNDone.iOS
 				loginViewModel.Username = txtEmail.Text;
 				loginViewModel.Password = txtPassword.Text;
 				try {
-					//TODO-Remove comments to work with real login.
-					//await loginViewModel.Login();
+					await loginViewModel.Login();
 					PerformSegue("OnLogin", this);
 				}
 				catch (Exception exc)

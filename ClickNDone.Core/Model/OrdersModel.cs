@@ -32,7 +32,7 @@ namespace ClickNDone.Core
 				serviceRequest.ReservationDate = ReservationDate;
 				//TODO - Replace with dinamyc category.
 				Category selectedCat = new Category();
-				selectedCat.Convention = "BEA-NAIL";
+				selectedCat.Convention = "NAIL";
 				serviceRequest.Category = selectedCat;
 				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
 
