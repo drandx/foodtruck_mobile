@@ -63,7 +63,7 @@ namespace ClickNDone.Core
 			user.userType = objResp["userType"].ToString();
 			user.birthAge = objResp["birthAge"].ToString();
 			//TODO-Include campo cellphone
-			//user.mobile = objResp["cellphone"].ToString();
+			user.mobile = objResp["cellphone"].ToString();
 
 			return user;
 		}

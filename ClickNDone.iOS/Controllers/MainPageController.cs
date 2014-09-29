@@ -14,7 +14,7 @@ namespace ClickNDone.iOS
 	{
 		public static FlyoutNavigationController navigation;
 		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
-
+		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 
 		public MainPageController (IntPtr handle) : base (handle)
 		{
@@ -25,44 +25,66 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 
 			try {
-				await categoriesModel.GetCategories();
+				await categoriesModel.GetCategories ();
+			} catch (Exception exc) {
+				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
 			}
-			catch (Exception exc)
+			FlyoutNavigationController LateralBar = new FlyoutNavigationController();
+
+			if (loginViewModel.UserType.Equals(UserType.CONSUMER)) {
+				LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
+					NavigationRoot = new RootElement ("Menu") { //Here we create the root of the alements
+						new Section () {//with this code we create Sections
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_categorias.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historial.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
+						},
+					},
+					ViewControllers = new [] {//here we link Controllers to the elements on the sections
+						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
+						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
+						this.Storyboard.InstantiateViewController ("CategoryController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
+					}
+				};
+			}
+			else if(loginViewModel.UserType.Equals(UserType.SUPPLIER))
 			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
+					NavigationRoot = new RootElement ("Menu") { //Here we create the root of the alements
+						new Section () {//with this code we create Sections
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_agenda.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historico.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
+						},
+					},
+					ViewControllers = new [] {//here we link Controllers to the elements on the sections
+						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
+						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
+						this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("AgendaController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
+					}
+				};
+
 			}
 
-			var LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
-				NavigationRoot = new RootElement("Menu"){ //Here we create the root of the alements
-					new Section(){//with this code we create Sections
-						new MyImageStringElement ("",UIImage.FromFile ("images/btn_menu_home.png"),true),
-						new MyImageStringElement ("",UIImage.FromFile ("images/btn_menu_perfil.png"),false),
-						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_categorias.png"),false),
-						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_historial.png"),false),
-						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_ranking.png"),false),
-						new MyImageStringElement("",UIImage.FromFile("images/btn_menu_sugerencias.png"),false),
-						//new StyledStringElement ("Perfil")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						//new StyledStringElement ("Categorias")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						//new StyledStringElement ("Historial de Servicios")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-						//new StyledStringElement ("Mi Ranking")    { BackgroundColor = UIColor.Clear, TextColor = UIColor.White },
-					},
-				},
-				ViewControllers =  new [] {//here we link Controllers to the elements on the sections
-					this.Storyboard.InstantiateViewController("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
-					this.Storyboard.InstantiateViewController("ProfileController") as UIViewController,//here we create the instances for the Controllers
-					this.Storyboard.InstantiateViewController("CategoryController") as UIViewController,
-					this.Storyboard.InstantiateViewController("HistorialController") as UIViewController,
-					this.Storyboard.InstantiateViewController("RankingController") as UIViewController,
-					this.Storyboard.InstantiateViewController("SugerenciasController") as UIViewController,
-				}
-			};
 
 			//LateralBar.NavigationTableView.BackgroundView = new UIImageView (UIImage.FromBundle ("images/Background-Party.png"));
-			UIColor bgColor = UIColor.FromRGB (0,167,229);
+			UIColor bgColor = UIColor.FromRGB (0, 167, 229);
 			LateralBar.NavigationTableView.BackgroundColor = bgColor;
 			LateralBar.NavigationTableView.SeparatorColor = UIColor.Clear;
 
-			LateralBar.ToggleMenu();
+			LateralBar.ToggleMenu ();
 			View.AddSubview (LateralBar.View);
 			navigation = LateralBar;
 

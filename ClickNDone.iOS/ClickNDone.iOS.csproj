@@ -159,6 +159,8 @@
     <BundleResource Include="images\btn_menu_historial%402x.png" />
     <BundleResource Include="images\btn_menu_perfil%402x.png" />
     <BundleResource Include="images\btn_menu_perfil_750%402x.png" />
+    <BundleResource Include="images\btn_menu_agenda%402x.png" />
+    <BundleResource Include="images\btn_menu_historico%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -266,6 +268,10 @@
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
       <Link>Core\Model\OrdersModel.cs</Link>
+    </Compile>
+    <Compile Include="Controllers\AgendaServiciosController.cs" />
+    <Compile Include="Controllers\AgendaServiciosController.designer.cs">
+      <DependentUpon>AgendaServiciosController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
