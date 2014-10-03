@@ -4,11 +4,16 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class HomeLogoController : MyViewController
 	{
+
+		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+
+
 		public HomeLogoController (IntPtr handle) : base (handle)
 		{
 		}
@@ -17,6 +22,9 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.LoadLeftbarButton ();
+
+			if(loginViewModel.UserType.Equals(UserType.CONSUMER))
+				btnProveedorServico.Hidden = loginViewModel.UserType.Equals (UserType.SUPPLIER) ? false : true;
 		}
 	}
 }
