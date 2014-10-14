@@ -6,14 +6,15 @@ namespace ClickNDone.Core
 
 	public class User
 	{
+		public int id { get; set;}
 		public string password { get; set; }
-		public string birthAge { get; set;}
+		public DateTime birthAge { get; set;}
 		public string email { get; set;}
 		public string names { get; set;}
 		public string surnames { get; set;}
 		public string mobile { get; set;}
 		public string gender { get; set;}
-		public string userType { get; set;}
+		public UserType userType { get; set;}
 		public string urlAvatar { get; set;}
 		public string sessionToken { get; set;}
 	}
@@ -33,6 +34,7 @@ namespace ClickNDone.Core
 
 	public class Category
 	{
+		public int Id { get; set;}
 		public string Name { get; set; }
 		public string Description { get; set; }
 		public string Convention { get; set; }
@@ -47,6 +49,29 @@ namespace ClickNDone.Core
 		public Double MaxCost { get; set; }
 		public DateTime ReservationDate { get; set; }
 		public Category Category { get; set;}
+	}
+
+	public class Order
+	{
+		public int Id { get; set;}
+		public int Status { get; set; }
+		public int UserId { get; set;}
+		public int SupplierId { get; set;}
+		public string ClickCode { get; set;}
+		public int CategoryId { get; set;}
+		public int SubCategoryId { get; set;}
+		public DateTime ReservationDate { get; set; }
+		public DateTime ReservationTime { get; set; }
+		public Double MinCost { get; set; }
+		public Double MaxCost { get; set; }
+		public string Location { get; set; }
+		public string Reference { get; set; }
+		public string Comments { get; set; }
+
+		public Category SubCategory { get; set;}
+		public User Supplier { get; set;}
+		public User User { get; set;}
+
 	}
 
 }

@@ -161,6 +161,7 @@
     <BundleResource Include="images\btn_menu_perfil_750%402x.png" />
     <BundleResource Include="images\btn_menu_agenda%402x.png" />
     <BundleResource Include="images\btn_menu_historico%402x.png" />
+    <BundleResource Include="images\btn_solicitar_telefono%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -272,6 +273,14 @@
     <Compile Include="Controllers\AgendaServiciosController.cs" />
     <Compile Include="Controllers\AgendaServiciosController.designer.cs">
       <DependentUpon>AgendaServiciosController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierConfirmServiceController.cs" />
+    <Compile Include="Controllers\SupplierConfirmServiceController.designer.cs">
+      <DependentUpon>SupplierConfirmServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierServiceController.cs" />
+    <Compile Include="Controllers\SupplierServiceController.designer.cs">
+      <DependentUpon>SupplierServiceController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

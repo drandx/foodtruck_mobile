@@ -48,7 +48,7 @@ namespace ClickNDone.Core
 				user.password = Password;
 				user.mobile = PhoneNumber;
 				user.email = Email;
-				user.userType = UserType.ToString();
+				user.userType = UserType;
 				user.names = Name;
 				user.surnames = LastName;
 				user.urlAvatar = Image;
@@ -60,7 +60,7 @@ namespace ClickNDone.Core
 				retUser.surnames = LastName;
 				retUser.email = Email;
 				retUser.mobile = PhoneNumber;
-				retUser.userType = UserType.ToString();
+				retUser.userType = UserType;
 				settings.User = retUser;
 				settings.SaveUserLocallly();
 
