@@ -1225,10 +1225,10 @@
             </objects>
             <point key="canvasLocation" x="2075" y="-1200"/>
         </scene>
-        <!--View Controller-->
+        <!--Sub Category Controller-->
         <scene sceneID="GaD-eo-heD">
             <objects>
-                <viewController id="lef-tA-DY7" sceneMemberID="viewController">
+                <viewController id="lef-tA-DY7" customClass="SubCategoryController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="slY-Kf-wVy"/>
                         <viewControllerLayoutGuide type="bottom" id="uxH-ij-DOg"/>
@@ -1238,51 +1238,37 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eQn-wM-qiE">
-                                <rect key="frame" x="20" y="89" width="130" height="45"/>
+                                <rect key="frame" x="20" y="73" width="130" height="45"/>
                                 <state key="normal" backgroundImage="images/logo_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione el servicio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuL-v3-1BC">
-                                <rect key="frame" x="40" y="160" width="241" height="29"/>
+                                <rect key="frame" x="40" y="127" width="241" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QQ7-LF-yKM" customClass="MyUIButton">
-                                <rect key="frame" x="118" y="223" width="104" height="30"/>
-                                <state key="normal" title="plomero">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Rsh-RU-Aom" kind="push" id="MZE-yt-Vyh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjV-0x-45I" customClass="MyUIButton">
-                                <rect key="frame" x="118" y="266" width="104" height="30"/>
-                                <state key="normal" title="cerrajero">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Rsh-RU-Aom" kind="push" id="EIM-Ui-ChW"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hogar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ti3-aZ-L61">
-                                <rect key="frame" x="158" y="97" width="123" height="29"/>
+                                <rect key="frame" x="158" y="81" width="123" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-8R-Czy">
+                                <rect key="frame" x="0.0" y="164" width="320" height="352"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="SdF-OK-dxW">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="cDG-Ba-Qd7"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ScrollerButtons" destination="mIe-8R-Czy" id="Eps-U2-rPG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPH-0L-EUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3045,8 +3031,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="MZE-yt-Vyh"/>
         <segue reference="Eez-fW-20j"/>
+        <segue reference="SF2-Fs-KTj"/>
+        <segue reference="uHb-zl-3a4"/>
     </inferredMetricsTieBreakers>
 </document>

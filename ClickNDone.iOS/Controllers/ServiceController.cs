@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Collections.Generic;
 using ClickNDone.Core;
+using System.Drawing;
 
 namespace ClickNDone.iOS
 {
@@ -144,6 +145,8 @@ namespace ClickNDone.iOS
 			};
 
 			this.SetupPickers();
+
+
 
 		}
 

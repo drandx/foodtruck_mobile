@@ -282,6 +282,10 @@
     <Compile Include="Controllers\SupplierServiceController.designer.cs">
       <DependentUpon>SupplierServiceController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\SubCategoryController.cs" />
+    <Compile Include="Controllers\SubCategoryController.designer.cs">
+      <DependentUpon>SubCategoryController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
