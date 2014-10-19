@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="62F-m9-1Og">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="62F-m9-1Og">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -581,7 +581,7 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="nn4-gm-6cd">
                                 <rect key="frame" x="139" y="172" width="20" height="20"/>
                             </activityIndicatorView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="FJa-FO-wzl">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FJa-FO-wzl">
                                 <rect key="frame" x="20" y="129" width="280" height="272"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -653,9 +653,6 @@
                                 <state key="normal" backgroundImage="images/logo_beauty.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="YhC-Ik-GgF" kind="push" id="GqX-rZ-wYB"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione la categoria" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vXt-aZ-Qvz">
                                 <rect key="frame" x="20" y="104" width="183" height="29"/>
@@ -664,14 +661,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-FN-NMQ">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mhu-FN-NMQ">
                                 <rect key="frame" x="20" y="261" width="130" height="45"/>
                                 <state key="normal" backgroundImage="images/logo_home.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="lef-tA-DY7" kind="push" id="bkD-wM-ani"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salud y Belleza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-JI-cLG">
                                 <rect key="frame" x="158" y="183" width="123" height="29"/>
@@ -693,10 +687,16 @@
                     <navigationItem key="navigationItem" id="Jfm-v5-MpK">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="dOJ-Bc-5C3"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnBeauty" destination="MIF-2f-8oj" id="m9f-uW-rYD"/>
+                        <outlet property="btnHome" destination="mhu-FN-NMQ" id="ghy-Oa-A3Z"/>
+                        <segue destination="YhC-Ik-GgF" kind="push" identifier="onBEA" id="MMp-5Z-2ag"/>
+                        <segue destination="lef-tA-DY7" kind="push" identifier="onHOME" id="HGI-7A-xzJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLI-7f-QCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="-726"/>
+            <point key="canvasLocation" x="1542" y="-720"/>
         </scene>
         <!--Service Controller-->
         <scene sceneID="tv5-sJ-cO9">
@@ -1162,10 +1162,10 @@
             </objects>
             <point key="canvasLocation" x="3611" y="-738"/>
         </scene>
-        <!--View Controller-->
+        <!--Sub Category Controller-->
         <scene sceneID="exv-yk-m5y">
             <objects>
-                <viewController id="YhC-Ik-GgF" sceneMemberID="viewController">
+                <viewController id="YhC-Ik-GgF" customClass="SubCategoryController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7wv-Ej-r7R"/>
                         <viewControllerLayoutGuide type="bottom" id="TQl-ZL-t4R"/>
@@ -1175,51 +1175,38 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hhr-dF-dJP">
-                                <rect key="frame" x="20" y="102" width="130" height="45"/>
+                                <rect key="frame" x="20" y="69" width="130" height="45"/>
                                 <state key="normal" backgroundImage="images/logo_beauty.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione el servicio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m28-e8-NeZ">
-                                <rect key="frame" x="40" y="163" width="241" height="29"/>
+                                <rect key="frame" x="40" y="119" width="241" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQT-ud-5KY" customClass="MyUIButton">
-                                <rect key="frame" x="118" y="226" width="104" height="30"/>
-                                <state key="normal" title="manicurista">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Rsh-RU-Aom" kind="push" id="KNG-q3-xY9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Xv-Mj-KpK" customClass="MyUIButton">
-                                <rect key="frame" x="118" y="269" width="104" height="30"/>
-                                <state key="normal" title="peluqueria">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Rsh-RU-Aom" kind="push" id="SF2-Fs-KTj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salud y Belleza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGo-r6-zhj">
-                                <rect key="frame" x="158" y="110" width="123" height="29"/>
+                                <rect key="frame" x="158" y="77" width="123" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="1LW-DL-m1T">
+                                <rect key="frame" x="0.0" y="154" width="320" height="321"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="jlc-kv-TIk">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="xko-UM-akv"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="ScrollerButtons" destination="1LW-DL-m1T" id="o1b-au-VL8"/>
+                        <segue destination="Rsh-RU-Aom" kind="push" identifier="onBautyRequest" id="8u6-QS-s4s"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nu-GO-hdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1258,7 +1245,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-8R-Czy">
-                                <rect key="frame" x="0.0" y="164" width="320" height="352"/>
+                                <rect key="frame" x="0.0" y="164" width="320" height="313"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1268,6 +1255,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ScrollerButtons" destination="mIe-8R-Czy" id="Eps-U2-rPG"/>
+                        <segue destination="Rsh-RU-Aom" kind="push" identifier="onHomeRequest" id="R6n-7M-aYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPH-0L-EUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3031,8 +3019,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Eez-fW-20j"/>
-        <segue reference="SF2-Fs-KTj"/>
         <segue reference="uHb-zl-3a4"/>
+        <segue reference="8u6-QS-s4s"/>
+        <segue reference="Eez-fW-20j"/>
     </inferredMetricsTieBreakers>
 </document>

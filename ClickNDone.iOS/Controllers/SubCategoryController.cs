@@ -12,7 +12,7 @@ namespace ClickNDone.iOS
 {
 	public partial class SubCategoryController : UIViewController
 	{
-
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 		private float scrollBtnCursor = 0f;
 
 		public SubCategoryController (IntPtr handle) : base (handle)
@@ -22,11 +22,16 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			for(int i=0; i<=30; i++)
+			//TODO - Change the categories and subcategories id to the real one (Pending to get id from the service)
+			int i = 1;
+			foreach(Category item in categoriesModel.SelectedCategory.Subcategories)
 			{
-				UIButton btn = this.CreateButton (i,"Click Me "+i);
+				item.Id = i;
+				UIButton btn = this.CreateButton (item.Id,item.Name);
 				this.ScrollerButtons.Add (btn);
+				i = i + 1;
 			}
+
 		}
 
 		void handler (Object sender, EventArgs args)
@@ -35,6 +40,11 @@ namespace ClickNDone.iOS
 			Console.WriteLine ("There You Go: "+test.Tag);
 		}
 
+		/**
+		 *
+		 *
+		 * 
+		 * */
 		private UIButton CreateButton(int catId,string title)
 		{
 			var x = UIScreen.MainScreen.Bounds.Width;
