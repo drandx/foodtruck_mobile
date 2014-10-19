@@ -32,13 +32,13 @@ namespace ClickNDone.iOS
 			if (pressedButton.Tag == 0) 
 			{
 				selectedCat = categoriesModel.GetCategoryById ("BEA");
-				PerformSegue("onBEA", this);
+				PerformSegue("OnBEA", this);
 
 			}
 			else if(pressedButton.Tag == 1)
 			{
 				selectedCat = categoriesModel.GetCategoryById ("HOME");
-				PerformSegue("onHOME", this);
+				PerformSegue("OnHOME", this);
 
 			}
 			categoriesModel.SelectedCategory = selectedCat;

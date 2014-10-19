@@ -36,8 +36,12 @@ namespace ClickNDone.iOS
 
 		void handler (Object sender, EventArgs args)
 		{
-			UIButton test = (UIButton)sender;
-			Console.WriteLine ("There You Go: "+test.Tag);
+			UIButton selectedSubcategory = (UIButton)sender;
+			categoriesModel.SelectedSubcategory = categoriesModel.GetSubCategory (selectedSubcategory.Tag);
+			if(categoriesModel.SelectedCategory.Convention == "BEA")
+				PerformSegue("OnBautyRequest", this);
+			else
+				PerformSegue("OnHomeRequest", this);
 		}
 
 		/**

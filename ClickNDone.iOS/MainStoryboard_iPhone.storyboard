@@ -690,8 +690,8 @@
                     <connections>
                         <outlet property="btnBeauty" destination="MIF-2f-8oj" id="m9f-uW-rYD"/>
                         <outlet property="btnHome" destination="mhu-FN-NMQ" id="ghy-Oa-A3Z"/>
-                        <segue destination="YhC-Ik-GgF" kind="push" identifier="onBEA" id="MMp-5Z-2ag"/>
-                        <segue destination="lef-tA-DY7" kind="push" identifier="onHOME" id="HGI-7A-xzJ"/>
+                        <segue destination="YhC-Ik-GgF" kind="push" identifier="OnBEA" id="MMp-5Z-2ag"/>
+                        <segue destination="lef-tA-DY7" kind="push" identifier="OnHOME" id="HGI-7A-xzJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLI-7f-QCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1205,7 +1205,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ScrollerButtons" destination="1LW-DL-m1T" id="o1b-au-VL8"/>
-                        <segue destination="Rsh-RU-Aom" kind="push" identifier="onBautyRequest" id="8u6-QS-s4s"/>
+                        <segue destination="Rsh-RU-Aom" kind="push" identifier="OnBautyRequest" id="8u6-QS-s4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nu-GO-hdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1255,12 +1255,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ScrollerButtons" destination="mIe-8R-Czy" id="Eps-U2-rPG"/>
-                        <segue destination="Rsh-RU-Aom" kind="push" identifier="onHomeRequest" id="R6n-7M-aYX"/>
+                        <segue destination="Rsh-RU-Aom" kind="push" identifier="OnHomeRequest" id="R6n-7M-aYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WPH-0L-EUO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075" y="-484"/>
+            <point key="canvasLocation" x="2075" y="-354"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="949-3a-fxu">
@@ -3019,8 +3019,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uHb-zl-3a4"/>
         <segue reference="8u6-QS-s4s"/>
+        <segue reference="uHb-zl-3a4"/>
         <segue reference="Eez-fW-20j"/>
     </inferredMetricsTieBreakers>
 </document>

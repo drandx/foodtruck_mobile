@@ -10,6 +10,7 @@ namespace ClickNDone.Core
 	{
 		public List<Category> Categories{ get; set; }
 		public Category SelectedCategory;
+		public Category SelectedSubcategory;
 
 		public async Task GetCategories()
 		{
@@ -24,9 +25,15 @@ namespace ClickNDone.Core
 
 		}
 
-		public Category GetCategoryById(string categoryId)
+		public Category GetCategoryById(string categoryConvention)
 		{
-			Category result = Categories.Where (c => c.Convention == categoryId).First();
+			Category result = Categories.Where (c => c.Convention == categoryConvention).First();
+			return result;
+		}
+
+		public Category GetSubCategory(int subCatId)
+		{
+			Category result = SelectedCategory.Subcategories.Where (c => c.Id == subCatId).First();
 			return result;
 		}
 
