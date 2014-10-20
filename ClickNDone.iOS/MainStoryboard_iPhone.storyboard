@@ -1549,10 +1549,10 @@
             </objects>
             <point key="canvasLocation" x="4572" y="-738"/>
         </scene>
-        <!--Service Request Controller-->
+        <!--View Controller-->
         <scene sceneID="Suz-RE-u46">
             <objects>
-                <viewController id="Txz-Pe-gBX" customClass="ServiceRequestController" sceneMemberID="viewController">
+                <viewController id="Txz-Pe-gBX" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ggY-zA-Swf"/>
                         <viewControllerLayoutGuide type="bottom" id="bQK-n9-0yC"/>
