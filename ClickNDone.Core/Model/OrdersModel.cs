@@ -5,6 +5,7 @@ namespace ClickNDone.Core
 {
 	public class OrdersModel:BaseViewModel
 	{
+		public int RequestedOrderId { get; set;}
 		public string Location { get; set; }
 		public string Comments { get; set; }
 		public Double MinCost { get; set; }
@@ -16,7 +17,7 @@ namespace ClickNDone.Core
 
 		}
 
-		public async Task<String> RequestService()
+		public async Task<bool> RequestService(Category selectedSubCategroy, Action RequestCallback)
 		{
 			if (string.IsNullOrEmpty(Location) || string.IsNullOrEmpty(Comments) || string.IsNullOrEmpty(MinCost.ToString()) 
 				|| string.IsNullOrEmpty(MaxCost.ToString()) || string.IsNullOrEmpty(ReservationDate.ToString()))
@@ -30,16 +31,29 @@ namespace ClickNDone.Core
 				serviceRequest.MinCost = MinCost;
 				serviceRequest.MaxCost = MaxCost;
 				serviceRequest.ReservationDate = ReservationDate;
-				//TODO - Replace with dinamyc category.
-				Category selectedCat = new Category();
-				selectedCat.Convention = "NAIL";
-				serviceRequest.Category = selectedCat;
+				serviceRequest.Category = selectedSubCategroy;
 				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
-
-				return ret;
+				this.RequestedOrderId = ret;
+				return true;
 			}
 			finally {
 				IsBusy = false;
+				RequestCallback();
+			}
+
+		}
+
+		public async Task<Order> GetOrder(int orderId)
+		{
+			try
+			{
+				//IsBusy = true;
+				var retOrder = await service.GetOrder(orderId);
+				return retOrder;
+
+			}
+			finally {
+				//IsBusy = false;
 			}
 
 		}

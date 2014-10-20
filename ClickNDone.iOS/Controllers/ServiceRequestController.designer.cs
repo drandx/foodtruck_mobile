@@ -12,9 +12,15 @@ namespace ClickNDone.iOS
 	[Register ("ServiceRequestController")]
 	partial class ServiceRequestController
 	{
+		[Outlet]
+		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
+			}
 		}
 	}
 }

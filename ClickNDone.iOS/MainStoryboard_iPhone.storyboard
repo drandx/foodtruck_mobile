@@ -564,7 +564,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7J-3o-5WZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="646"/>
+            <point key="canvasLocation" x="1016" y="690"/>
         </scene>
         <!--Terms Conditions Controller-->
         <scene sceneID="nJP-NG-lyb">
@@ -842,9 +842,6 @@
                                 <state key="normal" backgroundImage="images/btn_consultar.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Edl-EB-krx" kind="push" id="0Wh-P3-vOh"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qUv-Jk-9yN" customClass="MyUITextField">
                                 <rect key="frame" x="91" y="237" width="75" height="30"/>
@@ -870,6 +867,7 @@
                         <outlet property="txtComments" destination="mto-4P-5x6" id="gff-Aa-aDr"/>
                         <outlet property="txtFromValue" destination="qUv-Jk-9yN" id="RAd-BQ-gHF"/>
                         <outlet property="txtToValue" destination="dUb-53-NIh" id="foD-Dt-BXK"/>
+                        <segue destination="Edl-EB-krx" kind="push" identifier="OnRequestService" id="sFD-bf-64n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAJ-64-B3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -940,12 +938,19 @@
                                     <segue destination="Txz-Pe-gBX" kind="push" id="k0e-hO-2Fz"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-kn-WkG">
+                                <rect key="frame" x="140" y="310" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="vdZ-le-Nnm">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="UHW-1H-K7J"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="indicator" destination="yaq-kn-WkG" id="ztc-zg-t2U"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hI-5D-icn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1805,7 +1810,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QAP-BN-V0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="1282"/>
+            <point key="canvasLocation" x="1024" y="1366"/>
         </scene>
         <!--Sugerencias Controller-->
         <scene sceneID="Ll7-40-uT2">
@@ -2030,140 +2035,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d1r-Sf-IsA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1558" y="2902"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="JPo-bs-Lt5">
-            <objects>
-                <navigationController storyboardIdentifier="HistorialController" definesPresentationContext="YES" toolbarHidden="NO" id="FfJ-X8-65F" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gxg-2D-k6A">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="yWF-Ey-pdE">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
-                    <connections>
-                        <segue destination="rLe-ak-ojo" kind="relationship" relationship="rootViewController" id="8oA-Hn-aOJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Tp-qo-Ob2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1024" y="2016"/>
-        </scene>
-        <!--Category Controller-->
-        <scene sceneID="fne-fE-dla">
-            <objects>
-                <viewController id="rLe-ak-ojo" customClass="CategoryController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gSd-OX-dH8"/>
-                        <viewControllerLayoutGuide type="bottom" id="q85-Ct-7sl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g9I-We-rQI">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Historial de Servicios" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDb-cw-OVv">
-                                <rect key="frame" x="56" y="156" width="209" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mgj-95-iOU" customClass="MyUIButton">
-                                <rect key="frame" x="143" y="196" width="120" height="30"/>
-                                <state key="normal" title="Agosto 14 2014">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DQ0-cm-SI9" kind="push" id="bJU-NQ-SWX"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfb-5U-XuH" customClass="MyUIButton">
-                                <rect key="frame" x="143" y="228" width="120" height="30"/>
-                                <state key="normal" title="Julio 8 2014">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DQ0-cm-SI9" kind="push" id="pWJ-cy-LB3"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Servicio 1 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZf-ov-Qe4">
-                                <rect key="frame" x="56" y="197" width="86" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Servicio 2 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlc-xh-C09">
-                                <rect key="frame" x="56" y="229" width="86" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Servicio 3 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z6D-TG-Xpu">
-                                <rect key="frame" x="56" y="261" width="86" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Servicio 4 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89B-al-Kwo">
-                                <rect key="frame" x="56" y="293" width="86" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Servicio 5 " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hn0-ES-eqt">
-                                <rect key="frame" x="56" y="325" width="86" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-xc-Az2" customClass="MyUIButton">
-                                <rect key="frame" x="143" y="260" width="120" height="30"/>
-                                <state key="normal" title="Julio 7 2014">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DQ0-cm-SI9" kind="push" id="WiF-v9-KzQ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5X-JQ-rbD" customClass="MyUIButton">
-                                <rect key="frame" x="143" y="293" width="120" height="30"/>
-                                <state key="normal" title="Julio 6 2014">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DQ0-cm-SI9" kind="push" id="Eez-fW-20j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjY-pk-hht" customClass="MyUIButton">
-                                <rect key="frame" x="143" y="325" width="120" height="30"/>
-                                <state key="normal" title="Julio 5 2014">
-                                    <color key="titleColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="DQ0-cm-SI9" kind="push" id="awQ-S2-8Jw"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="JLC-01-rjf">
-                        <barButtonItem key="backBarButtonItem" title="Atras" id="e5o-bu-THq"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oNp-JQ-SvB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1564" y="2016"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="fZ5-jd-qNN">
@@ -3020,7 +2891,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8u6-QS-s4s"/>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="Eez-fW-20j"/>
+        <segue reference="D8J-HL-GE4"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -164,7 +164,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<String> RequestService (ServiceRequest order, String sessionToken, String deviceToken)
+		public async Task<int> RequestService (ServiceRequest order, String sessionToken, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
@@ -174,6 +174,7 @@ namespace ClickNDone.Core
 
 			string url = Constants.WebServiceHost + "requestservice";
 
+			//TODO - Send Caqtegory and Subcategory IDS. How?
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
 			serviceRequestAttributes.Add ("comments", order.Comments);
 			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32 (order.MinCost));
@@ -186,7 +187,7 @@ namespace ClickNDone.Core
 
 			var response = await client.UploadStringTaskAsync (url, "POST", serviceRequestJson);
 			var objResp = JObject.Parse (response);
-			return objResp ["serviceID"].ToString ();
+			return Convert.ToInt16(objResp ["serviceID"].ToString ());
 		}
 		/*
 		 * 
@@ -230,8 +231,9 @@ namespace ClickNDone.Core
 		public async Task<Order> GetOrder (int orderId)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
-			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
 			client.Headers.Set ("X-Origin-OS", "Iphone 7");
+			client.Headers.Set ("X-Origin-Token", "");
 			client.Headers.Set ("User-Agent", "IOS7");
 
 			string url = Constants.WebServiceHost + "GetOrderDetail";
@@ -246,16 +248,23 @@ namespace ClickNDone.Core
 
 			Order order = new Order ();
 			order.Id = orderId;
-			order.Status = Convert.ToInt16 (objResp ["status"].ToString ());
-			order.UserId = Convert.ToInt16 (objResp ["id_user"].ToString ());
-			order.SupplierId = Convert.ToInt16 (objResp ["id_supplier"].ToString ());
+
+			var status = objResp ["status"].ToString ();
+			var idUser = objResp ["id_user"].ToString ();
+			var idSupplier = objResp ["id_proveedor"].ToString ();
+			var catId = objResp ["id_category"].ToString ();
+			var subCatId = objResp ["id_subcategory"].ToString();
+
+			order.Status = status == "" || status == null ? 0 : Convert.ToInt32 (status);
+			order.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
+			order.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
 			order.ClickCode = objResp ["code_click"].ToString ();
-			order.CategoryId = Convert.ToInt16 (objResp ["id_category"].ToString ());
-			order.SubCategoryId = Convert.ToInt16 (objResp ["id_subcategory"]);
+			order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
+			order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
 			order.ReservationDate = new DateTime ();
 			order.ReservationTime = new DateTime ();
-			order.MinCost = Convert.ToDouble (objResp ["minimum_cost"]);
-			order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"]);
+			order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString());
+			order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString());
 			order.Location = objResp ["location"].ToString ();
 			order.Reference = objResp ["reference"].ToString ();
 			order.Comments = objResp ["comments"].ToString ();
@@ -318,17 +327,10 @@ namespace ClickNDone.Core
 		*/
 		public async Task<bool> ChangeOrderState (int orderId, int stateId)
 		{
-			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
-			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
-			client.Headers.Set ("X-Origin-OS", "Iphone 7");
-			client.Headers.Set ("User-Agent", "IOS7");
-
 			string url = Constants.WebServiceHost + "change_order_state";
-
 			IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
 			orderAttributes.Add ("STATE", stateId);
 			orderAttributes.Add ("OrderID", orderId);
-
 			var orderJson = JsonConvert.SerializeObject (orderAttributes);
 			await client.UploadStringTaskAsync (url, "POST", orderJson);
 

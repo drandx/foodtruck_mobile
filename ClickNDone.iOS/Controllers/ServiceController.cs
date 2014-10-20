@@ -142,6 +142,13 @@ namespace ClickNDone.iOS
 				ordersModel.ReservationDate = finalDateTime;
 				ordersModel.Comments = txtComments.Text;
 				ordersModel.Location = txtAddress.Text;
+
+				if(string.IsNullOrEmpty(ordersModel.Location) || string.IsNullOrEmpty(ordersModel.Comments) || string.IsNullOrEmpty(ordersModel.MinCost.ToString()) 
+					|| string.IsNullOrEmpty(ordersModel.MaxCost.ToString()) || string.IsNullOrEmpty(ordersModel.ReservationDate.ToString()))
+					new UIAlertView("Oops!", "Ingresa correctamente los campos", null, "Ok").Show();
+				else
+					PerformSegue("OnRequestService",this);
+			
 			};
 
 			this.SetupPickers();

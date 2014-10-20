@@ -286,6 +286,9 @@
     <Compile Include="Controllers\SubCategoryController.designer.cs">
       <DependentUpon>SubCategoryController.cs</DependentUpon>
     </Compile>
+    <Compile Include="..\ClickNDone.Core\Common\OrderStateTimer.cs">
+      <Link>Core\Common\OrderStateTimer.cs</Link>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

@@ -38,7 +38,7 @@ namespace ClickNDone.iOS
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_categorias.png"), false),
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historial.png"), false),
+							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historial.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
 						},
@@ -47,7 +47,7 @@ namespace ClickNDone.iOS
 						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("CategoryController") as UIViewController,
-						this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
+						//this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
 						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
 						this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
 					}
@@ -55,7 +55,7 @@ namespace ClickNDone.iOS
 			}
 			else if(loginViewModel.UserType.Equals(UserType.SUPPLIER))
 			{
-				LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
+				/*LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 					NavigationRoot = new RootElement ("Menu") { //Here we create the root of the alements
 						new Section () {//with this code we create Sections
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
@@ -74,7 +74,7 @@ namespace ClickNDone.iOS
 						this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
 						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
 					}
-				};
+				};*/
 
 			}
 

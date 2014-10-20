@@ -5,12 +5,14 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using ClickNDone.Core;
+using System.Threading;
 
 namespace ClickNDone.iOS
 {
 	public partial class ServiceRequestController : MyViewController
 	{
 
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
 
 		public ServiceRequestController (IntPtr handle) : base (handle)
@@ -23,13 +25,91 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 			this.AddKeyboarListeners ();
 			try {
-				var ret = await ordersModel.RequestService ();
-				new UIAlertView("Response!", ret, null, "Ok").Show();
+				await ordersModel.RequestService (categoriesModel.SelectedSubcategory, this.RequestServiceCallBack);
 			}
 			catch (Exception exc)
 			{
 				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
 			}
 		}
+		/**
+		 * 
+		 * 
+		 * */
+		async void CheckStatus(Object state) {
+			OrderStateTimer s = (OrderStateTimer) state;
+			try
+			{
+				Order ret = await ordersModel.GetOrder(ordersModel.RequestedOrderId);
+				if((ret.Status == 2) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
+				{
+					Console.WriteLine("disposing of timer...");
+					s.tmr.Dispose();
+					s.tmr = null;
+
+					if(ret.Status != 2)
+					{
+						//TODO-Change status to TimeOut
+						//Segue to the according
+					}
+					else
+					{
+						//Segue to the according screen
+					}
+
+				}
+				s.AttemptsCount++;
+			}
+			catch (Exception exc)
+			{
+				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+			}
+		}
+
+		/*
+		 * 
+		 * 
+		 * 
+		*/
+		private void RequestServiceCallBack()
+		{
+			try {
+				//Timer Code Starts Here
+				OrderStateTimer timerState = new OrderStateTimer();
+				TimerCallback timerDelegate = new TimerCallback(CheckStatus);
+				Timer timer = new Timer(timerDelegate, timerState, 10000, Constants.GET_ORDER_STATUS_WAIT_TIME);
+				timerState.tmr = timer;
+				while (timerState.tmr != null)
+					Thread.Sleep(0);
+				Console.WriteLine("Timer done.");
+				//Ends Timer Code
+			}
+			catch (Exception exc)
+			{
+				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+			}
+
+		}
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(false);
+			ordersModel.IsBusyChanged += OnIsBusyChanged;
+		}
+
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(false);
+			ordersModel.IsBusyChanged -= OnIsBusyChanged;
+		}
+
+		void OnIsBusyChanged(object sender, EventArgs e)
+		{
+			//txtEmail.Enabled = 
+				//txtPassword.Enabled =
+					//btnLogIn.Enabled =
+			indicator.Hidden = !ordersModel.IsBusy;
+		}
+
 	}
 }
