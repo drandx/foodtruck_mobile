@@ -20,18 +20,26 @@ namespace ClickNDone.iOS
 
 		}
 
-		public override async void ViewDidLoad ()
+		public override async void ViewDidAppear(bool animated)
 		{
-			base.ViewDidLoad ();
-			this.AddKeyboarListeners ();
-			try {
+			try 
+			{
 				await ordersModel.RequestService (categoriesModel.SelectedSubcategory, this.RequestServiceCallBack);
 			}
 			catch (Exception exc)
 			{
 				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
 			}
+
 		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
+
+		}
+
 		/**
 		 * 
 		 * 
@@ -46,17 +54,6 @@ namespace ClickNDone.iOS
 					Console.WriteLine("disposing of timer...");
 					s.tmr.Dispose();
 					s.tmr = null;
-
-					if(ret.Status != 2)
-					{
-						//TODO-Change status to TimeOut
-						//Segue to the according
-					}
-					else
-					{
-						//Segue to the according screen
-					}
-
 				}
 				s.AttemptsCount++;
 			}
@@ -83,6 +80,16 @@ namespace ClickNDone.iOS
 					Thread.Sleep(0);
 				Console.WriteLine("Timer done.");
 				//Ends Timer Code
+
+				if(ordersModel.RequestedOrder.Status != 2)
+				{
+					//TODO-Change status to TimeOut
+					PerformSegue("OnTimeOut",this);
+				}
+				else
+				{
+					PerformSegue("OnConfirmed",this);
+				}
 			}
 			catch (Exception exc)
 			{

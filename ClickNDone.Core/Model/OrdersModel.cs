@@ -6,6 +6,7 @@ namespace ClickNDone.Core
 	public class OrdersModel:BaseViewModel
 	{
 		public int RequestedOrderId { get; set;}
+		public Order RequestedOrder { get; set;}
 		public string Location { get; set; }
 		public string Comments { get; set; }
 		public Double MinCost { get; set; }
@@ -49,6 +50,7 @@ namespace ClickNDone.Core
 			{
 				//IsBusy = true;
 				var retOrder = await service.GetOrder(orderId);
+				this.RequestedOrder = retOrder;
 				return retOrder;
 
 			}
