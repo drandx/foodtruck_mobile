@@ -49,7 +49,7 @@ namespace ClickNDone.Core
 		public Double MinCost { get; set; }
 		public Double MaxCost { get; set; }
 		public DateTime ReservationDate { get; set; }
-		public Category Category { get; set;}
+		public Category SubCategory { get; set;}
 	}
 
 	public class Order

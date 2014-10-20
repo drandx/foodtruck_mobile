@@ -32,8 +32,8 @@ namespace ClickNDone.Core
 				serviceRequest.MinCost = MinCost;
 				serviceRequest.MaxCost = MaxCost;
 				serviceRequest.ReservationDate = ReservationDate;
-				serviceRequest.Category = selectedSubCategroy;
-				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken);
+				serviceRequest.SubCategory = selectedSubCategroy;
+				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken, settings.User.id);
 				this.RequestedOrderId = ret;
 				return true;
 			}

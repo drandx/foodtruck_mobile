@@ -61,9 +61,9 @@ namespace ClickNDone.Core
 			//user.sessionToken = objResp["token"].ToString();
 			user.sessionToken = "";
 			user.userType = (objResp ["userType"].ToString () == UserType.CONSUMER.ToString ()) ? UserType.CONSUMER : UserType.SUPPLIER;
-			user.birthAge = new DateTime ();
-			//TODO-Include campo cellphone
+			user.birthAge = new DateTime (); //TODO - Create DateTime object
 			user.mobile = objResp ["cellphone"].ToString ();
+			user.id = Convert.ToInt16(objResp ["id"].ToString ());
 
 			return user;
 		}
@@ -164,7 +164,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<int> RequestService (ServiceRequest order, String sessionToken, String deviceToken)
+		public async Task<int> RequestService (ServiceRequest order, String sessionToken, String deviceToken, int userId)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
@@ -182,6 +182,9 @@ namespace ClickNDone.Core
 			serviceRequestAttributes.Add ("location", order.Location);
 			serviceRequestAttributes.Add ("reservationDate", order.ReservationDate.ToString ("MM-dd-yy H:mm:ss"));
 			serviceRequestAttributes.Add ("allowanceToken", sessionToken);
+			serviceRequestAttributes.Add ("iduser", userId);
+			serviceRequestAttributes.Add ("category", order.SubCategory.ParentId);
+			serviceRequestAttributes.Add ("idsub_category", order.SubCategory.Id);
 
 			var serviceRequestJson = JsonConvert.SerializeObject (serviceRequestAttributes);
 
