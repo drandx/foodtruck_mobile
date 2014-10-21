@@ -45,7 +45,7 @@ namespace ClickNDone.Core
 	public class ServiceRequest
 	{
 		public string Location { get; set; }
-		public string Comments { get; set; }
+		public string Reference { get; set; }
 		public Double MinCost { get; set; }
 		public Double MaxCost { get; set; }
 		public DateTime ReservationDate { get; set; }

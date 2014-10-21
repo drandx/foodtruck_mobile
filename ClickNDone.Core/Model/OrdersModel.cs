@@ -27,7 +27,7 @@ namespace ClickNDone.Core
 			try
 			{
 				ServiceRequest serviceRequest = new ServiceRequest();
-				serviceRequest.Comments = this.Comments;
+				serviceRequest.Reference = this.Comments;
 				serviceRequest.Location = Location;
 				serviceRequest.MinCost = MinCost;
 				serviceRequest.MaxCost = MaxCost;

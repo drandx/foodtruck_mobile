@@ -71,6 +71,20 @@ namespace ClickNDone.Core
 
 		}
 
+		public async Task<User> GetUser(int userId, UserType userType)
+		{
+			IsBusy = true;
+			try
+			{
+				User supplier = await service.GetUser(userId, userType);
+				return supplier;
+			}
+			finally {
+				IsBusy = false;
+			}
+		}
+
+
 	}
 }
 

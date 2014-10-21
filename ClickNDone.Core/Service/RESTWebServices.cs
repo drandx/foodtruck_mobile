@@ -177,7 +177,7 @@ namespace ClickNDone.Core
 
 			//TODO - Send Caqtegory and Subcategory IDS. How?
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
-			serviceRequestAttributes.Add ("comments", order.Comments);
+			serviceRequestAttributes.Add ("reference", order.Reference);
 			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32 (order.MinCost));
 			serviceRequestAttributes.Add ("maximumCost", Convert.ToInt32 (order.MaxCost));
 			serviceRequestAttributes.Add ("location", order.Location);
@@ -209,7 +209,7 @@ namespace ClickNDone.Core
 
 			IDictionary<String,Object> userAttributes = new Dictionary<string, object> ();
 			userAttributes.Add ("id", userId);
-			userAttributes.Add ("UserType", UserType.ToString ());
+			userAttributes.Add ("userType", UserType.ToString ());
 
 			var userJson = JsonConvert.SerializeObject (userAttributes);
 			var response = await client.UploadStringTaskAsync (url, "POST", userJson);
@@ -221,8 +221,8 @@ namespace ClickNDone.Core
 			user.email = objResp ["email"].ToString ();
 			user.names = objResp ["names"].ToString ();
 			user.surnames = objResp ["surnames"].ToString ();
-			user.userType = (objResp ["userType"].ToString () == UserType.CONSUMER.ToString ()) ? UserType.CONSUMER : UserType.SUPPLIER;
 			user.urlAvatar = objResp ["urlAvatar"].ToString ();
+			user.userType = UserType;
 			user.mobile = objResp ["cellphone"].ToString ();
 
 			return user;

@@ -289,6 +289,10 @@
     <Compile Include="..\ClickNDone.Core\Common\OrderStateTimer.cs">
       <Link>Core\Common\OrderStateTimer.cs</Link>
     </Compile>
+    <Compile Include="Controllers\ConfirmedServiceController.cs" />
+    <Compile Include="Controllers\ConfirmedServiceController.designer.cs">
+      <DependentUpon>ConfirmedServiceController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
