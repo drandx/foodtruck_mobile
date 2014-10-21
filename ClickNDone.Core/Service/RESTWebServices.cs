@@ -63,7 +63,8 @@ namespace ClickNDone.Core
 			user.userType = (objResp ["userType"].ToString () == UserType.CONSUMER.ToString ()) ? UserType.CONSUMER : UserType.SUPPLIER;
 			user.birthAge = new DateTime (); //TODO - Create DateTime object
 			user.mobile = objResp ["cellphone"].ToString ();
-			user.id = Convert.ToInt16(objResp ["id"].ToString ());
+			var iduser = objResp ["id"].ToString ();
+			user.id = iduser == "" || iduser == null ? 0 : Convert.ToInt32 (iduser);
 
 			return user;
 		}
@@ -328,11 +329,16 @@ namespace ClickNDone.Core
 		* 
 		* 
 		*/
-		public async Task<bool> ChangeOrderState (int orderId, int stateId)
+		public async Task<bool> ChangeOrderState (int orderId, ServiceState state)
 		{
+			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+			client.Headers.Set ("X-Origin-OS", "Iphone 7");
+			client.Headers.Set ("User-Agent", "IOS7");
+
 			string url = Constants.WebServiceHost + "change_order_state";
 			IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
-			orderAttributes.Add ("STATE", stateId);
+			orderAttributes.Add ("STATE", (int)state+"");
 			orderAttributes.Add ("OrderID", orderId);
 			var orderJson = JsonConvert.SerializeObject (orderAttributes);
 			await client.UploadStringTaskAsync (url, "POST", orderJson);

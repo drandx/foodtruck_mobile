@@ -60,6 +60,19 @@ namespace ClickNDone.Core
 
 		}
 
+		public async Task<bool> ChangeOrderState(ServiceState state)
+		{
+			try
+			{
+				var retOrder = await service.ChangeOrderState(this.RequestedOrder.Id, state);
+				return retOrder;
+
+			}
+			finally {
+			}
+
+		}
+
 	}
 }
 

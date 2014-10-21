@@ -59,7 +59,8 @@ namespace ClickNDone.iOS
 			}
 
 			// Bottom of the controller = initial position + height + offset      
-			bottom = (activeview.Frame.Y + activeview.Frame.Height + offset);
+
+			bottom = (activeview.Frame.Y + activeview.Frame.Height + offset); //TODO - Crashes right here!!!
 
 			// Calculate how far we need to scroll
 			scroll_amount = (r.Height - (View.Frame.Size.Height - bottom)) ;
