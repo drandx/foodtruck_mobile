@@ -81,7 +81,7 @@ namespace ClickNDone.iOS
 					moveViewUp = false;
 				}
 			} catch (Exception exc) {
-				//new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				Console.WriteLine ("Crashing on KeyBoardUpNotification - " + exc.Message);
 			}
 
 		}

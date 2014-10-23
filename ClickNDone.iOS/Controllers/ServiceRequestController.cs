@@ -50,7 +50,7 @@ namespace ClickNDone.iOS
 			try
 			{
 				Order ret = await ordersModel.GetOrder(ordersModel.RequestedOrderId);
-				if((ret.Status == ServiceState.CONFIRMADO) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
+				if((ret != null) && ((ret.Status == ServiceState.CONFIRMADO) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS)))
 				{
 					Console.WriteLine("disposing of timer...");
 					s.tmr.Dispose();

@@ -191,7 +191,7 @@ namespace ClickNDone.Core
 
 			var response = await client.UploadStringTaskAsync (url, "POST", serviceRequestJson);
 			var objResp = JObject.Parse (response);
-			return Convert.ToInt16(objResp ["serviceID"].ToString ());
+			return Convert.ToInt16 (objResp ["serviceID"].ToString ());
 		}
 		/*
 		 * 
@@ -234,48 +234,56 @@ namespace ClickNDone.Core
 		 */
 		public async Task<Order> GetOrder (int orderId)
 		{
-			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
-			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
-			client.Headers.Set ("X-Origin-OS", "Iphone 7");
-			client.Headers.Set ("X-Origin-Token", "");
-			client.Headers.Set ("User-Agent", "IOS7");
+			try {
 
-			string url = Constants.WebServiceHost + "GetOrderDetail";
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
+				client.Headers.Set ("X-Origin-OS", "Iphone 7");
+				client.Headers.Set ("X-Origin-Token", "");
+				client.Headers.Set ("User-Agent", "IOS7");
 
-			IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
-			orderAttributes.Add ("orderId", orderId);
+				string url = Constants.WebServiceHost + "GetOrderDetail";
 
-			var orderJson = JsonConvert.SerializeObject (orderAttributes);
-			var response = await client.UploadStringTaskAsync (url, "POST", orderJson);
+				IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
+				orderAttributes.Add ("orderId", orderId);
 
-			var objResp = JObject.Parse (response);
+				var orderJson = JsonConvert.SerializeObject (orderAttributes);
+				Order order = new Order ();
 
-			Order order = new Order ();
-			order.Id = orderId;
+				if(!client.IsBusy)
+				{
+					var response = await client.UploadStringTaskAsync (url, "POST", orderJson);
+					var objResp = JObject.Parse (response);
+					order.Id = orderId;
 
+					var idUser = objResp ["id_user"].ToString ();
+					var idSupplier = objResp ["id_proveedor"].ToString ();
+					var catId = objResp ["id_category"].ToString ();
+					var subCatId = objResp ["id_subcategory"].ToString ();
 
-			var idUser = objResp ["id_user"].ToString ();
-			var idSupplier = objResp ["id_proveedor"].ToString ();
-			var catId = objResp ["id_category"].ToString ();
-			var subCatId = objResp ["id_subcategory"].ToString();
+					var status = objResp ["status"].ToString ();
+					order.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
 
-			var status = objResp ["status"].ToString ();
-			order.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
+					order.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
+					order.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
+					order.ClickCode = objResp ["code_click"].ToString ();
+					order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
+					order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
+					order.ReservationDate = new DateTime ();
+					order.ReservationTime = new DateTime ();
+					order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
+					order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
+					order.Location = objResp ["location"].ToString ();
+					order.Reference = objResp ["reference"].ToString ();
+					order.Comments = objResp ["comments"].ToString ();
+					return order;
+				}
+				return null;
 
-			order.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
-			order.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
-			order.ClickCode = objResp ["code_click"].ToString ();
-			order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
-			order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-			order.ReservationDate = new DateTime ();
-			order.ReservationTime = new DateTime ();
-			order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString());
-			order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString());
-			order.Location = objResp ["location"].ToString ();
-			order.Reference = objResp ["reference"].ToString ();
-			order.Comments = objResp ["comments"].ToString ();
-
-			return order;
+			} catch (Exception exc) {
+				Console.WriteLine ("Crashing when gets order - " + exc.Message);
+				return null;
+			}
 
 		}
 
@@ -310,11 +318,11 @@ namespace ClickNDone.Core
 				var status = item ["status"].ToString ();
 				orderItem.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
 
-				orderItem.UserId = Convert.ToInt16 (item["id_user"].ToString ());
-				orderItem.SupplierId = Convert.ToInt16 (item["id_proveedor"].ToString ());
-				orderItem.ClickCode = item["code_click"].ToString ();
-				orderItem.CategoryId = Convert.ToInt16 (item["id_category"].ToString ());
-				orderItem.SubCategoryId = Convert.ToInt16 (item["id_subcategory"].ToString ());
+				orderItem.UserId = Convert.ToInt16 (item ["id_user"].ToString ());
+				orderItem.SupplierId = Convert.ToInt16 (item ["id_proveedor"].ToString ());
+				orderItem.ClickCode = item ["code_click"].ToString ();
+				orderItem.CategoryId = Convert.ToInt16 (item ["id_category"].ToString ());
+				orderItem.SubCategoryId = Convert.ToInt16 (item ["id_subcategory"].ToString ());
 				orderItem.ReservationDate = new DateTime ();
 				orderItem.ReservationTime = new DateTime ();
 				orderItem.MinCost = Convert.ToDouble (objResp ["minimum_cost"]);
@@ -336,27 +344,37 @@ namespace ClickNDone.Core
 		*/
 		public async Task<bool> ChangeOrderState (int orderId, ServiceState state, string comments = null, string ranking = null)
 		{
-			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
-			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
-			client.Headers.Set ("X-Origin-OS", "Iphone 7");
-			client.Headers.Set ("User-Agent", "IOS7");
+			try {
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+				client.Headers.Set ("X-Origin-OS", "Iphone 7");
+				client.Headers.Set ("User-Agent", "IOS7");
 
-			string url = Constants.WebServiceHost + "change_order_state";
-			IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
-			orderAttributes.Add ("STATE", (int)state+"");
-			orderAttributes.Add ("OrderID", orderId);
+				string url = Constants.WebServiceHost + "change_order_state";
+				IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
+				orderAttributes.Add ("STATE", (int)state + "");
+				orderAttributes.Add ("OrderID", orderId);
 
-			if (comments != null && ranking != null) 
-			{
-				orderAttributes.Add ("comments", comments);
-				orderAttributes.Add ("rate", ranking);
+				if (comments != null && ranking != null) {
+					orderAttributes.Add ("comments", comments);
+					orderAttributes.Add ("rate", ranking);
 
+				}
+
+				if(!client.IsBusy)
+				{
+					var orderJson = JsonConvert.SerializeObject (orderAttributes);
+					await client.UploadStringTaskAsync (url, "POST", orderJson);
+					return true;
+				}
+				return false;
+
+
+				return true;
+			} catch (Exception exc) {
+				Console.WriteLine ("Crashing on ChangeOrderState - " + exc.Message);
+				return false;
 			}
-
-			var orderJson = JsonConvert.SerializeObject (orderAttributes);
-			await client.UploadStringTaskAsync (url, "POST", orderJson);
-
-			return true;
 		}
 	}
 }
