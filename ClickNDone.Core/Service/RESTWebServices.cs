@@ -287,6 +287,67 @@ namespace ClickNDone.Core
 
 		}
 
+
+		/*
+		 * 
+		 * 
+		 * 
+		 */
+		public Order GetOrder (int orderId)
+		{
+			try {
+
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
+				client.Headers.Set ("X-Origin-OS", "Iphone 7");
+				client.Headers.Set ("X-Origin-Token", "");
+				client.Headers.Set ("User-Agent", "IOS7");
+
+				string url = Constants.WebServiceHost + "GetOrderDetail";
+
+				IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
+				orderAttributes.Add ("orderId", orderId);
+
+				var orderJson = JsonConvert.SerializeObject (orderAttributes);
+				Order order = new Order ();
+
+				if(!client.IsBusy)
+				{
+					var response = client.UploadString (url, "POST", orderJson);
+					var objResp = JObject.Parse (response);
+					order.Id = orderId;
+
+					var idUser = objResp ["id_user"].ToString ();
+					var idSupplier = objResp ["id_proveedor"].ToString ();
+					var catId = objResp ["id_category"].ToString ();
+					var subCatId = objResp ["id_subcategory"].ToString ();
+
+					var status = objResp ["status"].ToString ();
+					order.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
+
+					order.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
+					order.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
+					order.ClickCode = objResp ["code_click"].ToString ();
+					order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
+					order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
+					order.ReservationDate = new DateTime ();
+					order.ReservationTime = new DateTime ();
+					order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
+					order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
+					order.Location = objResp ["location"].ToString ();
+					order.Reference = objResp ["reference"].ToString ();
+					order.Comments = objResp ["comments"].ToString ();
+					return order;
+				}
+				return null;
+
+			} catch (Exception exc) {
+				Console.WriteLine ("Crashing when gets order - " + exc.Message);
+				return null;
+			}
+
+		}
+
 		/*
 		* 
 		* 

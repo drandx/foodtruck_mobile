@@ -44,12 +44,28 @@ namespace ClickNDone.Core
 
 		}
 
-		public async Task<Order> GetOrder(int orderId)
+		public async Task<Order> GetOrderAsync(int orderId)
 		{
 			try
 			{
 				//IsBusy = true;
 				var retOrder = await service.GetOrderAsync(orderId);
+				this.RequestedOrder = retOrder;
+				return retOrder;
+
+			}
+			finally {
+				//IsBusy = false;
+			}
+
+		}
+
+		public Order GetOrder(int orderId)
+		{
+			try
+			{
+				//IsBusy = true;
+				var retOrder = service.GetOrder(orderId);
 				this.RequestedOrder = retOrder;
 				return retOrder;
 

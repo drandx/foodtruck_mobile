@@ -45,11 +45,12 @@ namespace ClickNDone.iOS
 		 * 
 		 * 
 		 * */
-		async void CheckStatus(Object state) {
+		/*async*/ void CheckStatus(Object state) {
 			OrderStateTimer s = (OrderStateTimer) state;
 			try
 			{
-				Order ret = await ordersModel.GetOrder(ordersModel.RequestedOrderId);
+				//
+				Order ret = ordersModel.GetOrder(ordersModel.RequestedOrderId);
 				if((ret != null) && ((ret.Status == ServiceState.CONFIRMADO) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS)))
 				{
 					Console.WriteLine("disposing of timer...");

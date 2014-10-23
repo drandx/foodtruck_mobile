@@ -13,6 +13,7 @@ namespace ClickNDone.Core
 		Task<List<Category>> GetCategoriesAsync(String sessionToken,String deviceToken);
 		Task<int> RequestServiceAsync(ServiceRequest order, String sessionToken, String deviceToken, int userId);
 		Task<Order> GetOrderAsync(int orderId);
+		Order GetOrder(int orderId);
 		Task<List<Order>> GetOrdersListAsync(int userId, int orderState, UserType userType);
 		Task<bool> ChangeOrderStateAsync(int orderId, ServiceState state, string comments = null, string ranking = null);
 	}
