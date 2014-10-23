@@ -34,7 +34,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<User> Login (string username, string password, UserType userType, String deviceToken)
+		public async Task<User> LoginAsync (string username, string password, UserType userType, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -73,7 +73,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<TermsConditions> GetTermsConditions (bool isEndUser)
+		public async Task<TermsConditions> GetTermsConditionsAsync (bool isEndUser)
 		{
 			string url = Constants.WebServiceHost + "terms_conditions/";
 			if (!isEndUser)
@@ -90,7 +90,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<User> Register (User user, String deviceToken)
+		public async Task<User> RegisterAsync (User user, String deviceToken)
 		{
 			string url = Constants.WebServiceHost + "signup";
 
@@ -125,7 +125,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<List<Category>> GetCategories (String sessionToken, String deviceToken)
+		public async Task<List<Category>> GetCategoriesAsync (String sessionToken, String deviceToken)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -165,7 +165,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<int> RequestService (ServiceRequest order, String sessionToken, String deviceToken, int userId)
+		public async Task<int> RequestServiceAsync (ServiceRequest order, String sessionToken, String deviceToken, int userId)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json");
@@ -198,7 +198,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<User> GetUser (int userId, UserType UserType)
+		public async Task<User> GetUserAsync (int userId, UserType UserType)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -232,7 +232,7 @@ namespace ClickNDone.Core
 		 * 
 		 * 
 		 */
-		public async Task<Order> GetOrder (int orderId)
+		public async Task<Order> GetOrderAsync (int orderId)
 		{
 			try {
 
@@ -292,7 +292,7 @@ namespace ClickNDone.Core
 		* 
 		* 
 		*/
-		public async Task<List<Order>> GetOrdersList (int userId, int orderState, UserType userType)
+		public async Task<List<Order>> GetOrdersListAsync (int userId, int orderState, UserType userType)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -342,7 +342,7 @@ namespace ClickNDone.Core
 		* 
 		* 
 		*/
-		public async Task<bool> ChangeOrderState (int orderId, ServiceState state, string comments = null, string ranking = null)
+		public async Task<bool> ChangeOrderStateAsync (int orderId, ServiceState state, string comments = null, string ranking = null)
 		{
 			try {
 				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 

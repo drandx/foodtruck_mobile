@@ -33,7 +33,7 @@ namespace ClickNDone.Core
 				serviceRequest.MaxCost = MaxCost;
 				serviceRequest.ReservationDate = ReservationDate;
 				serviceRequest.SubCategory = selectedSubCategroy;
-				var ret = await service.RequestService(serviceRequest,settings.User.sessionToken,settings.DeviceToken, settings.User.id);
+				var ret = await service.RequestServiceAsync(serviceRequest,settings.User.sessionToken,settings.DeviceToken, settings.User.id);
 				this.RequestedOrderId = ret;
 				return true;
 			}
@@ -49,7 +49,7 @@ namespace ClickNDone.Core
 			try
 			{
 				//IsBusy = true;
-				var retOrder = await service.GetOrder(orderId);
+				var retOrder = await service.GetOrderAsync(orderId);
 				this.RequestedOrder = retOrder;
 				return retOrder;
 
@@ -64,7 +64,7 @@ namespace ClickNDone.Core
 		{
 			try
 			{
-				var retOrder = await service.ChangeOrderState(this.RequestedOrder.Id, state, comments, ranking);
+				var retOrder = await service.ChangeOrderStateAsync(this.RequestedOrder.Id, state, comments, ranking);
 				return retOrder;
 
 			}

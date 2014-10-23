@@ -111,6 +111,12 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Components\json.net-4.5.11.1\lib\ios\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PDRating">
+      <HintPath>..\..\..\..\..\..\Desktop\pdreview-1.0.0\lib\ios\PDRating.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpMobileCode.ModalPicker">
+      <HintPath>..\..\..\..\..\..\Desktop\ModalPickerViewController-master\SharpMobileCode.ModalPicker\bin\Release\SharpMobileCode.ModalPicker.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Default-568h%402x.png" />
@@ -321,11 +327,5 @@
       <Version>4.5.11.1</Version>
       <Visible>False</Visible>
     </XamarinComponentReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\..\Desktop\ModalPickerViewController-master\SharpMobileCode.ModalPicker\SharpMobileCode.ModalPicker.csproj">
-      <Project>{D8D8ED2E-2C43-416B-8196-46A0AD9788FD}</Project>
-      <Name>SharpMobileCode.ModalPicker</Name>
-    </ProjectReference>
   </ItemGroup>
 </Project>

@@ -16,7 +16,7 @@ namespace ClickNDone.Core
 			TermsConditions result;
 			try
 			{
-				result = await service.GetTermsConditions(false);
+				result = await service.GetTermsConditionsAsync(false);
 			}
 			finally 
 			{

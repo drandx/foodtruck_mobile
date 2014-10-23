@@ -28,7 +28,7 @@ namespace ClickNDone.Core
 			IsBusy = true;
 			try
 			{
-				settings.User = await service.Login(Username, Password, UserType, settings.DeviceToken);
+				settings.User = await service.LoginAsync(Username, Password, UserType, settings.DeviceToken);
 				settings.SaveUserLocallly();
 			}
 			finally {
@@ -53,7 +53,7 @@ namespace ClickNDone.Core
 				user.surnames = LastName;
 				user.urlAvatar = Image;
 
-				User retUser = await service.Register(user,settings.DeviceToken);
+				User retUser = await service.RegisterAsync(user,settings.DeviceToken);
 
 				//Completing the User Object after SigningUp
 				retUser.names = Name;
@@ -76,7 +76,7 @@ namespace ClickNDone.Core
 			IsBusy = true;
 			try
 			{
-				User supplier = await service.GetUser(userId, userType);
+				User supplier = await service.GetUserAsync(userId, userType);
 				return supplier;
 			}
 			finally {

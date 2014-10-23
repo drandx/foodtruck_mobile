@@ -17,7 +17,7 @@ namespace ClickNDone.Core
 			IsBusy = true;
 			try
 			{
-				Categories = await service.GetCategories(settings.User.sessionToken, settings.DeviceToken);
+				Categories = await service.GetCategoriesAsync(settings.User.sessionToken, settings.DeviceToken);
 			}
 			finally {
 				IsBusy = false;
