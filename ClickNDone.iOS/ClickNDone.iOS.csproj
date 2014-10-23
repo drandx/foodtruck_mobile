@@ -293,6 +293,14 @@
     <Compile Include="Controllers\ConfirmedServiceController.designer.cs">
       <DependentUpon>ConfirmedServiceController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\CancelServiceController.cs" />
+    <Compile Include="Controllers\CancelServiceController.designer.cs">
+      <DependentUpon>CancelServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\RateServiceController.cs" />
+    <Compile Include="Controllers\RateServiceController.designer.cs">
+      <DependentUpon>RateServiceController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

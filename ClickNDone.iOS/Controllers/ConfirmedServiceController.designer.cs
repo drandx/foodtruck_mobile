@@ -13,6 +13,9 @@ namespace ClickNDone.iOS
 	partial class ConfirmedServiceController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnEndServcie { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
 
 		[Outlet]
@@ -44,9 +47,9 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (txtSurNames != null) {
-				txtSurNames.Dispose ();
-				txtSurNames = null;
+			if (btnEndServcie != null) {
+				btnEndServcie.Dispose ();
+				btnEndServcie = null;
 			}
 
 			if (indicator != null) {
@@ -87,6 +90,11 @@ namespace ClickNDone.iOS
 			if (txtSupplerName != null) {
 				txtSupplerName.Dispose ();
 				txtSupplerName = null;
+			}
+
+			if (txtSurNames != null) {
+				txtSurNames.Dispose ();
+				txtSurNames = null;
 			}
 
 			if (txtUpplierPhone != null) {

@@ -253,13 +253,15 @@ namespace ClickNDone.Core
 			Order order = new Order ();
 			order.Id = orderId;
 
-			var status = objResp ["status"].ToString ();
+
 			var idUser = objResp ["id_user"].ToString ();
 			var idSupplier = objResp ["id_proveedor"].ToString ();
 			var catId = objResp ["id_category"].ToString ();
 			var subCatId = objResp ["id_subcategory"].ToString();
 
-			order.Status = status == "" || status == null ? 0 : Convert.ToInt32 (status);
+			var status = objResp ["status"].ToString ();
+			order.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
+
 			order.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
 			order.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
 			order.ClickCode = objResp ["code_click"].ToString ();
@@ -304,7 +306,10 @@ namespace ClickNDone.Core
 
 			foreach (var item in objResp["orders"]) {
 				Order orderItem = new Order ();
-				orderItem.Status = Convert.ToInt16 (item["status"].ToString ());
+
+				var status = item ["status"].ToString ();
+				orderItem.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
+
 				orderItem.UserId = Convert.ToInt16 (item["id_user"].ToString ());
 				orderItem.SupplierId = Convert.ToInt16 (item["id_proveedor"].ToString ());
 				orderItem.ClickCode = item["code_click"].ToString ();
@@ -329,7 +334,7 @@ namespace ClickNDone.Core
 		* 
 		* 
 		*/
-		public async Task<bool> ChangeOrderState (int orderId, ServiceState state)
+		public async Task<bool> ChangeOrderState (int orderId, ServiceState state, string comments = null, string ranking = null)
 		{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -340,6 +345,14 @@ namespace ClickNDone.Core
 			IDictionary<String,Object> orderAttributes = new Dictionary<string, object> ();
 			orderAttributes.Add ("STATE", (int)state+"");
 			orderAttributes.Add ("OrderID", orderId);
+
+			if (comments != null && ranking != null) 
+			{
+				orderAttributes.Add ("comments", comments);
+				orderAttributes.Add ("rate", ranking);
+
+			}
+
 			var orderJson = JsonConvert.SerializeObject (orderAttributes);
 			await client.UploadStringTaskAsync (url, "POST", orderJson);
 

@@ -621,6 +621,7 @@
         <scene sceneID="ctB-kZ-ly0">
             <objects>
                 <navigationController storyboardIdentifier="CategoryController" definesPresentationContext="YES" toolbarHidden="NO" id="AwU-IS-eq9" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="eBB-5g-OqI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="INO-Ih-pFF">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -634,7 +635,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="th5-h6-O6e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1024" y="-726"/>
+            <point key="canvasLocation" x="1078" y="-720"/>
         </scene>
         <!--Category Controller-->
         <scene sceneID="WMw-v8-xSw">
@@ -937,7 +938,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8hI-5D-icn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3153" y="-738"/>
+            <point key="canvasLocation" x="3119" y="-860"/>
         </scene>
         <!--Confirmed Service Controller-->
         <scene sceneID="CwH-W9-DQ6">
@@ -1048,6 +1049,9 @@
                                 <state key="normal" backgroundImage="images/btn_cancelar_servicio.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="htc-bP-lqz" kind="push" identifier="OnCanceledService" id="ids-88-VX2"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Juan" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kd-rD-FnQ" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="192" width="106" height="20"/>
@@ -1096,9 +1100,6 @@
                                 <state key="normal" title="finalizar>">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="Rsh-RU-Aom" kind="push" id="6pc-Ip-uiZ"/>
-                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Perez" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5m-hV-i6g" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="214" width="106" height="20"/>
@@ -1123,6 +1124,7 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="bnB-zt-f2T"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnEndServcie" destination="IRS-Ls-JQI" id="DFm-mJ-4mt"/>
                         <outlet property="indicator" destination="6Bw-1A-k8i" id="hTz-lY-Vag"/>
                         <outlet property="lblRanking" destination="96M-Ma-TLs" id="iYI-sc-nZJ"/>
                         <outlet property="txtClickCode" destination="sO9-HW-Ndu" id="zh9-EH-jZu"/>
@@ -1133,6 +1135,7 @@
                         <outlet property="txtSupplerName" destination="7kd-rD-FnQ" id="Y8B-iT-urB"/>
                         <outlet property="txtSurNames" destination="E5m-hV-i6g" id="N9V-3v-gfu"/>
                         <outlet property="txtUpplierPhone" destination="2nU-60-EKV" id="JM8-Ox-HCO"/>
+                        <segue destination="N9f-0A-SVT" kind="push" identifier="OnEndedService" id="sD2-MN-S15"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2F2-YI-wJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1239,10 +1242,10 @@
             </objects>
             <point key="canvasLocation" x="2075" y="-354"/>
         </scene>
-        <!--View Controller-->
+        <!--Cancel Service Controller-->
         <scene sceneID="949-3a-fxu">
             <objects>
-                <viewController id="htc-bP-lqz" sceneMemberID="viewController">
+                <viewController id="htc-bP-lqz" customClass="CancelServiceController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pbi-Vk-07w"/>
                         <viewControllerLayoutGuide type="bottom" id="37Z-bp-tNd"/>
@@ -1282,15 +1285,15 @@
                                 <state key="normal" title="SI">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="E8T-w7-x15" kind="push" id="DSU-Bh-f9Y"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nt7-tI-xye">
                                 <rect key="frame" x="176" y="192" width="30" height="30"/>
                                 <state key="normal" title="NO">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="EnI-0N-eUl" kind="push" id="8j7-Fr-AT4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Codigo Click:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKy-EV-J3J">
                                 <rect key="frame" x="68" y="220" width="114" height="29"/>
@@ -1358,189 +1361,46 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbN-Fm-dj3">
-                                <rect key="frame" x="199" y="296" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wOY-i4-e2y">
-                                <rect key="frame" x="221" y="296" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apQ-JL-6GL">
-                                <rect key="frame" x="243" y="296" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/img_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="3yX-JH-Hph">
                                 <rect key="frame" x="20" y="296" width="93" height="115"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3O-Rx-VsM">
-                                <rect key="frame" x="265" y="296" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2de-EM-49u">
+                                <rect key="frame" x="208" y="294" width="10" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-Nj-eIA">
+                                <rect key="frame" x="146" y="431" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ZVZ-Kp-hdn">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="dp2-xI-dng"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnCancelConfirm" destination="358-RN-Lqx" id="IKR-Ni-fr2"/>
+                        <outlet property="btnNotCancel" destination="Nt7-tI-xye" id="pfN-1R-uO8"/>
+                        <outlet property="indicator" destination="5Eb-Nj-eIA" id="lxa-oL-lUO"/>
+                        <outlet property="lblMsgText1" destination="sh2-44-6qA" id="lBm-cI-RPF"/>
+                        <outlet property="lblMsgText2" destination="lzo-WJ-BsX" id="PDC-Hk-LAE"/>
+                        <outlet property="lblRanking" destination="2de-EM-49u" id="KUF-dk-B9w"/>
+                        <outlet property="txtClickCode" destination="QNn-Kg-D6E" id="Z1g-5u-Kbs"/>
+                        <outlet property="txtLastName" destination="Fij-dV-Lwd" id="vCe-YQ-mRM"/>
+                        <outlet property="txtName" destination="iwe-45-fuh" id="zwT-h4-Abl"/>
+                        <outlet property="txtState" destination="8Y7-y8-Eel" id="kuw-ye-ghL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXD-Nv-FWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4091" y="-738"/>
+            <point key="canvasLocation" x="4172" y="-860"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="htu-gp-scS">
-            <objects>
-                <viewController id="E8T-w7-x15" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="D7s-2x-miH"/>
-                        <viewControllerLayoutGuide type="bottom" id="SPZ-iW-tr7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4MT-QC-iNY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wcL-fd-Yhx">
-                                <rect key="frame" x="20" y="87" width="130" height="45"/>
-                                <state key="normal" backgroundImage="images/logo_beauty.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6i-Ru-UTk">
-                                <rect key="frame" x="211" y="98" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tu servicio ha sido cancelado!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hNL-XT-UE7">
-                                <rect key="frame" x="19" y="140" width="283" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Codigo Click:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUf-Y4-wGZ">
-                                <rect key="frame" x="70" y="177" width="114" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Estado:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Plj-2N-BYn">
-                                <rect key="frame" x="70" y="208" width="78" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2413" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6fq-uf-pyM" customClass="MyUITextField">
-                                <rect key="frame" x="183" y="177" width="71" height="29"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirmado" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3H1-yT-qaE" customClass="MyUITextField">
-                                <rect key="frame" x="148" y="208" width="106" height="29"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Ranking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="svR-7a-Bg3">
-                                <rect key="frame" x="118" y="245" width="78" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Datos del Proveedor" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="014-YR-62x">
-                                <rect key="frame" x="118" y="276" width="184" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Nombre:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLS-Sf-gGV">
-                                <rect key="frame" x="118" y="307" width="78" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Apellido:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RW1-Jv-2vL">
-                                <rect key="frame" x="118" y="338" width="78" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Juan" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="is1-uD-wp9" customClass="MyUITextField">
-                                <rect key="frame" x="196" y="307" width="106" height="29"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Perez" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ERG-O3-uP5" customClass="MyUITextField">
-                                <rect key="frame" x="196" y="338" width="106" height="29"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cug-vf-Ouw">
-                                <rect key="frame" x="200" y="249" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aro-sz-9dr">
-                                <rect key="frame" x="222" y="249" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fgL-te-zK9">
-                                <rect key="frame" x="244" y="249" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbs-uH-ZkV">
-                                <rect key="frame" x="266" y="249" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/img_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="BDG-h7-TxF">
-                                <rect key="frame" x="21" y="249" width="93" height="115"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7JP-S5-Bs8">
-                                <rect key="frame" x="110" y="375" width="192" height="24"/>
-                                <state key="normal" backgroundImage="images/btn_consultar_servicio.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="aXg-O5-Fbl">
-                        <barButtonItem key="backBarButtonItem" title="Atras" id="21S-rr-0Z4"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3mF-nn-rro" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4572" y="-738"/>
-        </scene>
-        <!--View Controller-->
+        <!--Rate Service Controller-->
         <scene sceneID="sIs-dJ-Xcc">
             <objects>
-                <viewController id="N9f-0A-SVT" sceneMemberID="viewController">
+                <viewController id="N9f-0A-SVT" customClass="RateServiceController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W2j-5x-ah0"/>
                         <viewControllerLayoutGuide type="bottom" id="Nl1-fP-bOI"/>
@@ -1595,36 +1455,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Ranking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJ2-jB-cA1">
-                                <rect key="frame" x="20" y="381" width="78" height="29"/>
+                                <rect key="frame" x="20" y="359" width="78" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="214-kG-Zk9">
-                                <rect key="frame" x="102" y="385" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u88-Sd-jQe">
-                                <rect key="frame" x="124" y="385" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8d-Pi-Cua">
-                                <rect key="frame" x="146" y="385" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pCv-mK-Lih">
-                                <rect key="frame" x="168" y="385" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/img_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="0ag-lw-6zM">
                                 <rect key="frame" x="20" y="169" width="93" height="115"/>
                             </imageView>
@@ -1662,40 +1498,64 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Comentarios:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aee-aA-XTt">
-                                <rect key="frame" x="20" y="296" width="110" height="29"/>
+                                <rect key="frame" x="20" y="295" width="110" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lzv-6H-Uaa" customClass="MyUITextField">
-                                <rect key="frame" x="20" y="327" width="283" height="50"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NdN-IP-DBp">
-                                <rect key="frame" x="20" y="413" width="131" height="17"/>
+                                <rect key="frame" x="20" y="394" width="131" height="17"/>
                                 <state key="normal" backgroundImage="images/btn_enviar_calificacion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3a2-IB-Pgf">
-                                <rect key="frame" x="172" y="413" width="131" height="17"/>
+                                <rect key="frame" x="172" y="394" width="131" height="17"/>
                                 <state key="normal" backgroundImage="images/btn_no_calificacion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="xw6-3X-QCN" kind="push" id="DCy-ad-QcF"/>
+                                </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ErE-sR-Jam">
+                                <rect key="frame" x="166" y="298" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Te6-bM-W5E" customClass="MyUITextField">
+                                <rect key="frame" x="20" y="326" width="283" height="30"/>
+                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dm9-89-Ang" customClass="MyUITextField">
+                                <rect key="frame" x="100" y="359" width="106" height="29"/>
+                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1RE-3k-Qcq">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="sMm-s8-4IR"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnNoSubmit" destination="3a2-IB-Pgf" id="Cjy-2T-dc3"/>
+                        <outlet property="btnSubmit" destination="NdN-IP-DBp" id="zAs-eu-fEk"/>
+                        <outlet property="indicator" destination="ErE-sR-Jam" id="TFH-5g-yqS"/>
+                        <outlet property="txtClickCode" destination="cyf-JH-gCS" id="H1f-7q-Lan"/>
+                        <outlet property="txtComments" destination="Te6-bM-W5E" id="GIs-6Z-9TY"/>
+                        <outlet property="txtLastName" destination="ezf-ej-2xJ" id="FqU-bX-02O"/>
+                        <outlet property="txtName" destination="WL7-Se-8S2" id="NcB-8K-RWg"/>
+                        <outlet property="txtRanking" destination="Dm9-89-Ang" id="Smp-et-OBU"/>
+                        <outlet property="txtStatus" destination="9Ba-k6-7xo" id="7Dh-ba-Yfm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olk-Gc-s90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3636" y="-151"/>
+            <point key="canvasLocation" x="3626" y="3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZhP-A2-Qop">
@@ -1829,7 +1689,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="blc-fd-vNT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1564" y="1282"/>
+            <point key="canvasLocation" x="1558" y="1349"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XRJ-Va-1of">
@@ -2772,7 +2632,6 @@
         <image name="images/btn_cliente.png" width="244" height="309"/>
         <image name="images/btn_conectar.png" width="244" height="309"/>
         <image name="images/btn_consultar.png" width="244" height="309"/>
-        <image name="images/btn_consultar_servicio.png" width="244" height="309"/>
         <image name="images/btn_enviar.png" width="244" height="309"/>
         <image name="images/btn_enviar_calificacion.png" width="244" height="309"/>
         <image name="images/btn_guardar.png" width="244" height="309"/>
@@ -2794,7 +2653,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="6pc-Ip-uiZ"/>
-        <segue reference="D8J-HL-GE4"/>
+        <segue reference="uHb-zl-3a4"/>
+        <segue reference="R6n-7M-aYX"/>
+        <segue reference="DCy-ad-QcF"/>
+        <segue reference="gYy-83-slm"/>
     </inferredMetricsTieBreakers>
 </document>

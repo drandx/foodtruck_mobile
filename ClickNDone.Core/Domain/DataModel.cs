@@ -55,7 +55,7 @@ namespace ClickNDone.Core
 	public class Order
 	{
 		public int Id { get; set;}
-		public int Status { get; set; }
+		public ServiceState Status { get; set; }
 		public int UserId { get; set;}
 		public int SupplierId { get; set;}
 		public string ClickCode { get; set;}

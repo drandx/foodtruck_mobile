@@ -50,7 +50,7 @@ namespace ClickNDone.iOS
 			try
 			{
 				Order ret = await ordersModel.GetOrder(ordersModel.RequestedOrderId);
-				if((ret.Status == 2) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
+				if((ret.Status == ServiceState.CONFIRMADO) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
 				{
 					Console.WriteLine("disposing of timer...");
 					s.tmr.Dispose();
@@ -82,7 +82,7 @@ namespace ClickNDone.iOS
 				Console.WriteLine("Timer done.");
 				//Ends Timer Code
 
-				if(ordersModel.RequestedOrder.Status != (int)ServiceState.CONFIRMADO)
+				if(ordersModel.RequestedOrder.Status != ServiceState.CONFIRMADO)
 				{
 					await ordersModel.ChangeOrderState(ServiceState.TIME_OUT_PROVEEDOR);
 					new UIAlertView("Oops!", "En el momento no hay proveedores disponibles, porfavor vuelve a intentarlo mas tarde", null, "Ok").Show();

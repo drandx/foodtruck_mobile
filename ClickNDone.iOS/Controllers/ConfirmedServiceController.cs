@@ -23,7 +23,7 @@ namespace ClickNDone.iOS
 			try 
 			{
 				ordersModel.RequestedOrder.Supplier = await userModel.GetUser(ordersModel.RequestedOrder.SupplierId, UserType.SUPPLIER);
-				this.lblRanking.Text = "SrvPendiente";
+				this.lblRanking.Text = "?";
 				this.txtSupplerName.Text = ordersModel.RequestedOrder.Supplier.names;
 				this.txtSurNames.Text = ordersModel.RequestedOrder.Supplier.surnames;
 				this.txtUpplierPhone.Text = ordersModel.RequestedOrder.Supplier.mobile;
@@ -45,6 +45,18 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.NavigationItem.SetHidesBackButton (true, false);
+			btnEndServcie.TouchUpInside += async(sender, e) =>
+			{
+				try {
+					await ordersModel.ChangeOrderState(ServiceState.FINALIZADO);
+					PerformSegue("OnEndedService", this);
+				}
+				catch (Exception exc)
+				{
+					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				}
+			};
+
 
 		}
 
@@ -62,9 +74,8 @@ namespace ClickNDone.iOS
 
 		void OnIsBusyChanged(object sender, EventArgs e)
 		{
-			/*txtEmail.Enabled = 
-				txtPassword.Enabled =
-					btnLogIn.Enabled = */
+
+			btnEndServcie.Enabled = 
 			indicator.Hidden = !userModel.IsBusy;
 		}
 

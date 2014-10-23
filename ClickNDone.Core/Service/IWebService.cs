@@ -14,7 +14,7 @@ namespace ClickNDone.Core
 		Task<int> RequestService(ServiceRequest order, String sessionToken, String deviceToken, int userId);
 		Task<Order> GetOrder(int orderId);
 		Task<List<Order>> GetOrdersList(int userId, int orderState, UserType userType);
-		Task<bool> ChangeOrderState(int orderId, ServiceState state);
+		Task<bool> ChangeOrderState(int orderId, ServiceState state, string comments = null, string ranking = null);
 	}
 }
 
