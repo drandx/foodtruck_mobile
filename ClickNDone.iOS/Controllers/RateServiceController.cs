@@ -21,17 +21,24 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.AddKeyboarListeners ();
+			this.NavigationItem.SetHidesBackButton (true, false);
 			this.txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
 			this.txtStatus.Text = ordersModel.RequestedOrder.Status.ToString ();
 			this.txtName.Text = ordersModel.RequestedOrder.Supplier.names;
 			this.txtLastName.Text = ordersModel.RequestedOrder.Supplier.surnames;
 
+			btnNoSubmit.TouchUpInside += (sender, e) => 
+			{
+				PerformSegue("OnRatedService",this);
+			};
+
 			btnSubmit.TouchUpInside += async (sender, e) => 
 			{
 				try
 				{
-					await ordersModel.ChangeOrderState(ServiceState.FINALIZADO,txtComments.Text, txtRanking.Text);
+					await ordersModel.ChangeOrderStateAsync(ServiceState.FINALIZADO,txtComments.Text, txtRanking.Text);
 					new UIAlertView("Felicitaciones", "El servicio ha sido calificado con exito ", null, "Ok").Show();
+					PerformSegue("OnRatedService",this);
 
 				}
 				catch(Exception exc)

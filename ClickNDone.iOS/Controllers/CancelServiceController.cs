@@ -19,6 +19,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.NavigationItem.SetHidesBackButton (true, false);
 
 			txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
 			txtState.Text = ordersModel.RequestedOrder.Status.ToString ();
@@ -29,7 +30,7 @@ namespace ClickNDone.iOS
 			btnCancelConfirm.TouchUpInside += async(sender, e) =>
 			{
 				try {
-					await ordersModel.ChangeOrderState(ServiceState.RECHAZADO_USUARIO);
+					await ordersModel.ChangeOrderStateAsync(ServiceState.RECHAZADO_USUARIO);
 					lblMsgText1.Text = "El servicio ha sido";
 					lblMsgText2.Text = "cancelado con exito";
 					btnCancelConfirm.Hidden = true;

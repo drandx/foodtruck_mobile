@@ -48,7 +48,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer: Angela Chisaca (A4WS59L5P2)</CodesignKey>
     <BuildIpa>true</BuildIpa>
-    <MtouchSdkVersion>7.1</MtouchSdkVersion>
+    <MtouchSdkVersion>8.1</MtouchSdkVersion>
     <IpaPackageName>
     </IpaPackageName>
     <MtouchI18n>
@@ -242,10 +242,6 @@
       <DependentUpon>HomeLogoController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\MyUIButton.cs" />
-    <Compile Include="Controllers\ServiceController.cs" />
-    <Compile Include="Controllers\ServiceController.designer.cs">
-      <DependentUpon>ServiceController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\ActionSheetDatePicker.cs" />
     <Compile Include="Common\PickerModel.cs" />
     <Compile Include="Common\PickerChangedEventArgs.cs" />

@@ -1,1 +1,1 @@
-App solicita servicio y spera a que cambie su estado.
+Problemas con DatePicker IOS8 solucionado.

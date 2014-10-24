@@ -13,6 +13,9 @@ namespace ClickNDone.iOS
 	partial class ConfirmedServiceController
 	{
 		[Outlet]
+		MonoTouch.UIKit.UIButton btnCancel { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIButton btnEndServcie { get; set; }
 
 		[Outlet]
@@ -52,9 +55,9 @@ namespace ClickNDone.iOS
 				btnEndServcie = null;
 			}
 
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
+			if (btnCancel != null) {
+				btnCancel.Dispose ();
+				btnCancel = null;
 			}
 
 			if (lblRanking != null) {
@@ -100,6 +103,11 @@ namespace ClickNDone.iOS
 			if (txtUpplierPhone != null) {
 				txtUpplierPhone.Dispose ();
 				txtUpplierPhone = null;
+			}
+
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
 			}
 		}
 	}

@@ -45,13 +45,16 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.NavigationItem.SetHidesBackButton (true, false);
-			btnEndServcie.TouchUpInside += async(sender, e) =>
+
+			btnEndServcie.TouchUpInside += async (sender, e) => 
 			{
-				try {
-					await ordersModel.ChangeOrderState(ServiceState.FINALIZADO);
-					PerformSegue("OnEndedService", this);
+				try
+				{
+					await ordersModel.ChangeOrderStateAsync(ServiceState.FINALIZADO);
+					PerformSegue("OnEndedService",this);
+
 				}
-				catch (Exception exc)
+				catch(Exception exc)
 				{
 					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
 				}
@@ -63,20 +66,20 @@ namespace ClickNDone.iOS
 		public override void ViewWillAppear(bool animated)
 		{
 			base.ViewWillAppear(false);
-			userModel.IsBusyChanged += OnIsBusyChanged;
+			ordersModel.IsBusyChanged += OnIsBusyChanged;
 		}
 
 		public override void ViewWillDisappear(bool animated)
 		{
 			base.ViewWillDisappear(false);
-			userModel.IsBusyChanged -= OnIsBusyChanged;
+			ordersModel.IsBusyChanged -= OnIsBusyChanged;
 		}
 
 		void OnIsBusyChanged(object sender, EventArgs e)
 		{
-
 			btnEndServcie.Enabled = 
-			indicator.Hidden = !userModel.IsBusy;
+				btnCancel.Enabled =
+					indicator.Hidden = !ordersModel.IsBusy;
 		}
 
 	}

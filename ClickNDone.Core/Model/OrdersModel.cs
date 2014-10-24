@@ -48,14 +48,14 @@ namespace ClickNDone.Core
 		{
 			try
 			{
-				//IsBusy = true;
+				IsBusy = true;
 				var retOrder = await service.GetOrderAsync(orderId);
 				this.RequestedOrder = retOrder;
 				return retOrder;
 
 			}
 			finally {
-				//IsBusy = false;
+				IsBusy = false;
 			}
 
 		}
@@ -64,28 +64,29 @@ namespace ClickNDone.Core
 		{
 			try
 			{
-				//IsBusy = true;
 				var retOrder = service.GetOrder(orderId);
 				this.RequestedOrder = retOrder;
 				return retOrder;
 
 			}
 			finally {
-				//IsBusy = false;
 			}
 
 		}
 
-		public async Task<bool> ChangeOrderState(ServiceState state, string comments = null, string ranking = null)
+		public async Task<bool> ChangeOrderStateAsync(ServiceState state, string comments = null, string ranking = null)
 		{
 			try
 			{
+				IsBusy = true;
 				var retOrder = await service.ChangeOrderStateAsync(this.RequestedOrder.Id, state, comments, ranking);
 				return retOrder;
 
 			}
 			finally {
 				this.RequestedOrder.Status = state;
+				IsBusy = false;
+
 			}
 
 		}

@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEQ-Xg-fFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="-1486"/>
+            <point key="canvasLocation" x="554" y="-1486"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GKg-b5-1aC">
@@ -697,7 +697,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gLI-7f-QCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1542" y="-720"/>
+            <point key="canvasLocation" x="1646" y="-756"/>
         </scene>
         <!--Service Modal Date Picker Controller-->
         <scene sceneID="tv5-sJ-cO9">
@@ -1122,8 +1122,9 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="bnB-zt-f2T"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btnCancel" destination="L1I-ka-uTZ" id="LP3-6n-0pf"/>
                         <outlet property="btnEndServcie" destination="IRS-Ls-JQI" id="DFm-mJ-4mt"/>
-                        <outlet property="indicator" destination="6Bw-1A-k8i" id="hTz-lY-Vag"/>
+                        <outlet property="indicator" destination="6Bw-1A-k8i" id="DQc-58-4rq"/>
                         <outlet property="lblRanking" destination="96M-Ma-TLs" id="iYI-sc-nZJ"/>
                         <outlet property="txtClickCode" destination="sO9-HW-Ndu" id="zh9-EH-jZu"/>
                         <outlet property="txtPrice" destination="149-uD-bpX" id="WZ2-s8-uaF"/>
@@ -1512,9 +1513,6 @@
                                 <state key="normal" backgroundImage="images/btn_no_calificacion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="xw6-3X-QCN" kind="push" id="DCy-ad-QcF"/>
-                                </connections>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ErE-sR-Jam">
                                 <rect key="frame" x="166" y="298" width="20" height="20"/>
@@ -1547,6 +1545,7 @@
                         <outlet property="txtName" destination="WL7-Se-8S2" id="NcB-8K-RWg"/>
                         <outlet property="txtRanking" destination="Dm9-89-Ang" id="Smp-et-OBU"/>
                         <outlet property="txtStatus" destination="9Ba-k6-7xo" id="7Dh-ba-Yfm"/>
+                        <segue destination="xw6-3X-QCN" kind="push" identifier="OnRatedService" id="B0I-qk-ijs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olk-Gc-s90" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2649,9 +2648,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="8u6-QS-s4s"/>
+        <segue reference="B0I-qk-ijs"/>
+        <segue reference="8j7-Fr-AT4"/>
         <segue reference="uHb-zl-3a4"/>
-        <segue reference="R6n-7M-aYX"/>
-        <segue reference="DCy-ad-QcF"/>
-        <segue reference="gYy-83-slm"/>
     </inferredMetricsTieBreakers>
 </document>
