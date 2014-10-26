@@ -1,1 +1,1 @@
-Problemas con DatePicker IOS8 solucionado.
+Proceso de solicitud de orden por parte del usuario mejorado y sin bugs.

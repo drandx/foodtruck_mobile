@@ -216,24 +216,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/logo_solutions.png" translatesAutoresizingMaskIntoConstraints="NO" id="3aj-Ah-Qcr">
                                 <rect key="frame" x="31" y="223" width="258" height="67"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1vB-5q-gCP">
-                                <rect key="frame" x="26" y="324" width="174" height="30"/>
-                                <state key="normal" title="Proveedor llega servicio>">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="cCi-AH-0RQ" kind="push" id="z06-Ny-Q1D"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="obk-P8-381">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="Bde-Ad-KXX"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="btnProveedorServico" destination="1vB-5q-gCP" id="gqK-5H-LPY"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c4-BC-xyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2097,30 +2085,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kCw-yR-FVT">
-                                <rect key="frame" x="206" y="169" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zNO-Ax-gxB">
-                                <rect key="frame" x="228" y="169" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfu-AB-koJ">
-                                <rect key="frame" x="250" y="169" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J4I-Lz-6RT">
-                                <rect key="frame" x="272" y="169" width="21" height="21"/>
-                                <state key="normal" backgroundImage="images/btn_star.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/img_photo.png" translatesAutoresizingMaskIntoConstraints="NO" id="VvW-su-vDN">
                                 <rect key="frame" x="12" y="72" width="93" height="115"/>
                             </imageView>
@@ -2223,6 +2187,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="?" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-Q3-ixa" customClass="MyUITextField">
+                                <rect key="frame" x="202" y="165" width="106" height="29"/>
+                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-s7-lyX">
+                                <rect key="frame" x="150" y="339" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2230,14 +2203,22 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="O3P-tI-cff"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="indicator" destination="zVP-s7-lyX" id="9vy-vQ-23M"/>
                         <outlet property="lblAcceptService" destination="cwM-dy-U5d" id="ZQW-48-dya"/>
                         <outlet property="lblRejectService" destination="awD-Ex-9cb" id="Ziz-hN-OVT"/>
+                        <outlet property="txtAddress" destination="6kk-hH-KK0" id="htB-E6-9d0"/>
+                        <outlet property="txtDate" destination="GHc-tZ-uEb" id="MEX-5P-WU3"/>
+                        <outlet property="txtReference" destination="GFg-w0-eSw" id="4qz-zQ-Nzh"/>
+                        <outlet property="txtTime" destination="B7N-u8-2dJ" id="D4X-Wu-5mS"/>
+                        <outlet property="txtUserLastName" destination="838-Wl-vjr" id="Hec-WH-Cu9"/>
+                        <outlet property="txtUserName" destination="oeo-QJ-wWq" id="cOs-XY-96B"/>
+                        <outlet property="txtUserRanking" destination="jcR-Q3-ixa" id="z5l-dw-88j"/>
                         <segue destination="M8G-As-Jgl" kind="push" identifier="OnAcceptService" id="5w3-5X-MZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-aV-YBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2091" y="-1938"/>
+            <point key="canvasLocation" x="2371" y="-2668"/>
         </scene>
         <!--Supplier Confirm Service Controller-->
         <scene sceneID="o9X-us-rep">
@@ -2618,6 +2599,26 @@
             </objects>
             <point key="canvasLocation" x="3023" y="-1938"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="BQo-X3-IGP">
+            <objects>
+                <navigationController storyboardIdentifier="SupplierServiceController" definesPresentationContext="YES" toolbarHidden="NO" id="VJH-Lc-iuk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="k5h-pg-h4o"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zEh-1Y-ebw">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="tRg-D6-YPJ">
+                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="cCi-AH-0RQ" kind="relationship" relationship="rootViewController" id="gfJ-Rg-EXy"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KB1-QF-ERD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1969" y="-2668"/>
+        </scene>
     </scenes>
     <resources>
         <image name="images/btn_borrar.png" width="244" height="309"/>
@@ -2649,8 +2650,8 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="8u6-QS-s4s"/>
-        <segue reference="B0I-qk-ijs"/>
-        <segue reference="8j7-Fr-AT4"/>
+        <segue reference="aUQ-ng-MoQ"/>
         <segue reference="uHb-zl-3a4"/>
+        <segue reference="8j7-Fr-AT4"/>
     </inferredMetricsTieBreakers>
 </document>

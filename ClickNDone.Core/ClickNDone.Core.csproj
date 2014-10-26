@@ -49,6 +49,7 @@
     <Folder Include="Model\" />
     <Folder Include="Service\" />
     <Folder Include="Common\" />
+    <Folder Include="Lib\" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -57,5 +58,8 @@
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\Components\json.net-4.5.11.1\lib\ios\Newtonsoft.Json.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Lib\SharpMobileCode.ModalPicker.dll" />
   </ItemGroup>
 </Project>

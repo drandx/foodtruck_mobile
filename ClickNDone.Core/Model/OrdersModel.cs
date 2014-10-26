@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace ClickNDone.Core
 {
@@ -70,6 +71,35 @@ namespace ClickNDone.Core
 
 			}
 			finally {
+			}
+
+		}
+
+
+		public async Task<List<Order>> GetOrdersListAsync(int userId, ServiceState state, UserType userType)
+		{
+			try
+			{
+				IsBusy = true;
+				var retOrdersList = await service.GetOrdersListAsync(userId,state,userType);
+				return retOrdersList;
+			}
+			finally {
+				IsBusy = false;
+			}
+
+		}
+
+		public List<Order> GetOrdersList(int userId, ServiceState state, UserType userType)
+		{
+			try
+			{
+				IsBusy = true;
+				var retOrdersList = service.GetOrdersList(userId,state,userType);
+				return retOrdersList;
+			}
+			finally {
+				IsBusy = false;
 			}
 
 		}

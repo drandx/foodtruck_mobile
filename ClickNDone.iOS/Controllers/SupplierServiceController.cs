@@ -4,11 +4,14 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class SupplierServiceController : UIViewController
 	{
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+
 		public SupplierServiceController (IntPtr handle) : base (handle)
 		{
 		}
@@ -28,6 +31,32 @@ namespace ClickNDone.iOS
 			lblRejectService.UserInteractionEnabled = true;
 			lblRejectService.AddGestureRecognizer(labelRejectTap);
 
+			txtAddress.Text = ordersModel.RequestedOrder.Location;
+			txtReference.Text = ordersModel.RequestedOrder.Reference;
+			txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
+			txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
+			txtUserName.Text = ordersModel.RequestedOrder.User.names;
+			txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+		}
+
+		public override void ViewWillAppear(bool animated)
+		{
+			base.ViewWillAppear(false);
+			ordersModel.IsBusyChanged += OnIsBusyChanged;
+		}
+
+		public override void ViewWillDisappear(bool animated)
+		{
+			base.ViewWillDisappear(false);
+			ordersModel.IsBusyChanged -= OnIsBusyChanged;
+		}
+
+		void OnIsBusyChanged(object sender, EventArgs e)
+		{
+			//txtEmail.Enabled = 
+				//txtPassword.Enabled =
+					//btnLogIn.Enabled =
+			indicator.Hidden = !ordersModel.IsBusy;
 		}
 	}
 }

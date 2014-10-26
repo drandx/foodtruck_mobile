@@ -22,7 +22,7 @@ namespace ClickNDone.iOS
 			base.ViewDidAppear (animated);
 			try 
 			{
-				ordersModel.RequestedOrder.Supplier = await userModel.GetUser(ordersModel.RequestedOrder.SupplierId, UserType.SUPPLIER);
+				ordersModel.RequestedOrder.Supplier = await userModel.GetUserAsync(ordersModel.RequestedOrder.SupplierId, UserType.SUPPLIER);
 				this.lblRanking.Text = "?";
 				this.txtSupplerName.Text = ordersModel.RequestedOrder.Supplier.names;
 				this.txtSurNames.Text = ordersModel.RequestedOrder.Supplier.surnames;

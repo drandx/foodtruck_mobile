@@ -115,7 +115,7 @@
       <HintPath>..\..\..\..\..\..\Desktop\pdreview-1.0.0\lib\ios\PDRating.dll</HintPath>
     </Reference>
     <Reference Include="SharpMobileCode.ModalPicker">
-      <HintPath>..\..\..\..\..\..\Desktop\ModalPickerViewController-master\SharpMobileCode.ModalPicker\bin\Release\SharpMobileCode.ModalPicker.dll</HintPath>
+      <HintPath>..\ClickNDone.Core\Lib\SharpMobileCode.ModalPicker.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

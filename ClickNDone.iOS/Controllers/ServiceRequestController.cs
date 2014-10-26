@@ -45,7 +45,8 @@ namespace ClickNDone.iOS
 		 * 
 		 * 
 		 * */
-		/*async*/ void CheckStatus(Object state) {
+		/*async*/ 
+		void CheckStatus(Object state) {
 			OrderStateTimer s = (OrderStateTimer) state;
 			try
 			{
