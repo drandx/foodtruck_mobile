@@ -16,7 +16,7 @@ namespace ClickNDone.Core
 
 		public OrdersModel ()
 		{
-
+			this.RequestedOrder = new Order ();
 		}
 
 		public async Task<bool> RequestService(Category selectedSubCategroy, Action RequestCallback)

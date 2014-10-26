@@ -202,7 +202,7 @@ namespace ClickNDone.Core
 		public Task<User> GetUserAsync (int userId, UserType UserType)
 		{
 			try {
-				return Task.Run(() => GetUser(userId,UserType));
+				return Task.Run (() => GetUser (userId, UserType));
 			} catch (Exception exc) {
 				Console.WriteLine ("Crashing on GetUserAsync - " + exc.Message);
 				return null;
@@ -447,36 +447,37 @@ namespace ClickNDone.Core
 				orderAttributes.Add ("STATE", (int)orderState);
 				orderAttributes.Add ("UserType", userType.ToString ());
 				orderAttributes.Add ("UserID", userId);
-
-				var orderJson = JsonConvert.SerializeObject (orderAttributes);
-				var response = client.UploadString (url, "POST", orderJson);
-
-				var objListResp = JObject.Parse (response);
 				List<Order> ordersList = new List<Order> ();
 
-				foreach (var objResp in objListResp["orders"]) {
-					Order orderItem = new Order ();
+				if (!client.IsBusy) {
+					var orderJson = JsonConvert.SerializeObject (orderAttributes);
+					var response = client.UploadString (url, "POST", orderJson);
+					var objListResp = JObject.Parse (response);
 
-					var status = objResp ["status"].ToString ();
-					orderItem.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
-					var idUser = objResp ["id_user"].ToString ();
-					orderItem.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
-					var idSupplier = objResp ["id_proveedor"].ToString ();
-					orderItem.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
-					orderItem.ClickCode = objResp ["code_click"].ToString ();
-					var catId = objResp ["id_category"].ToString ();
-					orderItem.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
-					var subCatId = objResp ["id_subcategory"].ToString ();
-					orderItem.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-					orderItem.ReservationDate = new DateTime ();
-					orderItem.ReservationTime = new DateTime ();
-					orderItem.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
-					orderItem.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
-					orderItem.Location = objResp ["location"].ToString ();
-					orderItem.Reference = objResp ["reference"].ToString ();
-					orderItem.Comments = objResp ["comments"].ToString ();
+					foreach (var objResp in objListResp["orders"]) {
+						Order orderItem = new Order ();
 
-					ordersList.Add (orderItem);
+						var status = objResp ["status"].ToString ();
+						orderItem.Status = status == "" || status == null ? ServiceState.UNKNOWN : (ServiceState)Convert.ToInt32 (status);
+						var idUser = objResp ["id_user"].ToString ();
+						orderItem.UserId = idUser == "" || idUser == null ? 0 : Convert.ToInt32 (idUser);
+						var idSupplier = objResp ["id_proveedor"].ToString ();
+						orderItem.SupplierId = idSupplier == "" || idSupplier == null ? 0 : Convert.ToInt32 (idSupplier);
+						orderItem.ClickCode = objResp ["code_click"].ToString ();
+						var catId = objResp ["id_category"].ToString ();
+						orderItem.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
+						var subCatId = objResp ["id_subcategory"].ToString ();
+						orderItem.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
+						orderItem.ReservationDate = new DateTime ();
+						orderItem.ReservationTime = new DateTime ();
+						orderItem.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
+						orderItem.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
+						orderItem.Location = objResp ["location"].ToString ();
+						orderItem.Reference = objResp ["reference"].ToString ();
+						orderItem.Comments = objResp ["comments"].ToString ();
+
+						ordersList.Add (orderItem);
+					}
 				}
 				return ordersList;
 			} catch (Exception exc) {

@@ -2109,13 +2109,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-QJ-wWq" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-QJ-wWq" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="103" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="838-Wl-vjr" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="838-Wl-vjr" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="134" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2141,7 +2141,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3:00 PM" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-u8-2dJ" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3:00 PM" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B7N-u8-2dJ" customClass="MyUITextField">
                                 <rect key="frame" x="101" y="222" width="207" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2187,14 +2187,14 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="?" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-Q3-ixa" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="?" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-Q3-ixa" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="165" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zVP-s7-lyX">
-                                <rect key="frame" x="150" y="339" width="20" height="20"/>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="eCV-7O-eMr">
+                                <rect key="frame" x="147" y="362" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2203,7 +2203,7 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="O3P-tI-cff"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="indicator" destination="zVP-s7-lyX" id="9vy-vQ-23M"/>
+                        <outlet property="indicator" destination="eCV-7O-eMr" id="7kc-rb-djP"/>
                         <outlet property="lblAcceptService" destination="cwM-dy-U5d" id="ZQW-48-dya"/>
                         <outlet property="lblRejectService" destination="awD-Ex-9cb" id="Ziz-hN-OVT"/>
                         <outlet property="txtAddress" destination="6kk-hH-KK0" id="htB-E6-9d0"/>
@@ -2213,7 +2213,6 @@
                         <outlet property="txtUserLastName" destination="838-Wl-vjr" id="Hec-WH-Cu9"/>
                         <outlet property="txtUserName" destination="oeo-QJ-wWq" id="cOs-XY-96B"/>
                         <outlet property="txtUserRanking" destination="jcR-Q3-ixa" id="z5l-dw-88j"/>
-                        <segue destination="M8G-As-Jgl" kind="push" identifier="OnAcceptService" id="5w3-5X-MZP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTP-aV-YBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2413,10 +2412,10 @@
             </objects>
             <point key="canvasLocation" x="2601" y="-1938"/>
         </scene>
-        <!--Supplier Service Controller-->
+        <!--View Controller-->
         <scene sceneID="9O3-8k-c9J">
             <objects>
-                <viewController id="LsE-4a-L6v" customClass="SupplierServiceController" sceneMemberID="viewController">
+                <viewController id="LsE-4a-L6v" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tdL-0o-t1o"/>
                         <viewControllerLayoutGuide type="bottom" id="2wh-nP-0kL"/>

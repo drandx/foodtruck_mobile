@@ -11,52 +11,66 @@ namespace ClickNDone.iOS
 	public partial class SupplierServiceController : UIViewController
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 
 		public SupplierServiceController (IntPtr handle) : base (handle)
 		{
 		}
 
+		public override async void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			try {
+				var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.SUPPLIER);
+				ordersModel.RequestedOrder.User = requesterUser;
+
+				txtAddress.Text = ordersModel.RequestedOrder.Location;
+				txtReference.Text = ordersModel.RequestedOrder.Reference;
+				txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
+				txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
+				txtUserName.Text = ordersModel.RequestedOrder.User.names;
+				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+
+			} catch (Exception exc) {
+				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+			}
+		}
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer(() => {
-				PerformSegue("OnAcceptService", this);
+			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (() => {
+
 			});
 			lblAcceptService.UserInteractionEnabled = true;
-			lblAcceptService.AddGestureRecognizer(labelAcceptTap);
+			lblAcceptService.AddGestureRecognizer (labelAcceptTap);
 
-			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer(() => {
+			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer (() => {
 
 			});
 			lblRejectService.UserInteractionEnabled = true;
-			lblRejectService.AddGestureRecognizer(labelRejectTap);
+			lblRejectService.AddGestureRecognizer (labelRejectTap);
 
-			txtAddress.Text = ordersModel.RequestedOrder.Location;
-			txtReference.Text = ordersModel.RequestedOrder.Reference;
-			txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
-			txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
-			txtUserName.Text = ordersModel.RequestedOrder.User.names;
-			txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
 		}
 
-		public override void ViewWillAppear(bool animated)
+		public override void ViewWillAppear (bool animated)
 		{
-			base.ViewWillAppear(false);
-			ordersModel.IsBusyChanged += OnIsBusyChanged;
+			base.ViewWillAppear (false);
+			userModel.IsBusyChanged += OnIsBusyChanged;
+
 		}
 
-		public override void ViewWillDisappear(bool animated)
+		public override void ViewWillDisappear (bool animated)
 		{
-			base.ViewWillDisappear(false);
-			ordersModel.IsBusyChanged -= OnIsBusyChanged;
+			base.ViewWillDisappear (false);
+			userModel.IsBusyChanged -= OnIsBusyChanged;
 		}
 
-		void OnIsBusyChanged(object sender, EventArgs e)
+		void OnIsBusyChanged (object sender, EventArgs e)
 		{
-			//txtEmail.Enabled = 
-				//txtPassword.Enabled =
-					//btnLogIn.Enabled =
-			indicator.Hidden = !ordersModel.IsBusy;
+			lblAcceptService.Enabled = 
+				lblRejectService.Enabled = 
+					indicator.Hidden = !userModel.IsBusy;
 		}
 	}
 }

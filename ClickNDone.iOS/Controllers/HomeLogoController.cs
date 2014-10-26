@@ -31,11 +31,12 @@ namespace ClickNDone.iOS
 			} 
 			else 
 			{
+
 				int taskID = UIApplication.SharedApplication.BeginBackgroundTask (() => {});
 				new Task (() => {
 					DoWork ();
+					UIApplication.SharedApplication.BeginInvokeOnMainThread(LoadUIController);
 					UIApplication.SharedApplication.EndBackgroundTask (taskID);
-					//UIApplication.SharedApplication.BeginInvokeOnMainThread(LoadUIController);
 				}).Start ();
 			}
 		}
@@ -63,19 +64,16 @@ namespace ClickNDone.iOS
 			OrderStateTimer s = (OrderStateTimer) state;
 			try
 			{
-				var ordersList = ordersModel.GetOrdersList(9,ServiceState.RECHAZADO_USUARIO,UserType.CONSUMER);
+				var ordersList = ordersModel.GetOrdersList(9,ServiceState.ABIERTO,UserType.CONSUMER);
+				//TODO - When GetOrdersList is working correctly, I will remove this validation
 				var result = ordersList.Where(c => c.Status.Equals(ServiceState.ABIERTO));
+
 				Console.WriteLine("Running TimeOut Cycle: " + s.AttemptsCount);
+
 				if((result.Count() > 0) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
 				{
+					ordersModel.RequestedOrder = result.First();
 					Console.WriteLine("disposing of timer...");
-
-					if(result.Count() > 0){
-						ordersModel.RequestedOrder = result.First();
-						var requesterUser = loginViewModel.GetUser(ordersModel.RequestedOrder.UserId, UserType.CONSUMER);
-						ordersModel.RequestedOrder.User = requesterUser;
-					}
-
 					s.tmr.Dispose();
 					s.tmr = null;
 				}

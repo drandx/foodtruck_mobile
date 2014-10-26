@@ -44,11 +44,6 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
-			}
-
 			if (lblAcceptService != null) {
 				lblAcceptService.Dispose ();
 				lblAcceptService = null;
@@ -92,6 +87,11 @@ namespace ClickNDone.iOS
 			if (txtUserRanking != null) {
 				txtUserRanking.Dispose ();
 				txtUserRanking = null;
+			}
+
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
 			}
 		}
 	}

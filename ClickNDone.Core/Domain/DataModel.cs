@@ -73,6 +73,13 @@ namespace ClickNDone.Core
 		public User Supplier { get; set;}
 		public User User { get; set;}
 
+
+		public Order()
+		{
+			this.Supplier = new User ();
+			this.User = new User ();
+		}
+
 	}
 
 }
