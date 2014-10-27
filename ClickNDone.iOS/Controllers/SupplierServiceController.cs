@@ -39,14 +39,16 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (() => {
-
+			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (async() => {
+				await ordersModel.ChangeOrderStateAsync(ServiceState.CONFIRMADO);
+				PerformSegue("OnAcceptedService",this);
 			});
 			lblAcceptService.UserInteractionEnabled = true;
 			lblAcceptService.AddGestureRecognizer (labelAcceptTap);
 
-			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer (() => {
-
+			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer (async() => {
+				await ordersModel.ChangeOrderStateAsync(ServiceState.RECHAZADO_PROVEEDOR);
+				PerformSegue("OnSuplierRejectedService",this);
 			});
 			lblRejectService.UserInteractionEnabled = true;
 			lblRejectService.AddGestureRecognizer (labelRejectTap);
@@ -57,6 +59,8 @@ namespace ClickNDone.iOS
 		{
 			base.ViewWillAppear (false);
 			userModel.IsBusyChanged += OnIsBusyChanged;
+			ordersModel.IsBusyChanged += OnIsBusyOrdersChanged;
+
 
 		}
 
@@ -64,6 +68,7 @@ namespace ClickNDone.iOS
 		{
 			base.ViewWillDisappear (false);
 			userModel.IsBusyChanged -= OnIsBusyChanged;
+			ordersModel.IsBusyChanged -= OnIsBusyOrdersChanged;
 		}
 
 		void OnIsBusyChanged (object sender, EventArgs e)
@@ -71,6 +76,13 @@ namespace ClickNDone.iOS
 			lblAcceptService.Enabled = 
 				lblRejectService.Enabled = 
 					indicator.Hidden = !userModel.IsBusy;
+		}
+
+		void OnIsBusyOrdersChanged (object sender, EventArgs e)
+		{
+			lblAcceptService.Enabled = 
+				lblRejectService.Enabled = 
+					indicator.Hidden = !ordersModel.IsBusy;
 		}
 	}
 }
