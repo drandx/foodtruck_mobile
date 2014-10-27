@@ -11,6 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using ClickNDone.Core;
+using ClickNDone.Droid.Activities;
 
 namespace ClickNDone.Droid
 {
@@ -46,6 +47,8 @@ namespace ClickNDone.Droid
 				await viewModel.Login();
 				//TODO: navigate to a new activity
 				System.Diagnostics.Debug.WriteLine(" *** READY TO GO HOME *** ");
+                var intent = new Intent(this, typeof(MainPageActivity));                
+                StartActivity(intent);
 
 			}
 			catch (Exception exc)
