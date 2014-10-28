@@ -23,17 +23,14 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			//TODO - Change the categories and subcategories id to the real one (Pending to get id from the service)
-			int i = 1;
-			categoriesModel.SelectedCategory.Id = 1; //TODO - Get this id from Service
+
 			foreach(Category item in categoriesModel.SelectedCategory.Subcategories)
 			{
-				item.Id = i;
 				item.ParentId = categoriesModel.SelectedCategory.Id; //TODO - Get this id from the service
 				UIButton btn = this.CreateButton (item.Id,item.Name);
 				this.ScrollerButtons.Add (btn);
-				i = i + 1;
 			}
+
 			SizeF scrollerSize = new SizeF ();
 			float heightSize = this.scrollerHeigt * 1.5f;
 			scrollerSize.Height = heightSize;

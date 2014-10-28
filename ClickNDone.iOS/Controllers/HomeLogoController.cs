@@ -64,15 +64,13 @@ namespace ClickNDone.iOS
 			OrderStateTimer s = (OrderStateTimer) state;
 			try
 			{
+				//TODO - Ingresar ID de usuario verdadero
 				var ordersList = ordersModel.GetOrdersList(9,ServiceState.ABIERTO,UserType.CONSUMER);
-				//TODO - When GetOrdersList is working correctly, I will remove this validation
-				var result = ordersList.Where(c => c.Status.Equals(ServiceState.ABIERTO));
-
 				Console.WriteLine("Running TimeOut Cycle: " + s.AttemptsCount);
 
-				if((result.Count() > 0) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
+				if((ordersList.Count() > 0) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
 				{
-					ordersModel.RequestedOrder = result.First();
+					ordersModel.RequestedOrder = ordersList.First();
 					Console.WriteLine("disposing of timer...");
 					s.tmr.Dispose();
 					s.tmr = null;

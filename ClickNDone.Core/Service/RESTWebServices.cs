@@ -146,6 +146,8 @@ namespace ClickNDone.Core
 				category.Name = cat ["categoryName"].ToString ();
 				category.Description = cat ["categoryDescription"].ToString ();
 				category.Convention = cat ["categoryConvention"].ToString ();
+				var idCat = cat ["id"].ToString ();
+				category.Id = idCat == "" || idCat == null ? 0 : Convert.ToInt32 (idCat);
 
 				foreach (var subcat in cat["subCategories"]) {
 					Category subcategory = new Category ();
@@ -153,6 +155,9 @@ namespace ClickNDone.Core
 					subcategory.Description = subcat ["subCategoryDescription"].ToString ();
 					subcategory.Convention = subcat ["subCategoryConvention"].ToString ();
 					subCategories.Add (subcategory);
+					var idSubCat = subcat ["id_sub"].ToString ();
+					subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
+					subcategory.ParentId = category.Id;
 				}
 
 				category.Subcategories = subCategories;
@@ -176,7 +181,6 @@ namespace ClickNDone.Core
 
 			string url = Constants.WebServiceHost + "requestservice";
 
-			//TODO - Send Caqtegory and Subcategory IDS. How?
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
 			serviceRequestAttributes.Add ("reference", order.Reference);
 			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32 (order.MinCost));
