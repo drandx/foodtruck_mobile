@@ -65,10 +65,9 @@ namespace ClickNDone.iOS
 			try
 			{
 				//TODO - Ingresar ID de usuario verdadero
-				var ordersList = ordersModel.GetOrdersList(9,ServiceState.ABIERTO,UserType.CONSUMER);
+				var ordersList = ordersModel.GetOrdersList(loginViewModel.User.id,ServiceState.ABIERTO,UserType.SUPPLIER);
 				Console.WriteLine("Running TimeOut Cycle: " + s.AttemptsCount);
-
-				if((ordersList.Count() > 0) || (s.AttemptsCount == Constants.GET_ORDER_STATUS_ATTEMPTS))
+				if((ordersList.Count() > 0))
 				{
 					ordersModel.RequestedOrder = ordersList.First();
 					Console.WriteLine("disposing of timer...");

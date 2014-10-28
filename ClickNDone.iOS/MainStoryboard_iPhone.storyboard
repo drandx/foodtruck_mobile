@@ -2488,7 +2488,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="LsE-4a-L6v" kind="push" id="UWF-Hu-TIe"/>
+                                    <segue destination="LsE-4a-L6v" kind="push" id="mre-hf-Tzf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mcn-nh-am4">
@@ -2509,9 +2509,6 @@
                     <navigationItem key="navigationItem" id="9XP-3g-w1x">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="JJ6-LG-x9a"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="btnCancelService" destination="24k-SJ-SOM" id="z0m-fE-LzM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bg6-ww-gNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2700,12 +2697,6 @@
                     <navigationItem key="navigationItem" id="Dq7-4N-msZ">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="m4V-1f-cSQ"/>
                     </navigationItem>
-                    <connections>
-                        <outlet property="lblAcceptService" destination="5Im-lT-Jko" id="LcD-8a-G8X"/>
-                        <outlet property="lblRejectService" destination="ll4-U4-aq4" id="U3q-io-EAw"/>
-                        <segue destination="Ikm-01-650" kind="push" id="z18-jJ-jGA"/>
-                        <segue destination="M8G-As-Jgl" kind="push" id="DoP-s4-OtT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpQ-yq-2Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2790,9 +2781,8 @@
     <inferredMetricsTieBreakers>
         <segue reference="a8M-oX-YDi"/>
         <segue reference="uHb-zl-3a4"/>
-        <segue reference="OEW-Tg-imM"/>
-        <segue reference="8j7-Fr-AT4"/>
-        <segue reference="aUQ-ng-MoQ"/>
         <segue reference="R6n-7M-aYX"/>
+        <segue reference="aUQ-ng-MoQ"/>
+        <segue reference="8j7-Fr-AT4"/>
     </inferredMetricsTieBreakers>
 </document>

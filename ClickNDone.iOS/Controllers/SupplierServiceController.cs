@@ -21,7 +21,7 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidAppear (animated);
 			try {
-				var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.SUPPLIER);
+				var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.CONSUMER);
 				ordersModel.RequestedOrder.User = requesterUser;
 
 				txtAddress.Text = ordersModel.RequestedOrder.Location;
@@ -40,14 +40,14 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (async() => {
-				await ordersModel.ChangeOrderStateAsync(ServiceState.CONFIRMADO);
+				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.CONFIRMADO);
 				PerformSegue("OnAcceptedService",this);
 			});
 			lblAcceptService.UserInteractionEnabled = true;
 			lblAcceptService.AddGestureRecognizer (labelAcceptTap);
 
 			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer (async() => {
-				await ordersModel.ChangeOrderStateAsync(ServiceState.RECHAZADO_PROVEEDOR);
+				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.RECHAZADO_PROVEEDOR);
 				PerformSegue("OnSuplierRejectedService",this);
 			});
 			lblRejectService.UserInteractionEnabled = true;

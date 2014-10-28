@@ -36,7 +36,7 @@ namespace ClickNDone.iOS
 			{
 				try
 				{
-					await ordersModel.ChangeOrderStateAsync(ServiceState.FINALIZADO,txtComments.Text, txtRanking.Text);
+					await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.FINALIZADO,txtComments.Text, txtRanking.Text);
 					new UIAlertView("Felicitaciones", "El servicio ha sido calificado con exito ", null, "Ok").Show();
 					PerformSegue("OnRatedService",this);
 

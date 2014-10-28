@@ -50,7 +50,7 @@ namespace ClickNDone.iOS
 			{
 				try
 				{
-					await ordersModel.ChangeOrderStateAsync(ServiceState.FINALIZADO);
+					await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.FINALIZADO);
 					PerformSegue("OnEndedService",this);
 
 				}

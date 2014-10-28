@@ -86,7 +86,7 @@ namespace ClickNDone.iOS
 
 				if(ordersModel.RequestedOrder.Status != ServiceState.CONFIRMADO)
 				{
-					await ordersModel.ChangeOrderStateAsync(ServiceState.TIME_OUT_PROVEEDOR);
+					await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.TIME_OUT_PROVEEDOR);
 					new UIAlertView("Oops!", "En el momento no hay proveedores disponibles, porfavor vuelve a intentarlo mas tarde", null, "Ok").Show();
 					NavigationController. PopViewControllerAnimated(true);
 				}

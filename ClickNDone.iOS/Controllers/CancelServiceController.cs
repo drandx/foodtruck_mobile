@@ -30,7 +30,7 @@ namespace ClickNDone.iOS
 			btnCancelConfirm.TouchUpInside += async(sender, e) =>
 			{
 				try {
-					await ordersModel.ChangeOrderStateAsync(ServiceState.RECHAZADO_USUARIO);
+					await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.RECHAZADO_USUARIO);
 					lblMsgText1.Text = "El servicio ha sido";
 					lblMsgText2.Text = "cancelado con exito";
 					btnCancelConfirm.Hidden = true;

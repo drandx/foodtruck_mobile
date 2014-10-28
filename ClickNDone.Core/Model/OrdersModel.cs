@@ -104,7 +104,7 @@ namespace ClickNDone.Core
 
 		}
 
-		public async Task<bool> ChangeOrderStateAsync(ServiceState state, string comments = null, string ranking = null)
+		public async Task<bool> ChangeRequestedOrderStateAsync(ServiceState state, string comments = null, string ranking = null)
 		{
 			try
 			{

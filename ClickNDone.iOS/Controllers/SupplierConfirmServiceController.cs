@@ -12,5 +12,11 @@ namespace ClickNDone.iOS
 		public SupplierConfirmServiceController (IntPtr handle) : base (handle)
 		{
 		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.NavigationItem.SetHidesBackButton (true, false);
+		}
 	}
 }
