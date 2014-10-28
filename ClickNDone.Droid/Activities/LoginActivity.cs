@@ -15,7 +15,7 @@ using ClickNDone.Droid.Activities;
 
 namespace ClickNDone.Droid
 {
-	[Activity(Label = "@string/app_name", MainLauncher = true)]			
+    [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]			
 	public class LoginActivity : BaseActivity<UserModel>
 	{
 		EditText username, password;
