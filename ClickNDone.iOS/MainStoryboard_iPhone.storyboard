@@ -1162,7 +1162,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="1LW-DL-m1T">
-                                <rect key="frame" x="0.0" y="154" width="320" height="321"/>
+                                <rect key="frame" x="0.0" y="154" width="320" height="370"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1198,7 +1198,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccione el servicio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuL-v3-1BC">
-                                <rect key="frame" x="40" y="127" width="241" height="29"/>
+                                <rect key="frame" x="40" y="121" width="241" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1211,8 +1211,9 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-8R-Czy">
-                                <rect key="frame" x="0.0" y="164" width="320" height="313"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" pagingEnabled="YES" indicatorStyle="black" delaysContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mIe-8R-Czy">
+                                <rect key="frame" x="0.0" y="154" width="320" height="370"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.0"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -2787,11 +2788,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="OEW-Tg-imM"/>
-        <segue reference="qwV-pz-hVx"/>
+        <segue reference="a8M-oX-YDi"/>
         <segue reference="uHb-zl-3a4"/>
-        <segue reference="8u6-QS-s4s"/>
-        <segue reference="aUQ-ng-MoQ"/>
+        <segue reference="OEW-Tg-imM"/>
         <segue reference="8j7-Fr-AT4"/>
+        <segue reference="aUQ-ng-MoQ"/>
+        <segue reference="R6n-7M-aYX"/>
     </inferredMetricsTieBreakers>
 </document>

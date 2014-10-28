@@ -14,7 +14,8 @@ namespace ClickNDone.iOS
 	{
 		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 		private float scrollBtnCursor = 0f;
-
+		private float buttonHeight = 40.0f;
+		private float scrollerHeigt = 0.0f;
 		public SubCategoryController (IntPtr handle) : base (handle)
 		{
 		}
@@ -33,6 +34,11 @@ namespace ClickNDone.iOS
 				this.ScrollerButtons.Add (btn);
 				i = i + 1;
 			}
+			SizeF scrollerSize = new SizeF ();
+			float heightSize = this.scrollerHeigt * 1.5f;
+			scrollerSize.Height = heightSize;
+			scrollerSize.Width = 300;
+			this.ScrollerButtons.ContentSize = scrollerSize;
 
 		}
 
@@ -56,7 +62,7 @@ namespace ClickNDone.iOS
 			var x = UIScreen.MainScreen.Bounds.Width;
 			UIButton button = UIButton.FromType(UIButtonType.RoundedRect);
 
-			RectangleF rect = new RectangleF(x*0.2f, this.scrollBtnCursor, x*0.6f, 40f);
+			RectangleF rect = new RectangleF(x*0.2f, this.scrollBtnCursor, x*0.6f, this.buttonHeight);
 			button.Frame = rect;
 			button.SetTitle(title, UIControlState.Normal);
 			button.Tag = catId;
@@ -64,6 +70,7 @@ namespace ClickNDone.iOS
 			UIColor ButtonBackgroundColor = UIColor.White;
 
 			this.scrollBtnCursor = rect.Location.Y + 45f;
+			this.scrollerHeigt = this.scrollerHeigt + this.buttonHeight;
 
 			try
 			{
