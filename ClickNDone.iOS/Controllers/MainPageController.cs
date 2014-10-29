@@ -58,7 +58,7 @@ namespace ClickNDone.iOS
 				LateralBar = new FlyoutNavigationController {//this will create a new instance of the FlyoutComponent
 					NavigationRoot = new RootElement ("Menu") { //Here we create the root of the alements
 						new Section () {//with this code we create Sections
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_agenda.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),

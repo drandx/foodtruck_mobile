@@ -127,7 +127,9 @@ namespace ClickNDone.Core
 		 * 
 		 */
 		public async Task<List<Category>> GetCategoriesAsync (String sessionToken, String deviceToken)
-		{
+		{			
+			List<Category> categoriesRet = new List<Category> ();
+			try{
 			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 			client.Headers.Set ("X-Origin-OS", "Iphone 7");
@@ -138,7 +140,6 @@ namespace ClickNDone.Core
 
 			var responseString = await client.DownloadStringTaskAsync (url);
 			var objResp = JObject.Parse (responseString);
-			List<Category> categoriesRet = new List<Category> ();
 
 			foreach (var cat in objResp["category"]) {
 				List<Category> subCategories = new List<Category> ();
@@ -163,7 +164,11 @@ namespace ClickNDone.Core
 				category.Subcategories = subCategories;
 				categoriesRet.Add (category);
 			}
+			}
+			catch(Exception exc) {
+				Console.WriteLine ("Crashing on GetCategoriesAsync - " + exc.Message);
 
+			}
 			return categoriesRet;
 		}
 		/*
@@ -230,7 +235,7 @@ namespace ClickNDone.Core
 				string url = Constants.WebServiceHost + "getuser";
 
 				IDictionary<String,Object> userAttributes = new Dictionary<string, object> ();
-				userAttributes.Add ("id", 5);
+				userAttributes.Add ("id", userId);
 				userAttributes.Add ("userType", UserType.ToString ());
 
 				var userJson = JsonConvert.SerializeObject (userAttributes);
@@ -401,7 +406,7 @@ namespace ClickNDone.Core
 				}
 				return ordersList;
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing on GetOrdersListAsync - " + exc.Message);
+				Console.WriteLine ("Crashing on GetOrders - " + exc.Message);
 				return null;
 			}
 

@@ -21,7 +21,9 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidAppear (animated);
 			try {
-				var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.CONSUMER);
+
+				//TODO - Fix this whe GetUser workis correctly according to the las change
+				/*var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.CONSUMER);
 				ordersModel.RequestedOrder.User = requesterUser;
 
 				txtAddress.Text = ordersModel.RequestedOrder.Location;
@@ -29,7 +31,7 @@ namespace ClickNDone.iOS
 				txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
 				txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
 				txtUserName.Text = ordersModel.RequestedOrder.User.names;
-				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;*/
 
 			} catch (Exception exc) {
 				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();

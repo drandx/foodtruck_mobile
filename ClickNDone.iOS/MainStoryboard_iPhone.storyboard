@@ -216,12 +216,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="images/logo_solutions.png" translatesAutoresizingMaskIntoConstraints="NO" id="3aj-Ah-Qcr">
                                 <rect key="frame" x="31" y="223" width="258" height="67"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6ew-vu-V2f">
+                                <rect key="frame" x="17" y="309" width="287" height="30"/>
+                                <state key="normal" title="Activar Recepción de Ordenes">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="obk-P8-381">
                         <barButtonItem key="backBarButtonItem" title="Atras" id="Bde-Ad-KXX"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="btnStartTaskt" destination="6ew-vu-V2f" id="u1f-Al-vbq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5c4-BC-xyg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

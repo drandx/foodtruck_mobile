@@ -16,6 +16,8 @@ namespace ClickNDone.iOS
 
 		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+		int taskId;
+		volatile bool running;
 
 
 		public HomeLogoController (IntPtr handle) : base (handle)
@@ -27,19 +29,90 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 			this.LoadLeftbarButton ();
 
-			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) {
+			btnStartTaskt.TouchUpInside += (sender, e) => {
+				 OnStartTask ();
+			};
+
+			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
+			{
 			} 
 			else 
 			{
-
-				int taskID = UIApplication.SharedApplication.BeginBackgroundTask (() => {});
+				/*int taskID = UIApplication.SharedApplication.BeginBackgroundTask (() => {});
 				new Task (() => {
 					DoWork ();
 					UIApplication.SharedApplication.BeginInvokeOnMainThread(LoadUIController);
 					UIApplication.SharedApplication.EndBackgroundTask (taskID);
-				}).Start ();
+				}).Start ();*/
 			}
 		}
+
+
+		async void OnStartTask()
+		{
+			// Stop the task if it's running.
+			if (taskId > 0) {
+				btnStartTaskt.SetTitle("Activar Recepción de Ordenes", UIControlState.Normal);
+				Console.WriteLine("Stopping Task...");
+				running = false;
+				return;
+			}
+
+			running = true;
+			btnStartTaskt.SetTitle("Detener Recepción de Ordenes", UIControlState.Normal);
+			taskId = 1;
+
+			var cts = new CancellationTokenSource();
+			taskId = UIApplication.SharedApplication.BeginBackgroundTask("Long-Running Task", () => {
+				Console.WriteLine("Task {0} timeout occurred, canceled.", taskId);
+				cts.Cancel();
+			});
+
+			// Kick off .NET Task to run in the background.
+			try {
+				await Task.Run(() => {
+					for (long count = 1; running == true ; count++) {
+						this.BeginInvokeOnMainThread(() => {
+							Console.WriteLine("Task {0} running.. {1}", taskId, count);
+						});
+						var ordersList = ordersModel.GetOrdersList(loginViewModel.User.id,ServiceState.ABIERTO,UserType.SUPPLIER);
+						if(ordersList == null)
+							Console.WriteLine("Orders List Null");
+						else
+						{
+							Console.WriteLine("Orders List Items Count: "+ordersList.Count);
+							if((ordersList.Count() > 0))
+							{
+								ordersModel.RequestedOrder = ordersList.First();
+								this.BeginInvokeOnMainThread(() => {
+									LoadUIController();
+									UIApplication.SharedApplication.EndBackgroundTask(taskId);
+									taskId = 0;
+									running = false;
+								});
+							}
+						}
+						cts.Token.ThrowIfCancellationRequested();
+						Thread.Sleep(Constants.GET_ORDER_STATUS_WAIT_TIME);
+					}
+				}, cts.Token);
+			}
+			catch (OperationCanceledException)
+			{
+				Console.WriteLine("Task {0} was cancelled.", taskId);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Exception: {0}", ex.Message);
+			}
+			finally
+			{
+				UIApplication.SharedApplication.EndBackgroundTask(taskId);
+				taskId = 0;
+				running = false;
+			}
+		}
+
 
 		private void LoadUIController()
 		{

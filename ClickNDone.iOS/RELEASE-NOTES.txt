@@ -1,1 +1,1 @@
-Proceso de solicitud de orden por parte del usuario mejorado y sin bugs.
+La version del proveedor recibe una orden y la confirma o la rechaza.
