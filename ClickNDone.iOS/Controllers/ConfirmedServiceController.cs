@@ -30,8 +30,8 @@ namespace ClickNDone.iOS
 				this.txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
 				this.txtState.Text = ordersModel.RequestedOrder.Status + "";
 				this.txtPrice.Text = "QuienloPone?";
-				this.txtServiceDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString();
-				this.txtServiceTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString();
+				this.txtServiceDate.Text = ordersModel.RequestedOrder.GetReservationDate();
+				this.txtServiceTime.Text = ordersModel.RequestedOrder.GetReservationTime();
 
 			}
 			catch (Exception exc)

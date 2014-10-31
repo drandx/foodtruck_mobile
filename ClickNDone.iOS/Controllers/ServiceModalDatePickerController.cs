@@ -99,11 +99,9 @@ namespace ClickNDone.iOS
 				ordersModel.MinCost = Convert.ToDouble(selectedFromMoney);
 				ordersModel.MaxCost = Convert.ToDouble(selectedToMoney);
 				DateTime finalDateTime = new DateTime();
-				finalDateTime.AddDays(this.selectedDate.Day);
-				finalDateTime.AddMonths(this.selectedDate.Month);
-				finalDateTime.AddYears(this.selectedDate.Year);
-				finalDateTime.AddHours(this.selectedTime.Hour);
-				finalDateTime.AddMinutes(this.selectedTime.Minute);
+				finalDateTime = this.selectedDate;
+				TimeSpan ts = new TimeSpan(this.selectedTime.Hour, this.selectedTime.Minute, this.selectedTime.Second);
+				finalDateTime = finalDateTime.Date + ts;
 				ordersModel.ReservationDate = finalDateTime;
 				ordersModel.Comments = txtComments.Text;
 				ordersModel.Location = txtAddress.Text;
@@ -140,6 +138,7 @@ namespace ClickNDone.iOS
 				lblDay.Text = dateTime.Day.ToString();
 				lblYear.Text = dateTime.Year.ToString();
 				this.selectedDate = dateTime;
+				Console.WriteLine("Selected Date: " + this.selectedDate.ToString());
 
 			};
 
@@ -157,10 +156,13 @@ namespace ClickNDone.iOS
 			};
 
 			modalPicker.DatePicker.Mode = UIDatePickerMode.Time;
+			modalPicker.DatePicker.Locale = NSLocale.CurrentLocale;
+			modalPicker.DatePicker.TimeZone = NSTimeZone.LocalTimeZone;
+
 
 			modalPicker.OnModalPickerDismissed += (s, ea) => 
 			{
-				var dateTime = DateTime.SpecifyKind(modalPicker.DatePicker.Date, DateTimeKind.Unspecified);
+				var dateTime = DateTime.SpecifyKind(modalPicker.DatePicker.Date, DateTimeKind.Utc).ToLocalTime();
 				lblHour.Text = dateTime.ToString("hh");
 				lblMinute.Text = dateTime.Minute.ToString();
 				lblAMPM.Text = dateTime.ToString("tt");
@@ -208,7 +210,7 @@ namespace ClickNDone.iOS
 		{
 			//Create custom data source
 			var FromPriceList = new List<string>();
-			foreach(var fromPrice in fromMoney)
+			foreach(var fromPrice in toMoney)
 			{
 				FromPriceList.Add(fromPrice);
 			}

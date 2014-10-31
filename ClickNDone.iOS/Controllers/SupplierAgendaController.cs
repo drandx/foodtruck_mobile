@@ -39,7 +39,7 @@ namespace ClickNDone.iOS
 
 				foreach(Order item in requesterOrders)
 				{
-					UIButton btn = this.CreateButton (item.Id,item.Id + " - " +item.ReservationDate.ToString());
+					UIButton btn = this.CreateButton (item.Id,item.Id + " - " +item.GetReservationDate());
 					this.scrollerAgenda.Add (btn);
 				}
 

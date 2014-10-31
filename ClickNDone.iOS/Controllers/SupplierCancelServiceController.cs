@@ -38,8 +38,8 @@ namespace ClickNDone.iOS
 
 			try {
 				txtAddress.Text = ordersModel.RequestedOrder.Location;
-				txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
-				txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
+				txtDate.Text = ordersModel.RequestedOrder.GetReservationDate();
+				txtTime.Text = ordersModel.RequestedOrder.GetReservationTime();
 				txtUserName.Text = ordersModel.RequestedOrder.User.names;
 				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
 

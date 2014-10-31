@@ -61,8 +61,7 @@ namespace ClickNDone.Core
 		public string ClickCode { get; set;}
 		public int CategoryId { get; set;}
 		public int SubCategoryId { get; set;}
-		public DateTime ReservationDate { get; set; }
-		public DateTime ReservationTime { get; set; }
+		public DateTime ReservationDate { get ; set; }
 		public Double MinCost { get; set; }
 		public Double MaxCost { get; set; }
 		public string Location { get; set; }
@@ -78,6 +77,16 @@ namespace ClickNDone.Core
 		{
 			this.Supplier = new User ();
 			this.User = new User ();
+		}
+
+		public string GetReservationDate()
+		{
+			return this.ReservationDate.ToString ("MMMM dd, yyyy");
+		}
+
+		public string GetReservationTime()
+		{
+			return this.ReservationDate.ToString ("HH:mm:ss");
 		}
 
 	}

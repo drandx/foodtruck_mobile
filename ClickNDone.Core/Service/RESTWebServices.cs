@@ -318,8 +318,9 @@ namespace ClickNDone.Core
 					order.ClickCode = objResp ["code_click"].ToString ();
 					order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
 					order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-					order.ReservationDate = new DateTime ();
-					order.ReservationTime = new DateTime ();
+					var reservation_date = objResp ["reservation_date"].ToString();
+					DateTime finalDate = reservation_date == "" || reservation_date == null ? new DateTime() : Convert.ToDateTime(reservation_date);
+					order.ReservationDate = finalDate;
 					order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
 					order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
 					order.Location = objResp ["location"].ToString ();
@@ -391,8 +392,9 @@ namespace ClickNDone.Core
 						orderItem.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
 						var subCatId = objResp ["id_subcategory"].ToString ();
 						orderItem.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-						orderItem.ReservationDate = new DateTime ();
-						orderItem.ReservationTime = new DateTime ();
+						var reservation_date = objResp ["reservation_date"].ToString();
+						DateTime finalDate = reservation_date == "" || reservation_date == null ? new DateTime() : Convert.ToDateTime(reservation_date);
+						orderItem.ReservationDate = finalDate;
 						orderItem.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
 						orderItem.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
 						orderItem.Location = objResp ["location"].ToString ();
