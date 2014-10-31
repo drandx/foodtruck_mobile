@@ -8,6 +8,7 @@ namespace ClickNDone.Core
 	{
 		public int RequestedOrderId { get; set;}
 		public Order RequestedOrder { get; set;}
+		public List<Order> SupplierAgenda { get; set;}
 		public string Location { get; set; }
 		public string Comments { get; set; }
 		public Double MinCost { get; set; }

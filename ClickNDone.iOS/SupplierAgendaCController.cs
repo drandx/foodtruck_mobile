@@ -6,6 +6,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using ClickNDone.Core;
 using System.Drawing;
+using System.Linq;
 
 namespace ClickNDone.iOS
 {
@@ -36,6 +37,7 @@ namespace ClickNDone.iOS
 
 			try {
 				var requesterOrders = await ordersModel.GetOrdersListAsync (userModel.User.id, ServiceState.CONFIRMADO, UserType.SUPPLIER);
+				ordersModel.SupplierAgenda = requesterOrders;
 
 				foreach(Order item in requesterOrders)
 				{
@@ -65,7 +67,9 @@ namespace ClickNDone.iOS
 
 		private void handler(Object sender, EventArgs args)
 		{
-			Console.WriteLine ("GO TO SERVICE DETAIL!");
+			UIButton selectedOrder = (UIButton)sender;
+			ordersModel.RequestedOrder = ordersModel.SupplierAgenda.Where (a => a.Id == selectedOrder.Tag).First();
+			PerformSegue("OnServiceDetail", this);
 		}
 
 

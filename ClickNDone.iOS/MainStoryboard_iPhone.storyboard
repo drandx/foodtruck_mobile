@@ -2468,7 +2468,7 @@
                     <connections>
                         <outlet property="indicator" destination="LTA-3V-Vh3" id="Iya-Z7-uWQ"/>
                         <outlet property="scrollerAgenda" destination="czE-UP-fqC" id="vCL-by-Kr3"/>
-                        <segue destination="QT0-YK-nvg" kind="push" identifier="OnSeupplierServiceDetail" id="Ooo-ii-MRH"/>
+                        <segue destination="QT0-YK-nvg" kind="push" identifier="OnServiceDetail" id="Ooo-ii-MRH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7r-f2-hRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3319,14 +3319,14 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="B0I-qk-ijs"/>
-        <segue reference="8j7-Fr-AT4"/>
-        <segue reference="R6n-7M-aYX"/>
-        <segue reference="sbZ-lK-PYD"/>
-        <segue reference="nKY-1G-vS7"/>
-        <segue reference="feR-zA-nDa"/>
         <segue reference="fBG-wL-bDp"/>
         <segue reference="kCl-DA-Bro"/>
+        <segue reference="Ooo-ii-MRH"/>
+        <segue reference="nKY-1G-vS7"/>
+        <segue reference="feR-zA-nDa"/>
+        <segue reference="uHb-zl-3a4"/>
+        <segue reference="R6n-7M-aYX"/>
+        <segue reference="B0I-qk-ijs"/>
+        <segue reference="8j7-Fr-AT4"/>
     </inferredMetricsTieBreakers>
 </document>
