@@ -4,11 +4,15 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
 	public partial class SupplierRateServiceController : MyViewController
 	{
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+
+
 		public SupplierRateServiceController (IntPtr handle) : base (handle)
 		{
 		}
@@ -18,6 +22,15 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 			this.AddKeyboarListeners ();
 			this.NavigationItem.SetHidesBackButton (true, false);
+
+			try {
+
+				txtUserName.Text = ordersModel.RequestedOrder.User.names;
+				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+
+			} catch (Exception exc) {
+				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+			}
 
 
 		}

@@ -36,6 +36,17 @@ namespace ClickNDone.iOS
 			lblNotCancel.UserInteractionEnabled = true;
 			lblNotCancel.AddGestureRecognizer (labelNotCancelTap);
 
+			try {
+				txtAddress.Text = ordersModel.RequestedOrder.Location;
+				txtDate.Text = ordersModel.RequestedOrder.ReservationDate.ToString ();
+				txtTime.Text = ordersModel.RequestedOrder.ReservationTime.ToString ();
+				txtUserName.Text = ordersModel.RequestedOrder.User.names;
+				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+
+			} catch (Exception exc) {
+				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+			}
+
 		}
 
 		public override void ViewWillAppear(bool animated)

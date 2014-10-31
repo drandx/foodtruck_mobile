@@ -315,6 +315,10 @@
     <Compile Include="Controllers\SupplierConfirmedServiceController.designer.cs">
       <DependentUpon>SupplierConfirmedServiceController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\SupplierAgendaController.cs" />
+    <Compile Include="Controllers\SupplierAgendaController.designer.cs">
+      <DependentUpon>SupplierAgendaController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />
