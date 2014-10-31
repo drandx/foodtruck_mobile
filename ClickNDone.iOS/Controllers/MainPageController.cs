@@ -69,7 +69,7 @@ namespace ClickNDone.iOS
 					ViewControllers = new [] {//here we link Controllers to the elements on the sections
 						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
-						this.Storyboard.InstantiateViewController ("SupplierAgendaController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("SupplierAgendaNavigation") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,

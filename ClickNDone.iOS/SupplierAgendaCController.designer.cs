@@ -9,8 +9,8 @@ using System.CodeDom.Compiler;
 
 namespace ClickNDone.iOS
 {
-	[Register ("SupplierAgendaController")]
-	partial class SupplierAgendaController
+	[Register ("SupplierAgendaCController")]
+	partial class SupplierAgendaCController
 	{
 		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }

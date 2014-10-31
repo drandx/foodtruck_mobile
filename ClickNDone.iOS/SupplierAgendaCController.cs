@@ -4,12 +4,12 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using System.Drawing;
 using ClickNDone.Core;
+using System.Drawing;
 
 namespace ClickNDone.iOS
 {
-	public partial class SupplierAgendaController : MyViewController
+	public partial class SupplierAgendaCController : MyViewController
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
 		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
@@ -20,7 +20,7 @@ namespace ClickNDone.iOS
 		private float scrollerHeigt = 0.0f;
 
 
-		public SupplierAgendaController (IntPtr handle) : base (handle)
+		public SupplierAgendaCController (IntPtr handle) : base (handle)
 		{
 		}
 
@@ -131,5 +131,8 @@ namespace ClickNDone.iOS
 			return null;
 
 		}
+
+
+
 	}
 }

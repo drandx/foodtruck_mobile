@@ -45,14 +45,14 @@ namespace ClickNDone.iOS
 
 			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (async() => {
 				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.CONFIRMADO);
-				PerformSegue("OnAcceptedService",this);
+				PerformSegue("OnSupplierConfirmService",this);
 			});
 			lblAcceptService.UserInteractionEnabled = true;
 			lblAcceptService.AddGestureRecognizer (labelAcceptTap);
 
 			UITapGestureRecognizer labelRejectTap = new UITapGestureRecognizer (async() => {
 				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.RECHAZADO_PROVEEDOR);
-				PerformSegue("OnSuplierRejectedService",this);
+				PerformSegue("OnSupplierRejectService",this);
 			});
 			lblRejectService.UserInteractionEnabled = true;
 			lblRejectService.AddGestureRecognizer (labelRejectTap);
@@ -62,7 +62,6 @@ namespace ClickNDone.iOS
 		public override void ViewWillAppear (bool animated)
 		{
 			base.ViewWillAppear (false);
-			userModel.IsBusyChanged += OnIsBusyChanged;
 			ordersModel.IsBusyChanged += OnIsBusyOrdersChanged;
 
 
@@ -71,7 +70,6 @@ namespace ClickNDone.iOS
 		public override void ViewWillDisappear (bool animated)
 		{
 			base.ViewWillDisappear (false);
-			userModel.IsBusyChanged -= OnIsBusyChanged;
 			ordersModel.IsBusyChanged -= OnIsBusyOrdersChanged;
 		}
 
