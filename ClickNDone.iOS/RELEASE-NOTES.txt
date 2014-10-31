@@ -1,1 +1,1 @@
-La version del proveedor recibe una orden y la confirma o la rechaza.
+Prueba para probar arreglo de Bug de concurrencia.

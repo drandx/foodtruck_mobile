@@ -8,7 +8,7 @@ using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class SupplierServiceController : UIViewController
+	public partial class SupplierServiceController : MyViewController
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
 		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
@@ -41,6 +41,8 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.NavigationItem.SetHidesBackButton (true, false);
+
 			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (async() => {
 				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.CONFIRMADO);
 				PerformSegue("OnAcceptedService",this);

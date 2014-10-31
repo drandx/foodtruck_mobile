@@ -7,16 +7,20 @@ using MonoTouch.UIKit;
 
 namespace ClickNDone.iOS
 {
-	public partial class SupplierConfirmServiceController : UIViewController
+	public partial class SupplierRateServiceController : MyViewController
 	{
-		public SupplierConfirmServiceController (IntPtr handle) : base (handle)
+		public SupplierRateServiceController (IntPtr handle) : base (handle)
 		{
 		}
 
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			this.AddKeyboarListeners ();
 			this.NavigationItem.SetHidesBackButton (true, false);
+
+
 		}
+
 	}
 }

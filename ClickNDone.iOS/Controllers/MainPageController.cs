@@ -39,8 +39,8 @@ namespace ClickNDone.iOS
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_categorias.png"), false),
 							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historial.png"), false),
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
+							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
+							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
 						},
 					},
 					ViewControllers = new [] {//here we link Controllers to the elements on the sections
@@ -48,8 +48,8 @@ namespace ClickNDone.iOS
 						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("CategoryController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
-						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
-						this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
+						//this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
+						//this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
 					}
 				};
 			}
@@ -61,18 +61,18 @@ namespace ClickNDone.iOS
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_agenda.png"), false),
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
+							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
 							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historico.png"), false),
-							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
+							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
 						},
 					},
 					ViewControllers = new [] {//here we link Controllers to the elements on the sections
 						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
-						this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
-						this.Storyboard.InstantiateViewController ("AgendaController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("SupplierAgendaController") as UIViewController,
+						//this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
-						this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
+						//this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
 					}
 				};
 

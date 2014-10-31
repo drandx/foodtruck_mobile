@@ -276,10 +276,6 @@
     <Compile Include="Controllers\AgendaServiciosController.designer.cs">
       <DependentUpon>AgendaServiciosController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\SupplierConfirmServiceController.cs" />
-    <Compile Include="Controllers\SupplierConfirmServiceController.designer.cs">
-      <DependentUpon>SupplierConfirmServiceController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\SupplierServiceController.cs" />
     <Compile Include="Controllers\SupplierServiceController.designer.cs">
       <DependentUpon>SupplierServiceController.cs</DependentUpon>
@@ -306,6 +302,18 @@
     <Compile Include="Controllers\ServiceModalDatePickerController.cs" />
     <Compile Include="Controllers\ServiceModalDatePickerController.designer.cs">
       <DependentUpon>ServiceModalDatePickerController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierCancelServiceController.cs" />
+    <Compile Include="Controllers\SupplierCancelServiceController.designer.cs">
+      <DependentUpon>SupplierCancelServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierRateServiceController.cs" />
+    <Compile Include="Controllers\SupplierRateServiceController.designer.cs">
+      <DependentUpon>SupplierRateServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierConfirmedServiceController.cs" />
+    <Compile Include="Controllers\SupplierConfirmedServiceController.designer.cs">
+      <DependentUpon>SupplierConfirmedServiceController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

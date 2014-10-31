@@ -55,6 +55,7 @@ namespace ClickNDone.iOS
 				btnStartTaskt.SetTitle("Activar Recepción de Ordenes", UIControlState.Normal);
 				Console.WriteLine("Stopping Task...");
 				running = false;
+				taskId = 0;
 				return;
 			}
 
@@ -119,43 +120,6 @@ namespace ClickNDone.iOS
 			var controller = Storyboard.InstantiateViewController("SupplierServiceController") as UIViewController;
 			PresentViewController (controller,true,null);
 		}
-
-		private void DoWork()
-		{
-			//Timer Code Starts Here
-			OrderStateTimer timerState = new OrderStateTimer();
-			TimerCallback timerDelegate = new TimerCallback(CheckStatus);
-			Timer timer = new Timer(timerDelegate, timerState, 10000, Constants.GET_ORDER_STATUS_WAIT_TIME);
-			timerState.tmr = timer;
-			while (timerState.tmr != null)
-				Thread.Sleep(0);
-			Console.WriteLine("Timer done.");
-			//Ends Timer Code
-		}
-
-		void CheckStatus(Object state) {
-			OrderStateTimer s = (OrderStateTimer) state;
-			try
-			{
-				//TODO - Ingresar ID de usuario verdadero
-				var ordersList = ordersModel.GetOrdersList(loginViewModel.User.id,ServiceState.ABIERTO,UserType.SUPPLIER);
-				Console.WriteLine("Running TimeOut Cycle: " + s.AttemptsCount);
-				if((ordersList.Count() > 0))
-				{
-					ordersModel.RequestedOrder = ordersList.First();
-					Console.WriteLine("disposing of timer...");
-					s.tmr.Dispose();
-					s.tmr = null;
-				}
-				s.AttemptsCount++;
-			}
-			catch (Exception exc)
-			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
-			}
-		}
-
-
 
 	}
 }
