@@ -2413,6 +2413,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Dgd-zG-Q4m"/>
+                    <connections>
+                        <outlet property="txtAddress" destination="8ze-Ut-ZOn" id="nhe-uC-gJg"/>
+                        <outlet property="txtDate" destination="9E6-MW-ZK5" id="bUD-2D-WNt"/>
+                        <outlet property="txtReference" destination="uCU-wP-lSD" id="62N-ld-1uc"/>
+                        <outlet property="txtState" destination="K3o-n1-A7J" id="OZR-jj-nk2"/>
+                        <outlet property="txtTime" destination="ebs-Ey-CyF" id="dQM-6T-Uq6"/>
+                        <outlet property="txtUserLastName" destination="gPr-S3-UpB" id="qoy-4e-Lps"/>
+                        <outlet property="txtUserName" destination="Qeh-f9-gxw" id="I5s-sj-wZu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2qF-Tg-YJh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2962,11 +2971,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="uHb-zl-3a4"/>
         <segue reference="8j7-Fr-AT4"/>
+        <segue reference="nzV-VY-zeO"/>
+        <segue reference="qwV-pz-hVx"/>
         <segue reference="aUQ-ng-MoQ"/>
         <segue reference="R6n-7M-aYX"/>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="fBG-wL-bDp"/>
-        <segue reference="qwV-pz-hVx"/>
     </inferredMetricsTieBreakers>
 </document>
