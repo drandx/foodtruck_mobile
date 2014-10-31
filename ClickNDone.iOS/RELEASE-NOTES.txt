@@ -1,1 +1,1 @@
-Prueba para probar arreglo de Bug de concurrencia.
+Primara version con el flujo completo.

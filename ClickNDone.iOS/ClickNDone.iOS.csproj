@@ -168,6 +168,8 @@
     <BundleResource Include="images\btn_menu_agenda%402x.png" />
     <BundleResource Include="images\btn_menu_historico%402x.png" />
     <BundleResource Include="images\btn_solicitar_telefono%402x.png" />
+    <BundleResource Include="images\btn_iniciar_servicio%402x.png" />
+    <BundleResource Include="images\btn_finalizar_servicio%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -318,6 +320,18 @@
     <Compile Include="SupplierAgendaCController.cs" />
     <Compile Include="SupplierAgendaCController.designer.cs">
       <DependentUpon>SupplierAgendaCController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierServiceDetailController.cs" />
+    <Compile Include="SupplierServiceDetailController.designer.cs">
+      <DependentUpon>SupplierServiceDetailController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierStartedServiceController.cs" />
+    <Compile Include="SupplierStartedServiceController.designer.cs">
+      <DependentUpon>SupplierStartedServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SupplierRateFinishedServiceController.cs" />
+    <Compile Include="SupplierRateFinishedServiceController.designer.cs">
+      <DependentUpon>SupplierRateFinishedServiceController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
