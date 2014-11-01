@@ -24,6 +24,7 @@ namespace ClickNDone.iOS
 		{
 		}
 
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
@@ -35,15 +36,11 @@ namespace ClickNDone.iOS
 
 			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
 			{
+				btnStartTaskt.Hidden = true;
 			} 
 			else 
 			{
-				/*int taskID = UIApplication.SharedApplication.BeginBackgroundTask (() => {});
-				new Task (() => {
-					DoWork ();
-					UIApplication.SharedApplication.BeginInvokeOnMainThread(LoadUIController);
-					UIApplication.SharedApplication.EndBackgroundTask (taskID);
-				}).Start ();*/
+				btnStartTaskt.Hidden = false;
 			}
 		}
 

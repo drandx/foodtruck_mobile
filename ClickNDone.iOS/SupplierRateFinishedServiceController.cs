@@ -4,13 +4,29 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class SupplierRateFinishedServiceController : UIViewController
+	public partial class SupplierRateFinishedServiceController : MyViewController
 	{
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+
+
 		public SupplierRateFinishedServiceController (IntPtr handle) : base (handle)
 		{
+		}
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.NavigationItem.SetHidesBackButton (true, false);
+
+			txtDate.Text = ordersModel.RequestedOrder.GetReservationDate();
+			txtState.Text = ordersModel.RequestedOrder.Status.ToString ();
+			txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
+			txtEndTime.Text = ordersModel.EndTime.ToString("HH:mm:ss");
+			txtStartTime.Text = ordersModel.InitTime.ToString("HH:mm:ss");
 		}
 	}
 }

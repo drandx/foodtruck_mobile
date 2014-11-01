@@ -129,43 +129,42 @@ namespace ClickNDone.Core
 		public async Task<List<Category>> GetCategoriesAsync (String sessionToken, String deviceToken)
 		{			
 			List<Category> categoriesRet = new List<Category> ();
-			try{
-			client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
-			client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
-			client.Headers.Set ("X-Origin-OS", "Iphone 7");
-			client.Headers.Set ("X-Origin-Token", deviceToken);
-			client.Headers.Set ("User-Agent", "IOS7");
+			try {
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+				client.Headers.Set ("X-Origin-OS", "Iphone 7");
+				client.Headers.Set ("X-Origin-Token", deviceToken);
+				client.Headers.Set ("User-Agent", "IOS7");
 
-			string url = Constants.WebServiceHost + "allcategories";
+				string url = Constants.WebServiceHost + "allcategories";
 
-			var responseString = await client.DownloadStringTaskAsync (url);
-			var objResp = JObject.Parse (responseString);
+				var responseString = await client.DownloadStringTaskAsync (url);
+				var objResp = JObject.Parse (responseString);
 
-			foreach (var cat in objResp["category"]) {
-				List<Category> subCategories = new List<Category> ();
-				Category category = new Category ();
-				category.Name = cat ["categoryName"].ToString ();
-				category.Description = cat ["categoryDescription"].ToString ();
-				category.Convention = cat ["categoryConvention"].ToString ();
-				var idCat = cat ["id"].ToString ();
-				category.Id = idCat == "" || idCat == null ? 0 : Convert.ToInt32 (idCat);
+				foreach (var cat in objResp["category"]) {
+					List<Category> subCategories = new List<Category> ();
+					Category category = new Category ();
+					category.Name = cat ["categoryName"].ToString ();
+					category.Description = cat ["categoryDescription"].ToString ();
+					category.Convention = cat ["categoryConvention"].ToString ();
+					var idCat = cat ["id"].ToString ();
+					category.Id = idCat == "" || idCat == null ? 0 : Convert.ToInt32 (idCat);
 
-				foreach (var subcat in cat["subCategories"]) {
-					Category subcategory = new Category ();
-					subcategory.Name = subcat ["subCategoryName"].ToString ();
-					subcategory.Description = subcat ["subCategoryDescription"].ToString ();
-					subcategory.Convention = subcat ["subCategoryConvention"].ToString ();
-					subCategories.Add (subcategory);
-					var idSubCat = subcat ["id_sub"].ToString ();
-					subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
-					subcategory.ParentId = category.Id;
+					foreach (var subcat in cat["subCategories"]) {
+						Category subcategory = new Category ();
+						subcategory.Name = subcat ["subCategoryName"].ToString ();
+						subcategory.Description = subcat ["subCategoryDescription"].ToString ();
+						subcategory.Convention = subcat ["subCategoryConvention"].ToString ();
+						subCategories.Add (subcategory);
+						var idSubCat = subcat ["id_sub"].ToString ();
+						subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
+						subcategory.ParentId = category.Id;
+					}
+
+					category.Subcategories = subCategories;
+					categoriesRet.Add (category);
 				}
-
-				category.Subcategories = subCategories;
-				categoriesRet.Add (category);
-			}
-			}
-			catch(Exception exc) {
+			} catch (Exception exc) {
 				Console.WriteLine ("Crashing on GetCategoriesAsync - " + exc.Message);
 
 			}
@@ -191,7 +190,8 @@ namespace ClickNDone.Core
 			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32 (order.MinCost));
 			serviceRequestAttributes.Add ("maximumCost", Convert.ToInt32 (order.MaxCost));
 			serviceRequestAttributes.Add ("location", order.Location);
-			serviceRequestAttributes.Add ("reservationDate", order.ReservationDate.ToString ("MM-dd-yy H:mm:ss"));
+			serviceRequestAttributes.Add ("reservationDate", order.ReservationDate.ToString ("yyyy-MM-dd"));
+			serviceRequestAttributes.Add ("hora", order.ReservationDate.ToString ("hh:mm tt"));
 			serviceRequestAttributes.Add ("allowanceToken", sessionToken);
 			serviceRequestAttributes.Add ("iduser", userId);
 			serviceRequestAttributes.Add ("category", order.SubCategory.ParentId);
@@ -266,8 +266,7 @@ namespace ClickNDone.Core
 		 */
 		public Task<Order> GetOrderAsync (int orderId)
 		{
-			try 
-			{
+			try {
 				return Task.Run (() => GetOrder (orderId));
 			} catch (Exception exc) {
 				Console.WriteLine ("Crashing when gets order - " + exc.Message);
@@ -318,14 +317,21 @@ namespace ClickNDone.Core
 					order.ClickCode = objResp ["code_click"].ToString ();
 					order.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
 					order.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-					var reservation_date = objResp ["reservation_date"].ToString();
-					DateTime finalDate = reservation_date == "" || reservation_date == null ? new DateTime() : Convert.ToDateTime(reservation_date);
+					var reservation_date = objResp ["reservation_date"].ToString ();
+					DateTime finalDate;
+					try {
+						finalDate = reservation_date == "" || reservation_date == null ? new DateTime () : Convert.ToDateTime (reservation_date);
+					} catch (Exception exc) {
+						Console.WriteLine ("Issues parsing date from service: " + exc.Message);
+						finalDate = new DateTime();
+					}
 					order.ReservationDate = finalDate;
 					order.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
 					order.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
 					order.Location = objResp ["location"].ToString ();
 					order.Reference = objResp ["reference"].ToString ();
 					order.Comments = objResp ["comments"].ToString ();
+					order.Time = objResp ["time"].ToString ();
 					return order;
 				}
 				return null;
@@ -392,14 +398,21 @@ namespace ClickNDone.Core
 						orderItem.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
 						var subCatId = objResp ["id_subcategory"].ToString ();
 						orderItem.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-						var reservation_date = objResp ["reservation_date"].ToString();
-						DateTime finalDate = reservation_date == "" || reservation_date == null ? new DateTime() : Convert.ToDateTime(reservation_date);
+						var reservation_date = objResp ["reservation_date"].ToString ();
+						DateTime finalDate;
+						try {
+							finalDate = reservation_date == "" || reservation_date == null ? new DateTime () : Convert.ToDateTime (reservation_date);
+						} catch (Exception exc) {
+							Console.WriteLine ("Issues parsing date from service: " + exc.Message);
+							finalDate = new DateTime();
+						}
 						orderItem.ReservationDate = finalDate;
 						orderItem.MinCost = Convert.ToDouble (objResp ["minimum_cost"].ToString ());
 						orderItem.MaxCost = Convert.ToDouble (objResp ["maximum_cost"].ToString ());
 						orderItem.Location = objResp ["location"].ToString ();
 						orderItem.Reference = objResp ["reference"].ToString ();
 						orderItem.Comments = objResp ["comments"].ToString ();
+						orderItem.Time = objResp ["time"].ToString ();
 						var idOder = objResp ["id_orden"].ToString ();
 						orderItem.Id = idOder == "" || idOder == null ? 0 : Convert.ToInt32 (idOder);
 

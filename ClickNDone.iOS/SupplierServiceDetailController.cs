@@ -4,13 +4,82 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
+using ClickNDone.Core;
 
 namespace ClickNDone.iOS
 {
-	public partial class SupplierServiceDetailController : UIViewController
+	public partial class SupplierServiceDetailController : MyViewController
 	{
+		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+
 		public SupplierServiceDetailController (IntPtr handle) : base (handle)
 		{
 		}
+
+
+		public override void ViewDidLoad ()
+		{
+			base.ViewDidLoad ();
+			this.NavigationItem.SetHidesBackButton (true, false);
+
+			btnInitService.TouchUpInside += async(sender, e) =>
+			{
+				try {
+
+					if(txtClickCode.Text == ordersModel.RequestedOrder.ClickCode)
+					{
+						await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.ORDEN_INICIADA);
+						ordersModel.InitTime = new DateTime();
+						PerformSegue("OnSupplierInitService",this);
+					}
+
+					else
+						new UIAlertView("Oops!", "Codigo Click Incorrecto", null, "Ok").Show();
+
+				}
+				catch (Exception exc)
+				{
+					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				}
+			};
+
+		}
+
+		public override async void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			try {
+				var requesterUser = await userModel.GetUserAsync (ordersModel.RequestedOrder.UserId, UserType.CONSUMER);
+				ordersModel.RequestedOrder.User = requesterUser;
+				txtDate.Text = ordersModel.RequestedOrder.GetReservationDate();
+				txtUserName.Text = ordersModel.RequestedOrder.User.names;
+				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
+				txtState.Text = ordersModel.RequestedOrder.Status.ToString();
+
+			} catch (Exception exc) {
+				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+			}
+		}
+
+		public override void ViewWillAppear (bool animated)
+		{
+			base.ViewWillAppear (false);
+			ordersModel.IsBusyChanged += OnIsBusyChanged;
+		}
+
+		public override void ViewWillDisappear (bool animated)
+		{
+			base.ViewWillDisappear (false);
+			ordersModel.IsBusyChanged -= OnIsBusyChanged;
+		}
+
+		void OnIsBusyChanged (object sender, EventArgs e)
+		{
+			btnInitService.Enabled = 
+					indicator.Hidden = !userModel.IsBusy;
+		}
+
+
 	}
 }

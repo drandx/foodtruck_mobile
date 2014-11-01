@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEQ-Xg-fFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1498" y="-2763"/>
+            <point key="canvasLocation" x="1492" y="-2817"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gyT-Wd-Xhc">
@@ -1110,12 +1110,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-Ls-JQI">
-                                <rect key="frame" x="241" y="374" width="62" height="30"/>
-                                <state key="normal" title="finalizar>">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Perez" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5m-hV-i6g" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="214" width="106" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -1131,6 +1125,21 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6Bw-1A-k8i">
                                 <rect key="frame" x="175" y="378" width="20" height="20"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yO2-ak-aXD">
+                                <rect key="frame" x="168" y="408" width="55" height="30"/>
+                                <state key="normal" title="Home >">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Vst-B1-DoA" kind="modal" id="aGu-Xd-tnv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-Ls-JQI">
+                                <rect key="frame" x="204" y="373" width="101" height="30"/>
+                                <state key="normal" title="tmp_finalizar >">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -2401,12 +2410,21 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfr-Aj-mDn">
-                                <rect key="frame" x="99" y="390" width="123" height="17"/>
+                                <rect key="frame" x="16" y="390" width="123" height="17"/>
                                 <state key="normal" backgroundImage="images/btn_cancelar_servicio.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="LsE-4a-L6v" kind="push" id="Q1b-3U-ABN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8P-b3-eNw">
+                                <rect key="frame" x="257" y="384" width="55" height="30"/>
+                                <state key="normal" title="Home >">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Vst-B1-DoA" kind="modal" id="ZqV-wQ-Svn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2452,15 +2470,6 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="LTA-3V-Vh3">
                                 <rect key="frame" x="172" y="272" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byc-ZM-pY1">
-                                <rect key="frame" x="283" y="69" width="30" height="30"/>
-                                <state key="normal" title="tmp">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="QT0-YK-nvg" kind="push" id="sbZ-lK-PYD"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2594,7 +2603,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-WL-rcv" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5bY-WL-rcv" customClass="MyUITextField">
                                 <rect key="frame" x="200" y="294" width="100" height="21"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2606,26 +2615,27 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gKO-Rx-Rlh">
-                                <rect key="frame" x="244" y="360" width="30" height="30"/>
-                                <state key="normal" title="tmp">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="vvI-NB-5BJ" kind="push" id="nKY-1G-vS7"/>
-                                </connections>
-                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-j4-7Lm">
+                                <rect key="frame" x="163" y="345" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="a34-UQ-GCU"/>
                     <connections>
-                        <segue destination="vvI-NB-5BJ" kind="push" id="Teg-v4-vTy"/>
+                        <outlet property="btnInitService" destination="4Un-b3-5UG" id="XhD-sF-iAN"/>
+                        <outlet property="indicator" destination="cQb-j4-7Lm" id="F1B-er-mJd"/>
+                        <outlet property="txtClickCode" destination="5bY-WL-rcv" id="SsA-LF-mrn"/>
+                        <outlet property="txtDate" destination="MhK-lh-WPQ" id="b1x-o8-3e5"/>
+                        <outlet property="txtState" destination="uf6-Bl-eMe" id="4Rw-3c-fPg"/>
+                        <outlet property="txtUserLastName" destination="pWr-NG-br3" id="bTG-My-aWV"/>
+                        <outlet property="txtUserName" destination="1uZ-JX-c0M" id="tNB-hC-2h7"/>
+                        <segue destination="vvI-NB-5BJ" kind="push" identifier="OnSupplierInitService" id="Teg-v4-vTy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfb-Eq-HM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3363" y="-2805"/>
+            <point key="canvasLocation" x="3345" y="-2805"/>
         </scene>
         <!--Supplier Started Service Controller-->
         <scene sceneID="Jwa-3J-Uo3">
@@ -2688,8 +2698,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Digite el Codigo Click" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-oR-kTG">
-                                <rect key="frame" x="20" y="288" width="186" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text=" Codigo Click" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQ0-oR-kTG">
+                                <rect key="frame" x="20" y="288" width="114" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2716,19 +2726,19 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SdH-4M-jcM">
-                                <rect key="frame" x="231" y="204" width="21" height="21"/>
+                                <rect key="frame" x="231" y="205" width="21" height="21"/>
                                 <state key="normal" backgroundImage="images/btn_star.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5V9-BT-yx0">
-                                <rect key="frame" x="253" y="204" width="21" height="21"/>
+                                <rect key="frame" x="253" y="205" width="21" height="21"/>
                                 <state key="normal" backgroundImage="images/btn_star.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lyf-HQ-eyw">
-                                <rect key="frame" x="275" y="204" width="21" height="21"/>
+                                <rect key="frame" x="275" y="205" width="21" height="21"/>
                                 <state key="normal" backgroundImage="images/btn_star.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2742,12 +2752,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Aceptado" borderStyle="line" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6VZ-nv-ZIJ" customClass="MyUITextField">
                                 <rect key="frame" x="133" y="311" width="109" height="20"/>
-                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-r8-mLU" customClass="MyUITextField">
-                                <rect key="frame" x="206" y="288" width="100" height="21"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -2783,26 +2787,31 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="jIp-8T-t5E">
                                 <rect key="frame" x="152" y="382" width="20" height="20"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-HE-ZXn">
-                                <rect key="frame" x="282" y="394" width="30" height="30"/>
-                                <state key="normal" title="tmp">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="Txc-TQ-On8" kind="push" id="Tsm-CC-Bp9"/>
-                                </connections>
-                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ev3-r8-mLU" customClass="MyUITextField">
+                                <rect key="frame" x="133" y="288" width="109" height="21"/>
+                                <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wc0-Hf-btN"/>
                     <connections>
-                        <segue destination="Txc-TQ-On8" kind="push" id="feR-zA-nDa"/>
+                        <outlet property="indicator" destination="jIp-8T-t5E" id="Vod-gw-zhl"/>
+                        <outlet property="lblCancel" destination="cCQ-5h-0pb" id="pPZ-UX-hce"/>
+                        <outlet property="lblNotCancel" destination="2JA-St-axi" id="6qV-W1-R3i"/>
+                        <outlet property="txtClickCode" destination="Ev3-r8-mLU" id="Nvv-0x-4SD"/>
+                        <outlet property="txtDate" destination="R3p-mE-D6P" id="xGE-Sk-t8K"/>
+                        <outlet property="txtState" destination="6VZ-nv-ZIJ" id="VaA-Ia-Fue"/>
+                        <outlet property="txtUserLastName" destination="3Pr-tk-n1m" id="rIX-pE-Yc1"/>
+                        <outlet property="txtUserName" destination="QYL-vk-kWu" id="nTr-1G-bOK"/>
+                        <segue destination="Txc-TQ-On8" kind="push" identifier="OnSupplierFinishService" id="feR-zA-nDa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqk-vT-SNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3847" y="-2805"/>
+            <point key="canvasLocation" x="3829" y="-2805"/>
         </scene>
         <!--Supplier Rate Finished Service Controller-->
         <scene sceneID="gXJ-cw-zba">
@@ -2919,15 +2928,27 @@
                                 <state key="normal" backgroundImage="images/btn_enviar_calificacion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Vst-B1-DoA" kind="modal" id="mTW-xa-XeS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="d49-8u-MvR"/>
+                    <connections>
+                        <outlet property="txtClickCode" destination="alJ-AY-svj" id="OkO-7f-TS7"/>
+                        <outlet property="txtComments" destination="CZY-ag-LDn" id="6da-r1-lBg"/>
+                        <outlet property="txtDate" destination="NCX-b3-bTa" id="0PC-tI-4Ca"/>
+                        <outlet property="txtEndTime" destination="g4z-is-NL1" id="ZuS-ke-UeX"/>
+                        <outlet property="txtRanking" destination="xN2-BW-tvX" id="mof-jD-l5f"/>
+                        <outlet property="txtStartTime" destination="eXz-kK-rUJ" id="hFW-hk-x1W"/>
+                        <outlet property="txtState" destination="2Kh-jO-fyI" id="GJA-L7-9hq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLJ-tu-Zpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4350" y="-2805"/>
+            <point key="canvasLocation" x="4332" y="-2805"/>
         </scene>
         <!--Supplier Cancel Service Controller-->
         <scene sceneID="9O3-8k-c9J">
@@ -3112,7 +3133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vpQ-yq-2Cr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3274" y="-3828"/>
+            <point key="canvasLocation" x="3280" y="-3822"/>
         </scene>
         <!--Supplier Rate Service Controller-->
         <scene sceneID="iLH-nr-8wE">
@@ -3286,7 +3307,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KB1-QF-ERD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747" y="-3828"/>
+            <point key="canvasLocation" x="1861" y="-3810"/>
         </scene>
     </scenes>
     <resources>
@@ -3319,14 +3340,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="fBG-wL-bDp"/>
-        <segue reference="kCl-DA-Bro"/>
-        <segue reference="Ooo-ii-MRH"/>
-        <segue reference="nKY-1G-vS7"/>
-        <segue reference="feR-zA-nDa"/>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="R6n-7M-aYX"/>
         <segue reference="B0I-qk-ijs"/>
         <segue reference="8j7-Fr-AT4"/>
+        <segue reference="R6n-7M-aYX"/>
+        <segue reference="mTW-xa-XeS"/>
+        <segue reference="uHb-zl-3a4"/>
+        <segue reference="fBG-wL-bDp"/>
     </inferredMetricsTieBreakers>
 </document>

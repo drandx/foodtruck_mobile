@@ -16,6 +16,11 @@ namespace ClickNDone.iOS
 		{
 		}
 
+		public override void ViewDidAppear(bool animated)
+		{
+			base.ViewDidAppear (animated);
+		}
+
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();

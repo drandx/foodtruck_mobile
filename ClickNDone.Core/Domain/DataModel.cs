@@ -62,6 +62,7 @@ namespace ClickNDone.Core
 		public int CategoryId { get; set;}
 		public int SubCategoryId { get; set;}
 		public DateTime ReservationDate { get ; set; }
+		public string Time { get; set;}
 		public Double MinCost { get; set; }
 		public Double MaxCost { get; set; }
 		public string Location { get; set; }
