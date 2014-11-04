@@ -69,7 +69,11 @@ namespace ClickNDone.iOS
 		{
 			UIButton selectedOrder = (UIButton)sender;
 			ordersModel.RequestedOrder = ordersModel.SupplierAgenda.Where (a => a.Id == selectedOrder.Tag).First();
-			PerformSegue("OnServiceDetail", this);
+
+			if(userModel.User.userType.Equals(UserType.SUPPLIER))
+			 		PerformSegue("OnServiceDetail", this);
+			else
+				PerformSegue("OnServiceConsumerDetail", this);
 		}
 
 

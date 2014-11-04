@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zEQ-Xg-fFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1492" y="-2817"/>
+            <point key="canvasLocation" x="1302" y="-3026"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gyT-Wd-Xhc">
@@ -199,7 +199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUM-ii-ah3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2366" y="-2805"/>
+            <point key="canvasLocation" x="2150" y="-2045"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GKg-b5-1aC">
@@ -1395,7 +1395,7 @@
                                 <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-Nj-eIA">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-Nj-eIA">
                                 <rect key="frame" x="146" y="431" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -1415,6 +1415,7 @@
                         <outlet property="txtLastName" destination="Fij-dV-Lwd" id="vCe-YQ-mRM"/>
                         <outlet property="txtName" destination="iwe-45-fuh" id="zwT-h4-Abl"/>
                         <outlet property="txtState" destination="8Y7-y8-Eel" id="kuw-ye-ghL"/>
+                        <segue destination="Vst-B1-DoA" kind="modal" identifier="OnConsummerCanceledService" id="vjs-Zp-xLd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cXD-Nv-FWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2480,11 +2481,12 @@
                         <outlet property="indicator" destination="LTA-3V-Vh3" id="Iya-Z7-uWQ"/>
                         <outlet property="scrollerAgenda" destination="czE-UP-fqC" id="vCL-by-Kr3"/>
                         <segue destination="QT0-YK-nvg" kind="push" identifier="OnServiceDetail" id="Ooo-ii-MRH"/>
+                        <segue destination="EnI-0N-eUl" kind="push" identifier="OnServiceConsumerDetail" id="Pb7-WV-ZAg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7r-f2-hRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2872" y="-2805"/>
+            <point key="canvasLocation" x="2677" y="-2045"/>
         </scene>
         <!--Supplier Service Detail Controller-->
         <scene sceneID="Z1d-n1-5NY">
@@ -2637,7 +2639,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kfb-Eq-HM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3345" y="-2805"/>
+            <point key="canvasLocation" x="3129" y="-2045"/>
         </scene>
         <!--Supplier Started Service Controller-->
         <scene sceneID="Jwa-3J-Uo3">
@@ -2813,7 +2815,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hqk-vT-SNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3829" y="-2805"/>
+            <point key="canvasLocation" x="3613" y="-2045"/>
         </scene>
         <!--Supplier Rate Finished Service Controller-->
         <scene sceneID="gXJ-cw-zba">
@@ -2950,7 +2952,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLJ-tu-Zpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4332" y="-2805"/>
+            <point key="canvasLocation" x="4116" y="-2045"/>
         </scene>
         <!--Supplier Cancel Service Controller-->
         <scene sceneID="9O3-8k-c9J">
@@ -3343,10 +3345,10 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="uHb-zl-3a4"/>
-        <segue reference="B0I-qk-ijs"/>
         <segue reference="8j7-Fr-AT4"/>
-        <segue reference="aGu-Xd-tnv"/>
+        <segue reference="B0I-qk-ijs"/>
         <segue reference="R6n-7M-aYX"/>
+        <segue reference="vjs-Zp-xLd"/>
         <segue reference="fBG-wL-bDp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -35,6 +35,7 @@ namespace ClickNDone.iOS
 					lblMsgText2.Text = "cancelado con exito";
 					btnCancelConfirm.Hidden = true;
 					btnNotCancel.Hidden = true;
+					PerformSegue("OnConsummerCanceledService",this);
 				}
 				catch (Exception exc)
 				{
