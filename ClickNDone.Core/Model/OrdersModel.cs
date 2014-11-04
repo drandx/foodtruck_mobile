@@ -11,8 +11,8 @@ namespace ClickNDone.Core
 		public List<Order> SupplierAgenda { get; set;}
 		public string Location { get; set; }
 		public string Comments { get; set; }
-		public Double MinCost { get; set; }
-		public Double MaxCost { get; set; }
+		public string MinCost { get; set; }
+		public string MaxCost { get; set; }
 		public DateTime ReservationDate { get; set; }
 
 		public DateTime InitTime { get; set;}

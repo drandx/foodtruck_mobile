@@ -187,8 +187,8 @@ namespace ClickNDone.Core
 
 			IDictionary<String,Object> serviceRequestAttributes = new Dictionary<string, object> ();
 			serviceRequestAttributes.Add ("reference", order.Reference);
-			serviceRequestAttributes.Add ("minimumCost", Convert.ToInt32 (order.MinCost));
-			serviceRequestAttributes.Add ("maximumCost", Convert.ToInt32 (order.MaxCost));
+			serviceRequestAttributes.Add ("minimumCost", order.MinCost);
+			serviceRequestAttributes.Add ("maximumCost", order.MaxCost);
 			serviceRequestAttributes.Add ("location", order.Location);
 			serviceRequestAttributes.Add ("reservationDate", order.ReservationDate.ToString ("yyyy-MM-dd"));
 			serviceRequestAttributes.Add ("hora", order.ReservationDate.ToString ("hh:mm tt"));
@@ -269,7 +269,7 @@ namespace ClickNDone.Core
 			try {
 				return Task.Run (() => GetOrder (orderId));
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing when gets order - " + exc.Message);
+				Console.WriteLine ("Crashing when gets order Async - " + exc.Message);
 				return null;
 			}
 

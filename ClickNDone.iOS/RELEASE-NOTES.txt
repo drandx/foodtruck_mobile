@@ -1,1 +1,1 @@
-Ajuste navegacion usuario final.
+Fixed cost type issue

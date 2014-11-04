@@ -158,7 +158,6 @@
     <BundleResource Include="images\btn_enviar_calificacion%402x.png" />
     <BundleResource Include="images\btn_no_calificacion%402x.png" />
     <BundleResource Include="images\btn_enviar%402x.png" />
-    <BundleResource Include="images\btn_menu_categorias%402x.png" />
     <BundleResource Include="images\btn_menu_promociones%402x.png" />
     <BundleResource Include="images\btn_menu_ranking%402x.png" />
     <BundleResource Include="images\btn_menu_sugerencias%402x.png" />
@@ -170,6 +169,7 @@
     <BundleResource Include="images\btn_solicitar_telefono%402x.png" />
     <BundleResource Include="images\btn_iniciar_servicio%402x.png" />
     <BundleResource Include="images\btn_finalizar_servicio%402x.png" />
+    <BundleResource Include="images\btn_menu_categorias%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

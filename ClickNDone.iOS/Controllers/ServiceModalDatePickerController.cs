@@ -24,6 +24,7 @@ namespace ClickNDone.iOS
 
 		private readonly IList<string> fromMoney = new List<string>
 		{
+			"desconocido",
 			"10000",
 			"30000",
 			"50000",
@@ -31,6 +32,7 @@ namespace ClickNDone.iOS
 		};
 		private readonly IList<string> toMoney = new List<string>
 		{
+			"desconocido",
 			"10000",
 			"30000",
 			"50000",
@@ -96,8 +98,8 @@ namespace ClickNDone.iOS
 			this.txtToValue.InputView = new UIView (new RectangleF(0, 0, 1, 1));
 
 			btnRequestService.TouchUpInside += (sender, e) => {
-				ordersModel.MinCost = Convert.ToDouble(selectedFromMoney);
-				ordersModel.MaxCost = Convert.ToDouble(selectedToMoney);
+				ordersModel.MinCost = selectedFromMoney;
+				ordersModel.MaxCost = selectedToMoney;
 				DateTime finalDateTime = new DateTime();
 				finalDateTime = this.selectedDate;
 				TimeSpan ts = new TimeSpan(this.selectedTime.Hour, this.selectedTime.Minute, this.selectedTime.Second);
