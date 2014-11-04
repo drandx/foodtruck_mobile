@@ -38,11 +38,6 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
-			}
-
 			if (lblCancel != null) {
 				lblCancel.Dispose ();
 				lblCancel = null;
@@ -51,6 +46,11 @@ namespace ClickNDone.iOS
 			if (lblNotCancel != null) {
 				lblNotCancel.Dispose ();
 				lblNotCancel = null;
+			}
+
+			if (txtClickCode != null) {
+				txtClickCode.Dispose ();
+				txtClickCode = null;
 			}
 
 			if (txtDate != null) {
@@ -73,9 +73,9 @@ namespace ClickNDone.iOS
 				txtUserName = null;
 			}
 
-			if (txtClickCode != null) {
-				txtClickCode.Dispose ();
-				txtClickCode = null;
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
 			}
 		}
 	}

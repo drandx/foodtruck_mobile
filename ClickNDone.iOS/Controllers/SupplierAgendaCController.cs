@@ -36,7 +36,7 @@ namespace ClickNDone.iOS
 			scrollerHeigt = 0.0f;
 
 			try {
-				var requesterOrders = await ordersModel.GetOrdersListAsync (userModel.User.id, ServiceState.CONFIRMADO, UserType.SUPPLIER);
+				var requesterOrders = await ordersModel.GetOrdersListAsync (userModel.User.id, ServiceState.CONFIRMADO, userModel.UserType);
 				ordersModel.SupplierAgenda = requesterOrders;
 
 				foreach(Order item in requesterOrders)

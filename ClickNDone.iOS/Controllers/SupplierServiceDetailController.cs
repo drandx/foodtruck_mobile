@@ -21,7 +21,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			this.NavigationItem.SetHidesBackButton (true, false);
+			this.AddKeyboarListeners ();
 
 			btnInitService.TouchUpInside += async(sender, e) =>
 			{
@@ -30,7 +30,7 @@ namespace ClickNDone.iOS
 					if(txtClickCode.Text == ordersModel.RequestedOrder.ClickCode)
 					{
 						await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.ORDEN_INICIADA);
-						ordersModel.InitTime = new DateTime();
+						ordersModel.InitTime = DateTime.Now;
 						PerformSegue("OnSupplierInitService",this);
 					}
 

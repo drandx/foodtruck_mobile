@@ -55,7 +55,7 @@
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>df477039-32fc-4eeb-80d3-b6d1ee8f4c24</CodesignProvision>
+    <CodesignProvision>49fe5fbe-56a2-48a9-bff3-28d18b7b4ccf</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -317,21 +317,21 @@
     <Compile Include="Controllers\SupplierConfirmedServiceController.designer.cs">
       <DependentUpon>SupplierConfirmedServiceController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupplierAgendaCController.cs" />
-    <Compile Include="SupplierAgendaCController.designer.cs">
+    <Compile Include="Controllers\SupplierAgendaCController.cs" />
+    <Compile Include="Controllers\SupplierAgendaCController.designer.cs">
       <DependentUpon>SupplierAgendaCController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupplierServiceDetailController.cs" />
-    <Compile Include="SupplierServiceDetailController.designer.cs">
+    <Compile Include="Controllers\SupplierRateFinishedServiceController.cs" />
+    <Compile Include="Controllers\SupplierRateFinishedServiceController.designer.cs">
+      <DependentUpon>SupplierRateFinishedServiceController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\SupplierServiceDetailController.cs" />
+    <Compile Include="Controllers\SupplierServiceDetailController.designer.cs">
       <DependentUpon>SupplierServiceDetailController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SupplierStartedServiceController.cs" />
-    <Compile Include="SupplierStartedServiceController.designer.cs">
+    <Compile Include="Controllers\SupplierStartedServiceController.cs" />
+    <Compile Include="Controllers\SupplierStartedServiceController.designer.cs">
       <DependentUpon>SupplierStartedServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SupplierRateFinishedServiceController.cs" />
-    <Compile Include="SupplierRateFinishedServiceController.designer.cs">
-      <DependentUpon>SupplierRateFinishedServiceController.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

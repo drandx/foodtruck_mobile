@@ -38,6 +38,7 @@ namespace ClickNDone.iOS
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_home.png"), true),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_perfil.png"), false),
 							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_categorias.png"), false),
+							new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_agenda.png"), false),
 							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_historial.png"), false),
 							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_ranking.png"), false),
 							//new MyImageStringElement ("", UIImage.FromFile ("images/btn_menu_sugerencias.png"), false),
@@ -47,6 +48,7 @@ namespace ClickNDone.iOS
 						this.Storyboard.InstantiateViewController ("HomeLogoController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("ProfileController") as UIViewController,//here we create the instances for the Controllers
 						this.Storyboard.InstantiateViewController ("CategoryController") as UIViewController,
+						this.Storyboard.InstantiateViewController ("SupplierAgendaNavigation") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("HistorialController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("RankingController") as UIViewController,
 						//this.Storyboard.InstantiateViewController ("SugerenciasController") as UIViewController,

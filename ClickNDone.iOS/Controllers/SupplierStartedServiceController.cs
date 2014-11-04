@@ -31,7 +31,7 @@ namespace ClickNDone.iOS
 
 			UITapGestureRecognizer labelAcceptTap = new UITapGestureRecognizer (async() => {
 				await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.FINALIZADO);
-				ordersModel.EndTime = new DateTime();
+				ordersModel.EndTime = DateTime.Now;
 				PerformSegue("OnSupplierFinishService",this);
 			});
 			lblCancel.UserInteractionEnabled = true;

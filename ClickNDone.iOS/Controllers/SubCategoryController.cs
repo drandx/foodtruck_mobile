@@ -59,7 +59,7 @@ namespace ClickNDone.iOS
 			var x = UIScreen.MainScreen.Bounds.Width;
 			UIButton button = UIButton.FromType(UIButtonType.RoundedRect);
 
-			RectangleF rect = new RectangleF(x*0.2f, this.scrollBtnCursor, x*0.6f, this.buttonHeight);
+			RectangleF rect = new RectangleF(x*0.1f, this.scrollBtnCursor, x*0.8f, this.buttonHeight);
 			button.Frame = rect;
 			button.SetTitle(title, UIControlState.Normal);
 			button.Tag = catId;

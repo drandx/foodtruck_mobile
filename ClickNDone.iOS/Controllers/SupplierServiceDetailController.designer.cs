@@ -35,9 +35,9 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
+			if (btnInitService != null) {
+				btnInitService.Dispose ();
+				btnInitService = null;
 			}
 
 			if (txtClickCode != null) {
@@ -65,9 +65,9 @@ namespace ClickNDone.iOS
 				txtUserName = null;
 			}
 
-			if (btnInitService != null) {
-				btnInitService.Dispose ();
-				btnInitService = null;
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
 			}
 		}
 	}

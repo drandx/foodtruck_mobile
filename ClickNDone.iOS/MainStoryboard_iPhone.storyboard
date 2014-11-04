@@ -199,7 +199,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUM-ii-ah3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397" y="-2805"/>
+            <point key="canvasLocation" x="2366" y="-2805"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="GKg-b5-1aC">
@@ -2473,7 +2473,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VND-FK-ktN"/>
+                    <navigationItem key="navigationItem" id="VND-FK-ktN">
+                        <barButtonItem key="backBarButtonItem" title="Atras" id="d0R-oK-G0d"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="indicator" destination="LTA-3V-Vh3" id="Iya-Z7-uWQ"/>
                         <outlet property="scrollerAgenda" destination="czE-UP-fqC" id="vCL-by-Kr3"/>
@@ -2616,7 +2618,7 @@
                                 </state>
                             </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cQb-j4-7Lm">
-                                <rect key="frame" x="163" y="345" width="20" height="20"/>
+                                <rect key="frame" x="159" y="341" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2624,7 +2626,7 @@
                     <navigationItem key="navigationItem" id="a34-UQ-GCU"/>
                     <connections>
                         <outlet property="btnInitService" destination="4Un-b3-5UG" id="XhD-sF-iAN"/>
-                        <outlet property="indicator" destination="cQb-j4-7Lm" id="F1B-er-mJd"/>
+                        <outlet property="indicator" destination="cQb-j4-7Lm" id="YEF-5W-Y0o"/>
                         <outlet property="txtClickCode" destination="5bY-WL-rcv" id="SsA-LF-mrn"/>
                         <outlet property="txtDate" destination="MhK-lh-WPQ" id="b1x-o8-3e5"/>
                         <outlet property="txtState" destination="uf6-Bl-eMe" id="4Rw-3c-fPg"/>
@@ -2798,7 +2800,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wc0-Hf-btN"/>
                     <connections>
-                        <outlet property="indicator" destination="jIp-8T-t5E" id="Vod-gw-zhl"/>
+                        <outlet property="indicator" destination="jIp-8T-t5E" id="ov4-3b-eOM"/>
                         <outlet property="lblCancel" destination="cCQ-5h-0pb" id="pPZ-UX-hce"/>
                         <outlet property="lblNotCancel" destination="2JA-St-axi" id="6qV-W1-R3i"/>
                         <outlet property="txtClickCode" destination="Ev3-r8-mLU" id="Nvv-0x-4SD"/>
@@ -3340,11 +3342,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="uHb-zl-3a4"/>
         <segue reference="B0I-qk-ijs"/>
         <segue reference="8j7-Fr-AT4"/>
+        <segue reference="aGu-Xd-tnv"/>
         <segue reference="R6n-7M-aYX"/>
-        <segue reference="mTW-xa-XeS"/>
-        <segue reference="uHb-zl-3a4"/>
         <segue reference="fBG-wL-bDp"/>
     </inferredMetricsTieBreakers>
 </document>
