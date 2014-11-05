@@ -16,8 +16,8 @@ namespace ClickNDone.iOS
 
 		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
-		int taskId;
-		volatile bool running;
+		static int taskId;
+		static volatile bool running;
 
 
 		public HomeLogoController (IntPtr handle) : base (handle)
@@ -43,7 +43,7 @@ namespace ClickNDone.iOS
 
 			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
 			{
-				//btnStartTaskt.Hidden = true;
+				KillBackGroundTastk ();
 			} 
 			else 
 			{
@@ -136,6 +136,12 @@ namespace ClickNDone.iOS
 		}
 
 
+		public static void KillBackGroundTastk()
+		{
+			UIApplication.SharedApplication.EndBackgroundTask(taskId);
+			taskId = 0;
+			running = false;
+		}
 
 	}
 }
