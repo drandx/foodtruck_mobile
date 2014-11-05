@@ -42,7 +42,7 @@ namespace ClickNDone.iOS
 		void handler (Object sender, EventArgs args)
 		{
 			UIButton selectedSubcategory = (UIButton)sender;
-			categoriesModel.SelectedSubcategory = categoriesModel.GetSubCategory (selectedSubcategory.Tag);
+			categoriesModel.SelectedSubcategory = categoriesModel.GetSubCategoryById (selectedSubcategory.Tag);
 			if(categoriesModel.SelectedCategory.Convention == "BEA")
 				PerformSegue("OnBautyRequest", this);
 			else

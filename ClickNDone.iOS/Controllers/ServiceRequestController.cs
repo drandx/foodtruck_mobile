@@ -29,7 +29,7 @@ namespace ClickNDone.iOS
 			}
 			catch (Exception exc)
 			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				new UIAlertView("Oops!", "Error solicitando servicio", null, "Ok").Show();
 			}
 
 		}
@@ -64,7 +64,7 @@ namespace ClickNDone.iOS
 			}
 			catch (Exception exc)
 			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				Console.WriteLine("Error obteniendo orden en CheckStatus()");
 			}
 		}
 
@@ -99,7 +99,7 @@ namespace ClickNDone.iOS
 			}
 			catch (Exception exc)
 			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				Console.WriteLine("Error cambiando orden de estado en RequestServiceCallBack"+exc.Message);
 			}
 
 		}

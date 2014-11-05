@@ -2475,7 +2475,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7r-f2-hRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2677" y="-2045"/>
+            <point key="canvasLocation" x="2645" y="-2233"/>
         </scene>
         <!--Supplier Service Detail Controller-->
         <scene sceneID="Z1d-n1-5NY">
@@ -3333,11 +3333,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="B0I-qk-ijs"/>
-        <segue reference="gYy-83-slm"/>
-        <segue reference="R6n-7M-aYX"/>
-        <segue reference="aGu-Xd-tnv"/>
-        <segue reference="fBG-wL-bDp"/>
         <segue reference="uHb-zl-3a4"/>
+        <segue reference="aGu-Xd-tnv"/>
+        <segue reference="Pb7-WV-ZAg"/>
+        <segue reference="B0I-qk-ijs"/>
+        <segue reference="R6n-7M-aYX"/>
+        <segue reference="fBG-wL-bDp"/>
     </inferredMetricsTieBreakers>
 </document>

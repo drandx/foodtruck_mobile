@@ -149,6 +149,10 @@ namespace ClickNDone.Core
 					category.Convention = cat ["categoryConvention"].ToString ();
 					var idCat = cat ["id"].ToString ();
 					category.Id = idCat == "" || idCat == null ? 0 : Convert.ToInt32 (idCat);
+					if(category.Id == 1)
+						category.ImageName = "logo_beauty.png";
+					if(category.Id == 2)
+						category.ImageName = "logo_home.png";
 
 					foreach (var subcat in cat["subCategories"]) {
 						Category subcategory = new Category ();
@@ -159,7 +163,7 @@ namespace ClickNDone.Core
 						subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
 						subcategory.ParentId = category.Id;
 
-						if(subcategory.Name != "")
+						if((subcategory.Name != "" ) && (subcategory != null))
 							subCategories.Add (subcategory);
 
 					}
@@ -228,6 +232,8 @@ namespace ClickNDone.Core
 		 */
 		public User GetUser (int userId, UserType UserType)
 		{
+			string userJson = "";
+
 			try {
 
 				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
@@ -241,7 +247,7 @@ namespace ClickNDone.Core
 				userAttributes.Add ("id", userId);
 				userAttributes.Add ("userType", UserType.ToString ());
 
-				var userJson = JsonConvert.SerializeObject (userAttributes);
+				userJson = JsonConvert.SerializeObject (userAttributes);
 				var response = client.UploadString (url, "POST", userJson);
 
 				var objResp = JObject.Parse (response);
@@ -257,7 +263,7 @@ namespace ClickNDone.Core
 
 				return user;
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing on GetUser - " + exc.Message);
+				Console.WriteLine ("Crashing on GetUser - " + exc.Message + "Json To Send: "+userJson);
 				return null;
 			}
 		}
@@ -368,6 +374,7 @@ namespace ClickNDone.Core
 		*/
 		public List<Order> GetOrdersList (int userId, ServiceState orderState, UserType userType)
 		{
+			string orderJson = ""; 
 			try {
 				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
@@ -383,7 +390,7 @@ namespace ClickNDone.Core
 				List<Order> ordersList = new List<Order> ();
 
 				if (!client.IsBusy) {
-					var orderJson = JsonConvert.SerializeObject (orderAttributes);
+					orderJson = JsonConvert.SerializeObject (orderAttributes);
 					var response = client.UploadString (url, "POST", orderJson);
 					var objListResp = JObject.Parse (response);
 
@@ -424,7 +431,7 @@ namespace ClickNDone.Core
 				}
 				return ordersList;
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing on GetOrders - " + exc.Message);
+				Console.WriteLine ("Crashing on GetOrdersList - " + exc.Message + " "+orderJson);
 				return null;
 			}
 

@@ -20,6 +20,7 @@ namespace ClickNDone.iOS
 		private float scrollBtnCursor = 0f;
 		private float buttonHeight = 35.0f;
 		private float scrollerHeigt = 0.0f;
+		private bool movedToChild = false;
 
 
 		public SupplierAgendaCController (IntPtr handle) : base (handle)
@@ -54,7 +55,7 @@ namespace ClickNDone.iOS
 				return true;
 			}
 			catch (Exception exc) {
-				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				Console.WriteLine("Error relacionado con ordersModel.GetOrdersListAsync " + exc.Message);
 				return false;
 			}
 		}
@@ -62,8 +63,11 @@ namespace ClickNDone.iOS
 		public override async void ViewDidAppear (bool animated)
 		{
 			base.ViewDidAppear (animated);
-			Console.WriteLine ("%%%"+IsMovingFromParentViewController.ToString ());
-			await this.LoadMenuItems ();
+			Console.WriteLine ("Did Appear MovingFromParent: %%%"+IsMovingFromParentViewController.ToString () + " "+IsMovingFromParentViewController.ToString());
+			if (!movedToChild) {
+				await this.LoadMenuItems ();
+			}
+			movedToChild = false;
 		}
 
 		public override void ViewDidLoad ()
@@ -78,10 +82,13 @@ namespace ClickNDone.iOS
 			UIButton selectedOrder = (UIButton)sender;
 			ordersModel.RequestedOrder = ordersModel.SupplierAgenda.Where (a => a.Id == selectedOrder.Tag).First();
 
-			if(userModel.User.userType.Equals(UserType.SUPPLIER))
-			 		PerformSegue("OnServiceDetail", this);
-			else
-				PerformSegue("OnServiceConsumerDetail", this);
+			if (userModel.User.userType.Equals (UserType.SUPPLIER)) {
+				PerformSegue ("OnServiceDetail", this);
+			} else if (userModel.User.userType.Equals (UserType.CONSUMER)) {
+				PerformSegue ("OnServiceConsumerDetail", this);
+			}
+
+			movedToChild = true;
 		}
 
 
@@ -95,7 +102,7 @@ namespace ClickNDone.iOS
 		{
 			base.ViewWillDisappear(false);
 			ordersModel.IsBusyChanged -= OnIsBusyChanged;
-			Console.WriteLine ("***"+IsMovingToParentViewController.ToString());
+			Console.WriteLine ("IsMovingToParentViewController ***"+IsMovingToParentViewController.ToString());
 
 		}
 

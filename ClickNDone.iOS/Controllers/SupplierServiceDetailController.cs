@@ -40,7 +40,7 @@ namespace ClickNDone.iOS
 				}
 				catch (Exception exc)
 				{
-					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+					Console.WriteLine("Error relacionado con ordersModel.ChangeRequestedOrderStateAsync " + exc.Message);
 				}
 			};
 
@@ -58,7 +58,7 @@ namespace ClickNDone.iOS
 				txtState.Text = ordersModel.RequestedOrder.Status.ToString();
 
 			} catch (Exception exc) {
-				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				Console.WriteLine("Error relacionado con userModel.GetUserAsync " + exc.Message);
 			}
 		}
 

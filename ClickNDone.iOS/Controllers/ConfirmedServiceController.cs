@@ -38,7 +38,7 @@ namespace ClickNDone.iOS
 			}
 			catch (Exception exc)
 			{
-				new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
+				Console.WriteLine("Error relacionado con userModel.GetUserAsync " + exc.Message);
 			}
 
 		}
@@ -47,9 +47,16 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.NavigationItem.SetHidesBackButton (true, false);
-			lblSubCategory.Text = categoriesModel.SelectedSubcategory.Name;
+			categoriesModel.SelectedCategory = categoriesModel.GetCategoryById (ordersModel.RequestedOrder.CategoryId);
+			categoriesModel.SelectedSubcategory = categoriesModel.GetSubCategoryById (ordersModel.RequestedOrder.SubCategoryId);
 
-			imgCat.Image = UIImage.FromBundle (categoriesModel.SelectedCategory.ImageName);
+			if (categoriesModel.SelectedSubcategory != null)
+				lblSubCategory.Text = categoriesModel.SelectedSubcategory.Name;
+			else
+				lblSubCategory.Text = categoriesModel.GetSubCategoryById (ordersModel.RequestedOrder.SubCategoryId).Name;
+
+			if(categoriesModel.SelectedCategory != null)
+				imgCat.Image = UIImage.FromBundle (categoriesModel.SelectedCategory.ImageName);
 
 		}
 

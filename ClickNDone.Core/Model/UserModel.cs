@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace ClickNDone.Core
 {
@@ -13,6 +14,7 @@ namespace ClickNDone.Core
 		public string LastName { get; set; }
 		public string Name { get; set; }
 		public string PhoneNumber { get; set; }
+		private Hashtable CachedUsers = new Hashtable();
 
 		public User User
 		{
@@ -74,26 +76,50 @@ namespace ClickNDone.Core
 		public async Task<User> GetUserAsync(int userId, UserType userType)
 		{
 			IsBusy = true;
-			try
-			{
-				User supplier = await service.GetUserAsync(userId, userType);
-				return supplier;
-			}
-			finally {
-				IsBusy = false;
+			if (CachedUsers.ContainsKey (userId)) {
+				User user = (User)CachedUsers [userId];
+				if (user != null) {
+					IsBusy = false;
+					return user;
+				} else {
+					CachedUsers.Remove (userId);
+					return await GetUserAsync (userId, userType);
+				}
+			} else {
+				try
+				{
+					User loadedUser = await service.GetUserAsync(userId, userType);
+					this.CachedUsers.Add(userId,loadedUser);
+					return loadedUser;
+				}
+				finally {
+					IsBusy = false;
+				}
 			}
 		}
 
 		public User GetUser(int userId, UserType userType)
 		{
 			IsBusy = true;
-			try
-			{
-				User supplier =  service.GetUser(userId, userType);
-				return supplier;
-			}
-			finally {
-				IsBusy = false;
+			if (CachedUsers.ContainsKey (userId)) {
+				User user = (User)CachedUsers [userId];
+				if (user != null) {
+					IsBusy = false;
+					return user;
+				} else {
+					CachedUsers.Remove (userId);
+					return GetUser (userId, userType);
+				}
+			} else {
+				try
+				{
+					User loadedUser =  service.GetUser(userId, userType);
+					this.CachedUsers.Add(userId,loadedUser);
+					return loadedUser;
+				}
+				finally {
+					IsBusy = false;
+				}
 			}
 		}
 

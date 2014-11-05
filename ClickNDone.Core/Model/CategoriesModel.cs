@@ -27,16 +27,29 @@ namespace ClickNDone.Core
 
 		}
 
-		public Category GetCategoryById(string categoryConvention)
+		public Category GetCategoryByConvention(string categoryConvention)
 		{
 			Category result = Categories.Where (c => c.Convention == categoryConvention).First();
 			return result;
 		}
 
-		public Category GetSubCategory(int subCatId)
+		public Category GetCategoryById(int catId)
 		{
-			Category result = SelectedCategory.Subcategories.Where (c => c.Id == subCatId).First();
+			Category result = Categories.Where (c => c.Id == catId).First();
 			return result;
+		}
+
+
+		public Category GetSubCategoryById(int subCatId)
+		{
+			if (SelectedCategory != null) {
+				var result = SelectedCategory.Subcategories.Where (c => c.Id == subCatId);
+				Category catResult = new Category();
+				if (result.Count()>0)
+					catResult = result.First ();
+				return catResult;
+			}
+			return new Category ();
 		}
 
 	}

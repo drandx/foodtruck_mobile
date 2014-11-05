@@ -29,7 +29,7 @@ namespace ClickNDone.iOS
 				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
 
 			} catch (Exception exc) {
-				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				Console.WriteLine("Error relacionado con ordersModel.RequestedOrder " + exc.Message);
 			}
 
 
