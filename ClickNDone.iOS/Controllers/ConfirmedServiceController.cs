@@ -67,7 +67,6 @@ namespace ClickNDone.iOS
 
 		void OnIsBusyChanged(object sender, EventArgs e)
 		{
-			btnEndServcie.Enabled = 
 				btnCancel.Enabled =
 					indicator.Hidden = !ordersModel.IsBusy;
 		}
