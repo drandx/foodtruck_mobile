@@ -155,10 +155,13 @@ namespace ClickNDone.Core
 						subcategory.Name = subcat ["subCategoryName"].ToString ();
 						subcategory.Description = subcat ["subCategoryDescription"].ToString ();
 						subcategory.Convention = subcat ["subCategoryConvention"].ToString ();
-						subCategories.Add (subcategory);
 						var idSubCat = subcat ["id_sub"].ToString ();
 						subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
 						subcategory.ParentId = category.Id;
+
+						if(subcategory.Name != "")
+							subCategories.Add (subcategory);
+
 					}
 
 					category.Subcategories = subCategories;
