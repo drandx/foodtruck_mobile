@@ -12,6 +12,8 @@ namespace ClickNDone.iOS
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
 		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
+
 
 		public ConfirmedServiceController (IntPtr handle) : base (handle)
 		{
@@ -45,21 +47,9 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.NavigationItem.SetHidesBackButton (true, false);
+			lblSubCategory.Text = categoriesModel.SelectedSubcategory.Name;
 
-			btnEndServcie.TouchUpInside += async (sender, e) => 
-			{
-				try
-				{
-					await ordersModel.ChangeRequestedOrderStateAsync(ServiceState.FINALIZADO);
-					PerformSegue("OnEndedService",this);
-
-				}
-				catch(Exception exc)
-				{
-					new UIAlertView("Oops!", exc.Message, null, "Ok").Show();
-				}
-			};
-
+			imgCat.Image = UIImage.FromBundle (categoriesModel.SelectedCategory.ImageName);
 
 		}
 

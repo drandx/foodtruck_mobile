@@ -19,10 +19,16 @@ namespace ClickNDone.iOS
 		MonoTouch.UIKit.UIButton btnEndServcie { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView imgCat { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lblRanking { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSubCategory { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UITextField txtClickCode { get; set; }
@@ -50,19 +56,29 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnEndServcie != null) {
-				btnEndServcie.Dispose ();
-				btnEndServcie = null;
-			}
-
 			if (btnCancel != null) {
 				btnCancel.Dispose ();
 				btnCancel = null;
 			}
 
+			if (btnEndServcie != null) {
+				btnEndServcie.Dispose ();
+				btnEndServcie = null;
+			}
+
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
+			}
+
 			if (lblRanking != null) {
 				lblRanking.Dispose ();
 				lblRanking = null;
+			}
+
+			if (lblSubCategory != null) {
+				lblSubCategory.Dispose ();
+				lblSubCategory = null;
 			}
 
 			if (txtClickCode != null) {
@@ -105,9 +121,9 @@ namespace ClickNDone.iOS
 				txtUpplierPhone = null;
 			}
 
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
+			if (imgCat != null) {
+				imgCat.Dispose ();
+				imgCat = null;
 			}
 		}
 	}

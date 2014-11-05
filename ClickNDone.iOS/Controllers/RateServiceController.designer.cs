@@ -19,7 +19,13 @@ namespace ClickNDone.iOS
 		MonoTouch.UIKit.UIButton btnSubmit { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView imgCat { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSubCategory { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UITextField txtClickCode { get; set; }
@@ -56,6 +62,11 @@ namespace ClickNDone.iOS
 				indicator = null;
 			}
 
+			if (lblSubCategory != null) {
+				lblSubCategory.Dispose ();
+				lblSubCategory = null;
+			}
+
 			if (txtClickCode != null) {
 				txtClickCode.Dispose ();
 				txtClickCode = null;
@@ -84,6 +95,11 @@ namespace ClickNDone.iOS
 			if (txtStatus != null) {
 				txtStatus.Dispose ();
 				txtStatus = null;
+			}
+
+			if (imgCat != null) {
+				imgCat.Dispose ();
+				imgCat = null;
 			}
 		}
 	}

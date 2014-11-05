@@ -7,6 +7,7 @@ using MonoTouch.UIKit;
 using ClickNDone.Core;
 using System.Drawing;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace ClickNDone.iOS
 {
@@ -25,9 +26,8 @@ namespace ClickNDone.iOS
 		{
 		}
 
-		public override async void ViewDidAppear (bool animated)
+		public async Task<bool> LoadMenuItems()
 		{
-			base.ViewDidAppear (animated);
 			var scrollerSubviews = this.scrollerAgenda.Subviews;
 			foreach (UIView subView in scrollerSubviews) {
 				subView.RemoveFromSuperview ();
@@ -51,11 +51,19 @@ namespace ClickNDone.iOS
 				scrollerSize.Width = 300;
 				this.scrollerAgenda.ContentSize = scrollerSize;
 
+				return true;
 			}
 			catch (Exception exc) {
 				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				return false;
 			}
+		}
 
+		public override async void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+			Console.WriteLine ("%%%"+IsMovingFromParentViewController.ToString ());
+			await this.LoadMenuItems ();
 		}
 
 		public override void ViewDidLoad ()
@@ -87,6 +95,8 @@ namespace ClickNDone.iOS
 		{
 			base.ViewWillDisappear(false);
 			ordersModel.IsBusyChanged -= OnIsBusyChanged;
+			Console.WriteLine ("***"+IsMovingToParentViewController.ToString());
+
 		}
 
 		void OnIsBusyChanged(object sender, EventArgs e)
@@ -138,6 +148,11 @@ namespace ClickNDone.iOS
 
 			return null;
 
+		}
+
+		public override void ToggleMenuHandler()
+		{
+			Console.WriteLine ("**Toggle Pressed");
 		}
 
 

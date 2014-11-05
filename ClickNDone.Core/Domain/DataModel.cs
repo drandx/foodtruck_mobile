@@ -40,6 +40,7 @@ namespace ClickNDone.Core
 		public string Description { get; set; }
 		public string Convention { get; set; }
 		public List<Category> Subcategories { get; set; }
+		public string ImageName { get; set;}
 	}
 
 	public class ServiceRequest
@@ -87,7 +88,7 @@ namespace ClickNDone.Core
 
 		public string GetReservationTime()
 		{
-			return this.ReservationDate.ToString ("HH:mm:ss");
+			return this.Time;
 		}
 
 	}

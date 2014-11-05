@@ -11,6 +11,8 @@ namespace ClickNDone.iOS
 	public partial class CancelServiceController : UIViewController
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
+
 
 		public CancelServiceController (IntPtr handle) : base (handle)
 		{
@@ -20,6 +22,9 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.NavigationItem.SetHidesBackButton (true, false);
+			lblSubcategory.Text = categoriesModel.SelectedSubcategory.Name;
+			imgCat.Image = UIImage.FromBundle (categoriesModel.SelectedCategory.ImageName);
+
 
 			txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
 			txtState.Text = ordersModel.RequestedOrder.Status.ToString ();

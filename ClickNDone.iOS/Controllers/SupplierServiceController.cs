@@ -29,7 +29,7 @@ namespace ClickNDone.iOS
 				txtAddress.Text = ordersModel.RequestedOrder.Location;
 				txtReference.Text = ordersModel.RequestedOrder.Reference;
 				txtDate.Text = ordersModel.RequestedOrder.GetReservationDate();
-				txtTime.Text = ordersModel.RequestedOrder.GetReservationTime();
+				txtTime.Text = ordersModel.RequestedOrder.Time;
 				txtUserName.Text = ordersModel.RequestedOrder.User.names;
 				txtUserLastName.Text = ordersModel.RequestedOrder.User.surnames;
 

@@ -13,21 +13,29 @@ namespace ClickNDone.iOS
 	partial class ServiceRequestController
 	{
 		[Outlet]
-		MonoTouch.UIKit.UIButton btnAction { get; set; }
+		MonoTouch.UIKit.UIImageView imgCat { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSubCategory { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (btnAction != null) {
-				btnAction.Dispose ();
-				btnAction = null;
-			}
-
 			if (indicator != null) {
 				indicator.Dispose ();
 				indicator = null;
+			}
+
+			if (lblSubCategory != null) {
+				lblSubCategory.Dispose ();
+				lblSubCategory = null;
+			}
+
+			if (imgCat != null) {
+				imgCat.Dispose ();
+				imgCat = null;
 			}
 		}
 	}

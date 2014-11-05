@@ -11,6 +11,7 @@ namespace ClickNDone.iOS
 	public partial class RateServiceController : MyViewController
 	{
 		readonly OrdersModel ordersModel = (OrdersModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(OrdersModel));
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 
 
 		public RateServiceController (IntPtr handle) : base (handle)
@@ -21,6 +22,8 @@ namespace ClickNDone.iOS
 		{
 			base.ViewDidLoad ();
 			this.AddKeyboarListeners ();
+			lblSubCategory.Text = categoriesModel.SelectedSubcategory.Name;
+
 			this.NavigationItem.SetHidesBackButton (true, false);
 			this.txtClickCode.Text = ordersModel.RequestedOrder.ClickCode;
 			this.txtStatus.Text = ordersModel.RequestedOrder.Status.ToString ();

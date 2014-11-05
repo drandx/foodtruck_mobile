@@ -41,16 +41,17 @@ namespace ClickNDone.iOS
 				 OnStartTask ();
 			};
 
-			/*if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
+			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
 			{
-				btnStartTaskt.Hidden = true;
+				//btnStartTaskt.Hidden = true;
 			} 
 			else 
 			{
-				btnStartTaskt.Hidden = false;
-			}*/
+				//btnStartTaskt.Hidden = false;
+				OnStartTask ();
 
-			OnStartTask ();
+			}
+
 		}
 
 
@@ -133,6 +134,8 @@ namespace ClickNDone.iOS
 			var controller = Storyboard.InstantiateViewController("SupplierServiceController") as UIViewController;
 			PresentViewController (controller,true,null);
 		}
+
+
 
 	}
 }

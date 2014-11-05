@@ -11,6 +11,7 @@ namespace ClickNDone.Core
 		public List<Category> Categories{ get; set; }
 		public Category SelectedCategory;
 		public Category SelectedSubcategory;
+		public static bool Loaded { get; set;}
 
 		public async Task GetCategories()
 		{
@@ -21,6 +22,7 @@ namespace ClickNDone.Core
 			}
 			finally {
 				IsBusy = false;
+				Loaded = true;
 			}
 
 		}

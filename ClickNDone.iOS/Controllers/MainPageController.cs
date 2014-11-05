@@ -25,9 +25,10 @@ namespace ClickNDone.iOS
 			base.ViewDidLoad ();
 
 			try {
-				await categoriesModel.GetCategories ();
+				if((!CategoriesModel.Loaded) && (loginViewModel.UserType.Equals(UserType.CONSUMER)))
+					await categoriesModel.GetCategories ();
 			} catch (Exception exc) {
-				new UIAlertView ("Oops!", exc.Message, null, "Ok").Show ();
+				Console.WriteLine ("Problems loading categories " + exc.Message);
 			}
 			FlyoutNavigationController LateralBar = new FlyoutNavigationController();
 

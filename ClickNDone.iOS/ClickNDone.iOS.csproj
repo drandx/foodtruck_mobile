@@ -171,6 +171,8 @@
     <BundleResource Include="images\btn_finalizar_servicio%402x.png" />
     <BundleResource Include="images\btn_menu_categorias%402x.png" />
     <BundleResource Include="images\btn_servicios_activos%402x.png" />
+    <BundleResource Include="Resources\logo_beauty%402x.png" />
+    <BundleResource Include="Resources\logo_home%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

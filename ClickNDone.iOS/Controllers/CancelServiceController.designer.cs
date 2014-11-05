@@ -19,6 +19,9 @@ namespace ClickNDone.iOS
 		MonoTouch.UIKit.UIButton btnNotCancel { get; set; }
 
 		[Outlet]
+		MonoTouch.UIKit.UIImageView imgCat { get; set; }
+
+		[Outlet]
 		MonoTouch.UIKit.UIActivityIndicatorView indicator { get; set; }
 
 		[Outlet]
@@ -29,6 +32,9 @@ namespace ClickNDone.iOS
 
 		[Outlet]
 		MonoTouch.UIKit.UILabel lblRanking { get; set; }
+
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblSubcategory { get; set; }
 
 		[Outlet]
 		MonoTouch.UIKit.UITextField txtClickCode { get; set; }
@@ -44,16 +50,6 @@ namespace ClickNDone.iOS
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (lblMsgText1 != null) {
-				lblMsgText1.Dispose ();
-				lblMsgText1 = null;
-			}
-
-			if (lblMsgText2 != null) {
-				lblMsgText2.Dispose ();
-				lblMsgText2 = null;
-			}
-
 			if (btnCancelConfirm != null) {
 				btnCancelConfirm.Dispose ();
 				btnCancelConfirm = null;
@@ -64,14 +60,19 @@ namespace ClickNDone.iOS
 				btnNotCancel = null;
 			}
 
-			if (txtClickCode != null) {
-				txtClickCode.Dispose ();
-				txtClickCode = null;
+			if (indicator != null) {
+				indicator.Dispose ();
+				indicator = null;
 			}
 
-			if (txtState != null) {
-				txtState.Dispose ();
-				txtState = null;
+			if (lblMsgText1 != null) {
+				lblMsgText1.Dispose ();
+				lblMsgText1 = null;
+			}
+
+			if (lblMsgText2 != null) {
+				lblMsgText2.Dispose ();
+				lblMsgText2 = null;
 			}
 
 			if (lblRanking != null) {
@@ -79,9 +80,14 @@ namespace ClickNDone.iOS
 				lblRanking = null;
 			}
 
-			if (txtName != null) {
-				txtName.Dispose ();
-				txtName = null;
+			if (lblSubcategory != null) {
+				lblSubcategory.Dispose ();
+				lblSubcategory = null;
+			}
+
+			if (txtClickCode != null) {
+				txtClickCode.Dispose ();
+				txtClickCode = null;
 			}
 
 			if (txtLastName != null) {
@@ -89,9 +95,19 @@ namespace ClickNDone.iOS
 				txtLastName = null;
 			}
 
-			if (indicator != null) {
-				indicator.Dispose ();
-				indicator = null;
+			if (txtName != null) {
+				txtName.Dispose ();
+				txtName = null;
+			}
+
+			if (txtState != null) {
+				txtState.Dispose ();
+				txtState = null;
+			}
+
+			if (imgCat != null) {
+				imgCat.Dispose ();
+				imgCat = null;
 			}
 		}
 	}

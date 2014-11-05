@@ -22,6 +22,7 @@ namespace ClickNDone.iOS
 
 		public override async void ViewDidAppear(bool animated)
 		{
+
 			try 
 			{
 				await ordersModel.RequestService (categoriesModel.SelectedSubcategory, this.RequestServiceCallBack);
@@ -36,9 +37,10 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			imgCat.Image = UIImage.FromBundle (categoriesModel.SelectedCategory.ImageName);
 			this.AddKeyboarListeners ();
 			this.NavigationItem.SetHidesBackButton (true, false);
-
+			lblSubCategory.Text = categoriesModel.SelectedSubcategory.Name;
 		}
 
 		/**

@@ -32,12 +32,14 @@ namespace ClickNDone.iOS
 			if (pressedButton.Tag == 0) 
 			{
 				selectedCat = categoriesModel.GetCategoryById ("BEA");
+				selectedCat.ImageName = "logo_beauty.png";
 				PerformSegue("OnBEA", this);
 
 			}
 			else if(pressedButton.Tag == 1)
 			{
 				selectedCat = categoriesModel.GetCategoryById ("HOME");
+				selectedCat.ImageName = "logo_home.png";
 				PerformSegue("OnHOME", this);
 
 			}

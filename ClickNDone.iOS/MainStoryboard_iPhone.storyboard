@@ -889,7 +889,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lAJ-64-B3r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2574" y="-1181"/>
+            <point key="canvasLocation" x="2606" y="-860"/>
         </scene>
         <!--Service Request Controller-->
         <scene sceneID="laQ-Fl-E5t">
@@ -903,14 +903,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1Y-Nb-i2s">
-                                <rect key="frame" x="30" y="87" width="130" height="45"/>
-                                <state key="normal" backgroundImage="images/logo_beauty.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Salud y Belleza" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9S-HB-JMI">
-                                <rect key="frame" x="168" y="95" width="123" height="29"/>
+                                <rect key="frame" x="177" y="95" width="123" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -940,6 +934,9 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-kn-WkG">
                                 <rect key="frame" x="140" y="310" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="avC-bj-tOp">
+                                <rect key="frame" x="21" y="87" width="130" height="45"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -947,7 +944,9 @@
                         <barButtonItem key="backBarButtonItem" title="Atras" id="UHW-1H-K7J"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="imgCat" destination="avC-bj-tOp" id="91x-gn-KS9"/>
                         <outlet property="indicator" destination="yaq-kn-WkG" id="ztc-zg-t2U"/>
+                        <outlet property="lblSubCategory" destination="k9S-HB-JMI" id="g45-F5-ndl"/>
                         <segue destination="EnI-0N-eUl" kind="push" identifier="OnConfirmed" id="gYy-83-slm"/>
                     </connections>
                 </viewController>
@@ -967,18 +966,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1d-RE-TYe">
-                                <rect key="frame" x="18" y="72" width="130" height="45"/>
-                                <state key="normal" backgroundImage="images/logo_beauty.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-3t-OI5">
-                                <rect key="frame" x="209" y="83" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tu servicio ha sido confirmado!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsw-Kg-OXf">
                                 <rect key="frame" x="17" y="121" width="287" height="25"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
@@ -1068,49 +1055,49 @@
                                     <segue destination="htc-bP-lqz" kind="push" identifier="OnCanceledService" id="ids-88-VX2"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Juan" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kd-rD-FnQ" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7kd-rD-FnQ" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="192" width="106" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="312333333" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-60-EKV" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2nU-60-EKV" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="236" width="106" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="2413" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sO9-HW-Ndu" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sO9-HW-Ndu" customClass="MyUITextField">
                                 <rect key="frame" x="232" y="258" width="71" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Confirmado" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-le-Pah" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8bY-le-Pah" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="280" width="106" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$15.000" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="149-uD-bpX" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="149-uD-bpX" customClass="MyUITextField">
                                 <rect key="frame" x="175" y="302" width="128" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Agosto 14 de 2014" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cau-aG-amL" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cau-aG-amL" customClass="MyUITextField">
                                 <rect key="frame" x="96" y="324" width="207" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3:00 PM" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzv-e7-a18" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pzv-e7-a18" customClass="MyUITextField">
                                 <rect key="frame" x="96" y="346" width="207" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Perez" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5m-hV-i6g" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E5m-hV-i6g" customClass="MyUITextField">
                                 <rect key="frame" x="197" y="214" width="106" height="20"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1134,12 +1121,15 @@
                                     <segue destination="Vst-B1-DoA" kind="modal" id="aGu-Xd-tnv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IRS-Ls-JQI">
-                                <rect key="frame" x="204" y="373" width="101" height="30"/>
-                                <state key="normal" title="tmp_finalizar >">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZG-3t-OI5">
+                                <rect key="frame" x="156" y="94" width="149" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7F-ZK-pWC">
+                                <rect key="frame" x="17" y="70" width="130" height="45"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1148,9 +1138,10 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnCancel" destination="L1I-ka-uTZ" id="LP3-6n-0pf"/>
-                        <outlet property="btnEndServcie" destination="IRS-Ls-JQI" id="DFm-mJ-4mt"/>
+                        <outlet property="imgCat" destination="r7F-ZK-pWC" id="eTg-dA-h31"/>
                         <outlet property="indicator" destination="6Bw-1A-k8i" id="DQc-58-4rq"/>
                         <outlet property="lblRanking" destination="96M-Ma-TLs" id="iYI-sc-nZJ"/>
+                        <outlet property="lblSubCategory" destination="LZG-3t-OI5" id="opM-c7-uaO"/>
                         <outlet property="txtClickCode" destination="sO9-HW-Ndu" id="zh9-EH-jZu"/>
                         <outlet property="txtPrice" destination="149-uD-bpX" id="WZ2-s8-uaF"/>
                         <outlet property="txtServiceDate" destination="cau-aG-amL" id="b2e-0L-n5g"/>
@@ -1279,14 +1270,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvv-Cl-yir">
-                                <rect key="frame" x="20" y="87" width="130" height="45"/>
-                                <state key="normal" backgroundImage="images/logo_beauty.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awe-cm-d8h">
-                                <rect key="frame" x="211" y="98" width="89" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Awe-cm-d8h">
+                                <rect key="frame" x="158" y="98" width="142" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1398,6 +1383,9 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="5Eb-Nj-eIA">
                                 <rect key="frame" x="146" y="431" width="20" height="20"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1C7-AW-QJq">
+                                <rect key="frame" x="20" y="84" width="130" height="45"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1407,10 +1395,12 @@
                     <connections>
                         <outlet property="btnCancelConfirm" destination="358-RN-Lqx" id="IKR-Ni-fr2"/>
                         <outlet property="btnNotCancel" destination="Nt7-tI-xye" id="pfN-1R-uO8"/>
+                        <outlet property="imgCat" destination="1C7-AW-QJq" id="hua-50-0ET"/>
                         <outlet property="indicator" destination="5Eb-Nj-eIA" id="lxa-oL-lUO"/>
                         <outlet property="lblMsgText1" destination="sh2-44-6qA" id="lBm-cI-RPF"/>
                         <outlet property="lblMsgText2" destination="lzo-WJ-BsX" id="PDC-Hk-LAE"/>
                         <outlet property="lblRanking" destination="2de-EM-49u" id="KUF-dk-B9w"/>
+                        <outlet property="lblSubcategory" destination="Awe-cm-d8h" id="1bR-s9-1vw"/>
                         <outlet property="txtClickCode" destination="QNn-Kg-D6E" id="Z1g-5u-Kbs"/>
                         <outlet property="txtLastName" destination="Fij-dV-Lwd" id="vCe-YQ-mRM"/>
                         <outlet property="txtName" destination="iwe-45-fuh" id="zwT-h4-Abl"/>
@@ -1434,14 +1424,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oOL-8p-FsE">
-                                <rect key="frame" x="20" y="73" width="130" height="45"/>
-                                <state key="normal" backgroundImage="images/logo_beauty.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ8-2i-Yl3">
-                                <rect key="frame" x="211" y="84" width="89" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="manicurista" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ8-2i-Yl3">
+                                <rect key="frame" x="158" y="84" width="142" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.6549019814" blue="0.89803922179999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1556,6 +1540,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xxN-fC-Gtx">
+                                <rect key="frame" x="21" y="65" width="130" height="45"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -1565,7 +1552,9 @@
                     <connections>
                         <outlet property="btnNoSubmit" destination="3a2-IB-Pgf" id="Cjy-2T-dc3"/>
                         <outlet property="btnSubmit" destination="NdN-IP-DBp" id="zAs-eu-fEk"/>
+                        <outlet property="imgCat" destination="xxN-fC-Gtx" id="k0e-f4-rfP"/>
                         <outlet property="indicator" destination="ErE-sR-Jam" id="TFH-5g-yqS"/>
+                        <outlet property="lblSubCategory" destination="wQ8-2i-Yl3" id="KNf-3N-Hav"/>
                         <outlet property="txtClickCode" destination="cyf-JH-gCS" id="H1f-7q-Lan"/>
                         <outlet property="txtComments" destination="Te6-bM-W5E" id="GIs-6Z-9TY"/>
                         <outlet property="txtLastName" destination="ezf-ej-2xJ" id="FqU-bX-02O"/>
@@ -1577,7 +1566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="olk-Gc-s90" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3626" y="3"/>
+            <point key="canvasLocation" x="3636" y="6"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZhP-A2-Qop">
@@ -2141,13 +2130,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-QJ-wWq" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oeo-QJ-wWq" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="103" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="838-Wl-vjr" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="838-Wl-vjr" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="134" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2219,7 +2208,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="?" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-Q3-ixa" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jcR-Q3-ixa" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="165" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2296,13 +2285,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-f9-gxw" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qeh-f9-gxw" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="103" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPr-S3-UpB" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gPr-S3-UpB" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="134" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2524,13 +2513,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1uZ-JX-c0M" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1uZ-JX-c0M" customClass="MyUITextField">
                                 <rect key="frame" x="200" y="141" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWr-NG-br3" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pWr-NG-br3" customClass="MyUITextField">
                                 <rect key="frame" x="200" y="172" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -2677,13 +2666,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYL-vk-kWu" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QYL-vk-kWu" customClass="MyUITextField">
                                 <rect key="frame" x="206" y="141" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Pr-tk-n1m" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Pr-tk-n1m" customClass="MyUITextField">
                                 <rect key="frame" x="206" y="172" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3021,13 +3010,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avk-zY-2iE" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="avk-zY-2iE" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="103" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUI-r6-Cuf" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cUI-r6-Cuf" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="134" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3206,13 +3195,13 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Carolina" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-VX-nfA" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m2L-VX-nfA" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="102" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Pabon" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXd-3y-dAe" customClass="MyUITextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="Campo obligatorio" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wXd-3y-dAe" customClass="MyUITextField">
                                 <rect key="frame" x="202" y="133" width="106" height="29"/>
                                 <color key="textColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -3344,11 +3333,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uHb-zl-3a4"/>
-        <segue reference="8j7-Fr-AT4"/>
         <segue reference="B0I-qk-ijs"/>
+        <segue reference="gYy-83-slm"/>
         <segue reference="R6n-7M-aYX"/>
-        <segue reference="vjs-Zp-xLd"/>
+        <segue reference="aGu-Xd-tnv"/>
         <segue reference="fBG-wL-bDp"/>
+        <segue reference="uHb-zl-3a4"/>
     </inferredMetricsTieBreakers>
 </document>
