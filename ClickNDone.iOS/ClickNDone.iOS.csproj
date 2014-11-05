@@ -170,6 +170,7 @@
     <BundleResource Include="images\btn_iniciar_servicio%402x.png" />
     <BundleResource Include="images\btn_finalizar_servicio%402x.png" />
     <BundleResource Include="images\btn_menu_categorias%402x.png" />
+    <BundleResource Include="images\btn_servicios_activos%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

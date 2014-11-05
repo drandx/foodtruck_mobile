@@ -22,6 +22,13 @@ namespace ClickNDone.iOS
 
 		public HomeLogoController (IntPtr handle) : base (handle)
 		{
+
+		}
+
+		public override void ViewDidAppear (bool animated)
+		{
+			base.ViewDidAppear (animated);
+
 		}
 
 
@@ -34,14 +41,16 @@ namespace ClickNDone.iOS
 				 OnStartTask ();
 			};
 
-			if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
+			/*if (loginViewModel.UserType.Equals (UserType.CONSUMER)) 
 			{
 				btnStartTaskt.Hidden = true;
 			} 
 			else 
 			{
 				btnStartTaskt.Hidden = false;
-			}
+			}*/
+
+			OnStartTask ();
 		}
 
 
@@ -72,24 +81,31 @@ namespace ClickNDone.iOS
 					for (long count = 1; running == true ; count++) {
 						this.BeginInvokeOnMainThread(() => {
 							Console.WriteLine("Task {0} running.. {1}", taskId, count);
-						});
-						var ordersList = ordersModel.GetOrdersList(loginViewModel.User.id,ServiceState.ABIERTO,UserType.SUPPLIER);
-						if(ordersList == null)
-							Console.WriteLine("Orders List Null");
-						else
-						{
-							Console.WriteLine("Orders List Items Count: "+ordersList.Count);
-							if((ordersList.Count() > 0))
+							var ordersList = ordersModel.GetOrdersList(loginViewModel.User.id,ServiceState.ABIERTO,UserType.SUPPLIER);
+							if(ordersList == null)
 							{
-								ordersModel.RequestedOrder = ordersList.First();
-								this.BeginInvokeOnMainThread(() => {
-									LoadUIController();
-									UIApplication.SharedApplication.EndBackgroundTask(taskId);
-									taskId = 0;
-									running = false;
-								});
+								//this.BeginInvokeOnMainThread(() => {
+									Console.WriteLine("Orders List Null");
+								//});
 							}
-						}
+							else
+							{
+								this.BeginInvokeOnMainThread(() => {
+									Console.WriteLine("Orders List Items Count: "+ordersList.Count);							
+								});
+								if((ordersList.Count() > 0))
+								{
+									ordersModel.RequestedOrder = ordersList.First();
+									this.BeginInvokeOnMainThread(() => {
+										LoadUIController();
+										UIApplication.SharedApplication.EndBackgroundTask(taskId);
+										taskId = 0;
+										running = false;
+									});
+								}
+							}
+						});
+
 						cts.Token.ThrowIfCancellationRequested();
 						Thread.Sleep(Constants.GET_ORDER_STATUS_WAIT_TIME);
 					}
