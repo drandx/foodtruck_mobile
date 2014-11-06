@@ -105,9 +105,6 @@
     <Reference Include="monotouch" />
     <Reference Include="System.Json" />
     <Reference Include="MonoTouch.Dialog-1" />
-    <Reference Include="PDRating">
-      <HintPath>..\..\..\..\..\..\Desktop\pdreview-1.0.0\lib\ios\PDRating.dll</HintPath>
-    </Reference>
     <Reference Include="SharpMobileCode.ModalPicker">
       <HintPath>..\ClickNDone.Core\Lib\SharpMobileCode.ModalPicker.dll</HintPath>
     </Reference>
