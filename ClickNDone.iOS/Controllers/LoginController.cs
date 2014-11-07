@@ -20,21 +20,7 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			btnRegister.Hidden = loginViewModel.UserType.Equals (UserType.CONSUMER) ? false : true;
 
-			btnLogIn.TouchUpInside += async(sender, e) =>
-			{
-				loginViewModel.Username = txtEmail.Text;
-				loginViewModel.Password = txtPassword.Text;
-				try {
-					await loginViewModel.Login();
-					PerformSegue("OnLogin", this);
-				}
-				catch (Exception exc)
-				{
-					new UIAlertView("Oops!", "Usuario o contraseña no válidos", null, "Ok").Show();
-				}
-			};
 		}
 			
 		public override void ViewWillAppear(bool animated)

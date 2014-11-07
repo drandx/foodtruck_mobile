@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickNDone.Core", "ClickNDone.Core\ClickNDone.Core.csproj", "{DFD3D4B0-1E41-4457-95F5-B360133D8196}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTruckMobile.Core", "ClickNDone.Core\FoodTruckMobile.Core.csproj", "{DFD3D4B0-1E41-4457-95F5-B360133D8196}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickNDone.iOS", "ClickNDone.iOS\ClickNDone.iOS.csproj", "{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTrcukMobile.iOS", "ClickNDone.iOS\FoodTrcukMobile.iOS.csproj", "{AB8E49D1-72BA-4150-88A3-FD172A1D4A87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClickNDone.Droid", "ClickNDone.Droid\ClickNDone.Droid.csproj", "{FE7ED3C5-C567-408C-B1B8-DC5549F45928}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodTruckMobile.Droid", "ClickNDone.Droid\FoodTruckMobile.Droid.csproj", "{FE7ED3C5-C567-408C-B1B8-DC5549F45928}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -94,7 +94,7 @@ Global
 		{FE7ED3C5-C567-408C-B1B8-DC5549F45928}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = ClickNDone.iOS\ClickNDone.iOS.csproj
+		StartupItem = ClickNDone.iOS\FoodTrcukMobile.iOS.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

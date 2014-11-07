@@ -23,15 +23,7 @@ namespace ClickNDone.iOS
 
 		public override void ViewDidLoad ()
 		{
-			base.ViewDidLoad ();
-			btnCustomer.TouchUpInside += (sender, e) => {
-				loginViewModel.UserType = UserType.CONSUMER;
-				PerformSegue ("OnUserSelection", this);
-			};
-			btnProvider.TouchUpInside += (sender, e) => {
-				loginViewModel.UserType = UserType.SUPPLIER;
-				PerformSegue ("OnUserSelection", this);
-			};
+
 		}
 
 		public override bool PrefersStatusBarHidden ()

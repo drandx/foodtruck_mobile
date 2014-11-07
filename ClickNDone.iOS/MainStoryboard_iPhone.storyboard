@@ -23,7 +23,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRx-kg-6UY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-492" y="34"/>
+            <point key="canvasLocation" x="-1948" y="21"/>
         </scene>
         <!--User Selection Controller-->
         <scene sceneID="jvV-CW-TOI">
@@ -42,6 +42,9 @@
                                 <state key="normal" backgroundImage="images/btn_proveedor.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="k6e-uv-op0" kind="push" id="9Gw-TC-18m"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que tipo de usuario eres?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHO-Bm-67S">
                                 <rect key="frame" x="55" y="138" width="210" height="21"/>
@@ -55,6 +58,9 @@
                                 <state key="normal" backgroundImage="images/btn_cliente.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ymh-oC-qWx" kind="push" id="aOQ-f7-VT3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -65,12 +71,38 @@
                     <connections>
                         <outlet property="btnCustomer" destination="B9N-Jt-E7y" id="Wph-X2-O9n"/>
                         <outlet property="btnProvider" destination="dT7-KQ-kHl" id="DP2-gi-ZaB"/>
-                        <segue destination="k6e-uv-op0" kind="push" identifier="OnUserSelection" id="zal-gE-ZhR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Def-HL-l0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11" y="34"/>
+            <point key="canvasLocation" x="-1445" y="21"/>
+        </scene>
+        <!--Root View Controller-->
+        <scene sceneID="r5P-bX-LL3">
+            <objects>
+                <tableViewController id="ymh-oC-qWx" customClass="RestaurantsController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Khs-dU-EE8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="d0z-Qk-wJk">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="d0z-Qk-wJk" id="dHe-xF-uab">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ymh-oC-qWx" id="1FW-98-jBk"/>
+                            <outlet property="delegate" destination="ymh-oC-qWx" id="sW2-cY-9db"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="jKs-rS-q20"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXI-hl-kDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-873" y="548"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="oVk-Bm-ZSE">
@@ -126,24 +158,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOI-tp-Azy">
-                                <rect key="frame" x="159" y="260" width="140" height="25"/>
-                                <state key="normal" backgroundImage="images/btn_olvidapassword.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="LTz-ER-hQX" kind="push" id="bex-9b-Tqf"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irS-st-NUa">
-                                <rect key="frame" x="21" y="263" width="93" height="20"/>
-                                <state key="normal" backgroundImage="images/btn_registrate.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="MP6-jL-oPw" kind="push" id="MBR-PE-WV1"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -152,16 +166,14 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnLogIn" destination="7UE-Z0-Y1N" id="uJ8-Z8-EE4"/>
-                        <outlet property="btnRegister" destination="irS-st-NUa" id="jGh-VK-acZ"/>
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
                         <outlet property="txtEmail" destination="dj5-2r-Bpn" id="a79-1F-gMx"/>
                         <outlet property="txtPassword" destination="FiG-fo-Igm" id="EpL-j7-y8X"/>
-                        <segue destination="Vst-B1-DoA" kind="modal" identifier="OnLogin" id="a8M-oX-YDi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-1s-4nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="513" y="47"/>
+            <point key="canvasLocation" x="-873" y="-487"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="ncE-Ys-etI">
@@ -294,9 +306,6 @@
                                 <state key="normal" backgroundImage="images/btn_cerrar_sesion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="62F-m9-1Og" kind="modal" id="7RI-ya-a5E"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Datos de Usuario" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeM-RY-Yg0">
                                 <rect key="frame" x="19" y="233" width="281" height="29"/>
@@ -3316,10 +3325,8 @@
         <image name="images/btn_guardar.png" width="244" height="309"/>
         <image name="images/btn_iniciar_servicio.png" width="244" height="309"/>
         <image name="images/btn_no_calificacion.png" width="244" height="309"/>
-        <image name="images/btn_olvidapassword.png" width="244" height="309"/>
         <image name="images/btn_proveedor.png" width="244" height="309"/>
         <image name="images/btn_registrar.png" width="244" height="309"/>
-        <image name="images/btn_registrate.png" width="244" height="309"/>
         <image name="images/btn_solicitar_telefono.png" width="244" height="309"/>
         <image name="images/btn_star.png" width="244" height="309"/>
         <image name="images/img_photo.png" width="244" height="309"/>
@@ -3333,11 +3340,11 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="uHb-zl-3a4"/>
         <segue reference="aGu-Xd-tnv"/>
         <segue reference="Pb7-WV-ZAg"/>
         <segue reference="B0I-qk-ijs"/>
         <segue reference="R6n-7M-aYX"/>
         <segue reference="fBG-wL-bDp"/>
+        <segue reference="uHb-zl-3a4"/>
     </inferredMetricsTieBreakers>
 </document>
