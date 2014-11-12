@@ -60,7 +60,7 @@ namespace DInteractive.Core
 
 				var json = JsonConvert.SerializeObject (company);
 				string url = Constants.DigitalInteractiveHost + "CompaniesREST/"+company.Email+"/position";
-				var response = await client.UploadStringTaskAsync (url, "POST", json);
+				var response = await client.UploadStringTaskAsync (url, "PUT", json);
 				var objResp = JObject.Parse (response);
 				return true;
 

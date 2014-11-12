@@ -10,7 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using ClickNDone.Core;
+using DInteractive.Core;
 
 namespace ClickNDone.Droid
 {

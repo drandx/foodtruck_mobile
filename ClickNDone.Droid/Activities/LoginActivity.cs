@@ -10,7 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using ClickNDone.Core;
+using DInteractive.Core;
 using ClickNDone.Droid.Activities;
 
 namespace ClickNDone.Droid
@@ -46,7 +46,7 @@ namespace ClickNDone.Droid
 			{
 				//tmp code
 				await viewModelCat.GetBusinessCategoriesAsync();
-				await viewModelCat.PutCompanyAsync("garjuanpablo@gmail.com","123456789","987654321");
+				await viewModelCat.PutCompanyAsync("garjuanpablo@gmail.com","#jojojo#","jejeje");
 
 				await viewModel.Login();
 				//TODO: navigate to a new activity

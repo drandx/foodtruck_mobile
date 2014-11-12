@@ -10,9 +10,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using ClickNDone.Core;
+using DInteractive.Core;
 
-namespace ClickNDone.Droid
+namespace DInteractive.Droid
 {
 	[Application(Theme = "@android:style/Theme.Holo.Light")]		
 	public class Application : Android.App.Application
