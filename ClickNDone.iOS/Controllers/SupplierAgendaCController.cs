@@ -4,12 +4,12 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using ClickNDone.Core;
+using DInteractive.Core;
 using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class SupplierAgendaCController : MyViewController
 	{

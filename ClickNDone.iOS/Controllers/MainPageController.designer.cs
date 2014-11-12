@@ -9,7 +9,7 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.CodeDom.Compiler;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	[Register ("MainPageController")]
 	partial class MainPageController

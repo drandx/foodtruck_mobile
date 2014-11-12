@@ -5,7 +5,7 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS {
+namespace DInteractive.iOS {
 	public class ActionSheetDatePicker {
 		#region -= declarations =-
 		

@@ -7,7 +7,7 @@
 using MonoTouch.Foundation;
 using System.CodeDom.Compiler;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	[Register ("CancelServiceController")]
 	partial class CancelServiceController

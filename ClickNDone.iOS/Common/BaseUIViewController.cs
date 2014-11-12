@@ -3,7 +3,7 @@
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class BaseUIViewController : UIViewController
 	{

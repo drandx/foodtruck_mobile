@@ -7,7 +7,7 @@
 using MonoTouch.Foundation;
 using System.CodeDom.Compiler;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	[Register ("HomeLogoController")]
 	partial class HomeLogoController

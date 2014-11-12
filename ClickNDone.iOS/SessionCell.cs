@@ -2,9 +2,9 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 using MonoTouch.CoreGraphics;
-using ClickNDone.Core;
+using DInteractive.Core;
 
-namespace FoodTruckMobile.iOS {
+namespace DInteractive.iOS {
 
 	//TODO: Demo5: this custom cell has been pre-built. 
 	public class SessionCell : UITableViewCell {

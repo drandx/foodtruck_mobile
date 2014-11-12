@@ -1,6 +1,6 @@
 using System;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class PickerChangedEventArgs : EventArgs
 	{

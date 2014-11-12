@@ -2,7 +2,7 @@
 using MonoTouch.Dialog;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 
 	public class MyImageStringElement : ImageStringElement

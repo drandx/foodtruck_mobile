@@ -4,10 +4,10 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using ClickNDone.Core;
+using DInteractive.Core;
 using System.Threading;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class ServiceRequestController : MyViewController
 	{

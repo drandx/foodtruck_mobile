@@ -2,7 +2,7 @@
 using MonoTouch.UIKit;
 using System.Drawing;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	[MonoTouch.Foundation.Register ("MyUIButton")]
 	public class MyUIButton : UIButton

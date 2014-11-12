@@ -7,9 +7,9 @@ using MonoTouch.UIKit;
 using SharpMobileCode.ModalPicker;
 using System.Collections.Generic;
 using System.Drawing;
-using ClickNDone.Core;
+using DInteractive.Core;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class ServiceModalDatePickerController : MyViewController
 	{

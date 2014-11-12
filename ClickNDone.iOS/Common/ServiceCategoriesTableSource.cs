@@ -3,7 +3,7 @@ using MonoTouch.UIKit;
 using System.Collections.Generic;
 using MonoTouch.Foundation;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class ServiceCategoriesTableSource : UITableViewSource
 	{

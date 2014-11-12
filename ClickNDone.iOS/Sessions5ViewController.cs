@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
-using ClickNDone.Core;
+using DInteractive.Core;
 
-namespace EvolveLite {
+namespace DInteractive {
 	public class SessionsViewController : UITableViewController {
 		List<BusinessCategory> sessions;
 

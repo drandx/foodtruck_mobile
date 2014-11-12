@@ -6,9 +6,9 @@ using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using FlyoutNavigation;
 using MonoTouch.Dialog;
-using ClickNDone.Core;
+using DInteractive.Core;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class MainPageController : UIViewController
 	{

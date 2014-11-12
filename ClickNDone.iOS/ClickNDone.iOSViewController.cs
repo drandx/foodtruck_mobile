@@ -4,7 +4,7 @@ using System.Drawing;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class ClickNDone_iOSViewController : UIViewController
 	{

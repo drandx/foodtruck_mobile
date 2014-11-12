@@ -1,7 +1,7 @@
 ﻿using System;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	[MonoTouch.Foundation.Register ("MyUITextField")]
 	public class MyUITextField : UITextField

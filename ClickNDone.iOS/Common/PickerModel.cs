@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class PickerModel : UIPickerViewModel
 	{

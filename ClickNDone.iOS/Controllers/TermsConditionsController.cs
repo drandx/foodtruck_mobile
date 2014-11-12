@@ -4,10 +4,10 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using ClickNDone.Core;
+using DInteractive.Core;
 
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class TermsConditionsController : UIViewController
 	{

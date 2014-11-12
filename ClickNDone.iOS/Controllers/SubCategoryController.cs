@@ -5,10 +5,10 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.Drawing;
-using ClickNDone.Core;
+using DInteractive.Core;
 using MonoTouch.ObjCRuntime;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class SubCategoryController : UIViewController
 	{

@@ -1,9 +1,9 @@
 ﻿using System;
-using ClickNDone.Core;
+using DInteractive.Core;
 using MonoTouch.Foundation;
 using Newtonsoft.Json;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class IOSSettings:Settings
 	{

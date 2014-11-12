@@ -2,7 +2,7 @@
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public class Helper
 	{

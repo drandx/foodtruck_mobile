@@ -5,7 +5,7 @@ using System;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class AgendaServiciosController : MyViewController
 	{

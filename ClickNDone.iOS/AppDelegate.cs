@@ -5,10 +5,10 @@ using System.Linq;
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 using System.ComponentModel.Design;
-using ClickNDone.Core;
+using DInteractive.Core;
 using FlyoutNavigation;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the
 	// User Interface of the application, as well as listening (and optionally responding) to

@@ -4,12 +4,12 @@ using System;
 
 using MonoTouch.Foundation;
 using MonoTouch.UIKit;
-using ClickNDone.Core;
+using DInteractive.Core;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Linq;
 
-namespace ClickNDone.iOS
+namespace DInteractive.iOS
 {
 	public partial class HomeLogoController : MyViewController
 	{
