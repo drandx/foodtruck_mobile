@@ -15,15 +15,20 @@ using ClickNDone.Core;
 namespace ClickNDone.Droid
 {
 	[Activity]
-	public class BaseActivity<TViewModel> : Activity where TViewModel : BaseViewModel
+	public class BaseActivity<TViewModelOne, TViewModelTwo> : Activity 
+		where TViewModelOne : BaseViewModel
+		where TViewModelTwo : BaseViewModel
 	{
-		protected readonly TViewModel viewModel;
+		protected readonly TViewModelOne viewModel;
+		protected readonly TViewModelTwo viewModelCat;
 		protected ProgressDialog progress;
 
 		public BaseActivity()
 		{
-			viewModel = (TViewModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(TViewModel));
+			viewModel = (TViewModelOne)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(TViewModelOne));
+			viewModelCat = (TViewModelTwo)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(TViewModelTwo));
 		}
+
 		protected override void OnCreate(Bundle bundle)
 		{
 			base.OnCreate(bundle);

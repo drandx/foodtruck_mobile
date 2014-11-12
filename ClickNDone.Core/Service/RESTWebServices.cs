@@ -29,6 +29,35 @@ namespace ClickNDone.Core
 			SleepDuration = 1;
 			client = new WebClient ();
 		}
+
+
+		//DigitalInteractive CMS services
+		public async Task<List<BusinessCategory>> GetBusinessCategoriesAsync ()
+		{
+			List<BusinessCategory> categories = new List<BusinessCategory> ();
+			try 
+			{
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+				string url = Constants.DigitalInteractiveHost + "BusinessCategoriesREST";
+				var response = await client.DownloadStringTaskAsync (url);
+				categories = JsonConvert.DeserializeObject<List<BusinessCategory>> (response);
+
+			} catch (Exception exc) 
+			{
+				Console.WriteLine ("Error on GetBusinessCategoriesAsync" + exc.Message);
+			}
+			return categories;
+
+		}
+
+		public Task<Boolean> PutCompanyAsync (Company company)
+		{
+			throw new NotImplementedException ();
+		}
+		//DigitalInteractive CMS services end here
+
+
 		/*
 		 * 
 		 * 
@@ -149,9 +178,9 @@ namespace ClickNDone.Core
 					category.Convention = cat ["categoryConvention"].ToString ();
 					var idCat = cat ["id"].ToString ();
 					category.Id = idCat == "" || idCat == null ? 0 : Convert.ToInt32 (idCat);
-					if(category.Id == 1)
+					if (category.Id == 1)
 						category.ImageName = "logo_beauty.png";
-					if(category.Id == 2)
+					if (category.Id == 2)
 						category.ImageName = "logo_home.png";
 
 					foreach (var subcat in cat["subCategories"]) {
@@ -163,7 +192,7 @@ namespace ClickNDone.Core
 						subcategory.Id = idSubCat == "" || idSubCat == null ? 0 : Convert.ToInt32 (idSubCat);
 						subcategory.ParentId = category.Id;
 
-						if((subcategory.Name != "" ) && (subcategory != null))
+						if ((subcategory.Name != "") && (subcategory != null))
 							subCategories.Add (subcategory);
 
 					}
@@ -263,7 +292,7 @@ namespace ClickNDone.Core
 
 				return user;
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing on GetUser - " + exc.Message + "Json To Send: "+userJson);
+				Console.WriteLine ("Crashing on GetUser - " + exc.Message + "Json To Send: " + userJson);
 				return null;
 			}
 		}
@@ -332,7 +361,7 @@ namespace ClickNDone.Core
 						finalDate = reservation_date == "" || reservation_date == null ? new DateTime () : Convert.ToDateTime (reservation_date);
 					} catch (Exception exc) {
 						Console.WriteLine ("Issues parsing date from service: " + exc.Message);
-						finalDate = new DateTime();
+						finalDate = new DateTime ();
 					}
 					order.ReservationDate = finalDate;
 					order.MinCost = objResp ["minimum_cost"].ToString ();
@@ -408,13 +437,13 @@ namespace ClickNDone.Core
 						orderItem.CategoryId = catId == "" || catId == null ? 0 : Convert.ToInt32 (catId);
 						var subCatId = objResp ["id_subcategory"].ToString ();
 						orderItem.SubCategoryId = subCatId == "" || subCatId == null ? 0 : Convert.ToInt32 (subCatId);
-						var reservation_date = objResp ["reservation_date"].ToString();
+						var reservation_date = objResp ["reservation_date"].ToString ();
 						DateTime finalDate;
 						try {
 							finalDate = reservation_date == "" || reservation_date == null ? new DateTime () : Convert.ToDateTime (reservation_date);
 						} catch (Exception exc) {
 							Console.WriteLine ("Issues parsing date from service: " + exc.Message);
-							finalDate = new DateTime();
+							finalDate = new DateTime ();
 						}
 						orderItem.ReservationDate = finalDate;
 						orderItem.MinCost = objResp ["minimum_cost"].ToString ();
@@ -431,7 +460,7 @@ namespace ClickNDone.Core
 				}
 				return ordersList;
 			} catch (Exception exc) {
-				Console.WriteLine ("Crashing on GetOrdersList - " + exc.Message + " "+orderJson);
+				Console.WriteLine ("Crashing on GetOrdersList - " + exc.Message + " " + orderJson);
 				return null;
 			}
 

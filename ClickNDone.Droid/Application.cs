@@ -32,7 +32,8 @@ namespace ClickNDone.Droid
 
 			//ViewModels
 			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(UserModel),new UserModel());
-			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(TermsConditionsViewModel),new TermsConditionsViewModel());
+			DependencyInjectionWrapper.Instance.ServiceContainer ().AddService (typeof(CategoriesModel),new CategoriesModel());
+
 
 		}
 	}

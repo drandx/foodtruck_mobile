@@ -16,7 +16,7 @@ using ClickNDone.Droid.Activities;
 namespace ClickNDone.Droid
 {
     [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]			
-	public class LoginActivity : BaseActivity<UserModel>
+	public class LoginActivity : BaseActivity<UserModel,CategoriesModel>
 	{
 		EditText username, password;
 		Button login;
@@ -44,6 +44,10 @@ namespace ClickNDone.Droid
 			viewModel.Password = password.Text;
 			try
 			{
+				//tmp code
+				await viewModelCat.GetBusinessCategories();
+
+
 				await viewModel.Login();
 				//TODO: navigate to a new activity
 				System.Diagnostics.Debug.WriteLine(" *** READY TO GO HOME *** ");

@@ -11,8 +11,6 @@ namespace ClickNDone.Core
 		public string Title { get; set; }
 		public string Content { get; set; }
 		public byte[] Icon { get; set; }
-		public virtual BusinessLine BusinessLine { get; set; }
-		public virtual ICollection<BusinessService> BussinessServices { get; set; }
 		public virtual ICollection<Company> AssociatedCompanies { get; set; }
 	}
 
@@ -42,17 +40,16 @@ namespace ClickNDone.Core
 	{
 		public int CompanyID { get; set; }
 		public string Title { get; set; }
+		public string Latitude { get; set; }
+		public string Longitude { get; set; }
 		public string Content { get; set; }
 		public byte[] Image { get; set; }
 		public byte[] Icon { get; set; }
 		public string Address { get; set; }
+		public string Email { get; set; }
 		public string City { get; set; }
 		public string Neighborhood { get; set; }
 		public string Country { get; set; }
-
-		public ICollection<BusinessCategory> BusinessCategories { get; set; }
-		public ICollection<BusinessService> Services { get; set; }
-		public ICollection<Staff> Staff { get; set; }
 
 	}
 

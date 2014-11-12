@@ -13,6 +13,26 @@ namespace ClickNDone.Core
 		public Category SelectedSubcategory;
 		public static bool Loaded { get; set;}
 
+		public BusinessCategory SelectedBusinessCategory;
+		public List<BusinessCategory> BusinessCategories{ get; set; }
+
+		//Digital Interactive code Starts Here
+		public async Task GetBusinessCategories()
+		{
+			IsBusy = true;
+			try
+			{
+				var tmp = await service.GetBusinessCategoriesAsync();
+			}
+			finally {
+				IsBusy = false;
+				Loaded = true;
+			}
+
+		}
+		//Digital Interactive code Ends Here
+
+
 		public async Task GetCategories()
 		{
 			IsBusy = true;
