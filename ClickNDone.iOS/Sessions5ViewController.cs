@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
+using ClickNDone.Core;
 
 namespace EvolveLite {
 	public class SessionsViewController : UITableViewController {
-		List<Session> sessions;
+		List<BusinessCategory> sessions;
 
 		public override void ViewDidLoad ()
 		{
@@ -15,7 +16,7 @@ namespace EvolveLite {
 			TableView = new UITableView (Rectangle.Empty, UITableViewStyle.Plain); // Grouped or Plain
 			TableView.BackgroundView = new UIImageView (UIImage.FromBundle ("images/Background"));
 
-			sessions = PopulateSessionData ();
+			//sessions = PopulateSessionData ();
 			TableView.Source = new SessionsTableSource (sessions);
 		}
 	
@@ -23,7 +24,7 @@ namespace EvolveLite {
 		/// <summary>
 		/// Helper method to populate our session data, 
 		/// </summary>
-		protected List<Session> PopulateSessionData()
+		/*protected List<Session> PopulateSessionData()
 		{
 			return new List<Session> () {
 				new Session {Title="Introduction to Mobile Development",Speaker="Bryan Costanich", Location="Ballroom", Begins=new DateTime(2013,4,14,9,0,0)},
@@ -34,6 +35,6 @@ namespace EvolveLite {
 				new Session {Title="Keynote (Day 1)",Speaker="Miguel de Icaza, Nat Friedman", Location="Ballroom",Begins=new DateTime(2013,4,16,9,0,0)},
 				new Session {Title="Keynote (Day 2)",Speaker="Miguel de Icaza, Nat Friedman", Location="Ballroom",Begins=new DateTime(2013,4,17,9,0,0)},
 			};
-		}
+		}*/
 	}
 }

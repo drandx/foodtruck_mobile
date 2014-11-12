@@ -2,6 +2,7 @@ using System;
 using MonoTouch.UIKit;
 using System.Drawing;
 using MonoTouch.CoreGraphics;
+using ClickNDone.Core;
 
 namespace FoodTruckMobile.iOS {
 
@@ -10,7 +11,7 @@ namespace FoodTruckMobile.iOS {
 		UILabel titleLabel, timeLabel, speakerLabel;
 		UIImageView favoriteImageView;
 
-		public Session Session { get; set; }
+		//public  Session { get; set; }
 
 		public SessionCell (string reuseIdentifier): base(UITableViewCellStyle.Default, reuseIdentifier)
 		{
@@ -32,9 +33,9 @@ namespace FoodTruckMobile.iOS {
 
 			float padding = 5.0f;
 
-			titleLabel.Text = Session.Title;
-			timeLabel.Text = String.Format ("{0} - {1}", Session.Begins.ToString ("HH:mm"), Session.Ends.ToString ("HH:mm"));
-			speakerLabel.Text = (Session.Speaker != null) ? Session.Speaker : "";
+			//titleLabel.Text = Session.Title;
+			//timeLabel.Text = String.Format ("{0} - {1}", Session.Begins.ToString ("HH:mm"), Session.Ends.ToString ("HH:mm"));
+			//speakerLabel.Text = (Session.Speaker != null) ? Session.Speaker : "";
 
 			RectangleF b = ContentView.Bounds; // ContentView.Bounds can change! see Accessories or Editing mode
 

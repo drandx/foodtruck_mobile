@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
+using ClickNDone.Core;
 
 namespace EvolveLite
 {
 	public class SessionsTableSource : UITableViewSource
 	{		
 		static readonly string sessionCellId = "SessionCell";
-		List<Session> data;
-		IGrouping<int, Session>[] grouping; // sub-group of speakers in each index
+		List<BusinessCategory> data;
+		IGrouping<int, BusinessCategory>[] grouping; // sub-group of speakers in each index
 		
-		public SessionsTableSource (List<Session> sessions)
+		public SessionsTableSource (List<BusinessCategory> sessions)
 		{
 			data = sessions;
-			grouping = GetSessionsGroupedByDate();
 		}
 		
 		public override int RowsInSection (UITableView tableview, int section)
@@ -27,11 +27,6 @@ namespace EvolveLite
 		public override int NumberOfSections (UITableView tableView)
 		{
 			return grouping.Count ();
-		}
-		
-		public override string TitleForHeader (UITableView tableView, int section)
-		{
-			return grouping [section].ElementAt (0).Begins.Date.ToString ("dd MMM yyyy");
 		}
 		
 		public override void RowSelected (UITableView tableView, NSIndexPath indexPath)
@@ -63,17 +58,7 @@ namespace EvolveLite
 			
 			return cell;
 		}
-		
-		
-		// helper method
-		IGrouping<int, Session>[] GetSessionsGroupedByDate ()
-		{
-			var sessionsGrouped = (from s in data
-			                       group s by s.Begins.Day into g
-			                       select g).ToArray ();
-			
-			return sessionsGrouped;
-		}
+
 	} 
 }
 
