@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class OrderStateTimer
 	{

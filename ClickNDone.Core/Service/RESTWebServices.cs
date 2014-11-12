@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class RESTWebServices : IWebService
 	{

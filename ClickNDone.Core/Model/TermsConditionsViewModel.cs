@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class TermsConditionsViewModel:BaseViewModel
 	{

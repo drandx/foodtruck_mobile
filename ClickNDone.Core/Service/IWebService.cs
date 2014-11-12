@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public interface IWebService
 	{

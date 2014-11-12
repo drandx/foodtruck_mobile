@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	//Digital Interactive CMS Domain Model
 	public class BusinessCategory

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.Design;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class DependencyInjectionWrapper
 	{

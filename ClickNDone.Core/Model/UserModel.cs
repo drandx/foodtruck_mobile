@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Collections;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class UserModel : BaseViewModel
 	{

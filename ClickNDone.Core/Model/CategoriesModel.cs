@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class CategoriesModel : BaseViewModel
 	{

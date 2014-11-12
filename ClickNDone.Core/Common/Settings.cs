@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class Settings : ISettings
 	{

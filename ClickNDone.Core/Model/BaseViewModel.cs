@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Threading.Tasks;
 using System.ComponentModel.Design;
-using ClickNDone.Core;
+using DInteractive.Core;
 
 
-namespace ClickNDone.Core
+namespace DInteractive.Core
 {
 	public class BaseViewModel
 	{
