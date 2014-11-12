@@ -42,6 +42,7 @@
     <Compile Include="Model\CategoriesModel.cs" />
     <Compile Include="Model\OrdersModel.cs" />
     <Compile Include="Common\OrderStateTimer.cs" />
+    <Compile Include="Model\CompaniesModel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -51,12 +51,27 @@ namespace ClickNDone.Core
 
 		}
 
-		public Task<Boolean> PutCompanyAsync (Company company)
+		public async Task<Boolean> PutCompanyAsync (Company company)
 		{
-			throw new NotImplementedException ();
+			try 
+			{
+				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+
+				var json = JsonConvert.SerializeObject (company);
+				string url = Constants.DigitalInteractiveHost + "CompaniesREST/"+company.Email+"/position";
+				var response = await client.UploadStringTaskAsync (url, "POST", json);
+				var objResp = JObject.Parse (response);
+				return true;
+
+			} catch (Exception exc) 
+			{
+				Console.WriteLine ("Error on PutCompanyAsync" + exc.Message);
+				return false;
+			}
+
 		}
 		//DigitalInteractive CMS services end here
-
 
 		/*
 		 * 

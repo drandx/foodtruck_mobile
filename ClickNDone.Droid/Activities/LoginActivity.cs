@@ -45,8 +45,8 @@ namespace ClickNDone.Droid
 			try
 			{
 				//tmp code
-				await viewModelCat.GetBusinessCategories();
-
+				await viewModelCat.GetBusinessCategoriesAsync();
+				await viewModelCat.PutCompanyAsync("garjuanpablo@gmail.com","123456789","987654321");
 
 				await viewModel.Login();
 				//TODO: navigate to a new activity

@@ -17,7 +17,7 @@ namespace ClickNDone.Core
 		public List<BusinessCategory> BusinessCategories{ get; set; }
 
 		//Digital Interactive code Starts Here
-		public async Task GetBusinessCategories()
+		public async Task GetBusinessCategoriesAsync()
 		{
 			IsBusy = true;
 			try
@@ -29,6 +29,23 @@ namespace ClickNDone.Core
 				Loaded = true;
 			}
 
+		}
+
+		public async Task PutCompanyAsync(string email, string latitude, string longitude)
+		{
+			IsBusy = true;
+			try
+			{
+				Company company = new Company();
+				company.Email = email;
+				company.Latitude = latitude;
+				company.Longitude = longitude;
+				await service.PutCompanyAsync(company);
+			}
+			finally {
+				IsBusy = false;
+				Loaded = true;
+			}
 		}
 		//Digital Interactive code Ends Here
 
