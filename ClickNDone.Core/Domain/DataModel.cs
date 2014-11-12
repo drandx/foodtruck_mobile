@@ -3,6 +3,83 @@ using System.Collections.Generic;
 
 namespace ClickNDone.Core
 {
+	//Digital Interactive CMS Domain Model
+	public class BusinessCategory
+	{
+		public int BusinessCategoryID { get; set; }
+		public int BusinessLineID { get; set; }
+		public string Title { get; set; }
+		public string Content { get; set; }
+		public byte[] Icon { get; set; }
+		public virtual BusinessLine BusinessLine { get; set; }
+		public virtual ICollection<BusinessService> BussinessServices { get; set; }
+		public virtual ICollection<Company> AssociatedCompanies { get; set; }
+	}
+
+	public class BusinessLine
+	{
+		public int BusinessLineID { get; set; }
+		public string Title { get; set; }
+		public string Content { get; set; }
+		public virtual ICollection<BusinessCategory> Categories { get; set; }
+	}  
+
+	public class BusinessService
+	{
+		public int ID { get; set; }
+		public int BusinessCategoryID { get; set; }
+		public string Title { get; set; }
+		public string Content { get; set; }
+		public byte[] Icon { get; set; }
+		public int MinutesDuration { get; set; }
+
+		public virtual BusinessCategory BusinessCategory { get; set; }
+		public virtual ICollection<Company> ProviderCompanies { get; set; }
+		public virtual ICollection<Staff> Staff { get; set; }
+	}
+
+	public class Company
+	{
+		public int CompanyID { get; set; }
+		public string Title { get; set; }
+		public string Content { get; set; }
+		public byte[] Image { get; set; }
+		public byte[] Icon { get; set; }
+		public string Address { get; set; }
+		public string City { get; set; }
+		public string Neighborhood { get; set; }
+		public string Country { get; set; }
+
+		public ICollection<BusinessCategory> BusinessCategories { get; set; }
+		public ICollection<BusinessService> Services { get; set; }
+		public ICollection<Staff> Staff { get; set; }
+
+	}
+
+	public class Staff
+	{
+		public int StaffID { get; set; }
+		public string FirstName { get; set; }
+		public string LastName { get; set; }
+		public byte[] Image { get; set; }
+		public string Email { get; set; }
+		public string PhoneNumber { get; set; }
+		public string Address { get; set; }
+		public virtual ICollection<MeetingTime> MeetingTimes { get; set; }
+		public ICollection<Company> Companies { get; set; }
+		public ICollection<BusinessService> Services { get; set; }
+
+	}
+
+	public class MeetingTime
+	{
+		public int MeetingTimeID { get; set; }
+		public int StaffID { get; set; }
+		public DateTime StartTime { get; set; }
+		public DateTime FinishTime { get; set; }
+		public virtual Staff Staff { get; set; }
+	}
+
 
 	public class User
 	{
@@ -18,6 +95,8 @@ namespace ClickNDone.Core
 		public string urlAvatar { get; set;}
 		public string sessionToken { get; set;}
 	}
+
+	//Digital Interactive CMS Domain Model Ends Here
 
 	public class LoginObj
 	{
