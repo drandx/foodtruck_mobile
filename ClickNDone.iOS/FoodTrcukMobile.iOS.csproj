@@ -131,14 +131,8 @@
     <BundleResource Include="images\header-3-64.png" />
     <BundleResource Include="images\barra_copyright_44%402x.png" />
     <BundleResource Include="images\barra_copyright%402x.png" />
-    <BundleResource Include="images\Icon-60%402x.png" />
-    <BundleResource Include="images\Icon.png" />
-    <BundleResource Include="images\Icon%402x.png" />
     <BundleResource Include="Resources\splash-568%402x.png" />
     <BundleResource Include="Resources\splash.png" />
-    <BundleResource Include="images\Icon-Small%402x.png" />
-    <BundleResource Include="images\Icon-Spotlight-40%402x.png" />
-    <BundleResource Include="images\Icon-Small.png" />
     <BundleResource Include="images\btn_borrar%402x.png" />
     <BundleResource Include="images\btn_cerrar%402x.png" />
     <BundleResource Include="images\logo_beauty%402x.png" />
@@ -170,6 +164,8 @@
     <BundleResource Include="images\btn_servicios_activos%402x.png" />
     <BundleResource Include="Resources\logo_beauty%402x.png" />
     <BundleResource Include="Resources\logo_home%402x.png" />
+    <BundleResource Include="Resources\Icon-29.png" />
+    <BundleResource Include="Resources\Icon-29%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -342,6 +338,11 @@
       <DependentUpon>TrackLocationController.cs</DependentUpon>
     </Compile>
     <Compile Include="BusinessCategoriesTableSource.cs" />
+    <Compile Include="MappingAppViewController.cs" />
+    <Compile Include="MappingAppViewController.designer.cs">
+      <DependentUpon>MappingAppViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomAnnotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

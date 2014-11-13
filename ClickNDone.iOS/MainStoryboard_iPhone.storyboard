@@ -101,10 +101,10 @@
             </objects>
             <point key="canvasLocation" x="-873" y="548"/>
         </scene>
-        <!--View Controller-->
+        <!--Mapping App View Controller-->
         <scene sceneID="3aw-rO-68C">
             <objects>
-                <viewController id="CH4-pC-pHg" sceneMemberID="viewController">
+                <viewController id="CH4-pC-pHg" customClass="MappingAppViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v5Y-97-77c"/>
                         <viewControllerLayoutGuide type="bottom" id="fDs-Yi-Uzg"/>
@@ -118,7 +118,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSu-1B-LVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-368" y="552"/>
+            <point key="canvasLocation" x="-367" y="548"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="oVk-Bm-ZSE">

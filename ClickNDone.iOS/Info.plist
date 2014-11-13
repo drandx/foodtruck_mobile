@@ -37,14 +37,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIconFiles</key>
-	<array>
-		<string>images/Icon-60@2x</string>
-		<string>images/Icon</string>
-		<string>images/Icon@2x</string>
-		<string>images/Icon-Small@2x</string>
-		<string>images/Icon-Spotlight-40@2x</string>
-		<string>images/Icon-Small</string>
-	</array>
+	<array/>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>fetch</string>

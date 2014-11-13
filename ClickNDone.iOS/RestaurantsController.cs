@@ -35,7 +35,7 @@ namespace DInteractive.iOS
 
 		public void executeSegue()
 		{
-			new UIAlertView("!!!", "++ This Rules ++", null, "OK").Show();
+			PerformSegue ("OnBusinessCategoryDetail",this);
 		}
 
 	}
