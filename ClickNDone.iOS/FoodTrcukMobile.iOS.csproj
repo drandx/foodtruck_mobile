@@ -337,9 +337,11 @@
     <Compile Include="RestaurantsController.designer.cs">
       <DependentUpon>RestaurantsController.cs</DependentUpon>
     </Compile>
-    <Compile Include="SessionCell.cs" />
-    <Compile Include="Sessions5TableSource.cs" />
-    <Compile Include="Sessions5ViewController.cs" />
+    <Compile Include="TrackLocationController.cs" />
+    <Compile Include="TrackLocationController.designer.cs">
+      <DependentUpon>TrackLocationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusinessCategoriesTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

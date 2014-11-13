@@ -10,7 +10,9 @@ namespace DInteractive.iOS
 {
 	public partial class UserSelectionController : UIViewController
 	{
-		readonly UserModel loginViewModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
+		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+
 
 		public UserSelectionController (IntPtr handle) : base (handle)
 		{
@@ -21,8 +23,30 @@ namespace DInteractive.iOS
 			base.ViewDidAppear (animated);
 		}
 
-		public override void ViewDidLoad ()
+		public override async void ViewDidLoad ()
 		{
+			try 
+			{
+				await categoriesModel.GetBusinessCategoriesAsync ();
+			}
+			catch(Exception exc) 
+			{
+				Console.WriteLine("Error on UserSelectionController - ViewDidLoad " + exc.Message);
+
+			}
+
+			btnCustomer.TouchUpInside += (sender, e) => 
+			{
+				userModel.UserType = UserType.CONSUMER;
+				PerformSegue("OnUserSelected",this);
+			};
+
+			btnProvider.TouchUpInside += (sender, e) => 
+			{
+				userModel.UserType = UserType.SUPPLIER;
+				PerformSegue("OnSupplierSelected",this);
+			};
+
 
 		}
 

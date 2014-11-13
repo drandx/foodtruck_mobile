@@ -13,12 +13,6 @@ namespace DInteractive.Core
 
 		private WebClient client;
 
-		public int SleepDuration { get; set; }
-
-		private Task Sleep ()
-		{
-			return Task.Delay (SleepDuration);
-		}
 		/*
 		 * 
 		 * 
@@ -26,12 +20,16 @@ namespace DInteractive.Core
 		 */
 		public RESTWebServices ()
 		{
-			SleepDuration = 1;
 			client = new WebClient ();
 		}
 
 
 		//DigitalInteractive CMS services
+		/**
+		 * 
+		 * 
+		 * 
+		 * */
 		public async Task<List<BusinessCategory>> GetBusinessCategoriesAsync ()
 		{
 			List<BusinessCategory> categories = new List<BusinessCategory> ();
@@ -51,6 +49,11 @@ namespace DInteractive.Core
 
 		}
 
+		/**
+		 * 
+		 * 
+		 * 
+		 * */
 		public async Task<Boolean> PutCompanyAsync (Company company)
 		{
 			try 

@@ -13,16 +13,16 @@ namespace DInteractive.Core
 		public Category SelectedSubcategory;
 		public static bool Loaded { get; set;}
 
+		//Digital Interactive code Starts Here
 		public BusinessCategory SelectedBusinessCategory;
 		public List<BusinessCategory> BusinessCategories{ get; set; }
 
-		//Digital Interactive code Starts Here
 		public async Task GetBusinessCategoriesAsync()
 		{
 			IsBusy = true;
 			try
 			{
-				var tmp = await service.GetBusinessCategoriesAsync();
+				BusinessCategories = await service.GetBusinessCategoriesAsync();
 			}
 			finally {
 				IsBusy = false;

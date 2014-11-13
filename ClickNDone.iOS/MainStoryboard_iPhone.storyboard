@@ -42,11 +42,8 @@
                                 <state key="normal" backgroundImage="images/btn_proveedor.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="k6e-uv-op0" kind="push" id="9Gw-TC-18m"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Que tipo de usuario eres?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHO-Bm-67S">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHO-Bm-67S">
                                 <rect key="frame" x="55" y="138" width="210" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196078431373" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -58,26 +55,23 @@
                                 <state key="normal" backgroundImage="images/btn_cliente.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="ymh-oC-qWx" kind="push" id="aOQ-f7-VT3"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lQ9-uv-wPs">
-                        <barButtonItem key="backBarButtonItem" title="Atras" id="0bX-Zr-9E0"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="lQ9-uv-wPs"/>
                     <connections>
                         <outlet property="btnCustomer" destination="B9N-Jt-E7y" id="Wph-X2-O9n"/>
                         <outlet property="btnProvider" destination="dT7-KQ-kHl" id="DP2-gi-ZaB"/>
+                        <segue destination="k6e-uv-op0" kind="push" identifier="OnSupplierSelected" id="Hz9-Gh-lIK"/>
+                        <segue destination="ymh-oC-qWx" kind="push" identifier="OnUserSelected" id="5zd-E1-cqD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Def-HL-l0z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1445" y="21"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Restaurants Controller-->
         <scene sceneID="r5P-bX-LL3">
             <objects>
                 <tableViewController id="ymh-oC-qWx" customClass="RestaurantsController" sceneMemberID="viewController">
@@ -98,11 +92,33 @@
                             <outlet property="delegate" destination="ymh-oC-qWx" id="sW2-cY-9db"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="jKs-rS-q20"/>
+                    <navigationItem key="navigationItem" id="jKs-rS-q20"/>
+                    <connections>
+                        <segue destination="CH4-pC-pHg" kind="push" identifier="OnBusinessCategoryDetail" id="IM7-2Y-JZL"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXI-hl-kDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-873" y="548"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3aw-rO-68C">
+            <objects>
+                <viewController id="CH4-pC-pHg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="v5Y-97-77c"/>
+                        <viewControllerLayoutGuide type="bottom" id="fDs-Yi-Uzg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Yv5-bQ-hvq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EHH-EL-wWh"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jSu-1B-LVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-368" y="552"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="oVk-Bm-ZSE">
@@ -122,22 +138,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FiG-fo-Igm" customClass="MyUITextField">
-                                <rect key="frame" x="95" y="193" width="194" height="30"/>
-                                <color key="textColor" red="0.0" green="0.65490196078431373" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-Z0-Y1N">
-                                <rect key="frame" x="226" y="231" width="73" height="16"/>
-                                <state key="normal" backgroundImage="images/btn_conectar.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="1cS-IC-B7T">
                                 <rect key="frame" x="158" y="263" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ingresa tu información" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-Ws-BqQ">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-Ws-BqQ">
                                 <rect key="frame" x="21" y="119" width="183" height="29"/>
                                 <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -151,29 +155,45 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clave:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whk-Al-YxJ">
-                                <rect key="frame" x="21" y="193" width="74" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-Z0-Y1N">
+                                <rect key="frame" x="216" y="204" width="73" height="16"/>
+                                <state key="normal" backgroundImage="images/btn_conectar.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d86-Pz-EFP">
-                        <barButtonItem key="backBarButtonItem" title="Atras" id="x8f-lr-oEA"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="d86-Pz-EFP"/>
                     <connections>
                         <outlet property="btnLogIn" destination="7UE-Z0-Y1N" id="uJ8-Z8-EE4"/>
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
                         <outlet property="txtEmail" destination="dj5-2r-Bpn" id="a79-1F-gMx"/>
-                        <outlet property="txtPassword" destination="FiG-fo-Igm" id="EpL-j7-y8X"/>
+                        <segue destination="lg5-JK-FKu" kind="push" identifier="OnTrackLocation" id="RUk-ox-pH2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-1s-4nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-873" y="-487"/>
+        </scene>
+        <!--Track Location Controller-->
+        <scene sceneID="Avy-O0-NcA">
+            <objects>
+                <viewController id="lg5-JK-FKu" customClass="TrackLocationController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cLB-a5-pRo"/>
+                        <viewControllerLayoutGuide type="bottom" id="6ZD-YE-qaU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a8t-We-7Zx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zwg-ym-EoQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="93L-Br-Fcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-456" y="-487"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="ncE-Ys-etI">
