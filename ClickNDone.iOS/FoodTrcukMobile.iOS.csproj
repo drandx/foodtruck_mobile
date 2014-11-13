@@ -166,6 +166,11 @@
     <BundleResource Include="Resources\logo_home%402x.png" />
     <BundleResource Include="Resources\Icon-29.png" />
     <BundleResource Include="Resources\Icon-29%402x.png" />
+    <BundleResource Include="images\icon_foodtruck.png" />
+    <BundleResource Include="images\icon_users.png" />
+    <BundleResource Include="Resources\icon_foodtruck.png" />
+    <BundleResource Include="Resources\icon_foodtruck%402x.png" />
+    <BundleResource Include="Resources\icon_foodtruck%404x.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />

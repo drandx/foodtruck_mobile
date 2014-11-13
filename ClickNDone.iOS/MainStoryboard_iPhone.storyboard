@@ -39,21 +39,21 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dT7-KQ-kHl">
-                                <rect key="frame" x="28" y="191" width="122" height="155"/>
-                                <state key="normal" backgroundImage="images/btn_proveedor.png">
+                                <rect key="frame" x="28" y="191" width="128" height="128"/>
+                                <state key="normal" backgroundImage="images/icon_users.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Select the user" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IHO-Bm-67S">
                                 <rect key="frame" x="55" y="138" width="210" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196078431373" blue="0.89803921568627454" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.89803921568627454" green="0.41166823452337004" blue="0.35057005793141099" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9N-Jt-E7y">
-                                <rect key="frame" x="165" y="191" width="122" height="155"/>
-                                <state key="normal" backgroundImage="images/btn_cliente.png">
+                                <rect key="frame" x="165" y="191" width="128" height="128"/>
+                                <state key="normal" backgroundImage="images/icon_foodtruck.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -144,14 +144,14 @@
                             </activityIndicatorView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter your Email" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g3-Ws-BqQ">
                                 <rect key="frame" x="21" y="119" width="183" height="29"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.41166823450000001" blue="0.35057005790000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jID-qx-zRq">
                                 <rect key="frame" x="21" y="156" width="74" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.65490196079999996" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.41166823450000001" blue="0.35057005790000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -159,6 +159,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-Z0-Y1N">
                                 <rect key="frame" x="216" y="204" width="73" height="16"/>
                                 <state key="normal" title="Start >">
+                                    <color key="titleColor" red="0.8980392157" green="0.41166823450000001" blue="0.35057005790000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -3349,17 +3350,17 @@
         <image name="images/btn_cancelar_servicio.png" width="244" height="309"/>
         <image name="images/btn_cerrar.png" width="244" height="309"/>
         <image name="images/btn_cerrar_sesion.png" width="244" height="309"/>
-        <image name="images/btn_cliente.png" width="244" height="309"/>
         <image name="images/btn_consultar.png" width="244" height="309"/>
         <image name="images/btn_enviar.png" width="244" height="309"/>
         <image name="images/btn_enviar_calificacion.png" width="244" height="309"/>
         <image name="images/btn_guardar.png" width="244" height="309"/>
         <image name="images/btn_iniciar_servicio.png" width="244" height="309"/>
         <image name="images/btn_no_calificacion.png" width="244" height="309"/>
-        <image name="images/btn_proveedor.png" width="244" height="309"/>
         <image name="images/btn_registrar.png" width="244" height="309"/>
         <image name="images/btn_solicitar_telefono.png" width="244" height="309"/>
         <image name="images/btn_star.png" width="244" height="309"/>
+        <image name="images/icon_foodtruck.png" width="244" height="309"/>
+        <image name="images/icon_users.png" width="244" height="309"/>
         <image name="images/img_photo.png" width="244" height="309"/>
         <image name="images/logo_beauty.png" width="244" height="309"/>
         <image name="images/logo_home.png" width="244" height="309"/>

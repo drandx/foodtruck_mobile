@@ -35,7 +35,11 @@
 		</dict>
 	</dict>
 	<key>CFBundleIconFiles</key>
-	<array/>
+	<array>
+		<string>icon_foodtruck</string>
+		<string>icon_foodtruck@2x</string>
+		<string>icon_foodtruck@4x</string>
+	</array>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>location</string>
