@@ -17,10 +17,12 @@ namespace MappingApp
 		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 		static int taskId;
 		static volatile bool running;
-		MKMapView map = null;
+		static MKMapView myMapView = null;
 
         public MappingAppViewController(IntPtr handle) : base(handle)
         {
+			if(myMapView == null)
+				myMapView = new MKMapView(UIScreen.MainScreen.Bounds);
         }
 
         public override void DidReceiveMemoryWarning()
@@ -36,29 +38,29 @@ namespace MappingApp
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+			this.NavigationItem.Title = categoriesModel.SelectedBusinessCategory.Title;
 
             // Perform any additional setup after loading the view, typically from a nib.
 
             // add the map view
-            map = new MKMapView(UIScreen.MainScreen.Bounds);
-            View.Add(map);
+            View.Add(myMapView);
 
             // change the map style
-            map.MapType = MKMapType.Standard;
+            myMapView.MapType = MKMapType.Standard;
 
             // enable/disable interactions
-            map.ZoomEnabled = true;
-            map.ScrollEnabled = true;
+            myMapView.ZoomEnabled = true;
+            myMapView.ScrollEnabled = true;
 
             // show user location
 			if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
 				locationManager.RequestWhenInUseAuthorization();
 			}
-            map.ShowsUserLocation = true;
+            myMapView.ShowsUserLocation = true;
 
             // TODO: Step 3d - specify a custom map delegate
             var mapDelegate = new MyMapDelegate();
-            map.Delegate = mapDelegate;
+            myMapView.Delegate = mapDelegate;
 
             // Add a point annotation
             //map.AddAnnotation(new MKPointAnnotation()
@@ -83,9 +85,9 @@ namespace MappingApp
 			location.Longitude = -87.655640;
 			region.Span = span;
 			region.Center = location;
-			map.SetRegion (region, true);
+			myMapView.SetRegion (region, true);
 
-			this.PrintPointOnMapp ();
+			this.PrintPointOnMapp (myMapView);
 
 			OnStartTask ();
 
@@ -129,12 +131,8 @@ namespace MappingApp
 								this.BeginInvokeOnMainThread(() => {
 									Console.WriteLine("Orders List Items Count: "+updatedCategory.AssociatedCompanies.Count);							
 								});
-								foreach(var an in map.Annotations)
-								{
-									map.RemoveAnnotation(an);
-								}
-								this.PrintPointOnMapp();
 
+								this.PrintPointOnMapp(myMapView);
 
 								/*if((ordersList.Count() > 0))
 								{
@@ -170,12 +168,18 @@ namespace MappingApp
 			}
 		}
 
-		private void PrintPointOnMapp()
+		private void PrintPointOnMapp(MKMapView map)
 		{
+
+			foreach(var an in myMapView.Annotations)
+			{
+				myMapView.RemoveAnnotation(an);
+			}
+
 			foreach(Company company in categoriesModel.SelectedBusinessCategory.AssociatedCompanies)
 			{
-				Console.WriteLine ("Lat:" + company.Latitude + " Long:" + company.Longitude);
-				this.map.AddAnnotation(new CustomAnnotation(company.Title, new MonoTouch.CoreLocation.CLLocationCoordinate2D(company.Latitude, company.Longitude)));
+				Console.WriteLine (company.Title + " Lat:" + company.Latitude + " Long:" + company.Longitude);
+				map.AddAnnotation(new CustomAnnotation(company.Title, new MonoTouch.CoreLocation.CLLocationCoordinate2D(company.Latitude, company.Longitude)));
 
 			}
 
