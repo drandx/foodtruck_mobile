@@ -40,8 +40,8 @@ namespace DInteractive.Core
 	{
 		public int CompanyID { get; set; }
 		public string Title { get; set; }
-		public string Latitude { get; set; }
-		public string Longitude { get; set; }
+		public double Latitude { get; set; }
+		public double Longitude { get; set; }
 		public string Content { get; set; }
 		public byte[] Image { get; set; }
 		public byte[] Icon { get; set; }

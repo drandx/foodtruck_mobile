@@ -20,6 +20,11 @@ namespace DInteractive.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
+			btnLogIn.TouchUpInside += (sender, e) => 
+			{
+				loginViewModel.Email = txtEmail.Text;
+				PerformSegue("OnTrackLocation",this);
+			};
 
 		}
 			

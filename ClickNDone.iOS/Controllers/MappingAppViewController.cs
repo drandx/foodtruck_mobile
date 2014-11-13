@@ -5,12 +5,15 @@ using MonoTouch.UIKit;
 using MonoTouch.MapKit;
 using System.Diagnostics;
 using MonoTouch.CoreLocation;
+using DInteractive.Core;
 
 namespace MappingApp
 {
     public partial class MappingAppViewController : UIViewController
     {
 		CLLocationManager locationManager = new CLLocationManager ();
+		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
+
 
         public MappingAppViewController(IntPtr handle) : base(handle)
         {
@@ -40,8 +43,8 @@ namespace MappingApp
             map.MapType = MKMapType.Standard;
 
             // enable/disable interactions
-            // map.ZoomEnabled = false;
-            // map.ScrollEnabled = false;
+            map.ZoomEnabled = true;
+            map.ScrollEnabled = true;
 
             // show user location
 			if (UIDevice.CurrentDevice.CheckSystemVersion (8, 0)) {
@@ -54,18 +57,45 @@ namespace MappingApp
             map.Delegate = mapDelegate;
 
             // Add a point annotation
-            map.AddAnnotation(new MKPointAnnotation()
-            {
-                Title = "MyAnnotation",
-                Coordinate = new MonoTouch.CoreLocation.CLLocationCoordinate2D(42.364260, -71.120824)
-            });
+            //map.AddAnnotation(new MKPointAnnotation()
+            //{
+                //Title = "MyAnnotation",
+               // Coordinate = new MonoTouch.CoreLocation.CLLocationCoordinate2D(42.364260, -71.120824)
+            //});
 
             // TODO: Step 3f - add a custom annotation
-            map.AddAnnotation(new CustomAnnotation("CustomSpot", new MonoTouch.CoreLocation.CLLocationCoordinate2D(38.364260, -68.120824)));
+            //map.AddAnnotation(new CustomAnnotation("CustomSpot", new MonoTouch.CoreLocation.CLLocationCoordinate2D(38.364260, -68.120824)));
 
             // TODO: Step 3a - remove old GetViewForAnnotation delegate code to new delegate - we will recreate this next
             // [removed]
+
+			//Centering the Map
+			MKCoordinateRegion region;
+			MKCoordinateSpan span;
+			span.LatitudeDelta = 0.05;
+			span.LongitudeDelta = 0.05;
+			CLLocationCoordinate2D location;
+			location.Latitude = 41.924986;
+			location.Longitude = -87.655640;
+			region.Span = span;
+			region.Center = location;
+			map.SetRegion (region, true);
+
+			this.PrintPointOnMapp (map);
+
+
         }
+
+		private void PrintPointOnMapp(MKMapView map)
+		{
+			foreach(Company company in categoriesModel.SelectedBusinessCategory.AssociatedCompanies)
+			{
+				Console.WriteLine ("Lat:" + company.Latitude + " Long:" + company.Longitude);
+				map.AddAnnotation(new CustomAnnotation(company.Title, new MonoTouch.CoreLocation.CLLocationCoordinate2D(company.Latitude, company.Longitude)));
+
+			}
+
+		}
 
         public override void ViewWillAppear(bool animated)
         {

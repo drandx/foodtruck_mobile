@@ -31,7 +31,7 @@ namespace DInteractive.Core
 
 		}
 
-		public async Task PutCompanyAsync(string email, string latitude, string longitude)
+		public async Task PutCompanyAsync(string email, double latitude, double longitude)
 		{
 			IsBusy = true;
 			try

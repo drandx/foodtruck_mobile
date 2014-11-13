@@ -55,7 +55,7 @@
     </MtouchI18n>
     <MtouchArch>ARMv7</MtouchArch>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <CodesignProvision>49fe5fbe-56a2-48a9-bff3-28d18b7b4ccf</CodesignProvision>
+    <CodesignProvision>6d01ff6b-c3c8-439e-8e73-de9723abca6b</CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>full</DebugType>
@@ -329,20 +329,20 @@
     <Compile Include="Controllers\SupplierStartedServiceController.designer.cs">
       <DependentUpon>SupplierStartedServiceController.cs</DependentUpon>
     </Compile>
-    <Compile Include="RestaurantsController.cs" />
-    <Compile Include="RestaurantsController.designer.cs">
-      <DependentUpon>RestaurantsController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TrackLocationController.cs" />
-    <Compile Include="TrackLocationController.designer.cs">
-      <DependentUpon>TrackLocationController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="BusinessCategoriesTableSource.cs" />
-    <Compile Include="MappingAppViewController.cs" />
-    <Compile Include="MappingAppViewController.designer.cs">
+    <Compile Include="Common\BusinessCategoriesTableSource.cs" />
+    <Compile Include="Controllers\MappingAppViewController.cs" />
+    <Compile Include="Controllers\MappingAppViewController.designer.cs">
       <DependentUpon>MappingAppViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="CustomAnnotation.cs" />
+    <Compile Include="Controllers\RestaurantsController.cs" />
+    <Compile Include="Controllers\RestaurantsController.designer.cs">
+      <DependentUpon>RestaurantsController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\TrackLocationController.cs" />
+    <Compile Include="Controllers\TrackLocationController.designer.cs">
+      <DependentUpon>TrackLocationController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\CustomAnnotation.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

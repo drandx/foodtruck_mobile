@@ -4,12 +4,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="Jzf-Wm-euj">
             <objects>
-                <navigationController definesPresentationContext="YES" toolbarHidden="NO" id="62F-m9-1Og" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="nPr-mD-Y6y"/>
+                <navigationController definesPresentationContext="YES" id="62F-m9-1Og" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="nPr-mD-Y6y"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eqG-9M-Bxh">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -25,7 +26,7 @@
             </objects>
             <point key="canvasLocation" x="-1948" y="21"/>
         </scene>
-        <!--User Selection Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="jvV-CW-TOI">
             <objects>
                 <viewController id="xRS-KV-x2Z" customClass="UserSelectionController" sceneMemberID="viewController">
@@ -59,7 +60,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lQ9-uv-wPs"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="lQ9-uv-wPs"/>
                     <connections>
                         <outlet property="btnCustomer" destination="B9N-Jt-E7y" id="Wph-X2-O9n"/>
                         <outlet property="btnProvider" destination="dT7-KQ-kHl" id="DP2-gi-ZaB"/>
@@ -71,7 +72,7 @@
             </objects>
             <point key="canvasLocation" x="-1445" y="21"/>
         </scene>
-        <!--Restaurants Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="r5P-bX-LL3">
             <objects>
                 <tableViewController id="ymh-oC-qWx" customClass="RestaurantsController" sceneMemberID="viewController">
@@ -92,7 +93,7 @@
                             <outlet property="delegate" destination="ymh-oC-qWx" id="sW2-cY-9db"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jKs-rS-q20"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="jKs-rS-q20"/>
                     <connections>
                         <segue destination="CH4-pC-pHg" kind="push" identifier="OnBusinessCategoryDetail" id="IM7-2Y-JZL"/>
                     </connections>
@@ -101,7 +102,7 @@
             </objects>
             <point key="canvasLocation" x="-873" y="548"/>
         </scene>
-        <!--Mapping App View Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="3aw-rO-68C">
             <objects>
                 <viewController id="CH4-pC-pHg" customClass="MappingAppViewController" sceneMemberID="viewController">
@@ -114,13 +115,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="EHH-EL-wWh"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="EHH-EL-wWh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jSu-1B-LVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-367" y="548"/>
         </scene>
-        <!--Login Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="oVk-Bm-ZSE">
             <objects>
                 <viewController id="k6e-uv-op0" customClass="LoginController" sceneMemberID="viewController">
@@ -164,7 +165,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="d86-Pz-EFP"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="d86-Pz-EFP"/>
                     <connections>
                         <outlet property="btnLogIn" destination="7UE-Z0-Y1N" id="uJ8-Z8-EE4"/>
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
@@ -176,7 +177,7 @@
             </objects>
             <point key="canvasLocation" x="-873" y="-487"/>
         </scene>
-        <!--Track Location Controller-->
+        <!--Where is My FoodTruck?-->
         <scene sceneID="Avy-O0-NcA">
             <objects>
                 <viewController id="lg5-JK-FKu" customClass="TrackLocationController" sceneMemberID="viewController">
@@ -189,7 +190,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="zwg-ym-EoQ"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="zwg-ym-EoQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93L-Br-Fcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
