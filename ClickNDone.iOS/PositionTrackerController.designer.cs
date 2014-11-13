@@ -9,12 +9,18 @@ using System.CodeDom.Compiler;
 
 namespace ClickNDone.iOS
 {
-	[Register ("TrackLocationController")]
-	partial class TrackLocationController
+	[Register ("PositionTrackerController")]
+	partial class PositionTrackerController
 	{
+		[Outlet]
+		MonoTouch.UIKit.UILabel lblPositionTracking { get; set; }
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (lblPositionTracking != null) {
+				lblPositionTracking.Dispose ();
+				lblPositionTracking = null;
+			}
 		}
 	}
 }

@@ -33,16 +33,14 @@ namespace DInteractive.Core
 		public async Task<List<BusinessCategory>> GetBusinessCategoriesAsync ()
 		{
 			List<BusinessCategory> categories = new List<BusinessCategory> ();
-			try 
-			{
+			try {
 				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 				string url = Constants.DigitalInteractiveHost + "BusinessCategoriesREST";
 				var response = await client.DownloadStringTaskAsync (url);
 				categories = JsonConvert.DeserializeObject<List<BusinessCategory>> (response);
 
-			} catch (Exception exc) 
-			{
+			} catch (Exception exc) {
 				Console.WriteLine ("Error on GetBusinessCategoriesAsync" + exc.Message);
 			}
 			return categories;
@@ -56,19 +54,19 @@ namespace DInteractive.Core
 		 * */
 		public async Task<Boolean> PutCompanyAsync (Company company)
 		{
-			try 
-			{
+			try {
 				client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 				client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 
-				var json = JsonConvert.SerializeObject (company);
-				string url = Constants.DigitalInteractiveHost + "CompaniesREST/"+company.Email+"/position";
-				var response = await client.UploadStringTaskAsync (url, "PUT", json);
-				var objResp = JObject.Parse (response);
+				if (!client.IsBusy) {
+					var json = JsonConvert.SerializeObject (company);
+					string url = Constants.DigitalInteractiveHost + "CompaniesREST/" + company.Email + "/position";
+					await client.UploadStringTaskAsync (url, "PUT", json);
+				}
+
 				return true;
 
-			} catch (Exception exc) 
-			{
+			} catch (Exception exc) {
 				Console.WriteLine ("Error on PutCompanyAsync" + exc.Message);
 				return false;
 			}

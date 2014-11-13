@@ -338,11 +338,12 @@
     <Compile Include="Controllers\RestaurantsController.designer.cs">
       <DependentUpon>RestaurantsController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controllers\TrackLocationController.cs" />
-    <Compile Include="Controllers\TrackLocationController.designer.cs">
-      <DependentUpon>TrackLocationController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\CustomAnnotation.cs" />
+    <Compile Include="Common\LocationManager.cs" />
+    <Compile Include="PositionTrackerController.cs" />
+    <Compile Include="PositionTrackerController.designer.cs">
+      <DependentUpon>PositionTrackerController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="MainStoryboard_iPhone.storyboard" />

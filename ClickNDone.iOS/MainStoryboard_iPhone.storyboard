@@ -158,7 +158,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-Z0-Y1N">
                                 <rect key="frame" x="216" y="204" width="73" height="16"/>
-                                <state key="normal" backgroundImage="images/btn_conectar.png">
+                                <state key="normal" title="Start >">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -170,7 +170,7 @@
                         <outlet property="btnLogIn" destination="7UE-Z0-Y1N" id="uJ8-Z8-EE4"/>
                         <outlet property="indicator" destination="1cS-IC-B7T" id="0Tc-MU-Dng"/>
                         <outlet property="txtEmail" destination="dj5-2r-Bpn" id="a79-1F-gMx"/>
-                        <segue destination="lg5-JK-FKu" kind="push" identifier="OnTrackLocation" id="RUk-ox-pH2"/>
+                        <segue destination="8o2-wt-2I4" kind="push" identifier="OnTrackLocation" id="fbO-82-YQ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XhI-1s-4nH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,23 +178,34 @@
             <point key="canvasLocation" x="-873" y="-487"/>
         </scene>
         <!--Where is My FoodTruck?-->
-        <scene sceneID="Avy-O0-NcA">
+        <scene sceneID="cdq-6q-gcg">
             <objects>
-                <viewController id="lg5-JK-FKu" customClass="TrackLocationController" sceneMemberID="viewController">
+                <viewController id="8o2-wt-2I4" customClass="PositionTrackerController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cLB-a5-pRo"/>
-                        <viewControllerLayoutGuide type="bottom" id="6ZD-YE-qaU"/>
+                        <viewControllerLayoutGuide type="top" id="Ycq-D1-KHc"/>
+                        <viewControllerLayoutGuide type="bottom" id="EZ1-mM-LPx"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="a8t-We-7Zx">
+                    <view key="view" contentMode="scaleToFill" id="leT-Ha-Nic">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tracking location..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9TH-7O-Ulw">
+                                <rect key="frame" x="88" y="136" width="145" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="zwg-ym-EoQ"/>
+                    <navigationItem key="navigationItem" title="Where is My FoodTruck?" id="pE3-8E-gqv"/>
+                    <connections>
+                        <outlet property="lblPositionTracking" destination="9TH-7O-Ulw" id="l4p-eG-yWE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="93L-Br-Fcj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="laJ-2r-9rW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-456" y="-487"/>
+            <point key="canvasLocation" x="-474" y="-487"/>
         </scene>
         <!--Main Page Controller-->
         <scene sceneID="ncE-Ys-etI">
@@ -3339,7 +3350,6 @@
         <image name="images/btn_cerrar.png" width="244" height="309"/>
         <image name="images/btn_cerrar_sesion.png" width="244" height="309"/>
         <image name="images/btn_cliente.png" width="244" height="309"/>
-        <image name="images/btn_conectar.png" width="244" height="309"/>
         <image name="images/btn_consultar.png" width="244" height="309"/>
         <image name="images/btn_enviar.png" width="244" height="309"/>
         <image name="images/btn_enviar_calificacion.png" width="244" height="309"/>
