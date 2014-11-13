@@ -31,6 +31,24 @@ namespace DInteractive.Core
 
 		}
 
+		public async Task<BusinessCategory> GetBusinessCategoryByIdAsync(int id)
+		{
+			IsBusy = true;
+			BusinessCategory category = new BusinessCategory (); 
+			try
+			{
+				category = await service.GetBusinessCategoryByIdAsync(id);
+			}
+			finally {
+				IsBusy = false;
+				Loaded = true;
+			}
+
+			return category;
+
+		}
+
+
 		public async Task PutCompanyAsync(string email, double latitude, double longitude)
 		{
 			IsBusy = true;

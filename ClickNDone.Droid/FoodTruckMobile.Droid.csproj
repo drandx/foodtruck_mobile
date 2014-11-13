@@ -74,9 +74,6 @@
     <Compile Include="..\ClickNDone.Core\Model\BaseViewModel.cs">
       <Link>Core\Model\BaseViewModel.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\TermsConditionsViewModel.cs">
-      <Link>Core\Model\TermsConditionsViewModel.cs</Link>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Model\UserModel.cs">
       <Link>Core\Model\UserModel.cs</Link>
     </Compile>
@@ -93,9 +90,6 @@
     <Compile Include="Activities\LoginActivity.cs" />
     <Compile Include="..\ClickNDone.Core\Model\CategoriesModel.cs">
       <Link>Core\Model\CategoriesModel.cs</Link>
-    </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
-      <Link>Core\Model\OrdersModel.cs</Link>
     </Compile>
   </ItemGroup>
   <ItemGroup>

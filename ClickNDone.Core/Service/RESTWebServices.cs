@@ -52,6 +52,30 @@ namespace DInteractive.Core
 		 * 
 		 * 
 		 * */
+		public async Task<BusinessCategory> GetBusinessCategoryByIdAsync (int id)
+		{
+			BusinessCategory category = new BusinessCategory ();
+			try {
+				if (!client.IsBusy) {
+					client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
+					client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
+					string url = Constants.DigitalInteractiveHost + "BusinessCategoriesREST/" + id;
+					var response = await client.DownloadStringTaskAsync (url);
+					category = JsonConvert.DeserializeObject<BusinessCategory> (response);
+				}
+
+			} catch (Exception exc) {
+				Console.WriteLine ("Error on GetBusinessCategoriesAsync" + exc.Message);
+			}
+			return category;
+
+		}
+
+		/**
+		 * 
+		 * 
+		 * 
+		 * */
 		public async Task<Boolean> PutCompanyAsync (Company company)
 		{
 			try {

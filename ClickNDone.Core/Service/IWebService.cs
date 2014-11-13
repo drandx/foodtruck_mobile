@@ -21,6 +21,7 @@ namespace DInteractive.Core
 
 		//Digital Interactive CMS
 		Task<List<BusinessCategory>> GetBusinessCategoriesAsync();
+		Task<BusinessCategory> GetBusinessCategoryByIdAsync(int id);
 		Task<Boolean> PutCompanyAsync(Company company);
 	}
 }

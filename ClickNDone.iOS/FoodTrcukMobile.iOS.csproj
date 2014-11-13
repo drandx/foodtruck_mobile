@@ -212,9 +212,6 @@
     <Compile Include="..\ClickNDone.Core\Common\Settings.cs">
       <Link>Core\Common\Settings.cs</Link>
     </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\TermsConditionsViewModel.cs">
-      <Link>Core\Model\TermsConditionsViewModel.cs</Link>
-    </Compile>
     <Compile Include="Common\BaseUIViewController.cs" />
     <Compile Include="Controllers\UserSelectionController.cs" />
     <Compile Include="Controllers\UserSelectionController.designer.cs">
@@ -235,9 +232,6 @@
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\CategoriesModel.cs">
       <Link>Core\Model\CategoriesModel.cs</Link>
-    </Compile>
-    <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
-      <Link>Core\Model\OrdersModel.cs</Link>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Common\OrderStateTimer.cs">
       <Link>Core\Common\OrderStateTimer.cs</Link>
