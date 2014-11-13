@@ -37,10 +37,8 @@
     <Compile Include="Common\Constants.cs" />
     <Compile Include="Service\RESTWebServices.cs" />
     <Compile Include="Common\Settings.cs" />
-    <Compile Include="Model\TermsConditionsViewModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="Model\CategoriesModel.cs" />
-    <Compile Include="Model\OrdersModel.cs" />
     <Compile Include="Common\OrderStateTimer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

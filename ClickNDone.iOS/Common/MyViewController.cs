@@ -22,15 +22,6 @@ namespace DInteractive.iOS
 		{
 		}
 
-		public void LoadLeftbarButton ()
-		{
-			var bbi = new UIBarButtonItem (UIImage.FromBundle ("images/slideout.png"), UIBarButtonItemStyle.Plain, (sender, e) => {
-				MainPageController.navigation.ToggleMenu ();
-				ToggleMenuHandler();
-			});
-			NavigationItem.SetLeftBarButtonItem (bbi, false);
-		}
-
 		public virtual void ToggleMenuHandler()
 		{
 			Console.WriteLine ("Toggle Pressed");

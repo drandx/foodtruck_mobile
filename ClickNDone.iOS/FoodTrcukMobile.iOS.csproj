@@ -212,62 +212,26 @@
     <Compile Include="..\ClickNDone.Core\Common\Settings.cs">
       <Link>Core\Common\Settings.cs</Link>
     </Compile>
-    <Compile Include="Controllers\TermsConditionsController.cs" />
-    <Compile Include="Controllers\TermsConditionsController.designer.cs">
-      <DependentUpon>TermsConditionsController.cs</DependentUpon>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Model\TermsConditionsViewModel.cs">
       <Link>Core\Model\TermsConditionsViewModel.cs</Link>
     </Compile>
     <Compile Include="Common\BaseUIViewController.cs" />
-    <Compile Include="Controllers\MainPageController.cs" />
-    <Compile Include="Controllers\MainPageController.designer.cs">
-      <DependentUpon>MainPageController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controllers\UserSelectionController.cs" />
     <Compile Include="Controllers\UserSelectionController.designer.cs">
       <DependentUpon>UserSelectionController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\ProfileController.cs" />
-    <Compile Include="Controllers\ProfileController.designer.cs">
-      <DependentUpon>ProfileController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\CategoryController.cs" />
-    <Compile Include="Controllers\CategoryController.designer.cs">
-      <DependentUpon>CategoryController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\ServiceCategoriesTableSource.cs" />
     <Compile Include="Common\Helper.cs" />
     <Compile Include="Common\MyUITextField.cs" />
     <Compile Include="Common\MyViewController.cs" />
-    <Compile Include="Controllers\HomeLogoController.cs" />
-    <Compile Include="Controllers\HomeLogoController.designer.cs">
-      <DependentUpon>HomeLogoController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\MyUIButton.cs" />
     <Compile Include="Common\ActionSheetDatePicker.cs" />
     <Compile Include="Common\PickerModel.cs" />
     <Compile Include="Common\PickerChangedEventArgs.cs" />
-    <Compile Include="Controllers\ServiceRequestController.cs" />
-    <Compile Include="Controllers\ServiceRequestController.designer.cs">
-      <DependentUpon>ServiceRequestController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SugerenciasController.cs" />
-    <Compile Include="Controllers\SugerenciasController.designer.cs">
-      <DependentUpon>SugerenciasController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\HistorialServiciosController.cs" />
-    <Compile Include="Controllers\HistorialServiciosController.designer.cs">
-      <DependentUpon>HistorialServiciosController.cs</DependentUpon>
-    </Compile>
     <Compile Include="Common\MyImageStringElement.cs" />
     <Compile Include="Common\IOSSettings.cs" />
     <Compile Include="..\ClickNDone.Core\Model\UserModel.cs">
       <Link>Core\Model\UserModel.cs</Link>
-    </Compile>
-    <Compile Include="Controllers\UserRegisterController.cs" />
-    <Compile Include="Controllers\UserRegisterController.designer.cs">
-      <DependentUpon>UserRegisterController.cs</DependentUpon>
     </Compile>
     <Compile Include="..\ClickNDone.Core\Model\CategoriesModel.cs">
       <Link>Core\Model\CategoriesModel.cs</Link>
@@ -275,64 +239,8 @@
     <Compile Include="..\ClickNDone.Core\Model\OrdersModel.cs">
       <Link>Core\Model\OrdersModel.cs</Link>
     </Compile>
-    <Compile Include="Controllers\AgendaServiciosController.cs" />
-    <Compile Include="Controllers\AgendaServiciosController.designer.cs">
-      <DependentUpon>AgendaServiciosController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierServiceController.cs" />
-    <Compile Include="Controllers\SupplierServiceController.designer.cs">
-      <DependentUpon>SupplierServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SubCategoryController.cs" />
-    <Compile Include="Controllers\SubCategoryController.designer.cs">
-      <DependentUpon>SubCategoryController.cs</DependentUpon>
-    </Compile>
     <Compile Include="..\ClickNDone.Core\Common\OrderStateTimer.cs">
       <Link>Core\Common\OrderStateTimer.cs</Link>
-    </Compile>
-    <Compile Include="Controllers\ConfirmedServiceController.cs" />
-    <Compile Include="Controllers\ConfirmedServiceController.designer.cs">
-      <DependentUpon>ConfirmedServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\CancelServiceController.cs" />
-    <Compile Include="Controllers\CancelServiceController.designer.cs">
-      <DependentUpon>CancelServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\RateServiceController.cs" />
-    <Compile Include="Controllers\RateServiceController.designer.cs">
-      <DependentUpon>RateServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\ServiceModalDatePickerController.cs" />
-    <Compile Include="Controllers\ServiceModalDatePickerController.designer.cs">
-      <DependentUpon>ServiceModalDatePickerController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierCancelServiceController.cs" />
-    <Compile Include="Controllers\SupplierCancelServiceController.designer.cs">
-      <DependentUpon>SupplierCancelServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierRateServiceController.cs" />
-    <Compile Include="Controllers\SupplierRateServiceController.designer.cs">
-      <DependentUpon>SupplierRateServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierConfirmedServiceController.cs" />
-    <Compile Include="Controllers\SupplierConfirmedServiceController.designer.cs">
-      <DependentUpon>SupplierConfirmedServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierAgendaCController.cs" />
-    <Compile Include="Controllers\SupplierAgendaCController.designer.cs">
-      <DependentUpon>SupplierAgendaCController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierRateFinishedServiceController.cs" />
-    <Compile Include="Controllers\SupplierRateFinishedServiceController.designer.cs">
-      <DependentUpon>SupplierRateFinishedServiceController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierServiceDetailController.cs" />
-    <Compile Include="Controllers\SupplierServiceDetailController.designer.cs">
-      <DependentUpon>SupplierServiceDetailController.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Controllers\SupplierStartedServiceController.cs" />
-    <Compile Include="Controllers\SupplierStartedServiceController.designer.cs">
-      <DependentUpon>SupplierStartedServiceController.cs</DependentUpon>
     </Compile>
     <Compile Include="Common\BusinessCategoriesTableSource.cs" />
     <Compile Include="Controllers\MappingAppViewController.cs" />
