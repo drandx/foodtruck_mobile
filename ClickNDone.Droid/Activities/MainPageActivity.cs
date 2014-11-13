@@ -9,17 +9,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using DInteractive.Core;
 
 namespace ClickNDone.Droid.Activities
 {
     [Activity(Label = "MainPageActivity")]
-    public class MainPageActivity : Activity
+	public class MainPageActivity : BaseActivity<UserModel,CategoriesModel>
     {
-        protected override void OnCreate(Bundle bundle)
+        protected async override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            Console.WriteLine("**** THE FLYOUT MENY GOES HERE - BAZINGA! ****");
-            // Create your application here
+			await viewModelCat.PutCompanyAsync (viewModel.Email, 41.878298, -87.625592);
         }
     }
 }

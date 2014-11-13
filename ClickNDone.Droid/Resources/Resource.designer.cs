@@ -186,25 +186,28 @@ namespace ClickNDone.Droid
 			public const int Icon_60 = 2130837550;
 			
 			// aapt resource value: 0x7f02002f
-			public const int Icon_Small = 2130837551;
+			public const int icon_foodtruck = 2130837551;
 			
 			// aapt resource value: 0x7f020030
-			public const int Icon_Spotlight_40 = 2130837552;
+			public const int Icon_Small = 2130837552;
 			
 			// aapt resource value: 0x7f020031
-			public const int img_photo = 2130837553;
+			public const int Icon_Spotlight_40 = 2130837553;
 			
 			// aapt resource value: 0x7f020032
-			public const int logo_beauty = 2130837554;
+			public const int img_photo = 2130837554;
 			
 			// aapt resource value: 0x7f020033
-			public const int logo_home = 2130837555;
+			public const int logo_beauty = 2130837555;
 			
 			// aapt resource value: 0x7f020034
-			public const int logo_solutions = 2130837556;
+			public const int logo_home = 2130837556;
 			
 			// aapt resource value: 0x7f020035
-			public const int slideout = 2130837557;
+			public const int logo_solutions = 2130837557;
+			
+			// aapt resource value: 0x7f020036
+			public const int slideout = 2130837558;
 			
 			static Drawable()
 			{
@@ -219,32 +222,29 @@ namespace ClickNDone.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050007
-			public const int btnFinish = 2131034119;
-			
-			// aapt resource value: 0x7f050002
-			public const int btnLogin = 2131034114;
-			
-			// aapt resource value: 0x7f050008
-			public const int button2 = 2131034120;
-			
-			// aapt resource value: 0x7f050005
-			public const int myAddButton = 2131034117;
-			
-			// aapt resource value: 0x7f050003
-			public const int myButton = 2131034115;
-			
-			// aapt resource value: 0x7f050004
-			public const int myLabel = 2131034116;
-			
 			// aapt resource value: 0x7f050006
-			public const int textMyCount = 2131034118;
-			
-			// aapt resource value: 0x7f050009
-			public const int textView1 = 2131034121;
+			public const int btnFinish = 2131034118;
 			
 			// aapt resource value: 0x7f050001
-			public const int txtPassword = 2131034113;
+			public const int btnLogin = 2131034113;
+			
+			// aapt resource value: 0x7f050007
+			public const int button2 = 2131034119;
+			
+			// aapt resource value: 0x7f050004
+			public const int myAddButton = 2131034116;
+			
+			// aapt resource value: 0x7f050002
+			public const int myButton = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int myLabel = 2131034115;
+			
+			// aapt resource value: 0x7f050005
+			public const int textMyCount = 2131034117;
+			
+			// aapt resource value: 0x7f050008
+			public const int textView1 = 2131034120;
 			
 			// aapt resource value: 0x7f050000
 			public const int txtUsername = 2131034112;

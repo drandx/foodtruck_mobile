@@ -55,7 +55,6 @@ namespace DInteractive.Core
 			try
 			{
 				Company company = new Company();
-				company.CompanyID = 2;
 				company.Email = email;
 				company.Latitude = latitude;
 				company.Longitude = longitude;

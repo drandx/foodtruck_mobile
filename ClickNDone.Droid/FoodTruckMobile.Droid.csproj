@@ -129,6 +129,7 @@
     <AndroidResource Include="Resources\drawable-mdpi\header_3_64.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\Background_Party.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Icon_Spotlight_40.png" />
+    <AndroidResource Include="Resources\drawable\icon_foodtruck.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\Main.axml" />
