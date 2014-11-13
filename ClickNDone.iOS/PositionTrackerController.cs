@@ -13,6 +13,7 @@ namespace ClickNDone.iOS
 	{
 		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
 		readonly UserModel userModel = (UserModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(UserModel));
+		CLLocationManager LocMgr = new CLLocationManager();
 
 		public PositionTrackerController (IntPtr handle) : base (handle)
 		{
@@ -27,7 +28,8 @@ namespace ClickNDone.iOS
 		public override void ViewDidLoad ()
 		{
 			base.ViewDidLoad ();
-			CLLocationManager locationManager = new CLLocationManager();
+
+			/*CLLocationManager locationManager = new CLLocationManager();
 			locationManager.StartUpdatingLocation();
 			locationManager.StartUpdatingHeading();
 
@@ -44,13 +46,32 @@ namespace ClickNDone.iOS
 					}
 					catch(Exception exc) 
 					{
-						Console.WriteLine("Error on UserSelectionController - ViewDidLoad " + exc.Message);
+						Console.WriteLine("Error on PutCompanyAsync - ViewDidLoad " + exc.Message);
 
 					}
 
 				}
-			};
+			};*/
 
+			if (CLLocationManager.LocationServicesEnabled) {
+				LocMgr.StartMonitoringSignificantLocationChanges ();
+			} else {
+				Console.WriteLine ("Location services not enabled, please enable this in your Settings");
+			}
+
+			LocMgr.LocationsUpdated += async(o, e) => {
+				Console.WriteLine ("Location change received - Lay: "+LocMgr.Location.Coordinate.Latitude+" - Long: "+LocMgr.Location.Coordinate.Longitude);
+				try 
+				{
+					await categoriesModel.PutCompanyAsync(userModel.Email, LocMgr.Location.Coordinate.Latitude, LocMgr.Location.Coordinate.Longitude);
+				}
+				catch(Exception exc) 
+				{
+					Console.WriteLine("Error on PutCompanyAsync - ViewDidLoad " + exc.Message);
+
+				}
+
+			};
 
 		}
 	}

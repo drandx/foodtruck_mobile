@@ -67,7 +67,7 @@ namespace DInteractive.Core
 				return true;
 
 			} catch (Exception exc) {
-				Console.WriteLine ("Error on PutCompanyAsync" + exc.Message);
+				Console.WriteLine ("Error on PutCompanyAsync " + exc.Message);
 				return false;
 			}
 
