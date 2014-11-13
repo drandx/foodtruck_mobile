@@ -8,7 +8,7 @@ namespace DInteractive.iOS
 	{
 		public MyUITextField (IntPtr handle) : base (handle)
 		{
-			UIColor borderColor = UIColor.FromRGB (0,167,229);
+			UIColor borderColor = UIColor.FromRGB (216,71,79);
 			this.Layer.BorderColor = borderColor.CGColor;
 			this.Layer.BorderWidth = 2f;
 

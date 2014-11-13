@@ -14,7 +14,7 @@ namespace DInteractive.iOS
 
 		public override void Draw(RectangleF rect)
 		{
-			UIColor borderColor = UIColor.FromRGB (0,167,229);
+			UIColor borderColor = UIColor.FromRGB (216,71,79);
 			UIColor ButtonBackgroundColor = UIColor.White;
 
 			try
