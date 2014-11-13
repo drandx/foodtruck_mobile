@@ -31,13 +31,13 @@ namespace DInteractive.Core
 
 		}
 
-		public async Task<BusinessCategory> GetBusinessCategoryByIdAsync(int id)
+		public BusinessCategory GetBusinessCategoryById(int id)
 		{
 			IsBusy = true;
 			BusinessCategory category = new BusinessCategory (); 
 			try
 			{
-				category = await service.GetBusinessCategoryByIdAsync(id);
+				category = service.GetBusinessCategoryById(id);
 			}
 			finally {
 				IsBusy = false;

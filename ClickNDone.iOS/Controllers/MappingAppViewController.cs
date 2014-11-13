@@ -6,6 +6,8 @@ using MonoTouch.MapKit;
 using System.Diagnostics;
 using MonoTouch.CoreLocation;
 using DInteractive.Core;
+using System.Threading.Tasks;
+using System.Threading;
 
 namespace MappingApp
 {
@@ -13,7 +15,9 @@ namespace MappingApp
     {
 		CLLocationManager locationManager = new CLLocationManager ();
 		readonly CategoriesModel categoriesModel = (CategoriesModel)DependencyInjectionWrapper.Instance.ServiceContainer ().GetService (typeof(CategoriesModel));
-
+		static int taskId;
+		static volatile bool running;
+		MKMapView map = null;
 
         public MappingAppViewController(IntPtr handle) : base(handle)
         {
@@ -36,7 +40,7 @@ namespace MappingApp
             // Perform any additional setup after loading the view, typically from a nib.
 
             // add the map view
-            var map = new MKMapView(UIScreen.MainScreen.Bounds);
+            map = new MKMapView(UIScreen.MainScreen.Bounds);
             View.Add(map);
 
             // change the map style
@@ -81,17 +85,97 @@ namespace MappingApp
 			region.Center = location;
 			map.SetRegion (region, true);
 
-			this.PrintPointOnMapp (map);
+			this.PrintPointOnMapp ();
 
+			OnStartTask ();
 
         }
 
-		private void PrintPointOnMapp(MKMapView map)
+		async void OnStartTask()
+		{
+			// Stop the task if it's running.
+			if (taskId > 0) {
+				//Console.WriteLine ("Foodtruck location updates should be activated");
+				//Console.WriteLine("Stopping Task...");
+				//running = false;
+				//taskId = 0;
+				return;
+			}
+
+			running = true;
+			Console.WriteLine ("Foodtruck location updates activated");
+			taskId = 1;
+
+			var cts = new CancellationTokenSource();
+			taskId = UIApplication.SharedApplication.BeginBackgroundTask("Long-Running Task", () => {
+				Console.WriteLine("Task {0} timeout occurred, canceled.", taskId);
+				cts.Cancel();
+			});
+
+			// Kick off .NET Task to run in the background.
+			try {
+				await Task.Run(() => {
+					for (long count = 1; running == true ; count++) {
+						this.BeginInvokeOnMainThread(() => {
+							Console.WriteLine("Task {0} running.. {1}", taskId, count);
+							var updatedCategory = categoriesModel.GetBusinessCategoryById(categoriesModel.SelectedBusinessCategory.BusinessCategoryID);
+							categoriesModel.SelectedBusinessCategory = updatedCategory;
+							if(updatedCategory == null)
+							{
+								Console.WriteLine("updatedCategory List Null");
+							}
+							else
+							{
+								this.BeginInvokeOnMainThread(() => {
+									Console.WriteLine("Orders List Items Count: "+updatedCategory.AssociatedCompanies.Count);							
+								});
+								foreach(var an in map.Annotations)
+								{
+									map.RemoveAnnotation(an);
+								}
+								this.PrintPointOnMapp();
+
+
+								/*if((ordersList.Count() > 0))
+								{
+									ordersModel.RequestedOrder = ordersList.First();
+									this.BeginInvokeOnMainThread(() => {
+										LoadUIController();
+										UIApplication.SharedApplication.EndBackgroundTask(taskId);
+										taskId = 0;
+										running = false;
+									});
+								}*/
+							}
+						});
+
+						cts.Token.ThrowIfCancellationRequested();
+						Thread.Sleep(Constants.GET_ORDER_STATUS_WAIT_TIME);
+					}
+				}, cts.Token);
+			}
+			catch (OperationCanceledException)
+			{
+				Console.WriteLine("Task {0} was cancelled.", taskId);
+			}
+			catch (Exception ex)
+			{
+				Console.WriteLine("Exception: {0}", ex.Message);
+			}
+			finally
+			{
+				UIApplication.SharedApplication.EndBackgroundTask(taskId);
+				taskId = 0;
+				running = false;
+			}
+		}
+
+		private void PrintPointOnMapp()
 		{
 			foreach(Company company in categoriesModel.SelectedBusinessCategory.AssociatedCompanies)
 			{
 				Console.WriteLine ("Lat:" + company.Latitude + " Long:" + company.Longitude);
-				map.AddAnnotation(new CustomAnnotation(company.Title, new MonoTouch.CoreLocation.CLLocationCoordinate2D(company.Latitude, company.Longitude)));
+				this.map.AddAnnotation(new CustomAnnotation(company.Title, new MonoTouch.CoreLocation.CLLocationCoordinate2D(company.Latitude, company.Longitude)));
 
 			}
 
@@ -187,8 +271,8 @@ namespace MappingApp
         // TODO: Step 3h - Add event handler for marker being tapped
         public override void DidSelectAnnotationView(MKMapView mapView, MKAnnotationView view)
         {
-            var alert = new UIAlertView("Marker was tapped", "Marker tapped", null, "OK");
-            alert.Show ();
+            //var alert = new UIAlertView("Marker was tapped", "Marker tapped", null, "OK");
+            //alert.Show ();
         }
     }
 }

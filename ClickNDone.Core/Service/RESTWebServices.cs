@@ -52,7 +52,22 @@ namespace DInteractive.Core
 		 * 
 		 * 
 		 * */
-		public async Task<BusinessCategory> GetBusinessCategoryByIdAsync (int id)
+		public Task<BusinessCategory> GetBusinessCategoryByIdAsync (int id)
+		{
+			try {
+				return Task.Run (() => this.GetBusinessCategoryById (id));
+			} catch (Exception exc) {
+				Console.WriteLine ("Crashing on GetUserAsync - " + exc.Message);
+				return null;
+			}
+		}
+
+		/**
+		 * 
+		 * 
+		 * 
+		 * */
+		public BusinessCategory GetBusinessCategoryById (int id)
 		{
 			BusinessCategory category = new BusinessCategory ();
 			try {
@@ -60,7 +75,7 @@ namespace DInteractive.Core
 					client.Headers.Add (HttpRequestHeader.Accept, "application/json"); 
 					client.Headers.Add (HttpRequestHeader.ContentType, "application/json"); 
 					string url = Constants.DigitalInteractiveHost + "BusinessCategoriesREST/" + id;
-					var response = await client.DownloadStringTaskAsync (url);
+					var response = client.DownloadString (url);
 					category = JsonConvert.DeserializeObject<BusinessCategory> (response);
 				}
 
@@ -70,6 +85,7 @@ namespace DInteractive.Core
 			return category;
 
 		}
+
 
 		/**
 		 * 
