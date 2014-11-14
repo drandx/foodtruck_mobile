@@ -1,0 +1,7 @@
+# bin 
+FoodTruckMobile.Core/bin/*
+FoodTruckMobile.Core/obj/*
+FoodTruckMobile.Droid/bin/*
+FoodTruckMobile.Droid/obj/*
+FoodTruckMobile.iOS/bin/*
+FoodTruckMobile.iOS/obj/*
