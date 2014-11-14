@@ -1,0 +1,9 @@
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/System.Core.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/MonoTouch.Dialog-1.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/mscorlib.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/monotouch.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/System.Json.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/ClickNDoneiOS.exe
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/Newtonsoft.Json.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/System.dll
+/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/ClickNDone.iOS/obj/iPhone/Debug/mtouch-cache/Link/System.Runtime.Serialization.dll

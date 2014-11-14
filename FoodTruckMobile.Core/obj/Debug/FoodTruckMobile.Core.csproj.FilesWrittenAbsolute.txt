@@ -1,0 +1,6 @@
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/bin/Debug/FoodTruckMobile.Core.dll.mdb
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/bin/Debug/FoodTruckMobile.Core.dll
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/obj/Debug/FoodTruckMobile.Core.dll
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/obj/Debug/FoodTruckMobile.Core.dll.mdb
+/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.Core/bin/Debug/Newtonsoft.Json.dll

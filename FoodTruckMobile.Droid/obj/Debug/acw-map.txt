@@ -1,0 +1,8 @@
+ClickNDone.Droid.Activities.MainPageActivity;clickndone.droid.activities.MainPageActivity
+ClickNDone.Droid.Activities.ProfileActivity;clickndone.droid.activities.ProfileActivity
+ClickNDone.Droid.Activities.UserSelectionActivity;clickndone.droid.activities.UserSelectionActivity
+ClickNDone.Droid.MainActivity;clickndone.droid.MainActivity
+ClickNDone.Droid.SecondActivity;clickndone.droid.SecondActivity
+DInteractive.Droid.Application;dinteractive.droid.Application
+ClickNDone.Droid.BaseActivity`2;clickndone.droid.BaseActivity_2
+ClickNDone.Droid.LoginActivity;clickndone.droid.LoginActivity

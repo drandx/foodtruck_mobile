@@ -1,0 +1,11 @@
+mscorlib.dll
+System.dll
+System.Xml.dll
+System.Core.dll
+Mono.Dynamic.Interpreter.dll
+FlyoutNavigation.dll
+MonoTouch.Dialog-1.dll
+System.Json.dll
+Newtonsoft.Json.dll
+System.Runtime.Serialization.dll
+SharpMobileCode.ModalPicker.dll

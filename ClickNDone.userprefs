@@ -1,0 +1,5 @@
+﻿<Properties>
+  <DisabledProjects>
+    <String>FoodTruckMobile.Droid/FoodTruckMobile.Droid.csproj</String>
+  </DisabledProjects>
+</Properties>

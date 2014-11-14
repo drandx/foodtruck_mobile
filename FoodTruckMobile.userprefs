@@ -1,0 +1,17 @@
+﻿<Properties GitUserInfo="UsingGIT">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.IPhone4s.8.1" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/FoodTruckMobile.iOS/Controllers/TrackLocationController.cs" line="27" column="3" />
+      <Breakpoint file="/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/FoodTruckMobile.iOS/Controllers/TrackLocationController.cs" line="15" column="3" />
+      <Breakpoint file="/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/FoodTruckMobile.iOS/Controllers/TrackLocationController.cs" line="20" column="4" />
+      <Breakpoint file="/Users/juangarcia/Documents/XamarinProjects/foodtruck_mobile/FoodTruckMobile.Droid/Activities/MainPageActivity.cs" line="81" column="4" />
+      <Breakpoint file="/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.iOS/PositionTrackerController.cs" line="66" column="6" />
+      <Breakpoint file="/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.iOS/PositionTrackerController.cs" line="56" column="3" />
+      <Breakpoint file="/Users/juangarcia/Desktop/foodtruck_mobile/FoodTruckMobile.iOS/PositionTrackerController.cs" line="57" column="4" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.FoodTruckMobile.Droid MonoForAntroid.PreferredDevice="Nexus 4" />
+</Properties>

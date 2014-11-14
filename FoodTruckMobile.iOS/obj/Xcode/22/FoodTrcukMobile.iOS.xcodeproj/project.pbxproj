@@ -1,0 +1,510 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E19A8F20000000000000000 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 711014400000000000000000 /* UIKit.framework */; };
+		2A889C540000000000000000 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37FF4A600000000000000000 /* MapKit.framework */; };
+		26F78FB60000000000000000 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FEEE8080000000000000000 /* Foundation.framework */; };
+		1763C4B20000000000000000 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AF4D1500000000000000000 /* CoreGraphics.framework */; };
+		2F4B02BC0000000000000000 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32DC0F5A0000000000000000 /* Default-568h@2x.png */; };
+		47E6B5400000000000000000 /* splash-568@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 80F77F200000000000000000 /* splash-568@2x.png */; };
+		32A92C3E0000000000000000 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 363A38DC0000000000000000 /* splash.png */; };
+		20D3ED280000000000000000 /* logo_beauty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2464F9C60000000000000000 /* logo_beauty@2x.png */; };
+		3D296EFC0000000000000000 /* logo_home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BA7B9A000000000000000000 /* logo_home@2x.png */; };
+		418A51C00000000000000000 /* Icon-29.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A9B1BA00000000000000000 /* Icon-29.png */; };
+		324366060000000000000000 /* Icon-29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 35D472A40000000000000000 /* Icon-29@2x.png */; };
+		206E26F00000000000000000 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 23FF338E0000000000000000 /* Info.plist */; };
+		E98E7DA00000000000000000 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1229F4780000000000000000 /* Entitlements.plist */; };
+		19192A980000000000000000 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CAA37360000000000000000 /* MainStoryboard_iPhone.storyboard */; };
+		743EB8200000000000000000 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD4F82000000000000000000 /* MainStoryboard_iPad.storyboard */; };
+		356EAC6C0000000000000000 /* icon_foodtruck.png in Resources */ = {isa = PBXBuildFile; fileRef = 38FFB90A0000000000000000 /* icon_foodtruck.png */; };
+		37FFBC800000000000000000 /* icon_foodtruck@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 711086600000000000000000 /* icon_foodtruck@2x.png */; };
+		11914B240000000000000000 /* icon_foodtruck@4x.png in Resources */ = {isa = PBXBuildFile; fileRef = 152257C20000000000000000 /* icon_foodtruck@4x.png */; };
+		16D16C830000000000000000 /* AppDelegate.h in Sources */ = {isa = PBXBuildFile; fileRef = 1A6279210000000000000000 /* AppDelegate.h */; };
+		34D603180000000000000000 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 38670FB60000000000000000 /* AppDelegate.m */; };
+		3BC539380000000000000000 /* ClickNDone_iOSViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3F5645D60000000000000000 /* ClickNDone_iOSViewController.h */; };
+		2D4E23A40000000000000000 /* ClickNDone_iOSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF30420000000000000000 /* ClickNDone_iOSViewController.m */; };
+		10C5BEB40000000000000000 /* LoginController.h in Sources */ = {isa = PBXBuildFile; fileRef = 1456CB520000000000000000 /* LoginController.h */; };
+		1ED70E100000000000000000 /* LoginController.m in Sources */ = {isa = PBXBuildFile; fileRef = 22681AAE0000000000000000 /* LoginController.m */; };
+		1CF516330000000000000000 /* TermsConditionsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 208622D10000000000000000 /* TermsConditionsController.h */; };
+		105FF87C0000000000000000 /* TermsConditionsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13F1051A0000000000000000 /* TermsConditionsController.m */; };
+		120F0D3D0000000000000000 /* MainPageController.h in Sources */ = {isa = PBXBuildFile; fileRef = 15A019DB0000000000000000 /* MainPageController.h */; };
+		3735BD0E0000000000000000 /* MainPageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AC6C9AC0000000000000000 /* MainPageController.m */; };
+		C6925A600000000000000000 /* UserSelectionController.h in Sources */ = {isa = PBXBuildFile; fileRef = FFA324400000000000000000 /* UserSelectionController.h */; };
+		219C8E3E0000000000000000 /* UserSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 252D9ADC0000000000000000 /* UserSelectionController.m */; };
+		234BA2FF0000000000000000 /* ProfileController.h in Sources */ = {isa = PBXBuildFile; fileRef = 26DCAF9D0000000000000000 /* ProfileController.h */; };
+		1A4791E60000000000000000 /* ProfileController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DD89E840000000000000000 /* ProfileController.m */; };
+		1F54D0290000000000000000 /* CategoryController.h in Sources */ = {isa = PBXBuildFile; fileRef = 22E5DCC70000000000000000 /* CategoryController.h */; };
+		19AEE8920000000000000000 /* CategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3FF5300000000000000000 /* CategoryController.m */; };
+		3D2683A20000000000000000 /* MyUITextField.h in Sources */ = {isa = PBXBuildFile; fileRef = B79040000000000000000000 /* MyUITextField.h */; };
+		35D1874A0000000000000000 /* MyUITextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 396293E80000000000000000 /* MyUITextField.m */; };
+		25AB5CF50000000000000000 /* HomeLogoController.h in Sources */ = {isa = PBXBuildFile; fileRef = 293C69930000000000000000 /* HomeLogoController.h */; };
+		1CA74BDC0000000000000000 /* HomeLogoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2038587A0000000000000000 /* HomeLogoController.m */; };
+		3C8DDA4E0000000000000000 /* MyUIButton.h in Sources */ = {isa = PBXBuildFile; fileRef = 1EE6EC000000000000000000 /* MyUIButton.h */; };
+		371AD5D30000000000000000 /* MyUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AABE2710000000000000000 /* MyUIButton.m */; };
+		3538DDF60000000000000000 /* ServiceRequestController.h in Sources */ = {isa = PBXBuildFile; fileRef = 38C9EA940000000000000000 /* ServiceRequestController.h */; };
+		28A3C03F0000000000000000 /* ServiceRequestController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C34CCDD0000000000000000 /* ServiceRequestController.m */; };
+		88A4EB100000000000000000 /* SugerenciasController.h in Sources */ = {isa = PBXBuildFile; fileRef = C1B5B4F00000000000000000 /* SugerenciasController.h */; };
+		1DBDB7490000000000000000 /* SugerenciasController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214EC3E70000000000000000 /* SugerenciasController.m */; };
+		3A13391D0000000000000000 /* HistorialServiciosController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3DA445BB0000000000000000 /* HistorialServiciosController.h */; };
+		BB5951700000000000000000 /* HistorialServiciosController.m in Sources */ = {isa = PBXBuildFile; fileRef = F46A1B500000000000000000 /* HistorialServiciosController.m */; };
+		2B9C23890000000000000000 /* UserRegisterController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2F2D30270000000000000000 /* UserRegisterController.h */; };
+		CF8C21000000000000000000 /* UserRegisterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 46098BF00000000000000000 /* UserRegisterController.m */; };
+		3EED94440000000000000000 /* AgendaServiciosController.h in Sources */ = {isa = PBXBuildFile; fileRef = 27EA0E200000000000000000 /* AgendaServiciosController.h */; };
+		3258768D0000000000000000 /* AgendaServiciosController.m in Sources */ = {isa = PBXBuildFile; fileRef = 35E9832B0000000000000000 /* AgendaServiciosController.m */; };
+		30767EB00000000000000000 /* SupplierServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 34078B4E0000000000000000 /* SupplierServiceController.h */; };
+		273F8A7B0000000000000000 /* SupplierServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AD097190000000000000000 /* SupplierServiceController.m */; };
+		270CA75F0000000000000000 /* SubCategoryController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2A9DB3FD0000000000000000 /* SubCategoryController.h */; };
+		3F9E39790000000000000000 /* SubCategoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32F461700000000000000000 /* SubCategoryController.m */; };
+		3DBC419C0000000000000000 /* ConfirmedServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 14D4E3A00000000000000000 /* ConfirmedServiceController.h */; };
+		312723E50000000000000000 /* ConfirmedServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 34B830830000000000000000 /* ConfirmedServiceController.m */; };
+		110DB2570000000000000000 /* CancelServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 149EBEF50000000000000000 /* CancelServiceController.h */; };
+		26411AEF0000000000000000 /* CancelServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29D2278D0000000000000000 /* CancelServiceController.m */; };
+		1D3D09D60000000000000000 /* RateServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 20CE16740000000000000000 /* RateServiceController.h */; };
+		3270726E0000000000000000 /* RateServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36017F0C0000000000000000 /* RateServiceController.m */; };
+		2CFD6DF30000000000000000 /* ServiceModalDatePickerController.h in Sources */ = {isa = PBXBuildFile; fileRef = 308E7A910000000000000000 /* ServiceModalDatePickerController.h */; };
+		1CD7439E0000000000000000 /* ServiceModalDatePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2068503C0000000000000000 /* ServiceModalDatePickerController.m */; };
+		392CC5720000000000000000 /* SupplierCancelServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3CBDD2100000000000000000 /* SupplierCancelServiceController.h */; };
+		ACF216C00000000000000000 /* SupplierCancelServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = E602E0A00000000000000000 /* SupplierCancelServiceController.m */; };
+		317202E20000000000000000 /* SupplierRateServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 35030F800000000000000000 /* SupplierRateServiceController.h */; };
+		D61BE7E00000000000000000 /* SupplierRateServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F2CB1C0000000000000000 /* SupplierRateServiceController.m */; };
+		7EEBA0300000000000000000 /* SupplierConfirmedServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = B7FC6A100000000000000000 /* SupplierConfirmedServiceController.h */; };
+		37C88FAE0000000000000000 /* SupplierConfirmedServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B599C4C0000000000000000 /* SupplierConfirmedServiceController.m */; };
+		35E697D10000000000000000 /* SupplierAgendaCController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3977A46F0000000000000000 /* SupplierAgendaCController.h */; };
+		29517A1A0000000000000000 /* SupplierAgendaCController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CE286B80000000000000000 /* SupplierAgendaCController.m */; };
+		215EF5000000000000000000 /* SupplierRateFinishedServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 5A6FBEE00000000000000000 /* SupplierRateFinishedServiceController.h */; };
+		10273EAC0000000000000000 /* SupplierRateFinishedServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B84B4A0000000000000000 /* SupplierRateFinishedServiceController.m */; };
+		2C7CC0800000000000000000 /* SupplierServiceDetailController.h in Sources */ = {isa = PBXBuildFile; fileRef = 300DCD1E0000000000000000 /* SupplierServiceDetailController.h */; };
+		3E1F1C7A0000000000000000 /* SupplierServiceDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B0291800000000000000000 /* SupplierServiceDetailController.m */; };
+		26D6D8E90000000000000000 /* SupplierStartedServiceController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2A67E5870000000000000000 /* SupplierStartedServiceController.h */; };
+		16B0AE940000000000000000 /* SupplierStartedServiceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A41BB320000000000000000 /* SupplierStartedServiceController.m */; };
+		14CEB6B70000000000000000 /* MappingAppViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 185FC3550000000000000000 /* MappingAppViewController.h */; };
+		839990000000000000000000 /* MappingAppViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCAA59E00000000000000000 /* MappingAppViewController.m */; };
+		282027720000000000000000 /* RestaurantsController.h in Sources */ = {isa = PBXBuildFile; fileRef = 2BB134100000000000000000 /* RestaurantsController.h */; };
+		3D53900A0000000000000000 /* RestaurantsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E49CA8000000000000000000 /* RestaurantsController.m */; };
+		3B71982D0000000000000000 /* PositionTrackerController.h in Sources */ = {isa = PBXBuildFile; fileRef = 3F02A4CB0000000000000000 /* PositionTrackerController.h */; };
+		2EDC7A760000000000000000 /* PositionTrackerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 326D87140000000000000000 /* PositionTrackerController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		31AAB5900000000000000000 /* FoodTrcukMobile.iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = "FoodTrcukMobile.iOS.app"; path = "FoodTrcukMobile.iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		711014400000000000000000 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "UIKit.framework"; path = "System/Library/Frameworks/UIKit.framework"; sourceTree = SDKROOT; };
+		37FF4A600000000000000000 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MapKit.framework"; path = "System/Library/Frameworks/MapKit.framework"; sourceTree = SDKROOT; };
+		3FEEE8080000000000000000 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; };
+		1AF4D1500000000000000000 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "CoreGraphics.framework"; path = "System/Library/Frameworks/CoreGraphics.framework"; sourceTree = SDKROOT; };
+		32DC0F5A0000000000000000 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		80F77F200000000000000000 /* splash-568@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash-568@2x.png"; path = "splash-568@2x.png"; sourceTree = "<group>"; };
+		363A38DC0000000000000000 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "splash.png"; path = "splash.png"; sourceTree = "<group>"; };
+		2464F9C60000000000000000 /* logo_beauty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_beauty@2x.png"; path = "logo_beauty@2x.png"; sourceTree = "<group>"; };
+		BA7B9A000000000000000000 /* logo_home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo_home@2x.png"; path = "logo_home@2x.png"; sourceTree = "<group>"; };
+		7A9B1BA00000000000000000 /* Icon-29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29.png"; path = "Icon-29.png"; sourceTree = "<group>"; };
+		35D472A40000000000000000 /* Icon-29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-29@2x.png"; path = "Icon-29@2x.png"; sourceTree = "<group>"; };
+		23FF338E0000000000000000 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info.plist"; path = "Info.plist"; sourceTree = "<group>"; };
+		1229F4780000000000000000 /* Entitlements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Entitlements.plist"; path = "Entitlements.plist"; sourceTree = "<group>"; };
+		1CAA37360000000000000000 /* MainStoryboard_iPhone.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard_iPhone.storyboard"; path = "MainStoryboard_iPhone.storyboard"; sourceTree = "<group>"; };
+		AD4F82000000000000000000 /* MainStoryboard_iPad.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = "MainStoryboard_iPad.storyboard"; path = "MainStoryboard_iPad.storyboard"; sourceTree = "<group>"; };
+		38FFB90A0000000000000000 /* icon_foodtruck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_foodtruck.png"; path = "icon_foodtruck.png"; sourceTree = "<group>"; };
+		711086600000000000000000 /* icon_foodtruck@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_foodtruck@2x.png"; path = "icon_foodtruck@2x.png"; sourceTree = "<group>"; };
+		152257C20000000000000000 /* icon_foodtruck@4x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon_foodtruck@4x.png"; path = "icon_foodtruck@4x.png"; sourceTree = "<group>"; };
+		1A6279210000000000000000 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AppDelegate.h"; path = "AppDelegate.h"; sourceTree = "<group>"; };
+		38670FB60000000000000000 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AppDelegate.m"; path = "AppDelegate.m"; sourceTree = "<group>"; };
+		3F5645D60000000000000000 /* ClickNDone_iOSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ClickNDone_iOSViewController.h"; path = "ClickNDone_iOSViewController.h"; sourceTree = "<group>"; };
+		30DF30420000000000000000 /* ClickNDone_iOSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ClickNDone_iOSViewController.m"; path = "ClickNDone_iOSViewController.m"; sourceTree = "<group>"; };
+		1456CB520000000000000000 /* LoginController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "LoginController.h"; path = "LoginController.h"; sourceTree = "<group>"; };
+		22681AAE0000000000000000 /* LoginController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "LoginController.m"; path = "LoginController.m"; sourceTree = "<group>"; };
+		208622D10000000000000000 /* TermsConditionsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "TermsConditionsController.h"; path = "TermsConditionsController.h"; sourceTree = "<group>"; };
+		13F1051A0000000000000000 /* TermsConditionsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "TermsConditionsController.m"; path = "TermsConditionsController.m"; sourceTree = "<group>"; };
+		15A019DB0000000000000000 /* MainPageController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MainPageController.h"; path = "MainPageController.h"; sourceTree = "<group>"; };
+		3AC6C9AC0000000000000000 /* MainPageController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MainPageController.m"; path = "MainPageController.m"; sourceTree = "<group>"; };
+		FFA324400000000000000000 /* UserSelectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UserSelectionController.h"; path = "UserSelectionController.h"; sourceTree = "<group>"; };
+		252D9ADC0000000000000000 /* UserSelectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UserSelectionController.m"; path = "UserSelectionController.m"; sourceTree = "<group>"; };
+		26DCAF9D0000000000000000 /* ProfileController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ProfileController.h"; path = "ProfileController.h"; sourceTree = "<group>"; };
+		1DD89E840000000000000000 /* ProfileController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ProfileController.m"; path = "ProfileController.m"; sourceTree = "<group>"; };
+		22E5DCC70000000000000000 /* CategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CategoryController.h"; path = "CategoryController.h"; sourceTree = "<group>"; };
+		1D3FF5300000000000000000 /* CategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CategoryController.m"; path = "CategoryController.m"; sourceTree = "<group>"; };
+		B79040000000000000000000 /* MyUITextField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MyUITextField.h"; path = "MyUITextField.h"; sourceTree = "<group>"; };
+		396293E80000000000000000 /* MyUITextField.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MyUITextField.m"; path = "MyUITextField.m"; sourceTree = "<group>"; };
+		293C69930000000000000000 /* HomeLogoController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HomeLogoController.h"; path = "HomeLogoController.h"; sourceTree = "<group>"; };
+		2038587A0000000000000000 /* HomeLogoController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "HomeLogoController.m"; path = "HomeLogoController.m"; sourceTree = "<group>"; };
+		1EE6EC000000000000000000 /* MyUIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MyUIButton.h"; path = "MyUIButton.h"; sourceTree = "<group>"; };
+		3AABE2710000000000000000 /* MyUIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MyUIButton.m"; path = "MyUIButton.m"; sourceTree = "<group>"; };
+		38C9EA940000000000000000 /* ServiceRequestController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ServiceRequestController.h"; path = "ServiceRequestController.h"; sourceTree = "<group>"; };
+		2C34CCDD0000000000000000 /* ServiceRequestController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ServiceRequestController.m"; path = "ServiceRequestController.m"; sourceTree = "<group>"; };
+		C1B5B4F00000000000000000 /* SugerenciasController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SugerenciasController.h"; path = "SugerenciasController.h"; sourceTree = "<group>"; };
+		214EC3E70000000000000000 /* SugerenciasController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SugerenciasController.m"; path = "SugerenciasController.m"; sourceTree = "<group>"; };
+		3DA445BB0000000000000000 /* HistorialServiciosController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "HistorialServiciosController.h"; path = "HistorialServiciosController.h"; sourceTree = "<group>"; };
+		F46A1B500000000000000000 /* HistorialServiciosController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "HistorialServiciosController.m"; path = "HistorialServiciosController.m"; sourceTree = "<group>"; };
+		2F2D30270000000000000000 /* UserRegisterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "UserRegisterController.h"; path = "UserRegisterController.h"; sourceTree = "<group>"; };
+		46098BF00000000000000000 /* UserRegisterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "UserRegisterController.m"; path = "UserRegisterController.m"; sourceTree = "<group>"; };
+		27EA0E200000000000000000 /* AgendaServiciosController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "AgendaServiciosController.h"; path = "AgendaServiciosController.h"; sourceTree = "<group>"; };
+		35E9832B0000000000000000 /* AgendaServiciosController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "AgendaServiciosController.m"; path = "AgendaServiciosController.m"; sourceTree = "<group>"; };
+		34078B4E0000000000000000 /* SupplierServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierServiceController.h"; path = "SupplierServiceController.h"; sourceTree = "<group>"; };
+		2AD097190000000000000000 /* SupplierServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierServiceController.m"; path = "SupplierServiceController.m"; sourceTree = "<group>"; };
+		2A9DB3FD0000000000000000 /* SubCategoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SubCategoryController.h"; path = "SubCategoryController.h"; sourceTree = "<group>"; };
+		32F461700000000000000000 /* SubCategoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SubCategoryController.m"; path = "SubCategoryController.m"; sourceTree = "<group>"; };
+		14D4E3A00000000000000000 /* ConfirmedServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ConfirmedServiceController.h"; path = "ConfirmedServiceController.h"; sourceTree = "<group>"; };
+		34B830830000000000000000 /* ConfirmedServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ConfirmedServiceController.m"; path = "ConfirmedServiceController.m"; sourceTree = "<group>"; };
+		149EBEF50000000000000000 /* CancelServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CancelServiceController.h"; path = "CancelServiceController.h"; sourceTree = "<group>"; };
+		29D2278D0000000000000000 /* CancelServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CancelServiceController.m"; path = "CancelServiceController.m"; sourceTree = "<group>"; };
+		20CE16740000000000000000 /* RateServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RateServiceController.h"; path = "RateServiceController.h"; sourceTree = "<group>"; };
+		36017F0C0000000000000000 /* RateServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RateServiceController.m"; path = "RateServiceController.m"; sourceTree = "<group>"; };
+		308E7A910000000000000000 /* ServiceModalDatePickerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "ServiceModalDatePickerController.h"; path = "ServiceModalDatePickerController.h"; sourceTree = "<group>"; };
+		2068503C0000000000000000 /* ServiceModalDatePickerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "ServiceModalDatePickerController.m"; path = "ServiceModalDatePickerController.m"; sourceTree = "<group>"; };
+		3CBDD2100000000000000000 /* SupplierCancelServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierCancelServiceController.h"; path = "SupplierCancelServiceController.h"; sourceTree = "<group>"; };
+		E602E0A00000000000000000 /* SupplierCancelServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierCancelServiceController.m"; path = "SupplierCancelServiceController.m"; sourceTree = "<group>"; };
+		35030F800000000000000000 /* SupplierRateServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierRateServiceController.h"; path = "SupplierRateServiceController.h"; sourceTree = "<group>"; };
+		10F2CB1C0000000000000000 /* SupplierRateServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierRateServiceController.m"; path = "SupplierRateServiceController.m"; sourceTree = "<group>"; };
+		B7FC6A100000000000000000 /* SupplierConfirmedServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierConfirmedServiceController.h"; path = "SupplierConfirmedServiceController.h"; sourceTree = "<group>"; };
+		3B599C4C0000000000000000 /* SupplierConfirmedServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierConfirmedServiceController.m"; path = "SupplierConfirmedServiceController.m"; sourceTree = "<group>"; };
+		3977A46F0000000000000000 /* SupplierAgendaCController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierAgendaCController.h"; path = "SupplierAgendaCController.h"; sourceTree = "<group>"; };
+		2CE286B80000000000000000 /* SupplierAgendaCController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierAgendaCController.m"; path = "SupplierAgendaCController.m"; sourceTree = "<group>"; };
+		5A6FBEE00000000000000000 /* SupplierRateFinishedServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierRateFinishedServiceController.h"; path = "SupplierRateFinishedServiceController.h"; sourceTree = "<group>"; };
+		13B84B4A0000000000000000 /* SupplierRateFinishedServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierRateFinishedServiceController.m"; path = "SupplierRateFinishedServiceController.m"; sourceTree = "<group>"; };
+		300DCD1E0000000000000000 /* SupplierServiceDetailController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierServiceDetailController.h"; path = "SupplierServiceDetailController.h"; sourceTree = "<group>"; };
+		1B0291800000000000000000 /* SupplierServiceDetailController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierServiceDetailController.m"; path = "SupplierServiceDetailController.m"; sourceTree = "<group>"; };
+		2A67E5870000000000000000 /* SupplierStartedServiceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SupplierStartedServiceController.h"; path = "SupplierStartedServiceController.h"; sourceTree = "<group>"; };
+		1A41BB320000000000000000 /* SupplierStartedServiceController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SupplierStartedServiceController.m"; path = "SupplierStartedServiceController.m"; sourceTree = "<group>"; };
+		185FC3550000000000000000 /* MappingAppViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "MappingAppViewController.h"; path = "MappingAppViewController.h"; sourceTree = "<group>"; };
+		BCAA59E00000000000000000 /* MappingAppViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "MappingAppViewController.m"; path = "MappingAppViewController.m"; sourceTree = "<group>"; };
+		2BB134100000000000000000 /* RestaurantsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "RestaurantsController.h"; path = "RestaurantsController.h"; sourceTree = "<group>"; };
+		E49CA8000000000000000000 /* RestaurantsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "RestaurantsController.m"; path = "RestaurantsController.m"; sourceTree = "<group>"; };
+		3F02A4CB0000000000000000 /* PositionTrackerController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PositionTrackerController.h"; path = "PositionTrackerController.h"; sourceTree = "<group>"; };
+		326D87140000000000000000 /* PositionTrackerController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "PositionTrackerController.m"; path = "PositionTrackerController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		252B77330000000000000000 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E19A8F20000000000000000 /* UIKit.framework in Frameworks */,
+				2A889C540000000000000000 /* MapKit.framework in Frameworks */,
+				26F78FB60000000000000000 /* Foundation.framework in Frameworks */,
+				1763C4B20000000000000000 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		234524180000000000000000 = {
+			isa = PBXGroup;
+			children = (
+				89EB70500000000000000000 /* FoodTrcukMobile.iOS */,
+				FF80E9B00000000000000000 /* Frameworks */,
+				2DF849F20000000000000000 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2DF849F20000000000000000 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31AAB5900000000000000000 /* FoodTrcukMobile.iOS.app */,
+			);
+			name = "Products";
+			sourceTree = "<group>";
+		};
+		FF80E9B00000000000000000 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				711014400000000000000000 /* UIKit.framework */,
+				37FF4A600000000000000000 /* MapKit.framework */,
+				3FEEE8080000000000000000 /* Foundation.framework */,
+				1AF4D1500000000000000000 /* CoreGraphics.framework */,
+			);
+			name = "Frameworks";
+			sourceTree = "<group>";
+		};
+		89EB70500000000000000000 /* FoodTrcukMobile.iOS */ = {
+			isa = PBXGroup;
+			children = (
+				27EA0E200000000000000000 /* AgendaServiciosController.h */,
+				1A6279210000000000000000 /* AppDelegate.h */,
+				149EBEF50000000000000000 /* CancelServiceController.h */,
+				22E5DCC70000000000000000 /* CategoryController.h */,
+				3F5645D60000000000000000 /* ClickNDone_iOSViewController.h */,
+				14D4E3A00000000000000000 /* ConfirmedServiceController.h */,
+				32DC0F5A0000000000000000 /* Default-568h@2x.png */,
+				1229F4780000000000000000 /* Entitlements.plist */,
+				3DA445BB0000000000000000 /* HistorialServiciosController.h */,
+				293C69930000000000000000 /* HomeLogoController.h */,
+				38FFB90A0000000000000000 /* icon_foodtruck.png */,
+				711086600000000000000000 /* icon_foodtruck@2x.png */,
+				152257C20000000000000000 /* icon_foodtruck@4x.png */,
+				7A9B1BA00000000000000000 /* Icon-29.png */,
+				35D472A40000000000000000 /* Icon-29@2x.png */,
+				23FF338E0000000000000000 /* Info.plist */,
+				1456CB520000000000000000 /* LoginController.h */,
+				2464F9C60000000000000000 /* logo_beauty@2x.png */,
+				BA7B9A000000000000000000 /* logo_home@2x.png */,
+				15A019DB0000000000000000 /* MainPageController.h */,
+				AD4F82000000000000000000 /* MainStoryboard_iPad.storyboard */,
+				1CAA37360000000000000000 /* MainStoryboard_iPhone.storyboard */,
+				185FC3550000000000000000 /* MappingAppViewController.h */,
+				1EE6EC000000000000000000 /* MyUIButton.h */,
+				B79040000000000000000000 /* MyUITextField.h */,
+				3F02A4CB0000000000000000 /* PositionTrackerController.h */,
+				26DCAF9D0000000000000000 /* ProfileController.h */,
+				20CE16740000000000000000 /* RateServiceController.h */,
+				2BB134100000000000000000 /* RestaurantsController.h */,
+				308E7A910000000000000000 /* ServiceModalDatePickerController.h */,
+				38C9EA940000000000000000 /* ServiceRequestController.h */,
+				363A38DC0000000000000000 /* splash.png */,
+				80F77F200000000000000000 /* splash-568@2x.png */,
+				2A9DB3FD0000000000000000 /* SubCategoryController.h */,
+				C1B5B4F00000000000000000 /* SugerenciasController.h */,
+				3977A46F0000000000000000 /* SupplierAgendaCController.h */,
+				3CBDD2100000000000000000 /* SupplierCancelServiceController.h */,
+				B7FC6A100000000000000000 /* SupplierConfirmedServiceController.h */,
+				5A6FBEE00000000000000000 /* SupplierRateFinishedServiceController.h */,
+				35030F800000000000000000 /* SupplierRateServiceController.h */,
+				34078B4E0000000000000000 /* SupplierServiceController.h */,
+				300DCD1E0000000000000000 /* SupplierServiceDetailController.h */,
+				2A67E5870000000000000000 /* SupplierStartedServiceController.h */,
+				208622D10000000000000000 /* TermsConditionsController.h */,
+				2F2D30270000000000000000 /* UserRegisterController.h */,
+				FFA324400000000000000000 /* UserSelectionController.h */,
+				36B7FAF50000000000000000 /* Supporting Files */,
+			);
+			name = "FoodTrcukMobile.iOS";
+			sourceTree = "<group>";
+		};
+		36B7FAF50000000000000000 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				35E9832B0000000000000000 /* AgendaServiciosController.m */,
+				38670FB60000000000000000 /* AppDelegate.m */,
+				29D2278D0000000000000000 /* CancelServiceController.m */,
+				1D3FF5300000000000000000 /* CategoryController.m */,
+				30DF30420000000000000000 /* ClickNDone_iOSViewController.m */,
+				34B830830000000000000000 /* ConfirmedServiceController.m */,
+				F46A1B500000000000000000 /* HistorialServiciosController.m */,
+				2038587A0000000000000000 /* HomeLogoController.m */,
+				22681AAE0000000000000000 /* LoginController.m */,
+				3AC6C9AC0000000000000000 /* MainPageController.m */,
+				BCAA59E00000000000000000 /* MappingAppViewController.m */,
+				3AABE2710000000000000000 /* MyUIButton.m */,
+				396293E80000000000000000 /* MyUITextField.m */,
+				326D87140000000000000000 /* PositionTrackerController.m */,
+				1DD89E840000000000000000 /* ProfileController.m */,
+				36017F0C0000000000000000 /* RateServiceController.m */,
+				E49CA8000000000000000000 /* RestaurantsController.m */,
+				2068503C0000000000000000 /* ServiceModalDatePickerController.m */,
+				2C34CCDD0000000000000000 /* ServiceRequestController.m */,
+				32F461700000000000000000 /* SubCategoryController.m */,
+				214EC3E70000000000000000 /* SugerenciasController.m */,
+				2CE286B80000000000000000 /* SupplierAgendaCController.m */,
+				E602E0A00000000000000000 /* SupplierCancelServiceController.m */,
+				3B599C4C0000000000000000 /* SupplierConfirmedServiceController.m */,
+				13B84B4A0000000000000000 /* SupplierRateFinishedServiceController.m */,
+				10F2CB1C0000000000000000 /* SupplierRateServiceController.m */,
+				2AD097190000000000000000 /* SupplierServiceController.m */,
+				1B0291800000000000000000 /* SupplierServiceDetailController.m */,
+				1A41BB320000000000000000 /* SupplierStartedServiceController.m */,
+				13F1051A0000000000000000 /* TermsConditionsController.m */,
+				46098BF00000000000000000 /* UserRegisterController.m */,
+				252D9ADC0000000000000000 /* UserSelectionController.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1E0502B90000000000000000 /* FoodTrcukMobile.iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 35E95A600000000000000000 /* Build configuration list for PBXNativeTarget "FoodTrcukMobile.iOS" */;
+			buildPhases = (
+				353BC22E0000000000000000 /* Sources */,
+				252B77330000000000000000 /* Frameworks */,
+				38CCCECC0000000000000000 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FoodTrcukMobile.iOS";
+			productName = "FoodTrcukMobile.iOS";
+			productReference = 31AAB5900000000000000000 /* FoodTrcukMobile.iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A7A03920000000000000000 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 28B828930000000000000000 /* Build configuration list for PBXProject "FoodTrcukMobile.iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 234524180000000000000000;
+			productRefGroup = 2DF849F20000000000000000 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1E0502B90000000000000000 /* FoodTrcukMobile.iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38CCCECC0000000000000000 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F4B02BC0000000000000000 /* Default-568h@2x.png in Resources */,
+				47E6B5400000000000000000 /* splash-568@2x.png in Resources */,
+				32A92C3E0000000000000000 /* splash.png in Resources */,
+				20D3ED280000000000000000 /* logo_beauty@2x.png in Resources */,
+				3D296EFC0000000000000000 /* logo_home@2x.png in Resources */,
+				418A51C00000000000000000 /* Icon-29.png in Resources */,
+				324366060000000000000000 /* Icon-29@2x.png in Resources */,
+				206E26F00000000000000000 /* Info.plist in Resources */,
+				E98E7DA00000000000000000 /* Entitlements.plist in Resources */,
+				19192A980000000000000000 /* MainStoryboard_iPhone.storyboard in Resources */,
+				743EB8200000000000000000 /* MainStoryboard_iPad.storyboard in Resources */,
+				356EAC6C0000000000000000 /* icon_foodtruck.png in Resources */,
+				37FFBC800000000000000000 /* icon_foodtruck@2x.png in Resources */,
+				11914B240000000000000000 /* icon_foodtruck@4x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		353BC22E0000000000000000 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				16D16C830000000000000000 /* AppDelegate.h in Sources */,
+				34D603180000000000000000 /* AppDelegate.m in Sources */,
+				3BC539380000000000000000 /* ClickNDone_iOSViewController.h in Sources */,
+				2D4E23A40000000000000000 /* ClickNDone_iOSViewController.m in Sources */,
+				10C5BEB40000000000000000 /* LoginController.h in Sources */,
+				1ED70E100000000000000000 /* LoginController.m in Sources */,
+				1CF516330000000000000000 /* TermsConditionsController.h in Sources */,
+				105FF87C0000000000000000 /* TermsConditionsController.m in Sources */,
+				120F0D3D0000000000000000 /* MainPageController.h in Sources */,
+				3735BD0E0000000000000000 /* MainPageController.m in Sources */,
+				C6925A600000000000000000 /* UserSelectionController.h in Sources */,
+				219C8E3E0000000000000000 /* UserSelectionController.m in Sources */,
+				234BA2FF0000000000000000 /* ProfileController.h in Sources */,
+				1A4791E60000000000000000 /* ProfileController.m in Sources */,
+				1F54D0290000000000000000 /* CategoryController.h in Sources */,
+				19AEE8920000000000000000 /* CategoryController.m in Sources */,
+				3D2683A20000000000000000 /* MyUITextField.h in Sources */,
+				35D1874A0000000000000000 /* MyUITextField.m in Sources */,
+				25AB5CF50000000000000000 /* HomeLogoController.h in Sources */,
+				1CA74BDC0000000000000000 /* HomeLogoController.m in Sources */,
+				3C8DDA4E0000000000000000 /* MyUIButton.h in Sources */,
+				371AD5D30000000000000000 /* MyUIButton.m in Sources */,
+				3538DDF60000000000000000 /* ServiceRequestController.h in Sources */,
+				28A3C03F0000000000000000 /* ServiceRequestController.m in Sources */,
+				88A4EB100000000000000000 /* SugerenciasController.h in Sources */,
+				1DBDB7490000000000000000 /* SugerenciasController.m in Sources */,
+				3A13391D0000000000000000 /* HistorialServiciosController.h in Sources */,
+				BB5951700000000000000000 /* HistorialServiciosController.m in Sources */,
+				2B9C23890000000000000000 /* UserRegisterController.h in Sources */,
+				CF8C21000000000000000000 /* UserRegisterController.m in Sources */,
+				3EED94440000000000000000 /* AgendaServiciosController.h in Sources */,
+				3258768D0000000000000000 /* AgendaServiciosController.m in Sources */,
+				30767EB00000000000000000 /* SupplierServiceController.h in Sources */,
+				273F8A7B0000000000000000 /* SupplierServiceController.m in Sources */,
+				270CA75F0000000000000000 /* SubCategoryController.h in Sources */,
+				3F9E39790000000000000000 /* SubCategoryController.m in Sources */,
+				3DBC419C0000000000000000 /* ConfirmedServiceController.h in Sources */,
+				312723E50000000000000000 /* ConfirmedServiceController.m in Sources */,
+				110DB2570000000000000000 /* CancelServiceController.h in Sources */,
+				26411AEF0000000000000000 /* CancelServiceController.m in Sources */,
+				1D3D09D60000000000000000 /* RateServiceController.h in Sources */,
+				3270726E0000000000000000 /* RateServiceController.m in Sources */,
+				2CFD6DF30000000000000000 /* ServiceModalDatePickerController.h in Sources */,
+				1CD7439E0000000000000000 /* ServiceModalDatePickerController.m in Sources */,
+				392CC5720000000000000000 /* SupplierCancelServiceController.h in Sources */,
+				ACF216C00000000000000000 /* SupplierCancelServiceController.m in Sources */,
+				317202E20000000000000000 /* SupplierRateServiceController.h in Sources */,
+				D61BE7E00000000000000000 /* SupplierRateServiceController.m in Sources */,
+				7EEBA0300000000000000000 /* SupplierConfirmedServiceController.h in Sources */,
+				37C88FAE0000000000000000 /* SupplierConfirmedServiceController.m in Sources */,
+				35E697D10000000000000000 /* SupplierAgendaCController.h in Sources */,
+				29517A1A0000000000000000 /* SupplierAgendaCController.m in Sources */,
+				215EF5000000000000000000 /* SupplierRateFinishedServiceController.h in Sources */,
+				10273EAC0000000000000000 /* SupplierRateFinishedServiceController.m in Sources */,
+				2C7CC0800000000000000000 /* SupplierServiceDetailController.h in Sources */,
+				3E1F1C7A0000000000000000 /* SupplierServiceDetailController.m in Sources */,
+				26D6D8E90000000000000000 /* SupplierStartedServiceController.h in Sources */,
+				16B0AE940000000000000000 /* SupplierStartedServiceController.m in Sources */,
+				14CEB6B70000000000000000 /* MappingAppViewController.h in Sources */,
+				839990000000000000000000 /* MappingAppViewController.m in Sources */,
+				282027720000000000000000 /* RestaurantsController.h in Sources */,
+				3D53900A0000000000000000 /* RestaurantsController.m in Sources */,
+				3B71982D0000000000000000 /* PositionTrackerController.h in Sources */,
+				2EDC7A760000000000000000 /* PositionTrackerController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C5DDB6A0000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				SDKROOT = iphoneos;
+			};
+			name = MonoTouch;
+		};
+		11415D240000000000000000 /* MonoTouch */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				PRODUCT_NAME = "FoodTrcukMobile.iOS";
+				WRAPPER_EXTENSION = app;
+			};
+			name = MonoTouch;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		28B828930000000000000000 /* Build configuration list for PBXProject "FoodTrcukMobile.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C5DDB6A0000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+		35E95A600000000000000000 /* Build configuration list for PBXNativeTarget "FoodTrcukMobile.iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11415D240000000000000000 /* MonoTouch */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = MonoTouch;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A7A03920000000000000000 /* Project object */;
+}
