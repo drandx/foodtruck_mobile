@@ -94,7 +94,7 @@ Global
 		{FE7ED3C5-C567-408C-B1B8-DC5549F45928}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = FoodTruckMobile.Droid\FoodTruckMobile.Droid.csproj
+		StartupItem = FoodTruckMobile.iOS\FoodTrcukMobile.iOS.csproj
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
